@@ -1,0 +1,857 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"a41f4debc8","applicationID":"3305491","transactionName":"cQ5cR0pcXFtQEBhXFlUAXFpCUkReWgxEFwBbEkZBUVBE","queueTime":4,"applicationTime":668,"agent":""}</script>
+<script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[f.now()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,t){s[t]=o(d+t,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(l+"tracer",[f.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return t.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],n),e}finally{c.emit("fn-end",[f.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=o(l+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,f.now()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],4:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o,i){if(!d.aborted||i){e&&e(n,r,o);for(var a=t(o),u=m(n),c=u.length,f=0;f<c;f++)u[f].apply(a,r);var p=s[y[n]];return p&&p.push([b,n,r,a]),a}}function l(e,t){v[e]=m(e).concat(t)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(n)}function g(e,t){f(e,function(e,n){t=t||"feature",y[n]=t,t in s||(s[t]=[])})}var v={},y={},b={on:l,emit:n,get:w,listeners:m,context:t,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},p={},d=t.exports=o();d.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!x++){var e=h.info=NREUM.info,t=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return s.abort();f(y,function(t,n){e[t]||(e[t]=n)}),c("mark",["onload",a()+h.offset],null,"api");var n=d.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),c=e("handle"),f=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1071.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=t.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),c("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://www.chicagogallerynews.com/calendar.rss" rel="alternate" title="Chicago Gallery News: Events" type="application/rss+xml" />
+  <link href="https://www.chicagogallerynews.com/news.rss" rel="alternate" title="Chicago Gallery News: All News" type="application/rss+xml" />
+    <link href="https://www.chicagogallerynews.com/news/category/announcements.rss" rel="alternate" title="Chicago Gallery News: Announcements" type="application/rss+xml" />
+    <link href="https://www.chicagogallerynews.com/news/category/previews.rss" rel="alternate" title="Chicago Gallery News: Previews" type="application/rss+xml" />
+    <link href="https://www.chicagogallerynews.com/news/category/interviews.rss" rel="alternate" title="Chicago Gallery News: Interviews" type="application/rss+xml" />
+    <link href="https://www.chicagogallerynews.com/news/category/features.rss" rel="alternate" title="Chicago Gallery News: Features" type="application/rss+xml" />
+  <link rel="icon" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/favicon.png"/>
+  <link rel="apple-touch-icon" sizes="72x72" href="/favicon.png"/>
+  <link rel="apple-touch-icon" sizes="114x114" href="/favicon.png"/>
+
+  <meta property="og:type" content="article"/>
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="Chicago Gallery News"/>
+  <meta property="og:url" content="https://www.chicagogallerynews.com/galleries/district/river-north"/>
+  <meta property="og:title" content=""/>
+  <meta property="og:description" content=""/>
+  <meta property="og:image" content=""/>
+
+  <title>River North - Galleries - Chicago Gallery News</title>
+    <meta name="description" content="">
+
+
+  <link href="/assets/application-eeb80162c04573ad4019ef99159c1d24.css" media="all" rel="stylesheet" type="text/css" />
+  <script type="text/javascript"
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnb7Hs4gT83hOhy3kEmPLFMATle4LXgN4&sensor=false">
+  </script>
+  <script src="https://use.fontawesome.com/e3ef403bbb.js"></script>
+  <script src="/assets/application-75513b902ea0c850f10e41317a3a9710.js" type="text/javascript"></script>
+
+  <script>var _gaq=[['_setAccount','UA-26697456-1'],['_trackPageview'],['_trackPageLoadTime']];(function(d,t){
+var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+g.async=1;g.src='//www.google-analytics.com/ga.js';s.parentNode.insertBefore(g,s)
+}(document,'script'))</script>
+
+  <script type="text/javascript" src="//use.typekit.net/hpf0pxa.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+  <script type='text/javascript'>
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+  (function() {
+  var gads = document.createElement('script');
+  gads.async = true;
+  gads.type = 'text/javascript';
+  var useSSL = 'https:' == document.location.protocol;
+  gads.src = (useSSL ? 'https:' : 'http:') +
+  '//www.googletagservices.com/tag/js/gpt.js';
+  var node = document.getElementsByTagName('script')[0];
+  node.parentNode.insertBefore(gads, node);
+})();
+
+
+googletag.cmd.push(function() {
+
+if($(window).width() > 767) {
+
+googletag.defineSlot('/73695685/ArtServices_BTF_1_300x250', [300, 250], 'div-gpt-ad-1388766715129-0').addService(googletag.pubads());
+googletag.defineSlot('/73695685/ArtServices_BTF_2_300x250', [300, 250], 'div-gpt-ad-1388766715129-1').addService(googletag.pubads());
+googletag.defineSlot('/73695685/ArtServices_BTF_3_300x250', [300, 250], 'div-gpt-ad-1388766715129-2').addService(googletag.pubads());
+googletag.defineSlot('/73695685/ArtServices_Header_ATF_Top_970x90', [970, 90], 'div-gpt-ad-1388766715129-3').addService(googletag.pubads());
+googletag.defineSlot('/73695685/ArtServicesDetail_BTF_10_300x250', [300, 250], 'div-gpt-ad-1388766715129-4').addService(googletag.pubads());
+googletag.defineSlot('/73695685/ArtServicesDetail_BTF_1_300x250', [300, 250], 'div-gpt-ad-1388766715129-5').addService(googletag.pubads());
+googletag.defineSlot('/73695685/ArtServicesDetail_BTF_2_300x250', [300, 250], 'div-gpt-ad-1388766715129-6').addService(googletag.pubads());
+googletag.defineSlot('/73695685/ArtServicesDetail_BTF_3_300x250', [300, 250], 'div-gpt-ad-1388766715129-7').addService(googletag.pubads());
+googletag.defineSlot('/73695685/ArtServicesDetail_BTF_4_300x250', [300, 250], 'div-gpt-ad-1388766715129-8').addService(googletag.pubads());
+googletag.defineSlot('/73695685/ArtServicesDetail_BTF_5_300x250', [300, 250], 'div-gpt-ad-1388766715129-9').addService(googletag.pubads());
+googletag.defineSlot('/73695685/ArtServicesDetail_BTF_6_300x250', [300, 250], 'div-gpt-ad-1388766715129-10').addService(googletag.pubads());
+googletag.defineSlot('/73695685/ArtServicesDetail_BTF_7_300x250', [300, 250], 'div-gpt-ad-1388766715129-11').addService(googletag.pubads());
+googletag.defineSlot('/73695685/ArtServicesDetail_BTF_8_300x250', [300, 250], 'div-gpt-ad-1388766715129-12').addService(googletag.pubads());
+googletag.defineSlot('/73695685/ArtServicesDetail_BTF_9_300x250', [300, 250], 'div-gpt-ad-1388766715129-13').addService(googletag.pubads());
+googletag.defineSlot('/73695685/Calendar_Body_BTF_10_300x250', [300, 250], 'div-gpt-ad-1388766715129-14').addService(googletag.pubads());
+googletag.defineSlot('/73695685/Calendar_Body_BTF_1_300x250', [300, 250], 'div-gpt-ad-1388766715129-15').addService(googletag.pubads());
+googletag.defineSlot('/73695685/Calendar_Body_BTF_2_300x250', [300, 250], 'div-gpt-ad-1388766715129-16').addService(googletag.pubads());
+googletag.defineSlot('/73695685/Calendar_Body_BTF_3_300x250', [300, 250], 'div-gpt-ad-1388766715129-17').addService(googletag.pubads());
+googletag.defineSlot('/73695685/Calendar_Body_BTF_4_300x250', [300, 250], 'div-gpt-ad-1388766715129-18').addService(googletag.pubads());
+googletag.defineSlot('/73695685/Calendar_Body_BTF_5_300x250', [300, 250], 'div-gpt-ad-1388766715129-19').addService(googletag.pubads());
+googletag.defineSlot('/73695685/Calendar_Body_BTF_6_300x250', [300, 250], 'div-gpt-ad-1388766715129-20').addService(googletag.pubads());
+googletag.defineSlot('/73695685/Calendar_Body_BTF_7_300x250', [300, 250], 'div-gpt-ad-1388766715129-21').addService(googletag.pubads());
+googletag.defineSlot('/73695685/Calendar_Body_BTF_8_300x250', [300, 250], 'div-gpt-ad-1388766715129-22').addService(googletag.pubads());
+googletag.defineSlot('/73695685/Calendar_Body_BTF_9_300x250', [300, 250], 'div-gpt-ad-1388766715129-23').addService(googletag.pubads());
+googletag.defineSlot('/73695685/Calendar_Header_ATF_Top_970x90', [970, 90], 'div-gpt-ad-1388766715129-24').addService(googletag.pubads());
+googletag.defineSlot('/73695685/District_MI_Body_BTF_1_300x250', [300, 250], 'div-gpt-ad-1388766715129-25').addService(googletag.pubads());
+googletag.defineSlot('/73695685/District_MI_Body_BTF_2_300x250', [300, 250], 'div-gpt-ad-1388766715129-26').addService(googletag.pubads());
+googletag.defineSlot('/73695685/District_MI_Body_BTF_3_300x250', [300, 250], 'div-gpt-ad-1388766715129-27').addService(googletag.pubads());
+googletag.defineSlot('/73695685/District_MI_Body_BTF_4_300x250', [300, 250], 'div-gpt-ad-1388766715129-28').addService(googletag.pubads());
+googletag.defineSlot('/73695685/District_MI_Body_BTF_5_300x250', [300, 250], 'div-gpt-ad-1388766715129-29').addService(googletag.pubads());
+googletag.defineSlot('/73695685/District_NS_Body_BTF_1_300x250', [300, 250], 'div-gpt-ad-1388766715129-30').addService(googletag.pubads());
+googletag.defineSlot('/73695685/District_NS_Body_BTF_2_300x250', [300, 250], 'div-gpt-ad-1388766715129-31').addService(googletag.pubads());
+googletag.defineSlot('/73695685/District_NS_Body_BTF_3_300x250', [300, 250], 'div-gpt-ad-1388766715129-32').addService(googletag.pubads());
+googletag.defineSlot('/73695685/District_NS_Body_BTF_4_300x250', [300, 250], 'div-gpt-ad-1388766715129-33').addService(googletag.pubads());
+googletag.defineSlot('/73695685/District_NS_Body_BTF_5_300x250', [300, 250], 'div-gpt-ad-1388766715129-34').addService(googletag.pubads());
+googletag.defineSlot('/73695685/District_RN_Body_BTF_1_300x250', [300, 250], 'div-gpt-ad-1388766715129-35').addService(googletag.pubads());
+googletag.defineSlot('/73695685/District_RN_Body_BTF_2_300x250', [300, 250], 'div-gpt-ad-1388766715129-36').addService(googletag.pubads());
+googletag.defineSlot('/73695685/District_RN_Body_BTF_3_300x250', [300, 250], 'div-gpt-ad-1388766715129-37').addService(googletag.pubads());
+googletag.defineSlot('/73695685/District_RN_Body_BTF_4_300x250', [300, 250], 'div-gpt-ad-1388766715129-38').addService(googletag.pubads());
+googletag.defineSlot('/73695685/District_RN_Body_BTF_5_300x250', [300, 250], 'div-gpt-ad-1388766715129-39').addService(googletag.pubads());
+googletag.defineSlot('/73695685/District_RN_Header_ATF_Top_970x90', [970, 90], 'div-gpt-ad-1388766715129-40').addService(googletag.pubads());
+googletag.defineSlot('/73695685/District_SU_Body_BTF_1_300x250', [300, 250], 'div-gpt-ad-1388766715129-41').addService(googletag.pubads());
+googletag.defineSlot('/73695685/District_SU_Body_BTF_2_300x250', [300, 250], 'div-gpt-ad-1388766715129-42').addService(googletag.pubads());
+googletag.defineSlot('/73695685/District_SU_Body_BTF_3_300x250', [300, 250], 'div-gpt-ad-1388766715129-43').addService(googletag.pubads());
+googletag.defineSlot('/73695685/District_SU_Body_BTF_4_300x250', [300, 250], 'div-gpt-ad-1388766715129-44').addService(googletag.pubads());
+googletag.defineSlot('/73695685/District_SU_Body_BTF_5_300x250', [300, 250], 'div-gpt-ad-1388766715129-45').addService(googletag.pubads());
+googletag.defineSlot('/73695685/District_WL_Body_BTF_1_300x250', [300, 250], 'div-gpt-ad-1388766715129-46').addService(googletag.pubads());
+googletag.defineSlot('/73695685/District_WL_Body_BTF_2_300x250', [300, 250], 'div-gpt-ad-1388766715129-47').addService(googletag.pubads());
+googletag.defineSlot('/73695685/District_WL_Body_BTF_3_300x250', [300, 250], 'div-gpt-ad-1388766715129-48').addService(googletag.pubads());
+googletag.defineSlot('/73695685/District_WL_Body_BTF_4_300x250', [300, 250], 'div-gpt-ad-1388766715129-49').addService(googletag.pubads());
+googletag.defineSlot('/73695685/District_WL_Body_BTF_5_300x250', [300, 250], 'div-gpt-ad-1388766715129-50').addService(googletag.pubads());
+googletag.defineSlot('/73695685/Galleries_Body_BTF_1_300x250', [300, 250], 'div-gpt-ad-1388766715129-51').addService(googletag.pubads());
+googletag.defineSlot('/73695685/Galleries_Body_BTF_2_300x250', [300, 250], 'div-gpt-ad-1388766715129-52').addService(googletag.pubads());
+googletag.defineSlot('/73695685/Galleries_Body_BTF_3_300x250', [300, 250], 'div-gpt-ad-1388766715129-53').addService(googletag.pubads());
+googletag.defineSlot('/73695685/Galleries_Body_BTF_4_300x250', [300, 250], 'div-gpt-ad-1388766715129-54').addService(googletag.pubads());
+googletag.defineSlot('/73695685/Galleries_Body_BTF_5_300x250', [300, 250], 'div-gpt-ad-1388766715129-55').addService(googletag.pubads());
+googletag.defineSlot('/73695685/Galleries_Body_BTF_6_300x250', [300, 250], 'div-gpt-ad-1388766715129-56').addService(googletag.pubads());
+googletag.defineSlot('/73695685/Galleries_Header_ATF_Top_970x90', [970, 90], 'div-gpt-ad-1388766715129-57').addService(googletag.pubads());
+googletag.defineSlot('/73695685/Institutions_BTF_1_300x250', [300, 250], 'div-gpt-ad-1388766715129-58').addService(googletag.pubads());
+googletag.defineSlot('/73695685/Institutions_BTF_2_300x250', [300, 250], 'div-gpt-ad-1388766715129-59').addService(googletag.pubads());
+googletag.defineSlot('/73695685/Institutions_BTF_3_300x250', [300, 250], 'div-gpt-ad-1388766715129-60').addService(googletag.pubads());
+googletag.defineSlot('/73695685/Institutions_Header_ATF_Top_970x90', [970, 90], 'div-gpt-ad-1388766715129-61').addService(googletag.pubads());
+googletag.defineSlot('/73695685/InstitutionsDetail_BTF_10_300x250', [300, 250], 'div-gpt-ad-1388766715129-62').addService(googletag.pubads());
+googletag.defineSlot('/73695685/InstitutionsDetail_BTF_1_300x250', [300, 250], 'div-gpt-ad-1388766715129-63').addService(googletag.pubads());
+googletag.defineSlot('/73695685/InstitutionsDetail_BTF_2_300x250', [300, 250], 'div-gpt-ad-1388766715129-64').addService(googletag.pubads());
+googletag.defineSlot('/73695685/InstitutionsDetail_BTF_3_300x250', [300, 250], 'div-gpt-ad-1388766715129-65').addService(googletag.pubads());
+googletag.defineSlot('/73695685/InstitutionsDetail_BTF_4_300x250', [300, 250], 'div-gpt-ad-1388766715129-66').addService(googletag.pubads());
+googletag.defineSlot('/73695685/InstitutionsDetail_BTF_5_300x250', [300, 250], 'div-gpt-ad-1388766715129-67').addService(googletag.pubads());
+googletag.defineSlot('/73695685/InstitutionsDetail_BTF_6_300x250', [300, 250], 'div-gpt-ad-1388766715129-68').addService(googletag.pubads());
+googletag.defineSlot('/73695685/InstitutionsDetail_BTF_7_300x250', [300, 250], 'div-gpt-ad-1388766715129-69').addService(googletag.pubads());
+googletag.defineSlot('/73695685/InstitutionsDetail_BTF_8_300x250', [300, 250], 'div-gpt-ad-1388766715129-70').addService(googletag.pubads());
+googletag.defineSlot('/73695685/InstitutionsDetail_BTF_9_300x250', [300, 250], 'div-gpt-ad-1388766715129-71').addService(googletag.pubads());
+googletag.defineSlot('/73695685/InstitutionsDetail_Header_ATF_Top_970x90', [970, 90], 'div-gpt-ad-1388766715129-72').addService(googletag.pubads());
+googletag.defineSlot('/73695685/News_BTF_10_300x250', [300, 250], 'div-gpt-ad-1388766715129-73').addService(googletag.pubads());
+googletag.defineSlot('/73695685/News_BTF_1_300x250', [300, 250], 'div-gpt-ad-1388766715129-74').addService(googletag.pubads());
+googletag.defineSlot('/73695685/News_BTF_2_300x250', [300, 250], 'div-gpt-ad-1388766715129-75').addService(googletag.pubads());
+googletag.defineSlot('/73695685/News_BTF_3_300x250', [300, 250], 'div-gpt-ad-1388766715129-76').addService(googletag.pubads());
+googletag.defineSlot('/73695685/News_BTF_4_300x250', [300, 250], 'div-gpt-ad-1388766715129-77').addService(googletag.pubads());
+googletag.defineSlot('/73695685/News_BTF_5_300x250', [300, 250], 'div-gpt-ad-1388766715129-78').addService(googletag.pubads());
+googletag.defineSlot('/73695685/News_BTF_6_300x250', [300, 250], 'div-gpt-ad-1388766715129-79').addService(googletag.pubads());
+googletag.defineSlot('/73695685/News_BTF_7_300x250', [300, 250], 'div-gpt-ad-1388766715129-80').addService(googletag.pubads());
+googletag.defineSlot('/73695685/News_BTF_8_300x250', [300, 250], 'div-gpt-ad-1388766715129-81').addService(googletag.pubads());
+googletag.defineSlot('/73695685/News_BTF_9_300x250', [300, 250], 'div-gpt-ad-1388766715129-82').addService(googletag.pubads());
+googletag.defineSlot('/73695685/News_Header_ATF_Top_970x90', [970, 90], 'div-gpt-ad-1388766715129-83').addService(googletag.pubads());
+googletag.defineSlot('/73695685/NewsDetail_BTF_1_300x250', [300, 250], 'div-gpt-ad-1388766715129-84').addService(googletag.pubads());
+googletag.defineSlot('/73695685/NewsDetail_BTF_2_300x250', [300, 250], 'div-gpt-ad-1388766715129-85').addService(googletag.pubads());
+googletag.defineSlot('/73695685/NewsDetail_BTF_3_300x250', [300, 250], 'div-gpt-ad-1388766715129-86').addService(googletag.pubads());
+googletag.defineSlot('/73695685/NewsDetail_BTF_4_300x250', [300, 250], 'div-gpt-ad-1388766715129-87').addService(googletag.pubads());
+googletag.defineSlot('/73695685/NewsDetail_BTF_5_300x250', [300, 250], 'div-gpt-ad-1388766715129-88').addService(googletag.pubads());
+googletag.defineSlot('/73695685/NewsDetail_Header_ATF_Top_970x90', [970, 90], 'div-gpt-ad-1388766715129-89').addService(googletag.pubads());
+googletag.defineSlot('/73695685/Specialties_Body_BTF_10_300x250', [300, 250], 'div-gpt-ad-1388766715129-90').addService(googletag.pubads());
+googletag.defineSlot('/73695685/Specialties_Body_BTF_1_300x250', [300, 250], 'div-gpt-ad-1388766715129-91').addService(googletag.pubads());
+googletag.defineSlot('/73695685/Specialties_Body_BTF_2_300x250', [300, 250], 'div-gpt-ad-1388766715129-92').addService(googletag.pubads());
+googletag.defineSlot('/73695685/Specialties_Body_BTF_3_300x250', [300, 250], 'div-gpt-ad-1388766715129-93').addService(googletag.pubads());
+googletag.defineSlot('/73695685/Specialties_Body_BTF_4_300x250', [300, 250], 'div-gpt-ad-1388766715129-94').addService(googletag.pubads());
+googletag.defineSlot('/73695685/Specialties_Body_BTF_5_300x250', [300, 250], 'div-gpt-ad-1388766715129-95').addService(googletag.pubads());
+googletag.defineSlot('/73695685/Specialties_Body_BTF_6_300x250', [300, 250], 'div-gpt-ad-1388766715129-96').addService(googletag.pubads());
+googletag.defineSlot('/73695685/Specialties_Body_BTF_7_300x250', [300, 250], 'div-gpt-ad-1388766715129-97').addService(googletag.pubads());
+googletag.defineSlot('/73695685/Specialties_Body_BTF_8_300x250', [300, 250], 'div-gpt-ad-1388766715129-98').addService(googletag.pubads());
+googletag.defineSlot('/73695685/Specialties_Body_BTF_9_300x250', [300, 250], 'div-gpt-ad-1388766715129-99').addService(googletag.pubads());
+googletag.defineSlot('/73695685/Specialties_Header_ATF_Top_970x90', [970, 90], 'div-gpt-ad-1388766715129-100').addService(googletag.pubads());
+googletag.defineSlot('/73695685/SpecialtiesDetail_BTF_10_300x250', [300, 250], 'div-gpt-ad-1388766715129-101').addService(googletag.pubads());
+googletag.defineSlot('/73695685/SpecialtiesDetail_BTF_1_300x250', [300, 250], 'div-gpt-ad-1388766715129-102').addService(googletag.pubads());
+googletag.defineSlot('/73695685/SpecialtiesDetail_BTF_2_300x250', [300, 250], 'div-gpt-ad-1388766715129-103').addService(googletag.pubads());
+googletag.defineSlot('/73695685/SpecialtiesDetail_BTF_3_300x250', [300, 250], 'div-gpt-ad-1388766715129-104').addService(googletag.pubads());
+googletag.defineSlot('/73695685/SpecialtiesDetail_BTF_4_300x250', [300, 250], 'div-gpt-ad-1388766715129-105').addService(googletag.pubads());
+googletag.defineSlot('/73695685/SpecialtiesDetail_BTF_5_300x250', [300, 250], 'div-gpt-ad-1388766715129-106').addService(googletag.pubads());
+googletag.defineSlot('/73695685/SpecialtiesDetail_BTF_6_300x250', [300, 250], 'div-gpt-ad-1388766715129-107').addService(googletag.pubads());
+googletag.defineSlot('/73695685/SpecialtiesDetail_BTF_7_300x250', [300, 250], 'div-gpt-ad-1388766715129-108').addService(googletag.pubads());
+googletag.defineSlot('/73695685/SpecialtiesDetail_BTF_8_300x250', [300, 250], 'div-gpt-ad-1388766715129-109').addService(googletag.pubads());
+googletag.defineSlot('/73695685/SpecialtiesDetail_BTF_9_300x250', [300, 250], 'div-gpt-ad-1388766715129-110').addService(googletag.pubads());
+googletag.defineSlot('/73695685/SpecialtiesDetail_Header_ATF_Top_970x90', [970, 90], 'div-gpt-ad-1388766715129-111').addService(googletag.pubads());
+googletag.defineSlot('/73695685/District_MI_Header_ATF_Top_970x90', [970, 90], 'div-gpt-ad-1389117726762-0').addService(googletag.pubads());
+googletag.defineSlot('/73695685/District_NS_Header_ATF_Top_970x90', [970, 90], 'div-gpt-ad-1389117726762-1').addService(googletag.pubads());
+googletag.defineSlot('/73695685/District_PS_Body_BTF_1_300x250', [300, 250], 'div-gpt-ad-1389117726762-2').addService(googletag.pubads());
+googletag.defineSlot('/73695685/District_PS_Body_BTF_2_300x250', [300, 250], 'div-gpt-ad-1389117726762-3').addService(googletag.pubads());
+googletag.defineSlot('/73695685/District_PS_Body_BTF_3_300x250', [300, 250], 'div-gpt-ad-1389117726762-4').addService(googletag.pubads());
+googletag.defineSlot('/73695685/District_PS_Body_BTF_4_300x250', [300, 250], 'div-gpt-ad-1389117726762-5').addService(googletag.pubads());
+googletag.defineSlot('/73695685/District_PS_Body_BTF_5_300x250', [300, 250], 'div-gpt-ad-1389117726762-6').addService(googletag.pubads());
+googletag.defineSlot('/73695685/District_PS_Header_ATF_Top_970x90', [970, 90], 'div-gpt-ad-1389117726762-7').addService(googletag.pubads());
+googletag.defineSlot('/73695685/District_SU_Header_ATF_Top_970x90', [970, 90], 'div-gpt-ad-1389117726762-8').addService(googletag.pubads());
+googletag.defineSlot('/73695685/District_WL_Header_ATF_Top_970x90', [970, 90], 'div-gpt-ad-1389117726762-9').addService(googletag.pubads());
+}
+
+googletag.pubads().collapseEmptyDivs(true);
+// googletag.pubads().enableSingleRequest();
+googletag.enableServices();
+});
+
+</script>
+
+  <meta content="authenticity_token" name="csrf-param" />
+<meta content="XiUV3LBc62hpFu9VxsPz/EDreQakl3zEyy11wA5DQ2w=" name="csrf-token" />
+</head>
+<body class="district" id="organizations">
+  <div id="root">
+
+
+<div id="primary-nav-wrapper" class="hidden-xs">
+  <nav id="primary-nav" class="" >
+    <div class="container">
+      <ul class="row menu">
+          <li>
+            <a href="/news" class="">
+              <span>News</span>
+            </a>
+          </li>
+          <li>
+            <a href="/calendar" class="">
+              <span>Calendar</span>
+            </a>
+          </li>
+          <li>
+            <span>Arts Guides</span>
+            <ul class="submenu">
+              <li>
+                <a href="/galleries" class="active">
+                  <span>Galleries</span>
+                </a>
+              </li>
+              <li>
+                <a href="/institutions" class="">
+                  <span>Institutions</span>
+                </a>
+              </li>
+              <li>
+                <a href="/art-services" class="">
+                  <span>Arts Services</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="/subscribe" class="">
+              <span>Subscribe</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" id="search-trigger">
+              <span><i class="fa fa-search"></i> Search</span>
+            </a>
+          </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<nav class="navbar navbar-default visible-xs" role="navigation">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#primary-nav-mobile">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+
+    <a href="/" class="navbar-brand" id="logo-mobile">
+      <img alt="Chicago Gallery News" class="img-responsive" src="/assets/cgn-logo-2016-22459ef6bfe5c448c3957843fb452dd7.png" />
+</a>  </div>
+
+  <div class="collapse navbar-collapse" id="primary-nav-mobile">
+    <ul class="nav navbar-nav">
+      <li>
+        <form accept-charset="UTF-8" action="/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+          <input type="search" name="q" id="mobile-search" class="search" placeholder="Search..." autocomplete="off" autocorrect="off" autocapitalize="off">
+</form>      </li>
+
+      <li>
+        <a href="/news" class="">
+          <span>News</span>
+        </a>
+      </li>
+      <li>
+        <a href="/calendar" class="">
+          <span>Calendar</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="">
+          <span>Arts Guides</span>
+        </a>
+        <ul class="submenu">
+          <li>
+            <a href="/galleries" class="active">
+              <span>Galleries</span>
+            </a>
+          </li>
+          <li>
+            <a href="/institutions" class="">
+              <span>Institutions</span>
+            </a>
+          </li>
+          <li>
+            <a href="art-services" class="">
+              <span>Arts Services</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="/subscribe" class="">
+          <span>Subscribe</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+<div id="header">
+  <div class="row align-center">
+    <div class="col-xs-12 col-sm-8 col-sm-offset-2 text-center">
+      <a href="/" class="hidden-xs" id="logo">
+        <img alt="Chicago Gallery News" src="/assets/cgn-logo-2016-22459ef6bfe5c448c3957843fb452dd7.png" />
+</a>    </div>
+  </div>
+</div>
+
+<div class="search-container">
+  <a href="#" class="search-close">
+    Close <i class="fa fa-times fa-lg"></i>
+  </a>
+  <form accept-charset="UTF-8" action="/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+    <input type="search" name="q" id="desktop-search" class="search" placeholder="begin typing" autocomplete="off" autocorrect="off" autocapitalize="off">
+    <a href="#" class="search-submit">
+      Search <i class="fa fa-long-arrow-right fa-lg"></i>
+    </a>
+</form></div>
+
+
+
+    <div id="main" data-swiftype-index='true'>
+
+<div class="container">
+  <div class="header-ad">
+<!-- District_RN_Header_ATF_Top_970x90 -->
+<div id='div-gpt-ad-1388766715129-40' style='width:970px; height:90px;'>
+<script type='text/javascript'>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1388766715129-40'); });
+</script>
+</div>
+
+</div>
+
+<div class="row" id="title_banner">
+  <div class="col-xs-12" id="title">
+    <h1><p>River North</p></h1>
+  </div>
+</div>
+
+
+  <div class="row">
+    <div class="col-xs-12">
+      <p>Over two dozen galleries radiate from the intersection of Superior and Franklin streets, making up the River North gallery district. The area is also the city&rsquo;s densest gallery center and is close to the Merchandise Mart and many design stores and showrooms.</p>
+
+<p>Chicago Gallery News hosts a free Saturday gallery tour in the district from 11am-12:30pm. Meet at the Starbucks at Chicago &amp; Franklin, every weekend (except major holidays).</p>
+
+
+      <div id="district-map"></div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="row">
+
+<div class="organization col-sm-6" data-latitude="41.895019" data-location="704 N. Wells Chicago, IL 60654" data-longitude="-87.6344725" data-name="Addington Gallery" id="organization_655">
+  <a href="/galleries/addington-gallery" class="btn btn-default btn-block">
+    <span class="text">Addington Gallery</span> <i class="fa fa-long-arrow-right"></i>
+</a>
+  <div class="details">
+      <p>
+        <strong>
+          <a href="/galleries/specialties/contemporary">Contemporary</a>, <a href="/galleries/specialties/abstraction">Abstraction</a>, <a href="/galleries/specialties/sculpture">Sculpture</a>, <a href="/galleries/specialties/emerging">Emerging</a>, <a href="/galleries/specialties/figurative">Figurative</a>
+        </strong>
+      </p>
+
+    <p>704 N. Wells
+<br />Chicago, IL 60654</p>
+  </div>
+</div>
+<div class="organization col-sm-6" data-latitude="41.8957341" data-location="300 W. Superior Chicago, IL 60654" data-longitude="-87.6360535" data-name="Andrew Bae Gallery" id="organization_627">
+  <a href="/galleries/andrew-bae-gallery" class="btn btn-default btn-block">
+    <span class="text">Andrew Bae Gallery</span> <i class="fa fa-long-arrow-right"></i>
+</a>
+  <div class="details">
+      <p>
+        <strong>
+          <a href="/galleries/specialties/contemporary">Contemporary</a>, <a href="/galleries/specialties/fine-prints-contemporary">Fine Prints - Contemporary</a>, <a href="/galleries/specialties/photography">Photography</a>, <a href="/galleries/specialties/sculpture">Sculpture</a>, <a href="/galleries/specialties/asian">Asian</a>
+        </strong>
+      </p>
+
+    <p>300 W. Superior
+<br />Chicago, IL 60654</p>
+  </div>
+</div>
+<div class="organization col-sm-6" data-latitude="41.8959824" data-location="740 N. Wells Chicago, IL 60654" data-longitude="-87.6344554" data-name="Carl Hammer Gallery" id="organization_403">
+  <a href="/galleries/carl-hammer-gallery" class="btn btn-default btn-block">
+    <span class="text">Carl Hammer Gallery</span> <i class="fa fa-long-arrow-right"></i>
+</a>
+  <div class="details">
+      <p>
+        <strong>
+          <a href="/galleries/specialties/folk-outsider">Folk / Outsider</a>, <a href="/galleries/specialties/contemporary">Contemporary</a>, <a href="/galleries/specialties/photography">Photography</a>, <a href="/galleries/specialties/sculpture">Sculpture</a>
+        </strong>
+      </p>
+
+    <p>740 N. Wells
+<br />Chicago, IL 60654</p>
+  </div>
+</div>
+<div class="organization col-sm-6" data-latitude="41.8957341" data-location="300 W. Superior Chicago, IL 60654" data-longitude="-87.6360535" data-name="Catherine Edelman Gallery" id="organization_349">
+  <a href="/galleries/catherine-edelman-gallery" class="btn btn-default btn-block">
+    <span class="text">Catherine Edelman Gallery</span> <i class="fa fa-long-arrow-right"></i>
+</a>
+  <div class="details">
+      <p>
+        <strong>
+          <a href="/galleries/specialties/photography">Photography</a>, <a href="/galleries/specialties/emerging">Emerging</a>, <a href="/galleries/specialties/landscape">Landscape</a>, <a href="/galleries/specialties/multi-media">Multi-Media</a>, <a href="/galleries/specialties/portraits-portraiture">Portraits / Portraiture</a>
+        </strong>
+      </p>
+
+    <p>300 W. Superior
+<br />Lower Level
+<br />Chicago, IL 60654</p>
+  </div>
+</div>
+<div class="organization col-sm-6" data-latitude="41.8971828" data-location="213 W. Institute Place, Suite 309 Chicago, IL 60610" data-longitude="-87.6352371" data-name="Chicago Gallery News" id="organization_915">
+  <a href="/galleries/chicago-gallery-news" class="btn btn-default btn-block">
+    <span class="text">Chicago Gallery News</span> <i class="fa fa-long-arrow-right"></i>
+</a>
+  <div class="details">
+
+    <p>213 W. Institute Place, Suite 309
+<br />Chicago, IL 60610</p>
+  </div>
+</div>
+<div class="organization col-sm-6" data-latitude="41.8958569" data-location="210 W. Superior Chicago, IL 60654" data-longitude="-87.6348349" data-name="Echt Gallery" id="organization_659">
+  <a href="/galleries/echt-gallery" class="btn btn-default btn-block">
+    <span class="text">Echt Gallery</span> <i class="fa fa-long-arrow-right"></i>
+</a>
+  <div class="details">
+      <p>
+        <strong>
+          <a href="/galleries/specialties/glass">Glass</a>, <a href="/galleries/specialties/sculpture">Sculpture</a>
+        </strong>
+      </p>
+
+    <p>Note new location as of June 2017:
+<br />210 W. Superior
+<br />Chicago, IL 60654</p>
+  </div>
+</div>
+<div class="organization col-sm-6" data-latitude="41.8952875" data-location="714 N. Wells St. Chicago, IL 60654" data-longitude="-87.6344707" data-name="Free CGN Saturday Gallery Tours" id="organization_574">
+  <a href="/galleries/free-cgn-saturday-gallery-tours" class="btn btn-default btn-block">
+    <span class="text">Free CGN Saturday Gallery Tours</span> <i class="fa fa-long-arrow-right"></i>
+</a>
+  <div class="details">
+      <p>
+        <strong>
+          <a href="/art-services/specialties/art-tours">Art Tours</a>
+        </strong>
+      </p>
+
+    <p>Fabcakes
+<br />714 N. Wells St.
+<br />Chicago, IL 60654
+</p>
+  </div>
+</div>
+<div class="organization col-sm-6" data-latitude="41.8953172" data-location="311 W. Superior Chicago, IL 60654" data-longitude="-87.6365723" data-name="GALERIE WATERTON" id="organization_817">
+  <a href="/galleries/galerie-waterton" class="btn btn-default btn-block">
+    <span class="text">GALERIE WATERTON</span> <i class="fa fa-long-arrow-right"></i>
+</a>
+  <div class="details">
+      <p>
+        <strong>
+          <a href="/galleries/specialties/contemporary">Contemporary</a>, <a href="/galleries/specialties/photography">Photography</a>, <a href="/galleries/specialties/emerging">Emerging</a>, <a href="/galleries/specialties/asian">Asian</a>
+        </strong>
+      </p>
+
+    <p>311 W. Superior, Suite 115
+<br />Chicago, IL 60654</p>
+  </div>
+</div>
+<div class="organization col-sm-6" data-latitude="41.8957341" data-location="300 W Superior St Chicago, IL 60654" data-longitude="-87.6360535" data-name="Gallery Victor Armendariz" id="organization_895">
+  <a href="/galleries/gallery-victor-armendariz" class="btn btn-default btn-block">
+    <span class="text">Gallery Victor Armendariz</span> <i class="fa fa-long-arrow-right"></i>
+</a>
+  <div class="details">
+      <p>
+        <strong>
+          <a href="/galleries/specialties/photography">Photography</a>, <a href="/galleries/specialties/chicago-scenes">Chicago Scenes</a>, <a href="/galleries/specialties/sculpture">Sculpture</a>, <a href="/galleries/specialties/emerging">Emerging</a>, <a href="/galleries/specialties/landscape">Landscape</a>, <a href="/galleries/specialties/figurative">Figurative</a>, <a href="/galleries/specialties/furniture-decorative-arts">Furniture &amp; Decorative Arts</a>
+        </strong>
+      </p>
+
+    <p>300 W. Superior
+<br />Chicago, IL 60654</p>
+  </div>
+</div>
+<div class="organization col-sm-6" data-latitude="41.8958506" data-location="226 W. Superior Chicago, IL 60654" data-longitude="-87.6353325" data-name="Gruen Galleries" id="organization_402">
+  <a href="/galleries/gruen-galleries" class="btn btn-default btn-block">
+    <span class="text">Gruen Galleries</span> <i class="fa fa-long-arrow-right"></i>
+</a>
+  <div class="details">
+      <p>
+        <strong>
+          <a href="/art-services/specialties/rental-spaces-special-events">Rental Spaces &amp; Special Events</a>, <a href="/galleries/specialties/african">African</a>, <a href="/galleries/specialties/contemporary">Contemporary</a>, <a href="/galleries/specialties/sculpture">Sculpture</a>
+        </strong>
+      </p>
+
+    <p>226 W. Superior
+<br />Chicago, IL 60654</p>
+  </div>
+</div>
+<div class="organization col-sm-6" data-latitude="41.8953394" data-location="716 N. Wells Chicago, IL 60654" data-longitude="-87.6344705" data-name="Hilton | Asmus Contemporary" id="organization_404">
+  <a href="/galleries/hilton-asmus-contemporary" class="btn btn-default btn-block">
+    <span class="text">Hilton | Asmus Contemporary</span> <i class="fa fa-long-arrow-right"></i>
+</a>
+  <div class="details">
+      <p>
+        <strong>
+          <a href="/galleries/specialties/photography">Photography</a>, <a href="/galleries/specialties/multi-media">Multi-Media</a>, <a href="/galleries/specialties/works-on-paper">Works on Paper</a>
+        </strong>
+      </p>
+
+    <p>716 N. Wells
+<br />Chicago, IL 60654</p>
+  </div>
+</div>
+<div class="organization col-sm-6" data-latitude="41.8953327" data-location="215 W. Superior Chicago, IL 60654" data-longitude="-87.6348677" data-name="Jean Albano Gallery" id="organization_656">
+  <a href="/galleries/jean-albano-gallery" class="btn btn-default btn-block">
+    <span class="text">Jean Albano Gallery</span> <i class="fa fa-long-arrow-right"></i>
+</a>
+  <div class="details">
+      <p>
+        <strong>
+          <a href="/art-services/specialties/rental-spaces-special-events">Rental Spaces &amp; Special Events</a>, <a href="/galleries/specialties/contemporary">Contemporary</a>, <a href="/galleries/specialties/abstraction">Abstraction</a>, <a href="/galleries/specialties/sculpture">Sculpture</a>, <a href="/galleries/specialties/multi-media">Multi-Media</a>
+        </strong>
+      </p>
+
+    <p>215 W. Superior
+<br />Chicago, IL 60654</p>
+  </div>
+</div>
+<div class="organization col-sm-6" data-latitude="41.8958439" data-location="230 W. Superior Chicago, IL 60654" data-longitude="-87.6355061" data-name="Ken Saunders Gallery" id="organization_571">
+  <a href="/galleries/ken-saunders-gallery" class="btn btn-default btn-block">
+    <span class="text">Ken Saunders Gallery</span> <i class="fa fa-long-arrow-right"></i>
+</a>
+  <div class="details">
+      <p>
+        <strong>
+          <a href="/galleries/specialties/glass">Glass</a>, <a href="/galleries/specialties/sculpture">Sculpture</a>
+        </strong>
+      </p>
+
+    <p>230 W. Superior
+<br />Chicago, IL 60654</p>
+  </div>
+</div>
+<div class="organization col-sm-6" data-latitude="41.8953172" data-location="311 W. Superior Chicago, IL 60654" data-longitude="-87.6365723" data-name="Printworks Gallery" id="organization_691">
+  <a href="/galleries/printworks-gallery" class="btn btn-default btn-block">
+    <span class="text">Printworks Gallery</span> <i class="fa fa-long-arrow-right"></i>
+</a>
+  <div class="details">
+      <p>
+        <strong>
+          <a href="/galleries/specialties/fine-prints-contemporary">Fine Prints - Contemporary</a>, <a href="/galleries/specialties/photography">Photography</a>, <a href="/galleries/specialties/works-on-paper">Works on Paper</a>, <a href="/galleries/specialties/artists-books">Artists&#x27; Books</a>
+        </strong>
+      </p>
+
+    <p>311 W. Superior
+<br />Chicago, IL 60654</p>
+  </div>
+</div>
+<div class="organization col-sm-6" data-latitude="41.8879565" data-location="612 Merchandise Mart Plaza Chicago, IL 60654" data-longitude="-87.6352435" data-name="Richard Norton Gallery" id="organization_416">
+  <a href="/galleries/richard-norton-gallery" class="btn btn-default btn-block">
+    <span class="text">Richard Norton Gallery</span> <i class="fa fa-long-arrow-right"></i>
+</a>
+  <div class="details">
+      <p>
+        <strong>
+          <a href="/galleries/specialties/surrealism">Surrealism</a>, <a href="/galleries/specialties/regionalism">Regionalism</a>, <a href="/galleries/specialties/abstraction">Abstraction</a>, <a href="/galleries/specialties/sculpture">Sculpture</a>, <a href="/galleries/specialties/modernism">Modernism</a>
+        </strong>
+      </p>
+
+    <p>612 Merchandise Mart Plaza
+<br />Chicago, IL 60654</p>
+  </div>
+</div>
+<div class="organization col-sm-6" data-latitude="41.8958439" data-location="230 W Superior Chicago IL 60654" data-longitude="-87.6355061" data-name="River North Art District" id="organization_918">
+  <a href="/galleries/river-north-art-district" class="btn btn-default btn-block">
+    <span class="text">River North Art District</span> <i class="fa fa-long-arrow-right"></i>
+</a>
+  <div class="details">
+
+    <p>River North near Superior and Franklin Streets and beyond</p>
+  </div>
+</div>
+<div class="organization col-sm-6" data-latitude="41.8963589" data-location="770 N LaSalle, Ste. 401 Chicago, IL 60654" data-longitude="-87.6330354" data-name="Schneider Gallery" id="organization_572">
+  <a href="/galleries/schneider-gallery" class="btn btn-default btn-block">
+    <span class="text">Schneider Gallery</span> <i class="fa fa-long-arrow-right"></i>
+</a>
+  <div class="details">
+      <p>
+        <strong>
+          <a href="/galleries/specialties/photography">Photography</a>, <a href="/galleries/specialties/emerging">Emerging</a>
+        </strong>
+      </p>
+
+    <p>770 N LaSalle, Ste. 401
+<br />Chicago, IL 60654</p>
+  </div>
+</div>
+<div class="organization col-sm-6" data-latitude="41.8881935" data-location="330 N. Clark Chicago, IL 60654" data-longitude="-87.6315253" data-name="The Golden Triangle" id="organization_401">
+  <a href="/galleries/the-golden-triangle" class="btn btn-default btn-block">
+    <span class="text">The Golden Triangle</span> <i class="fa fa-long-arrow-right"></i>
+</a>
+  <div class="details">
+      <p>
+        <strong>
+          <a href="/art-services/specialties/rental-spaces-special-events">Rental Spaces &amp; Special Events</a>, <a href="/galleries/specialties/antiques">Antiques</a>, <a href="/galleries/specialties/furniture-decorative-arts">Furniture &amp; Decorative Arts</a>, <a href="/galleries/specialties/asian">Asian</a>
+        </strong>
+      </p>
+
+    <p>330 N. Clark
+<br />Chicago, IL 60654</p>
+  </div>
+</div>
+<div class="organization col-sm-6" data-latitude="41.8957341" data-location="300 W. Superior Chicago, IL 60654" data-longitude="-87.6360535" data-name="The Rangefinder Gallery at Tamarkin Camera" id="organization_569">
+  <a href="/galleries/the-rangefinder-gallery-at-tamarkin-camera" class="btn btn-default btn-block">
+    <span class="text">The Rangefinder Gallery at Tamarkin Camera</span> <i class="fa fa-long-arrow-right"></i>
+</a>
+  <div class="details">
+      <p>
+        <strong>
+          <a href="/galleries/specialties/photography">Photography</a>
+        </strong>
+      </p>
+
+    <p>300 W. Superior, 2nd Fl.
+<br />Chicago, IL 60654</p>
+  </div>
+</div>
+<div class="organization col-sm-6" data-latitude="41.8958439" data-location="230 W. Superior Chicago, IL 60654" data-longitude="-87.6355061" data-name="Vale Craft Gallery" id="organization_576">
+  <a href="/galleries/vale-craft-gallery" class="btn btn-default btn-block">
+    <span class="text">Vale Craft Gallery</span> <i class="fa fa-long-arrow-right"></i>
+</a>
+  <div class="details">
+      <p>
+        <strong>
+          <a href="/galleries/specialties/ceramics">Ceramics</a>, <a href="/galleries/specialties/glass">Glass</a>, <a href="/galleries/specialties/jewelry">Jewelry</a>, <a href="/galleries/specialties/sculpture">Sculpture</a>, <a href="/galleries/specialties/fiber-arts-textiles">Fiber Arts / Textiles</a>, <a href="/galleries/specialties/crafts">Crafts</a>
+        </strong>
+      </p>
+
+    <p>230 W. Superior
+<br />Chicago, IL 60654</p>
+  </div>
+</div>
+<div class="organization col-sm-6" data-latitude="41.8957341" data-location="300 W. Superior Chicago, IL 60654" data-longitude="-87.6360535" data-name="Weinberg/Newton Gallery" id="organization_577">
+  <a href="/galleries/weinberg-newton-gallery" class="btn btn-default btn-block">
+    <span class="text">Weinberg/Newton Gallery</span> <i class="fa fa-long-arrow-right"></i>
+</a>
+  <div class="details">
+      <p>
+        <strong>
+          <a href="/art-services/specialties/video">Video</a>, <a href="/galleries/specialties/contemporary">Contemporary</a>, <a href="/galleries/specialties/photography">Photography</a>, <a href="/galleries/specialties/sculpture">Sculpture</a>, <a href="/galleries/specialties/installations">Installations</a>
+        </strong>
+      </p>
+
+    <p>300 W. Superior
+<br />Ste. 203
+<br />Chicago, IL 60654</p>
+  </div>
+</div>
+<div class="organization col-sm-6" data-latitude="41.8945029" data-location="325 W. Huron Chicago, IL 60654" data-longitude="-87.6366588" data-name="Zolla / Lieberman Gallery" id="organization_578">
+  <a href="/galleries/zolla-lieberman-gallery" class="btn btn-default btn-block">
+    <span class="text">Zolla / Lieberman Gallery</span> <i class="fa fa-long-arrow-right"></i>
+</a>
+  <div class="details">
+      <p>
+        <strong>
+          <a href="/galleries/specialties/sculpture">Sculpture</a>, <a href="/galleries/specialties/emerging">Emerging</a>
+        </strong>
+      </p>
+
+    <p>325 W. Huron
+<br />Chicago, IL 60654</p>
+  </div>
+</div>
+      </div>
+    </div>
+    <div class="col-sm-4" id="sidebar">
+        <ul class="nav nav-stacked">
+      <li>
+        <a href="/galleries/district/river-north" class="active blue"><span>River North</span></a>
+      </li>
+      <li>
+        <a href="/galleries/district/west-side" class=" purple"><span>West Side</span></a>
+      </li>
+      <li>
+        <a href="/galleries/district/south-side" class=" pink"><span>South Side</span></a>
+      </li>
+      <li>
+        <a href="/galleries/district/michigan-avenue" class=" orange"><span>Michigan Avenue</span></a>
+      </li>
+      <li>
+        <a href="/galleries/district/north-side" class=" red"><span>North Side</span></a>
+      </li>
+      <li>
+        <a href="/galleries/district/suburbs-midwest" class=" green"><span>Suburbs / Midwest</span></a>
+      </li>
+  </ul>
+
+  <ul class="nav nav-stacked">
+    <li>
+      <a href="/specialties" class="">
+      <span>Browse by Specialty</span>
+</a>    </li>
+  </ul>
+      <div class="ads">
+
+<!-- District_RN_Body_BTF_1_300x250 -->
+<div id='div-gpt-ad-1388766715129-35' style='width:300px; height:250px;'>
+<script type='text/javascript'>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1388766715129-35'); });
+</script>
+</div>
+
+<!-- District_RN_Body_BTF_2_300x250 -->
+<div id='div-gpt-ad-1388766715129-36' style='width:300px; height:250px;'>
+<script type='text/javascript'>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1388766715129-36'); });
+</script>
+</div>
+
+<!-- District_RN_Body_BTF_3_300x250 -->
+<div id='div-gpt-ad-1388766715129-37' style='width:300px; height:250px;'>
+<script type='text/javascript'>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1388766715129-37'); });
+</script>
+</div>
+
+<!-- District_RN_Body_BTF_4_300x250 -->
+<div id='div-gpt-ad-1388766715129-38' style='width:300px; height:250px;'>
+<script type='text/javascript'>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1388766715129-38'); });
+</script>
+</div>
+
+<!-- District_RN_Body_BTF_5_300x250 -->
+<div id='div-gpt-ad-1388766715129-39' style='width:300px; height:250px;'>
+<script type='text/javascript'>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1388766715129-39'); });
+</script>
+</div>
+
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+    </div>
+
+    <div id="root_footer"></div>
+  </div>
+
+  <div id="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-5 col-md-4">
+          <h3><strong>Chicago Gallery News</strong></h3>
+          <ul class="footer-nav">
+            <li><a href="/tours">Tours</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/faqs">FAQs</a></li>
+
+          </ul>
+       </div>
+
+      <div class="col-xs-12 col-sm-7 col-md-3">
+        <h3></h3>
+        <ul class="footer-nav">
+          <h3>&nbsp;</h3>
+          <li><a href="/subscribe">Subscriptions</a></li>
+          <li><a href="http://issuu.com/chigallerynews">Past issues</a></li>
+          <li><a href="/apps">Apps</a></li>
+          <li><a href="/advertising/">Advertise with us</a></li>
+        </ul>
+      </div>
+
+      <div class="col-xs-12 col-sm-7 col-md-5">
+        <h3><strong>We are Chicago's source for art gallery news, events, and listings</strong></h3>
+        <ul class="social-links">
+          <li><a href="http://facebook.com/ChicagoGalleryNews"><i class="fa fa-facebook"></i></a></li>
+          <li><a href="http://twitter.com/ChiGalleryNews"><i class="fa fa-twitter"></i></a></li>
+          <li><a href="http://instagram.com/ChiGalleryNews"><i class="fa fa-instagram"></i></a></li>
+        </ul>
+        <h5><strong>Subscribe to our newsletter</strong></h5>
+        <p>e-newsletters feature galleries and spotlight upcoming exhibitions, events and local and national art news.</p>
+          <!--Begin CTCT Sign-Up Form-->
+          <div class="ctct-embed-signup">
+              <span id="success_message" style="display:none;">
+                  <div style="text-align:center;">Thanks for signing up!</div>
+              </span>
+              <form data-id="embedded_signup:form" class="ctct-custom-form Form" name="embedded_signup" method="POST" action="https://visitor2.constantcontact.com/api/signup">
+                  <input data-id="ca:input" type="hidden" name="ca" value="37b4ca81-e27b-4bcb-87fb-3c04ba14e822">
+                  <input data-id="list:input" type="hidden" name="list" value="1">
+                  <input data-id="source:input" type="hidden" name="source" value="EFD">
+                  <input data-id="required:input" type="hidden" name="required" value="list,email">
+                  <input data-id="url:input" type="hidden" name="url" value="">
+                  <p data-id="Email Address:p" ><label data-id="Email Address:label" data-name="email" class="ctct-form-required">Email Address</label> <input data-id="Email Address:input" type="text" name="email" value="" maxlength="80"></p>
+                  <button type="submit" class="Button btn ctct-button Button--block Button-secondary" data-enabled="enabled">Sign Up</button>
+              </form>
+          </div>
+          <script type='text/javascript'>
+             var localizedErrMap = {};
+             localizedErrMap['required'] = 		'This field is required.';
+             localizedErrMap['ca'] = 			'An unexpected error occurred while attempting to send email.';
+             localizedErrMap['email'] = 			'Please enter your email address in name@email.com format.';
+             localizedErrMap['birthday'] = 		'Please enter birthday in MM/DD format.';
+             localizedErrMap['anniversary'] = 	'Please enter anniversary in MM/DD/YYYY format.';
+             localizedErrMap['custom_date'] = 	'Please enter this date in MM/DD/YYYY format.';
+             localizedErrMap['list'] = 			'Please select at least one email list.';
+             localizedErrMap['generic'] = 		'This field is invalid.';
+             localizedErrMap['shared'] = 		'Sorry, we could not complete your sign-up. Please contact us to resolve this.';
+             localizedErrMap['state_mismatch'] = 'Mismatched State/Province and Country.';
+          	localizedErrMap['state_province'] = 'Select a state/province';
+             localizedErrMap['selectcountry'] = 	'Select a country';
+             var postURL = 'https://visitor2.constantcontact.com/api/signup';
+          </script>
+          <script type='text/javascript' src='https://static.ctctcdn.com/h/contacts-embedded-signup-assets/1.0.2/js/signup-form.js'></script>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+      <p class="copyright">
+        &copy; 1998-2017 Chicago Gallery News <br> <a href="/colophon">Colophon</a>
+      </p>
+
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
