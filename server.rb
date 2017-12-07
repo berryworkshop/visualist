@@ -3,7 +3,7 @@ require 'sinatra'
 require 'sinatra/namespace'
 
 # DB Setup
-Mongoid.load! "mongoid.config"
+Mongoid.load! "mongoid.yml"
 
 # Models
 class Event
@@ -98,6 +98,31 @@ namespace '/api' do
     else
       status 422
       body EventSerializer.new(event).to_json
+    end
+  end
+
+  # update
+  patch '/events/:slug' do |slug|
+    event = Event.where(slug: slug).first
+    unless event
+      halt 404, { message:'Event Not Found'}.to_json
+    end
+    if event.update_attributes(json_params)
+      EventSerializer.new(event).to_json
+    else
+      status 422
+      body EventSerializer.new(event).to_json
+    end
+  end
+
+  # delete
+  delete '/events/:slug' do |slug|
+    event = Event.where(slug: slug).first
+    if event
+      event.destroy
+      status 204
+    else
+      halt 404, {message:'Event Not Found'}.to_json
     end
   end
 end
