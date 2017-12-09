@@ -1,6 +1,6 @@
 development:
   clients:
     default:
-      database: visualist_dev
+      database: visualist
       hosts:
         - localhost:27017

@@ -18,7 +18,7 @@ class Event
   index({ name: 'text' })
   index({ slug:1 }, { unique: true, name: "slug_index" })
 
-  scope :name, lambda {|name| where(name: /^#{name}/)}
+  scope :name, lambda {|name| where(name: /#{name}/)}
   scope :slug, lambda {|slug| where(slug: slug)}
 end
 
@@ -40,7 +40,7 @@ class EventSerializer
 end
 
 get '/' do
-  'Welcome to the Visualist!'
+  erb :index
 end
 
 namespace '/api' do
@@ -71,13 +71,23 @@ namespace '/api' do
 
   # index
   get '/events' do
-    events = Event.all
+    page = params[:page] || 1
+    page_size = params[:page_size] || 25
+    events = Event.desc(:id).skip(page_size * (page - 1)).limit(page_size)
+
     [:name, :slug].each do |filter|
       if params[filter]
         events = events.send(filter, params[filter])
       end
     end
-    events.map {|event| EventSerializer.new(event) }.to_json
+    count = events.count
+    events = events.map {|event| EventSerializer.new(event) }
+    return {
+      meta: {
+        total: count
+      },
+      items: events
+    }.to_json
   end
 
   # show
