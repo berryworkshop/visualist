@@ -1,0 +1,27 @@
+{
+  "label": "Person",
+  "created": "2010-01-01T12:00:00",
+  "modified": "2010-01-01T12:00:00",
+  "phones": [{
+    "label": "Phone",
+    "area_code": 312,
+    "exchange_code": 266,
+    "number": 2350
+  }],
+  "websites": [{
+    "label": "Website",
+    "url": "www.edelmangallery.com"
+  }],
+  "emails": [{
+    "label": "Email",
+    "address": "info@edelmangallery.com"
+  }],
+  "names": [{
+    "label": "Name",
+    "family": "Berry",
+    "given": "Allan",
+    "suffix": "Jr."
+  }],
+  "date_born": "",
+  "date_died": ""
+}

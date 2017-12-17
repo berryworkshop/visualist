@@ -11,15 +11,18 @@ class Event
 
   field :name, type: String
   field :slug, type: String
+  field :body, type: String
+  field :date_created, type: DateTime
+  field :date_modified, type: DateTime
 
   validates :name, presence: true
   validates :slug, presence: true
+  validates :body, presence: true
+  validates :date_created, presence: true
+  validates :date_modified, presence: true
 
   index({ name: 'text' })
   index({ slug:1 }, { unique: true, name: "slug_index" })
-
-  scope :name, lambda {|name| where(name: /#{name}/)}
-  scope :slug, lambda {|slug| where(slug: slug)}
 end
 
 # Serializers
@@ -30,11 +33,16 @@ class EventSerializer
 
   def as_json(*)
     data = {
-      id:@event.id.to_s,
-      name:@event.name,
-      slug:@event.slug
+      id:   @event.id.to_s,
+      name: @event.name,
+      slug: @event.slug,
+      body: @event.body,
+      # date_created: @event.date_created,
+      # date_modified: @event.date_modified,
     }
-    data[:errors] = @event.errors if@event.errors.any?
+    if @event.errors.any?
+      data[:errors] = @event.errors
+    end
     data
   end
 end
@@ -71,20 +79,23 @@ namespace '/api' do
 
   # index
   get '/events' do
-    page = params[:page] || 1
-    page_size = params[:page_size] || 25
-    events = Event.desc(:id).skip(page_size * (page - 1)).limit(page_size)
+    page = params.fetch(:page, 1).to_i
+    page_size = params.fetch(:page_size, 25).to_i
+    events = Event.all.desc(:id)
 
-    [:name, :slug].each do |filter|
-      if params[filter]
-        events = events.send(filter, params[filter])
-      end
+    if params.keys.include? "name"
+      events = events.where(name: /#{params[:name]}/i)
     end
+
     count = events.count
+    events = events.skip(page_size * (page - 1)).limit(page_size)
     events = events.map {|event| EventSerializer.new(event) }
     return {
       meta: {
-        total: count
+        total: count,
+        page: page,
+        pageSize: page_size,
+        pageQty: (count.to_f / page_size).ceil
       },
       items: events
     }.to_json

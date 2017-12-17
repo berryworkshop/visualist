@@ -1,0 +1,15 @@
+{
+  "label": "Place",
+  "created": "2010-01-01T12:00:00",
+  "modified": "2010-01-01T12:00:00",
+  "name": "Catherine Edelman Gallery main location",
+  "slug": "catherine-edelman-gallery-main-location",
+  "categories": [],
+  "address_street": "300 W. Superior, Lower Level",
+  "address_locality": "Chicago",
+  "region": "IL",
+  "postal_code": "60654",
+  "hours": "Tue-Sat 10-5:30",
+  "group_friendly": null,
+  "appointment_only": false,
+}

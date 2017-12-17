@@ -11,3 +11,8 @@ api first created with help from [an api tutorial online](https://x-team.com/blo
 start dev server
 ===
 `shotgun server.rb`
+
+
+insert records from json to db
+===
+`mongoimport --db visualist --collection events --file data/data_ingest/events.json --jsonArray --upsert --upsertFields slug`

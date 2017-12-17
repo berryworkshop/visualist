@@ -1,0 +1,46 @@
+{
+  "name": "Cool Event",
+  "slug": "cool-event",
+  "date_created": "2010-01-01T12:00:00",
+  "date_modified": "2010-01-01T12:00:00",
+  "body": "This is a longer passage, perhaps with limited <b>HTML tags</b>.",
+  "is_featured": false,
+  "status": "active",
+  "same_as": [
+    "http://example.com/"
+  ],
+  "oclc_fast_id": "1234abcd",
+  "cpl": {
+    "citations": [],
+    "file": true,
+    "slides": false,
+    "videos": false
+  },
+  "categories": [
+    "exhibition"
+  ],
+  "sources": [{
+    "key": "visualist1",
+    "id": "asdf",
+    "accessed": "2017-11-29"
+  }],
+  "tags": [{
+    "vocabulary": "aat",
+    "id": "12345678",
+    "value": "photography"
+  }],
+  "links": [
+    {
+      "key": "facebook",
+      "url": "http://www.facebook.com/pages/Catherine-Edelman-Gallery/73236304528"
+    },
+    {
+      "key": "twitter",
+      "id": "edelmangallery"
+    },
+    {
+      "key": "instagram",
+      "id": "edelmangallery"
+    }
+  ],
+}
