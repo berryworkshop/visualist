@@ -1,0 +1,23 @@
+.DS_Store
+.vscode
+
+# Ignore bundler config.
+/.bundle
+
+# Ignore all logfiles and tempfiles.
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+
+.byebug_history
+
+# Vue client files
+client/node_modules/
+client/dist/
+client/npm-debug.log*
+client/yarn-debug.log*
+client/yarn-error.log*
+client/test/unit/coverage/
+client/test/e2e/reports/
+client/selenium-debug.log

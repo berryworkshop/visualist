@@ -1,0 +1,5 @@
+2017-12-24 19:14:32.880+0000 INFO  ======== Neo4j 3.3.1 ========
+2017-12-24 19:14:32.985+0000 INFO  Starting...
+2017-12-24 19:14:36.132+0000 INFO  Bolt enabled on localhost:7472.
+2017-12-24 19:14:45.032+0000 INFO  Started.
+2017-12-24 19:14:48.044+0000 INFO  Remote interface available at http://localhost:7474/
