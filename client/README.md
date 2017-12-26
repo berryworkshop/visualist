@@ -1,6 +1,6 @@
 # visualist
 
-> Frontend for the Visualist version 2
+> A Vue.js project
 
 ## Build Setup
 

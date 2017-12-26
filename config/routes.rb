@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'main/index'
+
   scope '/api' do
     resources :events
   end

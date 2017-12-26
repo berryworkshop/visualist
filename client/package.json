@@ -1,7 +1,7 @@
 {
   "name": "visualist",
   "version": "1.0.0",
-  "description": "Frontend for the Visualist version 2",
+  "description": "A Vue.js project",
   "author": "Allan Berry <allan.berry@gmail.com>",
   "private": true,
   "scripts": {
@@ -14,7 +14,6 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-    "superagent": "^3.8.2",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
   },
