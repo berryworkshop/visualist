@@ -349,3 +349,31 @@ BatchingMultipleIndexPopulator{activeTasks=1, executor=java.util.concurrent.Thre
 2017-12-24 19:15:09.257+0000 INFO [o.n.k.i.a.i.IndexPopulationJob] Shutting down executor.
 BatchingMultipleIndexPopulator{activeTasks=1, executor=java.util.concurrent.ThreadPoolExecutor@615e3c03[Running, pool size = 2, active threads = 1, queued tasks = 0, completed tasks = 1], batchedUpdates = [0 updates], queuedUpdates = 0}
 2017-12-24 19:15:09.265+0000 INFO [o.n.k.i.a.i.IndexPopulationJob] Index population completed. Index is now online: [:Event(uuid) [provider: {key=lucene+native, version=1.0}]]
+2017-12-24 20:35:04.010+0000 WARN [o.n.k.i.c.MonitorGc] GC Monitor: Application threads blocked for 1295ms.
+2017-12-24 20:35:10.336+0000 INFO [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [12]:  Starting check pointing...
+2017-12-24 20:35:10.336+0000 INFO [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [12]:  Starting store flush...
+2017-12-24 20:35:10.354+0000 INFO [o.n.k.i.s.c.CountsTracker] About to rotate counts store at transaction 12 to [/Users/aljabear/Desktop/railstest/v/db/neo4j/development/data/databases/graph.db/neostore.counts.db.b], from [/Users/aljabear/Desktop/railstest/v/db/neo4j/development/data/databases/graph.db/neostore.counts.db.a].
+2017-12-24 20:35:10.355+0000 INFO [o.n.k.i.s.c.CountsTracker] Successfully rotated counts store at transaction 12 to [/Users/aljabear/Desktop/railstest/v/db/neo4j/development/data/databases/graph.db/neostore.counts.db.b], from [/Users/aljabear/Desktop/railstest/v/db/neo4j/development/data/databases/graph.db/neostore.counts.db.a].
+2017-12-24 20:35:10.362+0000 INFO [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [12]:  Store flush completed
+2017-12-24 20:35:10.362+0000 INFO [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [12]:  Starting appending check point entry into the tx log...
+2017-12-24 20:35:10.363+0000 INFO [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [12]:  Appending check point entry into the tx log completed
+2017-12-24 20:35:10.363+0000 INFO [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [12]:  Check pointing completed
+2017-12-24 20:35:10.363+0000 INFO [o.n.k.i.t.l.p.LogPruningImpl] Log Rotation [0]:  Starting log pruning.
+2017-12-24 20:35:10.363+0000 INFO [o.n.k.i.t.l.p.LogPruningImpl] Log Rotation [0]:  Log pruning complete.
+2017-12-24 21:05:05.009+0000 WARN [o.n.k.i.c.MonitorGc] GC Monitor: Application threads blocked for 1139ms.
+2017-12-24 21:06:56.010+0000 WARN [o.n.k.i.c.MonitorGc] GC Monitor: Application threads blocked for 1187ms.
+2017-12-25 07:08:45.010+0000 WARN [o.n.k.i.c.MonitorGc] GC Monitor: Application threads blocked for 1228ms.
+2017-12-25 08:56:38.015+0000 WARN [o.n.k.i.c.MonitorGc] GC Monitor: Application threads blocked for 1152ms.
+2017-12-25 10:26:38.006+0000 WARN [o.n.k.i.c.MonitorGc] GC Monitor: Application threads blocked for 1199ms.
+2017-12-25 11:27:39.011+0000 WARN [o.n.k.i.c.MonitorGc] GC Monitor: Application threads blocked for 1165ms.
+2017-12-25 12:57:39.013+0000 WARN [o.n.k.i.c.MonitorGc] GC Monitor: Application threads blocked for 1185ms.
+2017-12-25 13:45:00.019+0000 WARN [o.n.k.i.c.MonitorGc] GC Monitor: Application threads blocked for 1155ms.
+2017-12-25 14:45:45.007+0000 WARN [o.n.k.i.c.MonitorGc] GC Monitor: Application threads blocked for 1228ms.
+2017-12-25 15:46:30.007+0000 WARN [o.n.k.i.c.MonitorGc] GC Monitor: Application threads blocked for 1201ms.
+2017-12-25 17:16:30.014+0000 WARN [o.n.k.i.c.MonitorGc] GC Monitor: Application threads blocked for 1224ms.
+2017-12-25 17:21:52.014+0000 WARN [o.n.k.i.c.MonitorGc] GC Monitor: Application threads blocked for 1241ms.
+2017-12-25 17:22:21.010+0000 WARN [o.n.k.i.c.MonitorGc] GC Monitor: Application threads blocked for 1476ms.
+2017-12-25 20:52:20.011+0000 WARN [o.n.k.i.c.MonitorGc] GC Monitor: Application threads blocked for 1556ms.
+2017-12-26 13:45:04.601+0000 WARN [o.n.k.i.c.MonitorGc] GC Monitor: Application threads blocked for 27726ms.
+2017-12-26 14:29:42.011+0000 WARN [o.n.k.i.c.MonitorGc] GC Monitor: Application threads blocked for 1560ms.
+2017-12-26 14:57:41.012+0000 WARN [o.n.k.i.c.MonitorGc] GC Monitor: Application threads blocked for 1606ms.
