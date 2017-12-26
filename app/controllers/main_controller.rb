@@ -1,4 +1,5 @@
-class WelcomeController < ApplicationController
+class MainController < ActionController::Base
   def index
+    render file: 'public/index.html'
   end
 end
