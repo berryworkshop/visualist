@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  scope '/api' do
+  scope path: 'api' do
     resources :events
   end
 

@@ -382,3 +382,5 @@ BatchingMultipleIndexPopulator{activeTasks=1, executor=java.util.concurrent.Thre
 2017-12-26 19:35:30.012+0000 WARN [o.n.k.i.c.MonitorGc] GC Monitor: Application threads blocked for 1204ms.
 2017-12-26 21:41:59.019+0000 WARN [o.n.k.i.c.MonitorGc] GC Monitor: Application threads blocked for 1515ms.
 2017-12-26 21:59:13.012+0000 WARN [o.n.k.i.c.MonitorGc] GC Monitor: Application threads blocked for 1428ms.
+2017-12-27 01:32:55.009+0000 WARN [o.n.k.i.c.MonitorGc] GC Monitor: Application threads blocked for 1506ms.
+2017-12-27 03:56:00.053+0000 WARN [o.n.k.i.c.MonitorGc] GC Monitor: Application threads blocked for 27910ms.
