@@ -1,11 +1,32 @@
-class EventsController < ApplicationController
+class Api::EventsController < ApplicationController
   before_action :set_event, only: [:show, :update, :destroy]
+
+  # GET /
+  def root
+    render json: {
+      events: 'http://example.com'
+    }
+  end
 
   # GET /events
   def index
     @events = Event.all
 
-    render json: @events
+    page = params.fetch(:page, 0).to_i
+    page < 1 ? page = 1 : page
+    page_size = params.fetch(:page_size, 25).to_i
+
+    paged = @events.offset(page_size * (page-1)).limit(page_size)
+
+    render json: {
+      meta: {
+        total: @events.size,
+        page: page,
+        pageSize: page_size,
+        pageQty: 1
+      },
+      items: paged
+    }
   end
 
   # GET /events/1

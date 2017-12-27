@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
 
-  scope path: 'api' do
+  namespace :api do
+    get '/', to: 'base#index'
+
     resources :events
   end
 
-  get '*path', to: 'main#index'
+  get '*path', to: 'spa#index'
 
 end
