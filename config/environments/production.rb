@@ -3,10 +3,6 @@ require 'neo4j/railtie'
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
-  # from: https://devcenter.heroku.com/articles/graphenedb
-  config.neo4j.session.type = :http
-  config.neo4j.session.path = ENV["GRAPHENEDB_URL"]
-
   # Code is not reloaded between requests.
   config.cache_classes = true
 
@@ -77,6 +73,12 @@ Rails.application.configure do
   # Use a different logger for distributed setups.
   # require 'syslog/logger'
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
+
+  # from: https://devcenter.heroku.com/articles/graphenedb
+  config.neo4j.session.type = :http
+  config.neo4j.session.path = ENV["GRAPHENEDB_URL"]
+  # from: https://github.com/neo4jrb/neo4j/issues/1382
+  config.neo4j.session.options = {faraday_options: { ssl: { verify: true }}}
 
   if ENV["RAILS_LOG_TO_STDOUT"].present?
     logger           = ActiveSupport::Logger.new(STDOUT)
