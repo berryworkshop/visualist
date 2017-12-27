@@ -19,9 +19,9 @@ Bundler.require(*Rails.groups)
 
 module Visualist
   class Application < Rails::Application
-    
+
     config.generators do |g|
-      g.orm             :neo4j
+      g.orm :neo4j
     end
 
     # Configure where to connect to the Neo4j DB
