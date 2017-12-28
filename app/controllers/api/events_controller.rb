@@ -1,3 +1,5 @@
+include Rails.application.routes.url_helpers
+
 class Api::EventsController < ApplicationController
   before_action :set_event, only: [:show, :update, :destroy]
 
@@ -10,7 +12,7 @@ class Api::EventsController < ApplicationController
 
   # GET /events
   def index
-    @events = Event.all
+    @events = Event.all.order(created_at: :desc)
 
     page = params.fetch(:page, 0).to_i
     page < 1 ? page = 1 : page
@@ -23,7 +25,7 @@ class Api::EventsController < ApplicationController
         total: @events.size,
         page: page,
         pageSize: page_size,
-        pageQty: 1
+        pageQty: 1,
       },
       items: paged
     }
@@ -39,7 +41,7 @@ class Api::EventsController < ApplicationController
     @event = Event.new(event_params)
 
     if @event.save
-      render json: @event, status: :created, location: @event
+      render json: @event, status: :created, location: [:api, @event]
     else
       render json: @event.errors, status: :unprocessable_entity
     end
@@ -69,4 +71,5 @@ class Api::EventsController < ApplicationController
     def event_params
       params.require(:event).permit(:name, :description, :start_date)
     end
+
 end

@@ -21,3 +21,7 @@ client/yarn-error.log*
 client/test/unit/coverage/
 client/test/e2e/reports/
 client/selenium-debug.log
+
+# development and test databases
+db/neo4j/development
+db/neo4j/test
