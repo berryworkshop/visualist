@@ -1,13 +1,11 @@
----
-author:   Allan Berry
-version:  1.0
----
+# README
 
-notes
-===
-api first created with help from [an api tutorial online](https://x-team.com/blog/how-to-create-a-ruby-api-with-sinatra/)
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
+Things you may want to cover:
 
+<<<<<<< HEAD
 start dev server
 ===
 `shotgun server.rb`
@@ -16,3 +14,22 @@ start dev server
 insert records from json to db
 ===
 `mongoimport --db visualist --collection events --file data/data_ingest/events.json --jsonArray --upsert --upsertFields slug`
+=======
+* Ruby version
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
+>>>>>>> redo
