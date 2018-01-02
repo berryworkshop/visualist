@@ -27,7 +27,7 @@ selenium-debug.log
 /test/version_tmp/
 /tmp/
 
-Gemfile.lock
+# Gemfile.lock
 .ruby-version
 .ruby-gemset
 .env
