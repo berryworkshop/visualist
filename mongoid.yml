@@ -1,6 +1,0 @@
-development:
-  clients:
-    default:
-      database: visualist
-      hosts:
-        - localhost:27017
