@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class Api::UsersController < ApplicationController
   before_action :set_user, only: [:show, :update, :destroy]
   before_action :authenticate_user
 
@@ -6,7 +6,12 @@ class UsersController < ApplicationController
   def index
     @users = User.all
 
-    render json: @users
+    render json: {
+      meta: {
+        total: @users.size
+      },
+      items: @users
+    }
   end
 
   # GET /users/1

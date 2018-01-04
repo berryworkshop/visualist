@@ -1,6 +1,9 @@
 <template>
   <layout id="pages">
     <h2>Pages</h2>
+    <ul>
+      <li v-for="p in pages.items">{{ p.title }}</li>
+    </ul>
   </layout>
 </template>
 
@@ -11,6 +14,14 @@ export default {
   name: 'Pages',
   components: {
     Layout,
+  },
+  created() {
+    this.$store.commit('getPages');
+  },
+  computed: {
+    pages() {
+      return this.$store.state.pages;
+    },
   },
 };
 </script>

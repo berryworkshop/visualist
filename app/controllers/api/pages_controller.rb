@@ -1,4 +1,4 @@
-class PagesController < ApplicationController
+class Api::PagesController < ApplicationController
   before_action :set_page, only: [:show, :update, :destroy]
   before_action :authenticate_user, except: [:index, :show]
 
@@ -6,7 +6,12 @@ class PagesController < ApplicationController
   def index
     @pages = Page.all
 
-    render json: @pages
+    render json: {
+      meta: {
+        total: @pages.size
+      },
+      items: @pages
+    }
   end
 
   # GET /pages/1

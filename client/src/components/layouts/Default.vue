@@ -13,7 +13,7 @@ import HeaderDefault from '../partials/Header';
 import FooterDefault from '../partials/Footer';
 
 export default {
-  name: 'Error404',
+  name: 'Layout',
   components: {
     HeaderDefault,
     FooterDefault,
