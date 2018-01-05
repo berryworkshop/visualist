@@ -6,15 +6,28 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    pages: {},
+    apiUrl: (() => {
+      const protocol = window.location.protocol;
+      const hostname = window.location.hostname;
+      const port = process.env.NODE_ENV === 'development' ? 3000 : window.location.port;
+      return `${protocol}//${hostname}:${port}`;
+    })(),
+    pages: [],
   },
   mutations: {
-    getPages(state) {
-      request
-        .get('http://localhost:3000/api/pages')
-        .end((err, res) => {
-          state.pages = JSON.parse(res.text).data;
-        });
+    pagesSet(state, pagesArray) {
+      state.pages = pagesArray;
+    },
+  },
+  actions: {
+    async pagesFetch(context) {
+      const url = `${context.rootState.apiUrl}/pages`;
+      try {
+        const response = await request.get(url)
+        context.commit('pagesSet', JSON.parse(response.text).data);
+      } catch (err) {
+        console.error(err); // eslint-disable-line no-console
+      }
     },
   },
 });

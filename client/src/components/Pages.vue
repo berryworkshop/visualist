@@ -16,7 +16,7 @@ export default {
     Layout,
   },
   created() {
-    this.$store.commit('getPages');
+    this.$store.dispatch('pagesFetch');
   },
   computed: {
     pages() {

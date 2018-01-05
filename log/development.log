@@ -3911,3 +3911,185 @@ Processing by Api::PagesController#index as */*
 Completed 200 OK in 12ms (Views: 0.1ms | ActiveRecord: 0.6ms)
 
 
+Started GET "/pages" for 127.0.0.1 at 2018-01-05 13:11:18 -0600
+  
+NameError (JSONAPI: Could not find resource 'api/users'. (Class Api::UserResource not found)):
+  
+config/routes.rb:5:in `block (2 levels) in <top (required)>'
+config/routes.rb:4:in `block in <top (required)>'
+config/routes.rb:1:in `<top (required)>'
+Started GET "/pages" for 127.0.0.1 at 2018-01-05 13:13:14 -0600
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#index as HTML
+  [1m[36mPage Load (1.3ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Completed 200 OK in 18ms (Views: 0.1ms | ActiveRecord: 8.3ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-01-05 13:13:18 -0600
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+Completed 200 OK in 15ms (Views: 0.1ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/pages" for 127.0.0.1 at 2018-01-05 13:14:47 -0600
+Processing by PagesController#index as */*
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/pages" for 127.0.0.1 at 2018-01-05 13:18:25 -0600
+Processing by PagesController#index as */*
+  [1m[36mPage Load (0.5ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/pages" for 127.0.0.1 at 2018-01-05 13:19:19 -0600
+Processing by PagesController#index as */*
+  [1m[36mPage Load (0.6ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/pages" for 127.0.0.1 at 2018-01-05 13:19:35 -0600
+Processing by PagesController#index as */*
+  [1m[36mPage Load (0.9ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/pages" for 127.0.0.1 at 2018-01-05 13:20:59 -0600
+Processing by PagesController#index as */*
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/pages" for 127.0.0.1 at 2018-01-05 13:21:41 -0600
+Processing by PagesController#index as */*
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-01-05 13:29:45 -0600
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/pages" for 127.0.0.1 at 2018-01-05 13:29:46 -0600
+Processing by PagesController#index as HTML
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/pages" for 127.0.0.1 at 2018-01-05 13:49:28 -0600
+Processing by PagesController#index as */*
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/pages" for 127.0.0.1 at 2018-01-05 13:49:55 -0600
+Processing by PagesController#index as HTML
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/pages" for 127.0.0.1 at 2018-01-05 13:50:20 -0600
+Processing by PagesController#index as */*
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/pages" for 127.0.0.1 at 2018-01-05 13:50:46 -0600
+Processing by PagesController#index as */*
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/pages" for 127.0.0.1 at 2018-01-05 13:51:08 -0600
+Processing by PagesController#index as */*
+  [1m[36mPage Load (0.5ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/pages" for 127.0.0.1 at 2018-01-05 13:51:55 -0600
+Processing by PagesController#index as */*
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/pages" for 127.0.0.1 at 2018-01-05 13:52:11 -0600
+Processing by PagesController#index as */*
+  [1m[36mPage Load (0.5ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/pages" for 127.0.0.1 at 2018-01-05 13:52:31 -0600
+Processing by PagesController#index as */*
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/pages" for 127.0.0.1 at 2018-01-05 13:52:54 -0600
+Processing by PagesController#index as */*
+  [1m[36mPage Load (0.5ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/pages" for 127.0.0.1 at 2018-01-05 13:54:35 -0600
+Processing by PagesController#index as */*
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/pages" for 127.0.0.1 at 2018-01-05 13:54:51 -0600
+Processing by PagesController#index as */*
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/pages" for 127.0.0.1 at 2018-01-05 13:55:04 -0600
+Processing by PagesController#index as */*
+  [1m[36mPage Load (0.5ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/pages" for 127.0.0.1 at 2018-01-05 13:55:27 -0600
+Processing by PagesController#index as */*
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/pages" for 127.0.0.1 at 2018-01-05 13:55:27 -0600
+Processing by PagesController#index as */*
+  [1m[36mPage Load (0.6ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/pages" for 127.0.0.1 at 2018-01-05 13:56:17 -0600
+Processing by PagesController#index as */*
+  [1m[36mPage Load (0.5ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/pages" for 127.0.0.1 at 2018-01-05 13:58:05 -0600
+Processing by PagesController#index as */*
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/pages" for 127.0.0.1 at 2018-01-05 13:58:25 -0600
+Processing by PagesController#index as */*
+  [1m[36mPage Load (0.6ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/pages" for 127.0.0.1 at 2018-01-05 13:58:52 -0600
+Processing by PagesController#index as */*
+  [1m[36mPage Load (0.7ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Completed 200 OK in 10ms (Views: 0.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/pages" for 127.0.0.1 at 2018-01-05 13:59:27 -0600
+Processing by PagesController#index as */*
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
