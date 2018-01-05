@@ -23,7 +23,7 @@ export default new Vuex.Store({
     async pagesFetch(context) {
       const url = `${context.rootState.apiUrl}/pages`;
       try {
-        const response = await request.get(url)
+        const response = await request.get(url);
         context.commit('pagesSet', JSON.parse(response.text).data);
       } catch (err) {
         console.error(err); // eslint-disable-line no-console
