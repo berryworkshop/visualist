@@ -2316,3 +2316,1550 @@ Processing by Api::PagesController#index as HTML
 Completed 204 No Content in 15ms (ActiveRecord: 6.6ms)
 
 
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-05 11:27:04 -0600
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::PagesController#index as HTML
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "pages"[0m
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT "pages".* FROM "pages"[0m
+Completed 200 OK in 23ms (Views: 11.7ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/pages" for 127.0.0.1 at 2018-01-05 11:27:06 -0600
+  
+ActionController::RoutingError (uninitialized constant PagesController):
+  
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:269:in `const_get'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:269:in `block in constantize'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:267:in `each'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:267:in `inject'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:267:in `constantize'
+actionpack (5.1.4) lib/action_dispatch/http/request.rb:85:in `controller_class_for'
+actionpack (5.1.4) lib/action_dispatch/http/request.rb:78:in `controller_class'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:43:in `controller'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:29:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-05 11:27:37 -0600
+  
+NameError (JSONAPI: Could not find resource 'api/pages'. (Class Api::PageResource not found)):
+  
+config/routes.rb:5:in `block (2 levels) in <top (required)>'
+config/routes.rb:4:in `block in <top (required)>'
+config/routes.rb:1:in `<top (required)>'
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-05 11:28:02 -0600
+  
+LoadError (Unable to autoload constant Api::PageResource, expected /Users/aljabear/Projects/visualist/app/resources/api/page_resource.rb to define it):
+  
+config/routes.rb:5:in `block (2 levels) in <top (required)>'
+config/routes.rb:4:in `block in <top (required)>'
+config/routes.rb:1:in `<top (required)>'
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-05 11:28:03 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/api/pages"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-05 11:28:03 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/api/pages"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-05 11:28:09 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/api/pages"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-05 11:28:38 -0600
+  
+LoadError (Unable to autoload constant Api::PageResource, expected /Users/aljabear/Projects/visualist/app/resources/api/page_resource.rb to define it):
+  
+config/routes.rb:7:in `block (2 levels) in <top (required)>'
+config/routes.rb:4:in `block in <top (required)>'
+config/routes.rb:1:in `<top (required)>'
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-05 11:29:23 -0600
+Processing by Api::PagesController#index as HTML
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "pages"[0m
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT "pages".* FROM "pages"[0m
+Completed 200 OK in 18ms (Views: 6.3ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-05 11:31:34 -0600
+Processing by Api::PagesController#index as HTML
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT "pages".* FROM "pages"[0m
+Completed 200 OK in 21ms (Views: 11.0ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-05 11:31:49 -0600
+Processing by Api::PagesController#index as HTML
+  [1m[36mPage Load (0.3ms)[0m  [1m[34mSELECT "pages".* FROM "pages"[0m
+Completed 200 OK in 20ms (Views: 9.9ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-05 11:31:51 -0600
+Processing by Api::PagesController#index as HTML
+  [1m[36mPage Load (0.6ms)[0m  [1m[34mSELECT "pages".* FROM "pages"[0m
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-05 11:32:03 -0600
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::PagesController#index as HTML
+  [1m[36mPage Load (0.7ms)[0m  [1m[34mSELECT "pages".* FROM "pages"[0m
+Completed 200 OK in 16ms (Views: 8.3ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-05 11:33:10 -0600
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::PagesController#index as HTML
+  [1m[36mPage Load (0.7ms)[0m  [1m[34mSELECT "pages".* FROM "pages"[0m
+Completed 200 OK in 16ms (Views: 7.3ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-05 11:33:14 -0600
+Processing by Api::PagesController#index as HTML
+  [1m[36mPage Load (0.3ms)[0m  [1m[34mSELECT "pages".* FROM "pages"[0m
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-05 11:33:38 -0600
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::PagesController#index as HTML
+  [1m[36mPage Load (1.2ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Completed 200 OK in 23ms (Views: 0.1ms | ActiveRecord: 10.5ms)
+
+
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-05 11:34:03 -0600
+Processing by Api::PagesController#index as HTML
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Completed 200 OK in 20ms (Views: 0.1ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-05 11:34:48 -0600
+DEPRECATION WARNING: Id without format is no longer supported. Please remove ids from attributes, or specify a format. (called from <class:PageResource> at /Users/aljabear/Projects/visualist/app/resources/api/page_resource.rb:2)
+Processing by Api::PagesController#index as HTML
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Completed 200 OK in 20ms (Views: 0.1ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-05 11:34:50 -0600
+Processing by Api::PagesController#index as HTML
+  [1m[36mPage Load (0.5ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-05 11:35:03 -0600
+Processing by Api::PagesController#index as HTML
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Completed 200 OK in 28ms (Views: 0.1ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-05 11:35:57 -0600
+  
+ActionController::RoutingError (uninitialized constant Api::PagesController):
+  
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:271:in `const_get'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:271:in `block in constantize'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:267:in `each'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:267:in `inject'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:267:in `constantize'
+actionpack (5.1.4) lib/action_dispatch/http/request.rb:85:in `controller_class_for'
+actionpack (5.1.4) lib/action_dispatch/http/request.rb:78:in `controller_class'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:43:in `controller'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:29:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-05 11:35:58 -0600
+  
+ActionController::RoutingError (uninitialized constant Api::PagesController):
+  
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:271:in `const_get'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:271:in `block in constantize'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:267:in `each'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:267:in `inject'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:267:in `constantize'
+actionpack (5.1.4) lib/action_dispatch/http/request.rb:85:in `controller_class_for'
+actionpack (5.1.4) lib/action_dispatch/http/request.rb:78:in `controller_class'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:43:in `controller'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:29:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-05 11:36:16 -0600
+Processing by Api::PagesController#index as HTML
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Internal Server Error: undefined method `flurg' for #<Page:0x00007f939cbf9f28> /Users/aljabear/.gem/ruby/2.5.0/gems/activemodel-5.1.4/lib/active_model/attribute_methods.rb:432:in `method_missing'
+/Users/aljabear/.gem/ruby/2.5.0/gems/jsonapi-resources-0.9.0/lib/jsonapi/resource.rb:522:in `public_send'
+/Users/aljabear/.gem/ruby/2.5.0/gems/jsonapi-resources-0.9.0/lib/jsonapi/resource.rb:522:in `block in attribute'
+/Users/aljabear/.gem/ruby/2.5.0/gems/jsonapi-resources-0.9.0/lib/jsonapi/resource_serializer.rb:235:in `public_send'
+/Users/aljabear/.gem/ruby/2.5.0/gems/jsonapi-resources-0.9.0/lib/jsonapi/resource_serializer.rb:235:in `block in attributes_hash'
+/Users/aljabear/.rubies/ruby-2.5.0/lib/ruby/2.5.0/set.rb:338:in `each_key'
+/Users/aljabear/.rubies/ruby-2.5.0/lib/ruby/2.5.0/set.rb:338:in `each'
+/Users/aljabear/.gem/ruby/2.5.0/gems/jsonapi-resources-0.9.0/lib/jsonapi/resource_serializer.rb:232:in `each_with_object'
+/Users/aljabear/.gem/ruby/2.5.0/gems/jsonapi-resources-0.9.0/lib/jsonapi/resource_serializer.rb:232:in `attributes_hash'
+/Users/aljabear/.gem/ruby/2.5.0/gems/jsonapi-resources-0.9.0/lib/jsonapi/resource_serializer.rb:172:in `object_hash'
+/Users/aljabear/.gem/ruby/2.5.0/gems/jsonapi-resources-0.9.0/lib/jsonapi/resource_serializer.rb:506:in `add_resource'
+/Users/aljabear/.gem/ruby/2.5.0/gems/jsonapi-resources-0.9.0/lib/jsonapi/resource_serializer.rb:196:in `process_source_objects'
+/Users/aljabear/.gem/ruby/2.5.0/gems/jsonapi-resources-0.9.0/lib/jsonapi/resource_serializer.rb:193:in `block in process_source_objects'
+/Users/aljabear/.gem/ruby/2.5.0/gems/jsonapi-resources-0.9.0/lib/jsonapi/resource_serializer.rb:193:in `each'
+/Users/aljabear/.gem/ruby/2.5.0/gems/jsonapi-resources-0.9.0/lib/jsonapi/resource_serializer.rb:193:in `process_source_objects'
+/Users/aljabear/.gem/ruby/2.5.0/gems/jsonapi-resources-0.9.0/lib/jsonapi/resource_serializer.rb:53:in `serialize_to_hash'
+/Users/aljabear/.gem/ruby/2.5.0/gems/jsonapi-resources-0.9.0/lib/jsonapi/response_document.rb:111:in `results_to_hash'
+/Users/aljabear/.gem/ruby/2.5.0/gems/jsonapi-resources-0.9.0/lib/jsonapi/response_document.rb:12:in `contents'
+/Users/aljabear/.gem/ruby/2.5.0/gems/jsonapi-resources-0.9.0/lib/jsonapi/acts_as_resource_controller.rb:226:in `render_results'
+/Users/aljabear/.gem/ruby/2.5.0/gems/jsonapi-resources-0.9.0/lib/jsonapi/acts_as_resource_controller.rb:78:in `process_request'
+/Users/aljabear/.gem/ruby/2.5.0/gems/jsonapi-resources-0.9.0/lib/jsonapi/acts_as_resource_controller.rb:16:in `index'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/abstract_controller/base.rb:186:in `process_action'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_controller/metal/rendering.rb:30:in `process_action'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+/Users/aljabear/.gem/ruby/2.5.0/gems/activesupport-5.1.4/lib/active_support/callbacks.rb:131:in `run_callbacks'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/abstract_controller/callbacks.rb:19:in `process_action'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_controller/metal/rescue.rb:20:in `process_action'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+/Users/aljabear/.gem/ruby/2.5.0/gems/activesupport-5.1.4/lib/active_support/notifications.rb:166:in `block in instrument'
+/Users/aljabear/.gem/ruby/2.5.0/gems/activesupport-5.1.4/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/aljabear/.gem/ruby/2.5.0/gems/activesupport-5.1.4/lib/active_support/notifications.rb:166:in `instrument'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+/Users/aljabear/.gem/ruby/2.5.0/gems/activerecord-5.1.4/lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/abstract_controller/base.rb:124:in `process'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_controller/metal.rb:189:in `dispatch'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_controller/metal.rb:253:in `dispatch'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/routing/route_set.rb:31:in `serve'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/journey/router.rb:50:in `block in serve'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/journey/router.rb:33:in `each'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/journey/router.rb:33:in `serve'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/routing/route_set.rb:834:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/rack-2.0.3/lib/rack/etag.rb:25:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/rack-2.0.3/lib/rack/conditional_get.rb:25:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/rack-2.0.3/lib/rack/head.rb:12:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/activerecord-5.1.4/lib/active_record/migration.rb:556:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/activesupport-5.1.4/lib/active_support/callbacks.rb:97:in `run_callbacks'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/middleware/executor.rb:12:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/railties-5.1.4/lib/rails/rack/logger.rb:36:in `call_app'
+/Users/aljabear/.gem/ruby/2.5.0/gems/railties-5.1.4/lib/rails/rack/logger.rb:24:in `block in call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/activesupport-5.1.4/lib/active_support/tagged_logging.rb:69:in `block in tagged'
+/Users/aljabear/.gem/ruby/2.5.0/gems/activesupport-5.1.4/lib/active_support/tagged_logging.rb:26:in `tagged'
+/Users/aljabear/.gem/ruby/2.5.0/gems/activesupport-5.1.4/lib/active_support/tagged_logging.rb:69:in `tagged'
+/Users/aljabear/.gem/ruby/2.5.0/gems/railties-5.1.4/lib/rails/rack/logger.rb:24:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/middleware/request_id.rb:25:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/rack-2.0.3/lib/rack/runtime.rb:22:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/activesupport-5.1.4/lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/middleware/executor.rb:12:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/middleware/static.rb:125:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/rack-2.0.3/lib/rack/sendfile.rb:111:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/rack-cors-1.0.2/lib/rack/cors.rb:97:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/railties-5.1.4/lib/rails/engine.rb:522:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/puma-3.11.0/lib/puma/configuration.rb:225:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/puma-3.11.0/lib/puma/server.rb:624:in `handle_request'
+/Users/aljabear/.gem/ruby/2.5.0/gems/puma-3.11.0/lib/puma/server.rb:438:in `process_client'
+/Users/aljabear/.gem/ruby/2.5.0/gems/puma-3.11.0/lib/puma/server.rb:302:in `block in run'
+/Users/aljabear/.gem/ruby/2.5.0/gems/puma-3.11.0/lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Completed 500 Internal Server Error in 59ms (Views: 3.0ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-05 11:36:20 -0600
+Processing by Api::PagesController#index as HTML
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Internal Server Error: undefined method `flurg' for #<Page:0x00007f939ccd8c50> /Users/aljabear/.gem/ruby/2.5.0/gems/activemodel-5.1.4/lib/active_model/attribute_methods.rb:432:in `method_missing'
+/Users/aljabear/.gem/ruby/2.5.0/gems/jsonapi-resources-0.9.0/lib/jsonapi/resource.rb:522:in `public_send'
+/Users/aljabear/.gem/ruby/2.5.0/gems/jsonapi-resources-0.9.0/lib/jsonapi/resource.rb:522:in `block in attribute'
+/Users/aljabear/.gem/ruby/2.5.0/gems/jsonapi-resources-0.9.0/lib/jsonapi/resource_serializer.rb:235:in `public_send'
+/Users/aljabear/.gem/ruby/2.5.0/gems/jsonapi-resources-0.9.0/lib/jsonapi/resource_serializer.rb:235:in `block in attributes_hash'
+/Users/aljabear/.rubies/ruby-2.5.0/lib/ruby/2.5.0/set.rb:338:in `each_key'
+/Users/aljabear/.rubies/ruby-2.5.0/lib/ruby/2.5.0/set.rb:338:in `each'
+/Users/aljabear/.gem/ruby/2.5.0/gems/jsonapi-resources-0.9.0/lib/jsonapi/resource_serializer.rb:232:in `each_with_object'
+/Users/aljabear/.gem/ruby/2.5.0/gems/jsonapi-resources-0.9.0/lib/jsonapi/resource_serializer.rb:232:in `attributes_hash'
+/Users/aljabear/.gem/ruby/2.5.0/gems/jsonapi-resources-0.9.0/lib/jsonapi/resource_serializer.rb:172:in `object_hash'
+/Users/aljabear/.gem/ruby/2.5.0/gems/jsonapi-resources-0.9.0/lib/jsonapi/resource_serializer.rb:506:in `add_resource'
+/Users/aljabear/.gem/ruby/2.5.0/gems/jsonapi-resources-0.9.0/lib/jsonapi/resource_serializer.rb:196:in `process_source_objects'
+/Users/aljabear/.gem/ruby/2.5.0/gems/jsonapi-resources-0.9.0/lib/jsonapi/resource_serializer.rb:193:in `block in process_source_objects'
+/Users/aljabear/.gem/ruby/2.5.0/gems/jsonapi-resources-0.9.0/lib/jsonapi/resource_serializer.rb:193:in `each'
+/Users/aljabear/.gem/ruby/2.5.0/gems/jsonapi-resources-0.9.0/lib/jsonapi/resource_serializer.rb:193:in `process_source_objects'
+/Users/aljabear/.gem/ruby/2.5.0/gems/jsonapi-resources-0.9.0/lib/jsonapi/resource_serializer.rb:53:in `serialize_to_hash'
+/Users/aljabear/.gem/ruby/2.5.0/gems/jsonapi-resources-0.9.0/lib/jsonapi/response_document.rb:111:in `results_to_hash'
+/Users/aljabear/.gem/ruby/2.5.0/gems/jsonapi-resources-0.9.0/lib/jsonapi/response_document.rb:12:in `contents'
+/Users/aljabear/.gem/ruby/2.5.0/gems/jsonapi-resources-0.9.0/lib/jsonapi/acts_as_resource_controller.rb:226:in `render_results'
+/Users/aljabear/.gem/ruby/2.5.0/gems/jsonapi-resources-0.9.0/lib/jsonapi/acts_as_resource_controller.rb:78:in `process_request'
+/Users/aljabear/.gem/ruby/2.5.0/gems/jsonapi-resources-0.9.0/lib/jsonapi/acts_as_resource_controller.rb:16:in `index'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/abstract_controller/base.rb:186:in `process_action'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_controller/metal/rendering.rb:30:in `process_action'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+/Users/aljabear/.gem/ruby/2.5.0/gems/activesupport-5.1.4/lib/active_support/callbacks.rb:131:in `run_callbacks'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/abstract_controller/callbacks.rb:19:in `process_action'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_controller/metal/rescue.rb:20:in `process_action'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+/Users/aljabear/.gem/ruby/2.5.0/gems/activesupport-5.1.4/lib/active_support/notifications.rb:166:in `block in instrument'
+/Users/aljabear/.gem/ruby/2.5.0/gems/activesupport-5.1.4/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/aljabear/.gem/ruby/2.5.0/gems/activesupport-5.1.4/lib/active_support/notifications.rb:166:in `instrument'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+/Users/aljabear/.gem/ruby/2.5.0/gems/activerecord-5.1.4/lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/abstract_controller/base.rb:124:in `process'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_controller/metal.rb:189:in `dispatch'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_controller/metal.rb:253:in `dispatch'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/routing/route_set.rb:31:in `serve'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/journey/router.rb:50:in `block in serve'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/journey/router.rb:33:in `each'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/journey/router.rb:33:in `serve'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/routing/route_set.rb:834:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/rack-2.0.3/lib/rack/etag.rb:25:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/rack-2.0.3/lib/rack/conditional_get.rb:25:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/rack-2.0.3/lib/rack/head.rb:12:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/activerecord-5.1.4/lib/active_record/migration.rb:556:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/activesupport-5.1.4/lib/active_support/callbacks.rb:97:in `run_callbacks'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/middleware/executor.rb:12:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/railties-5.1.4/lib/rails/rack/logger.rb:36:in `call_app'
+/Users/aljabear/.gem/ruby/2.5.0/gems/railties-5.1.4/lib/rails/rack/logger.rb:24:in `block in call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/activesupport-5.1.4/lib/active_support/tagged_logging.rb:69:in `block in tagged'
+/Users/aljabear/.gem/ruby/2.5.0/gems/activesupport-5.1.4/lib/active_support/tagged_logging.rb:26:in `tagged'
+/Users/aljabear/.gem/ruby/2.5.0/gems/activesupport-5.1.4/lib/active_support/tagged_logging.rb:69:in `tagged'
+/Users/aljabear/.gem/ruby/2.5.0/gems/railties-5.1.4/lib/rails/rack/logger.rb:24:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/middleware/request_id.rb:25:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/rack-2.0.3/lib/rack/runtime.rb:22:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/activesupport-5.1.4/lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/middleware/executor.rb:12:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/middleware/static.rb:125:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/rack-2.0.3/lib/rack/sendfile.rb:111:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/rack-cors-1.0.2/lib/rack/cors.rb:97:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/railties-5.1.4/lib/rails/engine.rb:522:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/puma-3.11.0/lib/puma/configuration.rb:225:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/puma-3.11.0/lib/puma/server.rb:624:in `handle_request'
+/Users/aljabear/.gem/ruby/2.5.0/gems/puma-3.11.0/lib/puma/server.rb:438:in `process_client'
+/Users/aljabear/.gem/ruby/2.5.0/gems/puma-3.11.0/lib/puma/server.rb:302:in `block in run'
+/Users/aljabear/.gem/ruby/2.5.0/gems/puma-3.11.0/lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Completed 500 Internal Server Error in 17ms (Views: 1.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-05 11:36:34 -0600
+Processing by Api::PagesController#index as HTML
+  [1m[36mPage Load (0.3ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Completed 200 OK in 19ms (Views: 0.1ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-05 11:37:33 -0600
+  
+NameError (JSONAPI: Could not find resource 'api/users'. (Class Api::UserResource not found)):
+  
+config/routes.rb:5:in `block (2 levels) in <top (required)>'
+config/routes.rb:4:in `block in <top (required)>'
+config/routes.rb:1:in `<top (required)>'
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-05 11:37:33 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/api/pages"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-05 11:37:43 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/api/pages"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-05 11:37:54 -0600
+  
+NameError (JSONAPI: Could not find resource 'api/users'. (Class Api::UserResource not found)):
+  
+config/routes.rb:5:in `block (2 levels) in <top (required)>'
+config/routes.rb:4:in `block in <top (required)>'
+config/routes.rb:1:in `<top (required)>'
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-05 11:37:58 -0600
+Processing by Api::PagesController#index as HTML
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Completed 200 OK in 30ms (Views: 0.1ms | ActiveRecord: 7.1ms)
+
+
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-05 11:38:04 -0600
+  
+NameError (JSONAPI: Could not find resource 'api/users'. (Class Api::UserResource not found)):
+  
+config/routes.rb:5:in `block (2 levels) in <top (required)>'
+config/routes.rb:4:in `block in <top (required)>'
+config/routes.rb:1:in `<top (required)>'
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-05 11:38:05 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/api/pages"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-05 11:38:21 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/api/pages"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-05 11:38:22 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/api/pages"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-05 11:38:23 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/api/pages"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-05 11:38:26 -0600
+Processing by Api::PagesController#index as HTML
+  [1m[36mPage Load (0.9ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Completed 200 OK in 23ms (Views: 0.2ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-05 11:38:32 -0600
+Processing by Api::PagesController#index as HTML
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Completed 200 OK in 29ms (Views: 0.1ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-05 11:38:33 -0600
+Processing by Api::PagesController#index as HTML
+  [1m[36mPage Load (0.6ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-05 11:38:34 -0600
+Processing by Api::PagesController#index as HTML
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-05 11:38:45 -0600
+  
+NameError (JSONAPI: Could not find resource 'api/users'. (Class Api::UserResource not found)):
+  
+config/routes.rb:5:in `block (2 levels) in <top (required)>'
+config/routes.rb:4:in `block in <top (required)>'
+config/routes.rb:1:in `<top (required)>'
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-05 11:39:00 -0600
+  
+NameError (JSONAPI: Could not find resource 'api/users'. (Class Api::UserResource not found)):
+  
+config/routes.rb:5:in `block (2 levels) in <top (required)>'
+config/routes.rb:4:in `block in <top (required)>'
+config/routes.rb:1:in `<top (required)>'
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-05 11:39:01 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/api/pages"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-05 11:39:01 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/api/pages"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-05 11:39:11 -0600
+  
+NameError (JSONAPI: Could not find resource 'api/users'. (Class Api::UserResource not found)):
+  
+config/routes.rb:5:in `block (2 levels) in <top (required)>'
+config/routes.rb:4:in `block in <top (required)>'
+config/routes.rb:1:in `<top (required)>'
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-05 11:39:12 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/api/pages"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-05 11:39:13 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/api/pages"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-05 11:39:20 -0600
+Processing by Api::PagesController#index as HTML
+  [1m[36mPage Load (0.6ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Completed 200 OK in 22ms (Views: 0.1ms | ActiveRecord: 8.9ms)
+
+
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-05 11:39:48 -0600
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::PagesController#index as HTML
+  [1m[36mPage Load (1.2ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Completed 200 OK in 21ms (Views: 0.1ms | ActiveRecord: 9.1ms)
+
+
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-05 11:40:09 -0600
+Processing by Api::PagesController#index as HTML
+  [1m[36mPage Load (0.5ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Completed 200 OK in 21ms (Views: 0.1ms | ActiveRecord: 7.2ms)
+
+
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-05 11:40:19 -0600
+Processing by Api::PagesController#index as HTML
+  [1m[36mPage Load (0.5ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Completed 200 OK in 26ms (Views: 0.1ms | ActiveRecord: 8.8ms)
+
+
+Started GET "/api/users" for 127.0.0.1 at 2018-01-05 11:40:27 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/api/users"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/users" for 127.0.0.1 at 2018-01-05 11:40:28 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/api/users"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-05 11:40:31 -0600
+Processing by Api::PagesController#index as HTML
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-05 11:40:37 -0600
+Processing by Api::PagesController#index as HTML
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-05 11:41:17 -0600
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::PagesController#index as HTML
+  [1m[36mPage Load (0.9ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Completed 200 OK in 21ms (Views: 0.1ms | ActiveRecord: 8.5ms)
+
+
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-05 11:41:24 -0600
+Processing by Api::PagesController#index as HTML
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Completed 200 OK in 22ms (Views: 0.1ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-05 11:41:25 -0600
+Processing by Api::PagesController#index as HTML
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-05 11:41:32 -0600
+Processing by Api::PagesController#index as HTML
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Completed 200 OK in 21ms (Views: 0.1ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-05 11:41:33 -0600
+Processing by Api::PagesController#index as HTML
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/users" for 127.0.0.1 at 2018-01-05 11:41:38 -0600
+Processing by Api::UsersController#index as HTML
+Internal Server Error: JSONAPI: Could not find resource 'api/users'. (Class Api::UserResource not found) /Users/aljabear/.gem/ruby/2.5.0/gems/jsonapi-resources-0.9.0/lib/jsonapi/resource.rb:461:in `resource_for'
+/Users/aljabear/.gem/ruby/2.5.0/gems/jsonapi-resources-0.9.0/lib/jsonapi/request_parser.rb:33:in `setup_action'
+/Users/aljabear/.gem/ruby/2.5.0/gems/jsonapi-resources-0.9.0/lib/jsonapi/request_parser.rb:27:in `initialize'
+/Users/aljabear/.gem/ruby/2.5.0/gems/jsonapi-resources-0.9.0/lib/jsonapi/acts_as_resource_controller.rb:66:in `new'
+/Users/aljabear/.gem/ruby/2.5.0/gems/jsonapi-resources-0.9.0/lib/jsonapi/acts_as_resource_controller.rb:66:in `process_request'
+/Users/aljabear/.gem/ruby/2.5.0/gems/jsonapi-resources-0.9.0/lib/jsonapi/acts_as_resource_controller.rb:16:in `index'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/abstract_controller/base.rb:186:in `process_action'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_controller/metal/rendering.rb:30:in `process_action'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+/Users/aljabear/.gem/ruby/2.5.0/gems/activesupport-5.1.4/lib/active_support/callbacks.rb:97:in `run_callbacks'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/abstract_controller/callbacks.rb:19:in `process_action'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_controller/metal/rescue.rb:20:in `process_action'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+/Users/aljabear/.gem/ruby/2.5.0/gems/activesupport-5.1.4/lib/active_support/notifications.rb:166:in `block in instrument'
+/Users/aljabear/.gem/ruby/2.5.0/gems/activesupport-5.1.4/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/aljabear/.gem/ruby/2.5.0/gems/activesupport-5.1.4/lib/active_support/notifications.rb:166:in `instrument'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+/Users/aljabear/.gem/ruby/2.5.0/gems/activerecord-5.1.4/lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/abstract_controller/base.rb:124:in `process'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_controller/metal.rb:189:in `dispatch'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_controller/metal.rb:253:in `dispatch'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/routing/route_set.rb:31:in `serve'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/journey/router.rb:50:in `block in serve'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/journey/router.rb:33:in `each'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/journey/router.rb:33:in `serve'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/routing/route_set.rb:834:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/rack-2.0.3/lib/rack/etag.rb:25:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/rack-2.0.3/lib/rack/conditional_get.rb:25:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/rack-2.0.3/lib/rack/head.rb:12:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/activerecord-5.1.4/lib/active_record/migration.rb:556:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/activesupport-5.1.4/lib/active_support/callbacks.rb:97:in `run_callbacks'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/middleware/executor.rb:12:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/railties-5.1.4/lib/rails/rack/logger.rb:36:in `call_app'
+/Users/aljabear/.gem/ruby/2.5.0/gems/railties-5.1.4/lib/rails/rack/logger.rb:24:in `block in call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/activesupport-5.1.4/lib/active_support/tagged_logging.rb:69:in `block in tagged'
+/Users/aljabear/.gem/ruby/2.5.0/gems/activesupport-5.1.4/lib/active_support/tagged_logging.rb:26:in `tagged'
+/Users/aljabear/.gem/ruby/2.5.0/gems/activesupport-5.1.4/lib/active_support/tagged_logging.rb:69:in `tagged'
+/Users/aljabear/.gem/ruby/2.5.0/gems/railties-5.1.4/lib/rails/rack/logger.rb:24:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/middleware/request_id.rb:25:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/rack-2.0.3/lib/rack/runtime.rb:22:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/activesupport-5.1.4/lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/middleware/executor.rb:12:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/middleware/static.rb:125:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/rack-2.0.3/lib/rack/sendfile.rb:111:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/rack-cors-1.0.2/lib/rack/cors.rb:97:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/railties-5.1.4/lib/rails/engine.rb:522:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/puma-3.11.0/lib/puma/configuration.rb:225:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/puma-3.11.0/lib/puma/server.rb:624:in `handle_request'
+/Users/aljabear/.gem/ruby/2.5.0/gems/puma-3.11.0/lib/puma/server.rb:438:in `process_client'
+/Users/aljabear/.gem/ruby/2.5.0/gems/puma-3.11.0/lib/puma/server.rb:302:in `block in run'
+/Users/aljabear/.gem/ruby/2.5.0/gems/puma-3.11.0/lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Completed 500 Internal Server Error in 8ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/users" for 127.0.0.1 at 2018-01-05 11:41:53 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/api/users"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/users" for 127.0.0.1 at 2018-01-05 11:41:54 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/api/users"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/users" for 127.0.0.1 at 2018-01-05 11:42:03 -0600
+Processing by Api::UsersController#index as HTML
+Internal Server Error: JSONAPI: Could not find resource 'api/users'. (Class Api::UserResource not found) /Users/aljabear/.gem/ruby/2.5.0/gems/jsonapi-resources-0.9.0/lib/jsonapi/resource.rb:461:in `resource_for'
+/Users/aljabear/.gem/ruby/2.5.0/gems/jsonapi-resources-0.9.0/lib/jsonapi/request_parser.rb:33:in `setup_action'
+/Users/aljabear/.gem/ruby/2.5.0/gems/jsonapi-resources-0.9.0/lib/jsonapi/request_parser.rb:27:in `initialize'
+/Users/aljabear/.gem/ruby/2.5.0/gems/jsonapi-resources-0.9.0/lib/jsonapi/acts_as_resource_controller.rb:66:in `new'
+/Users/aljabear/.gem/ruby/2.5.0/gems/jsonapi-resources-0.9.0/lib/jsonapi/acts_as_resource_controller.rb:66:in `process_request'
+/Users/aljabear/.gem/ruby/2.5.0/gems/jsonapi-resources-0.9.0/lib/jsonapi/acts_as_resource_controller.rb:16:in `index'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/abstract_controller/base.rb:186:in `process_action'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_controller/metal/rendering.rb:30:in `process_action'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+/Users/aljabear/.gem/ruby/2.5.0/gems/activesupport-5.1.4/lib/active_support/callbacks.rb:97:in `run_callbacks'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/abstract_controller/callbacks.rb:19:in `process_action'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_controller/metal/rescue.rb:20:in `process_action'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+/Users/aljabear/.gem/ruby/2.5.0/gems/activesupport-5.1.4/lib/active_support/notifications.rb:166:in `block in instrument'
+/Users/aljabear/.gem/ruby/2.5.0/gems/activesupport-5.1.4/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/aljabear/.gem/ruby/2.5.0/gems/activesupport-5.1.4/lib/active_support/notifications.rb:166:in `instrument'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+/Users/aljabear/.gem/ruby/2.5.0/gems/activerecord-5.1.4/lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/abstract_controller/base.rb:124:in `process'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_controller/metal.rb:189:in `dispatch'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_controller/metal.rb:253:in `dispatch'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/routing/route_set.rb:31:in `serve'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/journey/router.rb:50:in `block in serve'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/journey/router.rb:33:in `each'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/journey/router.rb:33:in `serve'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/routing/route_set.rb:834:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/rack-2.0.3/lib/rack/etag.rb:25:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/rack-2.0.3/lib/rack/conditional_get.rb:25:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/rack-2.0.3/lib/rack/head.rb:12:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/activerecord-5.1.4/lib/active_record/migration.rb:556:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/activesupport-5.1.4/lib/active_support/callbacks.rb:97:in `run_callbacks'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/middleware/executor.rb:12:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/railties-5.1.4/lib/rails/rack/logger.rb:36:in `call_app'
+/Users/aljabear/.gem/ruby/2.5.0/gems/railties-5.1.4/lib/rails/rack/logger.rb:24:in `block in call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/activesupport-5.1.4/lib/active_support/tagged_logging.rb:69:in `block in tagged'
+/Users/aljabear/.gem/ruby/2.5.0/gems/activesupport-5.1.4/lib/active_support/tagged_logging.rb:26:in `tagged'
+/Users/aljabear/.gem/ruby/2.5.0/gems/activesupport-5.1.4/lib/active_support/tagged_logging.rb:69:in `tagged'
+/Users/aljabear/.gem/ruby/2.5.0/gems/railties-5.1.4/lib/rails/rack/logger.rb:24:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/middleware/request_id.rb:25:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/rack-2.0.3/lib/rack/runtime.rb:22:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/activesupport-5.1.4/lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/middleware/executor.rb:12:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/middleware/static.rb:125:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/rack-2.0.3/lib/rack/sendfile.rb:111:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/rack-cors-1.0.2/lib/rack/cors.rb:97:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/railties-5.1.4/lib/rails/engine.rb:522:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/puma-3.11.0/lib/puma/configuration.rb:225:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/puma-3.11.0/lib/puma/server.rb:624:in `handle_request'
+/Users/aljabear/.gem/ruby/2.5.0/gems/puma-3.11.0/lib/puma/server.rb:438:in `process_client'
+/Users/aljabear/.gem/ruby/2.5.0/gems/puma-3.11.0/lib/puma/server.rb:302:in `block in run'
+/Users/aljabear/.gem/ruby/2.5.0/gems/puma-3.11.0/lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Completed 500 Internal Server Error in 10ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-05 11:42:07 -0600
+Processing by Api::PagesController#index as HTML
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Completed 200 OK in 21ms (Views: 0.1ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-05 11:42:15 -0600
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::PagesController#index as HTML
+  [1m[36mPage Load (1.1ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Completed 200 OK in 20ms (Views: 0.1ms | ActiveRecord: 8.5ms)
+
+
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-05 11:42:46 -0600
+Processing by Api::PagesController#index as HTML
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/users" for 127.0.0.1 at 2018-01-05 11:42:52 -0600
+Processing by Api::UsersController#index as HTML
+Internal Server Error: JSONAPI: Could not find resource 'api/users'. (Class Api::UserResource not found) /Users/aljabear/.gem/ruby/2.5.0/gems/jsonapi-resources-0.9.0/lib/jsonapi/resource.rb:461:in `resource_for'
+/Users/aljabear/.gem/ruby/2.5.0/gems/jsonapi-resources-0.9.0/lib/jsonapi/request_parser.rb:33:in `setup_action'
+/Users/aljabear/.gem/ruby/2.5.0/gems/jsonapi-resources-0.9.0/lib/jsonapi/request_parser.rb:27:in `initialize'
+/Users/aljabear/.gem/ruby/2.5.0/gems/jsonapi-resources-0.9.0/lib/jsonapi/acts_as_resource_controller.rb:66:in `new'
+/Users/aljabear/.gem/ruby/2.5.0/gems/jsonapi-resources-0.9.0/lib/jsonapi/acts_as_resource_controller.rb:66:in `process_request'
+/Users/aljabear/.gem/ruby/2.5.0/gems/jsonapi-resources-0.9.0/lib/jsonapi/acts_as_resource_controller.rb:16:in `index'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/abstract_controller/base.rb:186:in `process_action'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_controller/metal/rendering.rb:30:in `process_action'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+/Users/aljabear/.gem/ruby/2.5.0/gems/activesupport-5.1.4/lib/active_support/callbacks.rb:97:in `run_callbacks'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/abstract_controller/callbacks.rb:19:in `process_action'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_controller/metal/rescue.rb:20:in `process_action'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+/Users/aljabear/.gem/ruby/2.5.0/gems/activesupport-5.1.4/lib/active_support/notifications.rb:166:in `block in instrument'
+/Users/aljabear/.gem/ruby/2.5.0/gems/activesupport-5.1.4/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/aljabear/.gem/ruby/2.5.0/gems/activesupport-5.1.4/lib/active_support/notifications.rb:166:in `instrument'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+/Users/aljabear/.gem/ruby/2.5.0/gems/activerecord-5.1.4/lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/abstract_controller/base.rb:124:in `process'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_controller/metal.rb:189:in `dispatch'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_controller/metal.rb:253:in `dispatch'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/routing/route_set.rb:31:in `serve'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/journey/router.rb:50:in `block in serve'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/journey/router.rb:33:in `each'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/journey/router.rb:33:in `serve'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/routing/route_set.rb:834:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/rack-2.0.3/lib/rack/etag.rb:25:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/rack-2.0.3/lib/rack/conditional_get.rb:25:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/rack-2.0.3/lib/rack/head.rb:12:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/activerecord-5.1.4/lib/active_record/migration.rb:556:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/activesupport-5.1.4/lib/active_support/callbacks.rb:97:in `run_callbacks'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/middleware/executor.rb:12:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/railties-5.1.4/lib/rails/rack/logger.rb:36:in `call_app'
+/Users/aljabear/.gem/ruby/2.5.0/gems/railties-5.1.4/lib/rails/rack/logger.rb:24:in `block in call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/activesupport-5.1.4/lib/active_support/tagged_logging.rb:69:in `block in tagged'
+/Users/aljabear/.gem/ruby/2.5.0/gems/activesupport-5.1.4/lib/active_support/tagged_logging.rb:26:in `tagged'
+/Users/aljabear/.gem/ruby/2.5.0/gems/activesupport-5.1.4/lib/active_support/tagged_logging.rb:69:in `tagged'
+/Users/aljabear/.gem/ruby/2.5.0/gems/railties-5.1.4/lib/rails/rack/logger.rb:24:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/middleware/request_id.rb:25:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/rack-2.0.3/lib/rack/runtime.rb:22:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/activesupport-5.1.4/lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/middleware/executor.rb:12:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/middleware/static.rb:125:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/rack-2.0.3/lib/rack/sendfile.rb:111:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/rack-cors-1.0.2/lib/rack/cors.rb:97:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/railties-5.1.4/lib/rails/engine.rb:522:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/puma-3.11.0/lib/puma/configuration.rb:225:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/puma-3.11.0/lib/puma/server.rb:624:in `handle_request'
+/Users/aljabear/.gem/ruby/2.5.0/gems/puma-3.11.0/lib/puma/server.rb:438:in `process_client'
+/Users/aljabear/.gem/ruby/2.5.0/gems/puma-3.11.0/lib/puma/server.rb:302:in `block in run'
+/Users/aljabear/.gem/ruby/2.5.0/gems/puma-3.11.0/lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Completed 500 Internal Server Error in 7ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/users" for 127.0.0.1 at 2018-01-05 11:43:16 -0600
+Processing by Api::UsersController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+LoadError (Unable to autoload constant Api::UserResource, expected /Users/aljabear/Projects/visualist/app/resources/api/user_resource.rb to define it):
+  
+activesupport (5.1.4) lib/active_support/dependencies.rb:511:in `load_missing_constant'
+activesupport (5.1.4) lib/active_support/dependencies.rb:202:in `const_missing'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:271:in `const_get'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:271:in `block in constantize'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:267:in `each'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:267:in `inject'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:267:in `constantize'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:312:in `safe_constantize'
+activesupport (5.1.4) lib/active_support/core_ext/string/inflections.rb:77:in `safe_constantize'
+jsonapi-resources (0.9.0) lib/jsonapi/resource.rb:459:in `resource_for'
+jsonapi-resources (0.9.0) lib/jsonapi/request_parser.rb:33:in `setup_action'
+jsonapi-resources (0.9.0) lib/jsonapi/request_parser.rb:27:in `initialize'
+jsonapi-resources (0.9.0) lib/jsonapi/acts_as_resource_controller.rb:66:in `new'
+jsonapi-resources (0.9.0) lib/jsonapi/acts_as_resource_controller.rb:66:in `process_request'
+jsonapi-resources (0.9.0) lib/jsonapi/acts_as_resource_controller.rb:16:in `index'
+actionpack (5.1.4) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.1.4) lib/abstract_controller/base.rb:186:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.1.4) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.4) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.4) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.4) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.4) lib/abstract_controller/base.rb:124:in `process'
+actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/users" for 127.0.0.1 at 2018-01-05 11:43:17 -0600
+Processing by Api::UsersController#index as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+LoadError (Unable to autoload constant Api::UserResource, expected /Users/aljabear/Projects/visualist/app/resources/api/user_resource.rb to define it):
+  
+activesupport (5.1.4) lib/active_support/dependencies.rb:511:in `load_missing_constant'
+activesupport (5.1.4) lib/active_support/dependencies.rb:202:in `const_missing'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:271:in `const_get'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:271:in `block in constantize'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:267:in `each'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:267:in `inject'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:267:in `constantize'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:312:in `safe_constantize'
+activesupport (5.1.4) lib/active_support/core_ext/string/inflections.rb:77:in `safe_constantize'
+jsonapi-resources (0.9.0) lib/jsonapi/resource.rb:459:in `resource_for'
+jsonapi-resources (0.9.0) lib/jsonapi/request_parser.rb:33:in `setup_action'
+jsonapi-resources (0.9.0) lib/jsonapi/request_parser.rb:27:in `initialize'
+jsonapi-resources (0.9.0) lib/jsonapi/acts_as_resource_controller.rb:66:in `new'
+jsonapi-resources (0.9.0) lib/jsonapi/acts_as_resource_controller.rb:66:in `process_request'
+jsonapi-resources (0.9.0) lib/jsonapi/acts_as_resource_controller.rb:16:in `index'
+actionpack (5.1.4) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.1.4) lib/abstract_controller/base.rb:186:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.1.4) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.4) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.4) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.4) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.4) lib/abstract_controller/base.rb:124:in `process'
+actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/users" for 127.0.0.1 at 2018-01-05 11:43:23 -0600
+Processing by Api::UsersController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+LoadError (Unable to autoload constant Api::UserResource, expected /Users/aljabear/Projects/visualist/app/resources/api/user_resource.rb to define it):
+  
+activesupport (5.1.4) lib/active_support/dependencies.rb:511:in `load_missing_constant'
+activesupport (5.1.4) lib/active_support/dependencies.rb:202:in `const_missing'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:271:in `const_get'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:271:in `block in constantize'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:267:in `each'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:267:in `inject'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:267:in `constantize'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:312:in `safe_constantize'
+activesupport (5.1.4) lib/active_support/core_ext/string/inflections.rb:77:in `safe_constantize'
+jsonapi-resources (0.9.0) lib/jsonapi/resource.rb:459:in `resource_for'
+jsonapi-resources (0.9.0) lib/jsonapi/request_parser.rb:33:in `setup_action'
+jsonapi-resources (0.9.0) lib/jsonapi/request_parser.rb:27:in `initialize'
+jsonapi-resources (0.9.0) lib/jsonapi/acts_as_resource_controller.rb:66:in `new'
+jsonapi-resources (0.9.0) lib/jsonapi/acts_as_resource_controller.rb:66:in `process_request'
+jsonapi-resources (0.9.0) lib/jsonapi/acts_as_resource_controller.rb:16:in `index'
+actionpack (5.1.4) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.1.4) lib/abstract_controller/base.rb:186:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.1.4) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.4) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.4) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.4) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.4) lib/abstract_controller/base.rb:124:in `process'
+actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/users" for 127.0.0.1 at 2018-01-05 11:43:33 -0600
+Processing by Api::UsersController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+Completed 200 OK in 29ms (Views: 0.1ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/api/users" for 127.0.0.1 at 2018-01-05 11:44:19 -0600
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::UsersController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+Completed 200 OK in 20ms (Views: 0.1ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/api/users" for 127.0.0.1 at 2018-01-05 11:44:20 -0600
+Processing by Api::UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-05 11:44:22 -0600
+Processing by Api::PagesController#index as HTML
+  [1m[36mPage Load (0.6ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Completed 200 OK in 20ms (Views: 0.1ms | ActiveRecord: 5.7ms)
+
+
+Started POST "/api/pages" for 127.0.0.1 at 2018-01-05 11:45:05 -0600
+Processing by Api::PagesController#create as HTML
+  Parameters: {"title"=>"Another Page", "page"=>{"title"=>"Another Page"}}
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/pages" for 127.0.0.1 at 2018-01-05 11:45:13 -0600
+Processing by Api::PagesController#create as HTML
+  Parameters: {"title"=>"Another Page", "page"=>{"title"=>"Another Page"}}
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/pages" for 127.0.0.1 at 2018-01-05 11:45:35 -0600
+Processing by Api::PagesController#create as HTML
+  Parameters: {"title"=>"Another Page", "page"=>{"title"=>"Another Page"}}
+Completed 415 Unsupported Media Type in 7ms (Views: 0.2ms | ActiveRecord: 4.1ms)
+
+
+Started POST "/api/pages" for 127.0.0.1 at 2018-01-05 11:46:04 -0600
+Processing by Api::PagesController#create as HTML
+  Parameters: {"title"=>"Another Page", "page"=>{"title"=>"Another Page"}}
+Completed 415 Unsupported Media Type in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/pages" for 127.0.0.1 at 2018-01-05 11:46:14 -0600
+Processing by Api::PagesController#create as HTML
+  Parameters: {"title"=>"Another Page"}
+Completed 400 Bad Request in 2ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/pages" for 127.0.0.1 at 2018-01-05 11:46:55 -0600
+Processing by Api::PagesController#create as HTML
+  Parameters: {"data"=>{"title"=>"Another Page"}}
+Completed 400 Bad Request in 2ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/pages" for 127.0.0.1 at 2018-01-05 11:47:32 -0600
+Processing by Api::PagesController#create as HTML
+  Parameters: {"data"=>{"title"=>"Another Page"}, "type"=>"pages"}
+Completed 400 Bad Request in 2ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/pages" for 127.0.0.1 at 2018-01-05 11:50:16 -0600
+Processing by Api::PagesController#create as HTML
+  Parameters: {"data"=>{"type"=>"pages", "attributes"=>{"title"=>"Another Page", "body"=>"This is the body, yep"}}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (19.3ms)[0m  [1m[32mINSERT INTO "pages" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Another Page"], ["body", "This is the body, yep"], ["created_at", "2018-01-05 17:50:16.196379"], ["updated_at", "2018-01-05 17:50:16.196379"]]
+  [1m[35m (144.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 185ms (Views: 0.1ms | ActiveRecord: 166.0ms)
+
+
+Started POST "/api/pages" for 127.0.0.1 at 2018-01-05 11:50:46 -0600
+Processing by Api::PagesController#create as HTML
+  Parameters: {"data"=>{"type"=>"pages", "attributes"=>{"title"=>"Yet Another Page"}}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "pages" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "Yet Another Page"], ["created_at", "2018-01-05 17:50:46.836957"], ["updated_at", "2018-01-05 17:50:46.836957"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 12ms (Views: 0.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-05 11:51:07 -0600
+Processing by Api::PagesController#index as */*
+  [1m[36mPage Load (0.5ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Completed 200 OK in 15ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-05 11:53:37 -0600
+Processing by Api::PagesController#index as HTML
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-05 11:59:25 -0600
+Processing by Api::PagesController#index as */*
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/pages" for 127.0.0.1 at 2018-01-05 12:00:13 -0600
+Processing by Api::PagesController#create as HTML
+  Parameters: {"data"=>{"type"=>"pages", "attributes"=>{"body"=>"This is indeed the body, yep"}}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 5ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
