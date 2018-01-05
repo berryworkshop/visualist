@@ -3863,3 +3863,51 @@ Processing by Api::PagesController#create as HTML
 Completed 422 Unprocessable Entity in 5ms (Views: 0.2ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-05 12:03:04 -0600
+Processing by Api::PagesController#index as */*
+  [1m[36mPage Load (0.6ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Completed 200 OK in 43ms (Views: 0.1ms | ActiveRecord: 9.4ms)
+
+
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-05 12:05:51 -0600
+Processing by Api::PagesController#index as */*
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Completed 200 OK in 9ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-05 12:06:08 -0600
+Processing by Api::PagesController#index as */*
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Completed 200 OK in 9ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-05 12:06:11 -0600
+Processing by Api::PagesController#index as */*
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Completed 200 OK in 10ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-05 12:06:19 -0600
+Processing by Api::PagesController#index as */*
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-05 12:07:12 -0600
+Processing by Api::PagesController#index as */*
+  [1m[36mPage Load (0.6ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-05 12:08:13 -0600
+Processing by Api::PagesController#index as */*
+  [1m[36mPage Load (0.5ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-05 12:11:38 -0600
+Processing by Api::PagesController#index as */*
+  [1m[36mPage Load (0.6ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Completed 200 OK in 12ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+
+

@@ -13,7 +13,7 @@ export default new Vuex.Store({
       request
         .get('http://localhost:3000/api/pages')
         .end((err, res) => {
-          state.pages = JSON.parse(res.text);
+          state.pages = JSON.parse(res.text).data;
         });
     },
   },

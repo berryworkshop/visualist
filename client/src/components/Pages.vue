@@ -2,7 +2,7 @@
   <layout id="pages">
     <h2>Pages</h2>
     <ul>
-      <li v-for="p in pages.items">{{ p.title }}</li>
+      <li v-for="p in pages">{{ p.attributes.title }}</li>
     </ul>
   </layout>
 </template>

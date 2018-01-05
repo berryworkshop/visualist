@@ -12,6 +12,9 @@ gem 'rails', '~> 5.1.4'
 # Use sqlite3 as the database for Active Record
 gem 'pg'
 
+# for getting data in
+gem 'activerecord-import'
+
 # auth
 gem 'knock', '~> 2.1.1'
 gem 'bcrypt', '~> 3.1.7'
