@@ -2192,3 +2192,127 @@ Processing by Api::PagesController#index as */*
 Completed 200 OK in 4ms (Views: 1.5ms | ActiveRecord: 1.3ms)
 
 
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-04 22:22:07 -0600
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::PagesController#index as HTML
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "pages"[0m
+  [1m[36mPage Load (0.5ms)[0m  [1m[34mSELECT "pages".* FROM "pages"[0m
+Completed 200 OK in 22ms (Views: 10.1ms | ActiveRecord: 8.5ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2018-01-04 22:22:08 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-04 22:26:10 -0600
+Processing by Api::PagesController#index as HTML
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "pages"[0m
+  [1m[36mPage Load (0.3ms)[0m  [1m[34mSELECT "pages".* FROM "pages"[0m
+Completed 200 OK in 21ms (Views: 1.3ms | ActiveRecord: 10.8ms)
+
+
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-04 22:26:13 -0600
+Processing by Api::PagesController#index as HTML
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "pages"[0m
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT "pages".* FROM "pages"[0m
+Completed 200 OK in 3ms (Views: 1.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-04 22:26:17 -0600
+Processing by Api::PagesController#index as HTML
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "pages"[0m
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT "pages".* FROM "pages"[0m
+Completed 200 OK in 4ms (Views: 1.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-04 22:26:21 -0600
+Processing by Api::PagesController#index as HTML
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "pages"[0m
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT "pages".* FROM "pages"[0m
+Completed 200 OK in 4ms (Views: 1.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-04 22:26:56 -0600
+Processing by Api::PagesController#index as HTML
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "pages"[0m
+  [1m[36mPage Load (0.3ms)[0m  [1m[34mSELECT "pages".* FROM "pages"[0m
+Completed 200 OK in 9ms (Views: 0.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-04 22:27:23 -0600
+Processing by Api::PagesController#index as HTML
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "pages"[0m
+  [1m[36mPage Load (0.3ms)[0m  [1m[34mSELECT "pages".* FROM "pages"[0m
+Completed 200 OK in 11ms (Views: 1.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-04 22:27:30 -0600
+Processing by Api::PagesController#index as HTML
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "pages"[0m
+  [1m[36mPage Load (0.3ms)[0m  [1m[34mSELECT "pages".* FROM "pages"[0m
+Completed 204 No Content in 9ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-04 22:27:34 -0600
+Processing by Api::PagesController#index as HTML
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "pages"[0m
+  [1m[36mPage Load (0.3ms)[0m  [1m[34mSELECT "pages".* FROM "pages"[0m
+Completed 204 No Content in 2ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-04 22:27:35 -0600
+Processing by Api::PagesController#index as HTML
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "pages"[0m
+  [1m[36mPage Load (0.3ms)[0m  [1m[34mSELECT "pages".* FROM "pages"[0m
+Completed 204 No Content in 2ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-04 22:27:35 -0600
+Processing by Api::PagesController#index as HTML
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "pages"[0m
+  [1m[36mPage Load (0.3ms)[0m  [1m[34mSELECT "pages".* FROM "pages"[0m
+Completed 204 No Content in 2ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-04 22:27:35 -0600
+Processing by Api::PagesController#index as HTML
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "pages"[0m
+  [1m[36mPage Load (0.3ms)[0m  [1m[34mSELECT "pages".* FROM "pages"[0m
+Completed 204 No Content in 2ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-04 22:27:36 -0600
+Processing by Api::PagesController#index as HTML
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "pages"[0m
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT "pages".* FROM "pages"[0m
+Completed 204 No Content in 2ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/api/pages" for 127.0.0.1 at 2018-01-04 22:27:50 -0600
+Processing by Api::PagesController#index as HTML
+  [1m[36mPage Load (0.6ms)[0m  [1m[34mSELECT "pages".* FROM "pages"[0m
+Completed 204 No Content in 15ms (ActiveRecord: 6.6ms)
+
+
