@@ -27,8 +27,19 @@ ActiveRecord::Schema.define(version: 20180105220241) do
   end
 
   create_table "nodes", force: :cascade do |t|
+    t.string "type"
+    t.text "body"
+    t.text "categories", default: [], array: true
+    t.bigint "user_id"
+    t.boolean "is_active"
+    t.boolean "is_approved"
+    t.boolean "is_featured", default: false
+    t.boolean "is_public", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["categories"], name: "index_nodes_on_categories"
+    t.index ["type"], name: "index_nodes_on_type"
+    t.index ["user_id"], name: "index_nodes_on_user_id"
   end
 
   create_table "pages", force: :cascade do |t|

@@ -1,2 +1,2 @@
-class ThingsController < ApplicationController
+class NodesController < ApplicationController
 end

@@ -4615,3 +4615,322 @@ Migrating to CreateEdges (20180105220241)
   [1m[35m (8.8ms)[0m  [1m[35mCOMMIT[0m
   [1m[36mNode Load (0.5ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" LIMIT $1[0m  [["LIMIT", 11]]
   [1m[36mEdge Load (0.4ms)[0m  [1m[34mSELECT  "edges".* FROM "edges" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8056133293431660360)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateEdges (20180105220241)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.4ms)[0m  [1m[35mDROP TABLE "edges"[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20180105220241"]]
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(8056133293431660360)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8056133293431660360)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateNodes (20180105220211)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.1ms)[0m  [1m[35mDROP TABLE "nodes"[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20180105220211"]]
+  [1m[35m (10.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(8056133293431660360)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8056133293431660360)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateNodes (20180105220211)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(8056133293431660360)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8056133293431660360)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateNodes (20180105220211)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (10.6ms)[0m  [1m[35mCREATE TABLE "nodes" ("id" bigserial primary key, "type" character varying, "body" text, "categories" text[] DEFAULT '{}', "user_id" bigint, "is_active" boolean, "is_approved" boolean, "is_featured" boolean DEFAULT 'f', "is_public" boolean DEFAULT 't', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX  "index_nodes_on_user_id" ON "nodes"  ("user_id")[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE  INDEX  "index_nodes_on_type" ON "nodes"  ("type")[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_nodes_on_categories" ON "nodes"  ("categories")[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180105220211"]]
+  [1m[35m (133.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateEdges (20180105220241)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (28.8ms)[0m  [1m[35mCREATE TABLE "edges" ("id" bigserial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "subject_id" bigint, "predicate" character varying, "dobject_id" bigint)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX  "index_edges_on_subject_id" ON "edges"  ("subject_id")[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_edges_on_dobject_id" ON "edges"  ("dobject_id")[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_edges_on_subject_id_and_predicate_and_dobject_id" ON "edges"  ("subject_id", "predicate", "dobject_id")[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180105220241"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(8056133293431660360)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/pages" for 127.0.0.1 at 2018-01-06 14:32:11 -0600
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#index as HTML
+  [1m[36mPage Load (1.5ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Completed 200 OK in 24ms (Views: 0.1ms | ActiveRecord: 10.3ms)
+
+
+Started GET "/nodes" for 127.0.0.1 at 2018-01-06 14:32:20 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/nodes"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/nodes" for 127.0.0.1 at 2018-01-06 14:34:13 -0600
+  
+LoadError (Unable to autoload constant NodesController, expected /Users/aljabear/Projects/visualist/app/controllers/nodes_controller.rb to define it):
+  
+activesupport (5.1.4) lib/active_support/dependencies.rb:511:in `load_missing_constant'
+activesupport (5.1.4) lib/active_support/dependencies.rb:202:in `const_missing'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:269:in `const_get'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:269:in `block in constantize'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:267:in `each'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:267:in `inject'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:267:in `constantize'
+activesupport (5.1.4) lib/active_support/dependencies.rb:582:in `get'
+activesupport (5.1.4) lib/active_support/dependencies.rb:613:in `constantize'
+actionpack (5.1.4) lib/action_dispatch/http/request.rb:85:in `controller_class_for'
+actionpack (5.1.4) lib/action_dispatch/http/parameters.rb:99:in `binary_params_for?'
+actionpack (5.1.4) lib/action_dispatch/http/parameters.rb:90:in `set_binary_encoding'
+actionpack (5.1.4) lib/action_dispatch/http/parameters.rb:67:in `path_parameters='
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:48:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/nodes" for 127.0.0.1 at 2018-01-06 14:34:14 -0600
+  
+LoadError (Unable to autoload constant NodesController, expected /Users/aljabear/Projects/visualist/app/controllers/nodes_controller.rb to define it):
+  
+activesupport (5.1.4) lib/active_support/dependencies.rb:511:in `load_missing_constant'
+activesupport (5.1.4) lib/active_support/dependencies.rb:202:in `const_missing'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:269:in `const_get'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:269:in `block in constantize'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:267:in `each'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:267:in `inject'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:267:in `constantize'
+activesupport (5.1.4) lib/active_support/dependencies.rb:582:in `get'
+activesupport (5.1.4) lib/active_support/dependencies.rb:613:in `constantize'
+actionpack (5.1.4) lib/action_dispatch/http/request.rb:85:in `controller_class_for'
+actionpack (5.1.4) lib/action_dispatch/http/parameters.rb:99:in `binary_params_for?'
+actionpack (5.1.4) lib/action_dispatch/http/parameters.rb:90:in `set_binary_encoding'
+actionpack (5.1.4) lib/action_dispatch/http/parameters.rb:67:in `path_parameters='
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:48:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/nodes" for 127.0.0.1 at 2018-01-06 14:34:42 -0600
+Processing by NodesController#index as HTML
+  [1m[36mNode Load (10.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 29ms (Views: 0.1ms | ActiveRecord: 17.9ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-06 14:34:48 -0600
+Processing by EventsController#index as HTML
+  [1m[36mNode Load (0.5ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["type", "Event"], ["body", "This is the body"], ["created_at", "2018-01-06 20:35:53.308322"], ["updated_at", "2018-01-06 20:35:53.308322"]]
+  [1m[35m (8.7ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/events" for 127.0.0.1 at 2018-01-06 14:36:01 -0600
+Processing by EventsController#index as HTML
+  [1m[36mNode Load (0.4ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" ORDER BY "nodes"."id" ASC[0m
+Internal Server Error: undefined method `user' for #<Event:0x00007fca96b0f640>
+Did you mean?  user_id /Users/aljabear/.gem/ruby/2.5.0/gems/activemodel-5.1.4/lib/active_model/attribute_methods.rb:432:in `method_missing'
+/Users/aljabear/.gem/ruby/2.5.0/gems/jsonapi-resources-0.9.0/lib/jsonapi/resource.rb:522:in `public_send'
+/Users/aljabear/.gem/ruby/2.5.0/gems/jsonapi-resources-0.9.0/lib/jsonapi/resource.rb:522:in `block in attribute'
+/Users/aljabear/.gem/ruby/2.5.0/gems/jsonapi-resources-0.9.0/lib/jsonapi/resource_serializer.rb:235:in `public_send'
+/Users/aljabear/.gem/ruby/2.5.0/gems/jsonapi-resources-0.9.0/lib/jsonapi/resource_serializer.rb:235:in `block in attributes_hash'
+/Users/aljabear/.rubies/ruby-2.5.0/lib/ruby/2.5.0/set.rb:338:in `each_key'
+/Users/aljabear/.rubies/ruby-2.5.0/lib/ruby/2.5.0/set.rb:338:in `each'
+/Users/aljabear/.gem/ruby/2.5.0/gems/jsonapi-resources-0.9.0/lib/jsonapi/resource_serializer.rb:232:in `each_with_object'
+/Users/aljabear/.gem/ruby/2.5.0/gems/jsonapi-resources-0.9.0/lib/jsonapi/resource_serializer.rb:232:in `attributes_hash'
+/Users/aljabear/.gem/ruby/2.5.0/gems/jsonapi-resources-0.9.0/lib/jsonapi/resource_serializer.rb:172:in `object_hash'
+/Users/aljabear/.gem/ruby/2.5.0/gems/jsonapi-resources-0.9.0/lib/jsonapi/resource_serializer.rb:506:in `add_resource'
+/Users/aljabear/.gem/ruby/2.5.0/gems/jsonapi-resources-0.9.0/lib/jsonapi/resource_serializer.rb:196:in `process_source_objects'
+/Users/aljabear/.gem/ruby/2.5.0/gems/jsonapi-resources-0.9.0/lib/jsonapi/resource_serializer.rb:193:in `block in process_source_objects'
+/Users/aljabear/.gem/ruby/2.5.0/gems/jsonapi-resources-0.9.0/lib/jsonapi/resource_serializer.rb:193:in `each'
+/Users/aljabear/.gem/ruby/2.5.0/gems/jsonapi-resources-0.9.0/lib/jsonapi/resource_serializer.rb:193:in `process_source_objects'
+/Users/aljabear/.gem/ruby/2.5.0/gems/jsonapi-resources-0.9.0/lib/jsonapi/resource_serializer.rb:53:in `serialize_to_hash'
+/Users/aljabear/.gem/ruby/2.5.0/gems/jsonapi-resources-0.9.0/lib/jsonapi/response_document.rb:111:in `results_to_hash'
+/Users/aljabear/.gem/ruby/2.5.0/gems/jsonapi-resources-0.9.0/lib/jsonapi/response_document.rb:12:in `contents'
+/Users/aljabear/.gem/ruby/2.5.0/gems/jsonapi-resources-0.9.0/lib/jsonapi/acts_as_resource_controller.rb:226:in `render_results'
+/Users/aljabear/.gem/ruby/2.5.0/gems/jsonapi-resources-0.9.0/lib/jsonapi/acts_as_resource_controller.rb:78:in `process_request'
+/Users/aljabear/.gem/ruby/2.5.0/gems/jsonapi-resources-0.9.0/lib/jsonapi/acts_as_resource_controller.rb:16:in `index'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/abstract_controller/base.rb:186:in `process_action'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_controller/metal/rendering.rb:30:in `process_action'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+/Users/aljabear/.gem/ruby/2.5.0/gems/activesupport-5.1.4/lib/active_support/callbacks.rb:97:in `run_callbacks'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/abstract_controller/callbacks.rb:19:in `process_action'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_controller/metal/rescue.rb:20:in `process_action'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+/Users/aljabear/.gem/ruby/2.5.0/gems/activesupport-5.1.4/lib/active_support/notifications.rb:166:in `block in instrument'
+/Users/aljabear/.gem/ruby/2.5.0/gems/activesupport-5.1.4/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/aljabear/.gem/ruby/2.5.0/gems/activesupport-5.1.4/lib/active_support/notifications.rb:166:in `instrument'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+/Users/aljabear/.gem/ruby/2.5.0/gems/activerecord-5.1.4/lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/abstract_controller/base.rb:124:in `process'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_controller/metal.rb:189:in `dispatch'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_controller/metal.rb:253:in `dispatch'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/routing/route_set.rb:31:in `serve'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/journey/router.rb:50:in `block in serve'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/journey/router.rb:33:in `each'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/journey/router.rb:33:in `serve'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/routing/route_set.rb:834:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/rack-2.0.3/lib/rack/etag.rb:25:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/rack-2.0.3/lib/rack/conditional_get.rb:25:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/rack-2.0.3/lib/rack/head.rb:12:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/activerecord-5.1.4/lib/active_record/migration.rb:556:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/activesupport-5.1.4/lib/active_support/callbacks.rb:97:in `run_callbacks'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/middleware/executor.rb:12:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/railties-5.1.4/lib/rails/rack/logger.rb:36:in `call_app'
+/Users/aljabear/.gem/ruby/2.5.0/gems/railties-5.1.4/lib/rails/rack/logger.rb:24:in `block in call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/activesupport-5.1.4/lib/active_support/tagged_logging.rb:69:in `block in tagged'
+/Users/aljabear/.gem/ruby/2.5.0/gems/activesupport-5.1.4/lib/active_support/tagged_logging.rb:26:in `tagged'
+/Users/aljabear/.gem/ruby/2.5.0/gems/activesupport-5.1.4/lib/active_support/tagged_logging.rb:69:in `tagged'
+/Users/aljabear/.gem/ruby/2.5.0/gems/railties-5.1.4/lib/rails/rack/logger.rb:24:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/middleware/request_id.rb:25:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/rack-2.0.3/lib/rack/runtime.rb:22:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/activesupport-5.1.4/lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/middleware/executor.rb:12:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/actionpack-5.1.4/lib/action_dispatch/middleware/static.rb:125:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/rack-2.0.3/lib/rack/sendfile.rb:111:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/rack-cors-1.0.2/lib/rack/cors.rb:97:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/railties-5.1.4/lib/rails/engine.rb:522:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/puma-3.11.0/lib/puma/configuration.rb:225:in `call'
+/Users/aljabear/.gem/ruby/2.5.0/gems/puma-3.11.0/lib/puma/server.rb:624:in `handle_request'
+/Users/aljabear/.gem/ruby/2.5.0/gems/puma-3.11.0/lib/puma/server.rb:438:in `process_client'
+/Users/aljabear/.gem/ruby/2.5.0/gems/puma-3.11.0/lib/puma/server.rb:302:in `block in run'
+/Users/aljabear/.gem/ruby/2.5.0/gems/puma-3.11.0/lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Completed 500 Internal Server Error in 43ms (Views: 1.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-06 14:37:43 -0600
+Processing by EventsController#index as HTML
+  [1m[36mNode Load (0.4ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 34ms (Views: 0.1ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/nodes" for 127.0.0.1 at 2018-01-06 14:44:46 -0600
+Processing by NodesController#index as HTML
+  [1m[36mNode Load (0.9ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 0.9ms)
+
+
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "nodes" ("body", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["body", "this is a node"], ["created_at", "2018-01-06 20:47:14.473897"], ["updated_at", "2018-01-06 20:47:14.473897"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/nodes" for 127.0.0.1 at 2018-01-06 14:47:19 -0600
+Processing by NodesController#index as HTML
+  [1m[36mNode Load (0.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 47ms (Views: 0.1ms | ActiveRecord: 8.3ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-06 14:47:23 -0600
+Processing by EventsController#index as HTML
+  [1m[36mNode Load (0.7ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-06 14:48:09 -0600
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 36ms (Views: 0.1ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/nodes" for 127.0.0.1 at 2018-01-06 14:48:15 -0600
+Processing by NodesController#index as HTML
+  [1m[36mNode Load (0.5ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+
+

@@ -10,5 +10,4 @@ class Node < ApplicationRecord
     class_name: "Edge",
     dependent: :destroy
   has_many :dobjects, through: :edge_dobjects, source: :dobject
-
 end
