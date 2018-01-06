@@ -4584,3 +4584,34 @@ Migrating to CreateEdges (20180105220241)
   [1m[36mEdge Load (0.7ms)[0m  [1m[34mSELECT  "edges".* FROM "edges" WHERE "edges"."subject_id" = 1 AND "edges"."dobject_id" = 2 LIMIT $1[0m  [["LIMIT", 11]]
   [1m[36mEdge Load (0.6ms)[0m  [1m[34mSELECT  "edges".* FROM "edges" WHERE "edges"."dobject_id" = $1 LIMIT $2[0m  [["dobject_id", 1], ["LIMIT", 11]]
   [1m[36mEdge Load (0.6ms)[0m  [1m[34mSELECT  "edges".* FROM "edges" WHERE "edges"."subject_id" = $1 LIMIT $2[0m  [["subject_id", 1], ["LIMIT", 11]]
+  [1m[36mEdge Load (0.7ms)[0m  [1m[34mSELECT  "edges".* FROM "edges" ORDER BY "edges"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNode Load (0.8ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mNode Load (0.4ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mNode Load (0.5ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" ORDER BY "nodes"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mNode Load (0.5ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" ORDER BY "nodes"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mNode Load (0.5ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mNode Load (0.6ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "edges" ("created_at", "updated_at", "subject_id", "predicate", "dobject_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2018-01-06 18:35:38.745927"], ["updated_at", "2018-01-06 18:35:38.745927"], ["subject_id", 1], ["predicate", "is_about"], ["dobject_id", 2]]
+  [1m[35m (9.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mEdge Load (0.8ms)[0m  [1m[34mSELECT  "edges".* FROM "edges" WHERE "edges"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEdge Load (0.7ms)[0m  [1m[34mSELECT  "edges".* FROM "edges" WHERE "edges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mNode Load (0.4ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEdge Load (0.7ms)[0m  [1m[34mSELECT  "edges".* FROM "edges" ORDER BY "edges"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mNode Load (0.5ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mNode Load (0.7ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEdge Load (0.5ms)[0m  [1m[34mSELECT "edges".* FROM "edges" WHERE "edges"."dobject_id" = $1[0m  [["dobject_id", 1]]
+  [1m[36mEdge Load (0.4ms)[0m  [1m[34mSELECT "edges".* FROM "edges" WHERE "edges"."subject_id" = $1[0m  [["subject_id", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[31mDELETE FROM "edges" WHERE "edges"."id" = $1[0m  [["id", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "edges" WHERE "edges"."id" = $1[0m  [["id", 2]]
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "nodes" WHERE "nodes"."id" = $1[0m  [["id", 1]]
+  [1m[35m (8.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mNode Load (0.5ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mEdge Load (0.4ms)[0m  [1m[34mSELECT  "edges".* FROM "edges" LIMIT $1[0m  [["LIMIT", 11]]
