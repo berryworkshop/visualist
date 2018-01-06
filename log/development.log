@@ -4093,3 +4093,494 @@ Processing by PagesController#index as */*
 Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.4ms)
 
 
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8056133293431660360)[0m
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateThings (20180105220211)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (17.6ms)[0m  [1m[35mCREATE TABLE "things" ("id" bigserial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180105220211"]]
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateRelations (20180105220241)
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (15.1ms)[0m  [1m[35mCREATE TABLE "relations" ("id" bigserial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "thing_id" bigint, "related_thing_id" bigint, "predicate" character varying)[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE  INDEX  "index_relations_on_thing_id" ON "relations"  ("thing_id")[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE  INDEX  "index_relations_on_related_thing_id" ON "relations"  ("related_thing_id")[0m
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE  INDEX  "index_relations_on_thing_id_and_related_thing_id_and_predicate" ON "relations"  ("thing_id", "related_thing_id", "predicate")[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180105220241"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(8056133293431660360)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8056133293431660360)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateRelations (20180105220241)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.2ms)[0m  [1m[35mDROP TABLE "relations"[0m
+  [1m[35mSQL (1.7ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20180105220241"]]
+  [1m[35m (4.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT pg_advisory_unlock(8056133293431660360)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8056133293431660360)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateRelations (20180105220241)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (15.5ms)[0m  [1m[35mCREATE TABLE "relations" ("id" bigserial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "thing_id" bigint, "related_thing_id" bigint, "predicate" character varying)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_relations_on_thing_id" ON "relations"  ("thing_id")[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE  INDEX  "index_relations_on_related_thing_id" ON "relations"  ("related_thing_id")[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180105220241"]]
+  [1m[35m (146.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(8056133293431660360)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (14.4ms)[0m  [1m[32mINSERT INTO "things" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2018-01-06 03:16:37.318717"], ["updated_at", "2018-01-06 03:16:37.318717"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "things" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2018-01-06 03:17:01.526748"], ["updated_at", "2018-01-06 03:17:01.526748"]]
+  [1m[35m (8.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mThing Load (0.6ms)[0m  [1m[34mSELECT  "things".* FROM "things" ORDER BY "things"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mThing Load (0.5ms)[0m  [1m[34mSELECT  "things".* FROM "things" ORDER BY "things"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "relations" ("created_at", "updated_at", "thing_id", "related_thing_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2018-01-06 03:18:42.652265"], ["updated_at", "2018-01-06 03:18:42.652265"], ["thing_id", 1], ["related_thing_id", 2]]
+  [1m[35m (8.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mRelation Load (0.6ms)[0m  [1m[34mSELECT  "relations".* FROM "relations" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mThing Load (0.5ms)[0m  [1m[34mSELECT  "things".* FROM "things" ORDER BY "things"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8056133293431660360)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateRelations (20180105220241)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.3ms)[0m  [1m[35mDROP TABLE "relations"[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20180105220241"]]
+  [1m[35m (3.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(8056133293431660360)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8056133293431660360)[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateRelations (20180105220241)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (17.2ms)[0m  [1m[35mCREATE TABLE "relations" ("id" bigserial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "subject_id" bigint, "predicate" character varying, "dobject_id" bigint)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX  "index_relations_on_subject_id" ON "relations"  ("subject_id")[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE  INDEX  "index_relations_on_dobject_id" ON "relations"  ("dobject_id")[0m
+  [1m[35m (13.7ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_relations_on_subject_and_predicate_and_dobject" ON "relations"  ("subject", "predicate", "dobject")[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(8056133293431660360)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8056133293431660360)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateRelations (20180105220241)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (15.5ms)[0m  [1m[35mCREATE TABLE "relations" ("id" bigserial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "subject_id" bigint, "predicate" character varying, "dobject_id" bigint)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX  "index_relations_on_subject_id" ON "relations"  ("subject_id")[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_relations_on_dobject_id" ON "relations"  ("dobject_id")[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_relations_on_subject_and_predicate_and_dobject" ON "relations"  ("subject", "predicate", "dobject")[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(8056133293431660360)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8056133293431660360)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateRelations (20180105220241)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (15.0ms)[0m  [1m[35mCREATE TABLE "relations" ("id" bigserial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "subject_id" bigint, "predicate" character varying, "dobject_id" bigint)[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE  INDEX  "index_relations_on_subject_id" ON "relations"  ("subject_id")[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_relations_on_dobject_id" ON "relations"  ("dobject_id")[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_relations_on_subject_and_predicate_and_dobject" ON "relations"  ("subject", "predicate", "dobject")[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(8056133293431660360)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8056133293431660360)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateRelations (20180105220241)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (14.8ms)[0m  [1m[35mCREATE TABLE "relations" ("id" bigserial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "subject_id" bigint, "predicate" character varying, "dobject_id" bigint)[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE  INDEX  "index_relations_on_subject_id" ON "relations"  ("subject_id")[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_relations_on_dobject_id" ON "relations"  ("dobject_id")[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_relations_on_subject_and_predicate_and_dobject" ON "relations"  ("subject", "predicate", "dobject")[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(8056133293431660360)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8056133293431660360)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateRelations (20180105220241)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (14.9ms)[0m  [1m[35mCREATE TABLE "relations" ("id" bigserial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "subject_id" bigint, "predicate" character varying, "dobject_id" bigint)[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE  INDEX  "index_relations_on_subject_id" ON "relations"  ("subject_id")[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_relations_on_dobject_id" ON "relations"  ("dobject_id")[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_relations_on_subject_id_and_predicate_and_dobject_id" ON "relations"  ("subject_id", "predicate", "dobject_id")[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180105220241"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(8056133293431660360)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mThing Load (0.5ms)[0m  [1m[34mSELECT  "things".* FROM "things" ORDER BY "things"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mThing Load (0.5ms)[0m  [1m[34mSELECT  "things".* FROM "things" ORDER BY "things"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8056133293431660360)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateRelations (20180105220241)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.5ms)[0m  [1m[35mDROP TABLE "relations"[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20180105220241"]]
+  [1m[35m (11.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(8056133293431660360)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8056133293431660360)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateRelations (20180105220241)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (15.3ms)[0m  [1m[35mCREATE TABLE "relations" ("id" bigserial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "subject_id" bigint, "predicate" character varying, "dobject_id" bigint)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE  INDEX  "index_relations_on_subject_id" ON "relations"  ("subject_id")[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_relations_on_dobject_id" ON "relations"  ("dobject_id")[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_relations_on_subject_id_and_predicate_and_dobject_id" ON "relations"  ("subject_id", "predicate", "dobject_id")[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180105220241"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(8056133293431660360)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mThing Load (0.5ms)[0m  [1m[34mSELECT  "things".* FROM "things" ORDER BY "things"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mThing Load (0.5ms)[0m  [1m[34mSELECT  "things".* FROM "things" ORDER BY "things"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.9ms)[0m  [1m[32mINSERT INTO "relations" ("created_at", "updated_at", "subject_id", "dobject_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2018-01-06 05:21:23.769489"], ["updated_at", "2018-01-06 05:21:23.769489"], ["subject_id", 2], ["dobject_id", 1]]
+  [1m[35m (8.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mRelation Load (0.6ms)[0m  [1m[34mSELECT  "relations".* FROM "relations" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (9.5ms)[0m  [1m[33mUPDATE "relations" SET "updated_at" = $1, "predicate" = $2 WHERE "relations"."id" = $3[0m  [["updated_at", "2018-01-06 05:22:16.860554"], ["predicate", "creator_of"], ["id", 1]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mThing Load (0.5ms)[0m  [1m[34mSELECT  "things".* FROM "things" ORDER BY "things"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mThing Load (0.5ms)[0m  [1m[34mSELECT  "things".* FROM "things" ORDER BY "things"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mThing Load (1.1ms)[0m  [1m[34mSELECT  "things".* FROM "things" ORDER BY "things"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mThing Load (0.5ms)[0m  [1m[34mSELECT  "things".* FROM "things" ORDER BY "things"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mThing Load (0.5ms)[0m  [1m[34mSELECT  "things".* FROM "things" ORDER BY "things"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mThing Load (0.9ms)[0m  [1m[34mSELECT  "things".* FROM "things" ORDER BY "things"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mThing Load (0.5ms)[0m  [1m[34mSELECT  "things".* FROM "things" ORDER BY "things"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mThing Load (0.5ms)[0m  [1m[34mSELECT  "things".* FROM "things" ORDER BY "things"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mThing Load (0.6ms)[0m  [1m[34mSELECT  "things".* FROM "things" ORDER BY "things"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mThing Load (0.5ms)[0m  [1m[34mSELECT  "things".* FROM "things" ORDER BY "things"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mThing Load (0.6ms)[0m  [1m[34mSELECT  "things".* FROM "things" ORDER BY "things"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mThing Load (0.5ms)[0m  [1m[34mSELECT  "things".* FROM "things" ORDER BY "things"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mThing Load (0.6ms)[0m  [1m[34mSELECT  "things".* FROM "things" ORDER BY "things"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mThing Load (1.3ms)[0m  [1m[34mSELECT  "things".* FROM "things" ORDER BY "things"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mThing Load (1.0ms)[0m  [1m[34mSELECT  "things".* FROM "things" ORDER BY "things"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35mSQL (168.9ms)[0m  [1m[31mDELETE FROM "things" WHERE "things"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "things" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2018-01-06 05:54:47.645752"], ["updated_at", "2018-01-06 05:54:47.645752"]]
+  [1m[35m (8.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mThing Load (0.7ms)[0m  [1m[34mSELECT  "things".* FROM "things" ORDER BY "things"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mRelation Load (0.7ms)[0m  [1m[34mSELECT  "relations".* FROM "relations" WHERE "relations"."subject_id" = $1 LIMIT $2[0m  [["subject_id", 2], ["LIMIT", 11]]
+  [1m[36mThing Load (0.9ms)[0m  [1m[34mSELECT  "things".* FROM "things" ORDER BY "things"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mThing Load (0.5ms)[0m  [1m[34mSELECT  "things".* FROM "things" ORDER BY "things"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mThing Load (0.9ms)[0m  [1m[34mSELECT  "things".* FROM "things" ORDER BY "things"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mRelation Load (0.7ms)[0m  [1m[34mSELECT  "relations".* FROM "relations" WHERE "relations"."subject_id" = $1 LIMIT $2[0m  [["subject_id", 2], ["LIMIT", 11]]
+  [1m[36mThing Load (0.5ms)[0m  [1m[34mSELECT  "things".* FROM "things" ORDER BY "things"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mRelation Load (0.7ms)[0m  [1m[34mSELECT  "relations".* FROM "relations" WHERE "relations"."subject_id" = $1 LIMIT $2[0m  [["subject_id", 2], ["LIMIT", 11]]
+  [1m[36mThing Load (0.5ms)[0m  [1m[34mSELECT  "things".* FROM "things" ORDER BY "things"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mThing Load (1.0ms)[0m  [1m[34mSELECT  "things".* FROM "things" INNER JOIN "relations" ON "things"."id" = "relations"."dobject_id" WHERE "relations"."subject_id" = $1 LIMIT $2[0m  [["subject_id", 2], ["LIMIT", 11]]
+  [1m[36mThing Load (0.7ms)[0m  [1m[34mSELECT  "things".* FROM "things" INNER JOIN "relations" ON "things"."id" = "relations"."subject_id" WHERE "relations"."subject_id" = $1 LIMIT $2[0m  [["subject_id", 2], ["LIMIT", 11]]
+  [1m[36mThing Load (0.6ms)[0m  [1m[34mSELECT  "things".* FROM "things" ORDER BY "things"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mThing Load (1.0ms)[0m  [1m[34mSELECT  "things".* FROM "things" INNER JOIN "relations" ON "things"."id" = "relations"."subject_id" WHERE "relations"."subject_id" = $1 LIMIT $2[0m  [["subject_id", 2], ["LIMIT", 11]]
+  [1m[36mThing Load (1.0ms)[0m  [1m[34mSELECT  "things".* FROM "things" INNER JOIN "relations" ON "things"."id" = "relations"."dobject_id" WHERE "relations"."subject_id" = $1 LIMIT $2[0m  [["subject_id", 2], ["LIMIT", 11]]
+  [1m[36mRelation Load (0.6ms)[0m  [1m[34mSELECT  "relations".* FROM "relations" WHERE "relations"."subject_id" = $1 LIMIT $2[0m  [["subject_id", 2], ["LIMIT", 11]]
+  [1m[36mThing Load (0.5ms)[0m  [1m[34mSELECT  "things".* FROM "things" ORDER BY "things"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mThing Load (0.5ms)[0m  [1m[34mSELECT  "things".* FROM "things" ORDER BY "things"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mThing Load (1.1ms)[0m  [1m[34mSELECT  "things".* FROM "things" INNER JOIN "relations" ON "things"."id" = "relations"."subject_id" WHERE "relations"."subject_id" = $1 LIMIT $2[0m  [["subject_id", 2], ["LIMIT", 11]]
+  [1m[36mThing Load (0.8ms)[0m  [1m[34mSELECT  "things".* FROM "things" INNER JOIN "relations" ON "things"."id" = "relations"."dobject_id" WHERE "relations"."dobject_id" = $1 LIMIT $2[0m  [["dobject_id", 2], ["LIMIT", 11]]
+  [1m[36mThing Load (0.6ms)[0m  [1m[34mSELECT  "things".* FROM "things" ORDER BY "things"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mThing Load (0.6ms)[0m  [1m[34mSELECT  "things".* FROM "things" ORDER BY "things"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mThing Load (0.7ms)[0m  [1m[34mSELECT "things".* FROM "things" INNER JOIN "relations" ON "things"."id" = "relations"."subject_id" WHERE "relations"."subject_id" = $1[0m  [["subject_id", 2]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[31mDELETE FROM "relations" WHERE "relations"."subject_id" = $1 AND "relations"."subject_id" = 2[0m  [["subject_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mThing Load (0.4ms)[0m  [1m[34mSELECT  "things".* FROM "things" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "things"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mThing Load (0.5ms)[0m  [1m[34mSELECT  "things".* FROM "things" ORDER BY "things"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mThing Load (1.0ms)[0m  [1m[34mSELECT  "things".* FROM "things" INNER JOIN "relations" ON "things"."id" = "relations"."subject_id" WHERE "relations"."subject_id" = $1 LIMIT $2[0m  [["subject_id", 2], ["LIMIT", 11]]
+  [1m[36mThing Load (0.9ms)[0m  [1m[34mSELECT  "things".* FROM "things" INNER JOIN "relations" ON "things"."id" = "relations"."dobject_id" WHERE "relations"."subject_id" = $1 LIMIT $2[0m  [["subject_id", 2], ["LIMIT", 11]]
+  [1m[36mRelation Load (0.4ms)[0m  [1m[34mSELECT  "relations".* FROM "relations" ORDER BY "relations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35mSQL (9.4ms)[0m  [1m[31mDELETE FROM "relations" WHERE "relations"."id" = $1[0m  [["id", 1]]
+  [1m[36mRelation Load (0.5ms)[0m  [1m[34mSELECT  "relations".* FROM "relations" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mThing Load (0.6ms)[0m  [1m[34mSELECT  "things".* FROM "things" ORDER BY "things"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mThing Load (0.5ms)[0m  [1m[34mSELECT  "things".* FROM "things" ORDER BY "things"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "relations" ("created_at", "updated_at", "subject_id", "predicate", "dobject_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2018-01-06 06:13:38.207484"], ["updated_at", "2018-01-06 06:13:38.207484"], ["subject_id", 2], ["predicate", "loves"], ["dobject_id", 3]]
+  [1m[35m (8.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mThing Load (1.0ms)[0m  [1m[34mSELECT  "things".* FROM "things" INNER JOIN "relations" ON "things"."id" = "relations"."dobject_id" WHERE "relations"."subject_id" = $1 LIMIT $2[0m  [["subject_id", 2], ["LIMIT", 11]]
+  [1m[36mThing Load (0.9ms)[0m  [1m[34mSELECT  "things".* FROM "things" INNER JOIN "relations" ON "things"."id" = "relations"."subject_id" WHERE "relations"."subject_id" = $1 LIMIT $2[0m  [["subject_id", 2], ["LIMIT", 11]]
+  [1m[36mThing Load (1.0ms)[0m  [1m[34mSELECT  "things".* FROM "things" INNER JOIN "relations" ON "things"."id" = "relations"."dobject_id" WHERE "relations"."subject_id" = $1 LIMIT $2[0m  [["subject_id", 3], ["LIMIT", 11]]
+  [1m[36mThing Load (0.8ms)[0m  [1m[34mSELECT  "things".* FROM "things" INNER JOIN "relations" ON "things"."id" = "relations"."subject_id" WHERE "relations"."subject_id" = $1 LIMIT $2[0m  [["subject_id", 3], ["LIMIT", 11]]
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8056133293431660360)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateRelations (20180105220241)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.5ms)[0m  [1m[35mDROP TABLE "relations"[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20180105220241"]]
+  [1m[35m (4.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(8056133293431660360)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8056133293431660360)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateRelations (20180105220241)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (21.1ms)[0m  [1m[35mCREATE TABLE "relations" ("id" bigserial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "thing_id" bigint, "predicate" character varying, "target_id" bigint)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_relations_on_thing_id" ON "relations"  ("thing_id")[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_relations_on_target_id" ON "relations"  ("target_id")[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_relations_on_thing_id_and_predicate_and_target_id" ON "relations"  ("thing_id", "predicate", "target_id")[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180105220241"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(8056133293431660360)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "things" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2018-01-06 06:26:18.687067"], ["updated_at", "2018-01-06 06:26:18.687067"]]
+  [1m[35m (7.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "things" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2018-01-06 06:26:30.302295"], ["updated_at", "2018-01-06 06:26:30.302295"]]
+  [1m[35m (8.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.6ms)[0m  [1m[32mINSERT INTO "relations" ("created_at", "updated_at", "thing_id", "predicate", "target_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2018-01-06 06:26:56.646227"], ["updated_at", "2018-01-06 06:26:56.646227"], ["thing_id", 4], ["predicate", "loves"], ["target_id", 5]]
+  [1m[35m (8.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mRelation Load (0.5ms)[0m  [1m[34mSELECT  "relations".* FROM "relations" WHERE "relations"."thing_id" = $1 LIMIT $2[0m  [["thing_id", 4], ["LIMIT", 11]]
+  [1m[36mThing Load (0.5ms)[0m  [1m[34mSELECT  "things".* FROM "things" ORDER BY "things"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mThing Load (0.6ms)[0m  [1m[34mSELECT  "things".* FROM "things" ORDER BY "things"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mThing Load (1.7ms)[0m  [1m[34mSELECT  "things".* FROM "things" INNER JOIN "relations" ON "things"."id" = "relations"."target_id" WHERE "relations"."thing_id" = $1 LIMIT $2[0m  [["thing_id", 2], ["LIMIT", 11]]
+  [1m[36mThing Load (0.8ms)[0m  [1m[34mSELECT  "things".* FROM "things" INNER JOIN "relations" ON "things"."id" = "relations"."thing_id" WHERE "relations"."thing_id" = $1 LIMIT $2[0m  [["thing_id", 2], ["LIMIT", 11]]
+  [1m[36mRelation Load (0.6ms)[0m  [1m[34mSELECT  "relations".* FROM "relations" WHERE "relations"."thing_id" = $1 LIMIT $2[0m  [["thing_id", 2], ["LIMIT", 11]]
+  [1m[36mRelation Load (0.4ms)[0m  [1m[34mSELECT  "relations".* FROM "relations" ORDER BY "relations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mThing Load (0.4ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  [1m[36mThing Load (0.7ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mThing Load (1.0ms)[0m  [1m[34mSELECT  "things".* FROM "things" INNER JOIN "relations" ON "things"."id" = "relations"."target_id" WHERE "relations"."thing_id" = $1 LIMIT $2[0m  [["thing_id", 4], ["LIMIT", 11]]
+  [1m[36mThing Load (0.6ms)[0m  [1m[34mSELECT  "things".* FROM "things" WHERE "things"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mThing Load (1.0ms)[0m  [1m[34mSELECT  "things".* FROM "things" INNER JOIN "relations" ON "things"."id" = "relations"."target_id" WHERE "relations"."thing_id" = $1 LIMIT $2[0m  [["thing_id", 5], ["LIMIT", 11]]
+  [1m[36mThing Load (0.8ms)[0m  [1m[34mSELECT  "things".* FROM "things" INNER JOIN "relations" ON "things"."id" = "relations"."thing_id" WHERE "relations"."thing_id" = $1 LIMIT $2[0m  [["thing_id", 5], ["LIMIT", 11]]
+  [1m[36mThing Load (1.0ms)[0m  [1m[34mSELECT  "things".* FROM "things" INNER JOIN "relations" ON "things"."id" = "relations"."target_id" WHERE "relations"."thing_id" = $1 LIMIT $2[0m  [["thing_id", 5], ["LIMIT", 11]]
+  [1m[36mThing Load (1.0ms)[0m  [1m[34mSELECT  "things".* FROM "things" INNER JOIN "relations" ON "things"."id" = "relations"."target_id" WHERE "relations"."thing_id" = $1 LIMIT $2[0m  [["thing_id", 4], ["LIMIT", 11]]
+  [1m[36mRelation Load (0.7ms)[0m  [1m[34mSELECT  "relations".* FROM "relations" ORDER BY "relations"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8056133293431660360)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateRelations (20180105220241)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.6ms)[0m  [1m[35mDROP TABLE "relations"[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20180105220241"]]
+  [1m[35m (160.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(8056133293431660360)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8056133293431660360)[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateRelations (20180105220241)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.8ms)[0m  [1m[35mCREATE TABLE "relations" ("id" bigserial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "thing_id" bigint, "predicate" character varying, "target_id" bigint)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_relations_on_thing_id" ON "relations"  ("thing_id")[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE  INDEX  "index_relations_on_target_id" ON "relations"  ("target_id")[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_relations_on_thing_id_and_predicate_and_target_id" ON "relations"  ("thing_id", "predicate", "target_id")[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180105220241"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(8056133293431660360)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8056133293431660360)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateRelations (20180105220241)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.7ms)[0m  [1m[35mDROP TABLE "relations"[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20180105220241"]]
+  [1m[35m (5.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(8056133293431660360)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8056133293431660360)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateRelations (20180105220241)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (19.4ms)[0m  [1m[35mCREATE TABLE "relations" ("id" bigserial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "subject_id" bigint, "predicate" character varying, "dobject_id" bigint)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX  "index_relations_on_subject_id" ON "relations"  ("subject_id")[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE  INDEX  "index_relations_on_dobject_id" ON "relations"  ("dobject_id")[0m
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_relations_on_thing_id_and_predicate_and_target_id" ON "relations"  ("thing_id", "predicate", "target_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(8056133293431660360)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8056133293431660360)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateRelations (20180105220241)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.8ms)[0m  [1m[35mCREATE TABLE "relations" ("id" bigserial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "subject_id" bigint, "predicate" character varying, "dobject_id" bigint)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX  "index_relations_on_subject_id" ON "relations"  ("subject_id")[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE  INDEX  "index_relations_on_dobject_id" ON "relations"  ("dobject_id")[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_relations_on_subject_id_and_predicate_and_dobject_id" ON "relations"  ("subject_id", "predicate", "dobject_id")[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180105220241"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(8056133293431660360)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "things" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2018-01-06 14:28:37.353767"], ["updated_at", "2018-01-06 14:28:37.353767"]]
+  [1m[35m (8.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "things" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2018-01-06 14:28:40.113599"], ["updated_at", "2018-01-06 14:28:40.113599"]]
+  [1m[35m (8.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.8ms)[0m  [1m[32mINSERT INTO "relations" ("created_at", "updated_at", "subject_id", "predicate", "dobject_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2018-01-06 14:29:04.580001"], ["updated_at", "2018-01-06 14:29:04.580001"], ["subject_id", 6], ["predicate", "loves"], ["dobject_id", 7]]
+  [1m[35m (8.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mThing Load (1.2ms)[0m  [1m[34mSELECT  "things".* FROM "things" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mThing Load (0.8ms)[0m  [1m[34mSELECT "things".* FROM "things"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[31mDELETE FROM "things" WHERE "things"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "things" WHERE "things"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "things" WHERE "things"."id" = $1[0m  [["id", 4]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "things" WHERE "things"."id" = $1[0m  [["id", 5]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "things" WHERE "things"."id" = $1[0m  [["id", 6]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "things" WHERE "things"."id" = $1[0m  [["id", 7]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mRelation Load (1.7ms)[0m  [1m[34mSELECT "relations".* FROM "relations"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[31mDELETE FROM "relations" WHERE "relations"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mThing Load (0.6ms)[0m  [1m[34mSELECT  "things".* FROM "things" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mRelation Load (0.5ms)[0m  [1m[34mSELECT  "relations".* FROM "relations" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8056133293431660360)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateRelations (20180105220241)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.6ms)[0m  [1m[35mDROP TABLE "relations"[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20180105220241"]]
+  [1m[35m (4.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(8056133293431660360)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8056133293431660360)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateThings (20180105220211)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.7ms)[0m  [1m[35mDROP TABLE "things"[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20180105220211"]]
+  [1m[35m (5.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(8056133293431660360)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8056133293431660360)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateThings (20180105220211)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(8056133293431660360)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8056133293431660360)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateNodes (20180105220211)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (12.8ms)[0m  [1m[35mCREATE TABLE "nodes" ("id" bigserial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180105220211"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateRelations (20180105220241)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(8056133293431660360)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8056133293431660360)[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateEdges (20180105220241)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (16.0ms)[0m  [1m[35mCREATE TABLE "edges" ("id" bigserial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "subject_id" bigint, "predicate" character varying, "dobject_id" bigint)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE  INDEX  "index_edges_on_subject_id" ON "edges"  ("subject_id")[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_edges_on_dobject_id" ON "edges"  ("dobject_id")[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_edges_on_subject_id_and_predicate_and_dobject_id" ON "edges"  ("subject_id", "predicate", "dobject_id")[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180105220241"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(8056133293431660360)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8056133293431660360)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(8056133293431660360)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8056133293431660360)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(8056133293431660360)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8056133293431660360)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateEdges (20180105220241)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.7ms)[0m  [1m[35mDROP TABLE "edges"[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20180105220241"]]
+  [1m[35m (10.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(8056133293431660360)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8056133293431660360)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateNodes (20180105220211)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.9ms)[0m  [1m[35mDROP TABLE "nodes"[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20180105220211"]]
+  [1m[35m (10.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(8056133293431660360)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8056133293431660360)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateNodes (20180105220211)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (12.8ms)[0m  [1m[35mCREATE TABLE "nodes" ("id" bigserial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180105220211"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateEdges (20180105220241)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE TABLE "edges" ("id" bigserial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "subject_id" bigint, "predicate" character varying, "dobject_id" bigint)[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE  INDEX  "index_edges_on_subject_id" ON "edges"  ("subject_id")[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX  "index_edges_on_dobject_id" ON "edges"  ("dobject_id")[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_edges_on_subject_id_and_predicate_and_dobject_id" ON "edges"  ("subject_id", "predicate", "dobject_id")[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180105220241"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(8056133293431660360)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (4.0ms)[0m  [1m[32mINSERT INTO "nodes" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2018-01-06 14:48:52.951433"], ["updated_at", "2018-01-06 14:48:52.951433"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "nodes" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2018-01-06 14:48:55.036465"], ["updated_at", "2018-01-06 14:48:55.036465"]]
+  [1m[35m (8.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (14.6ms)[0m  [1m[32mINSERT INTO "edges" ("created_at", "updated_at", "subject_id", "predicate", "dobject_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2018-01-06 14:49:29.141513"], ["updated_at", "2018-01-06 14:49:29.141513"], ["subject_id", 1], ["predicate", "loves"], ["dobject_id", 2]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mNode Load (0.6ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" ORDER BY "nodes"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mNode Load (1.6ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes"."id" = "edges"."subject_id" WHERE "edges"."dobject_id" = $1 LIMIT $2[0m  [["dobject_id", 1], ["LIMIT", 11]]
+  [1m[36mNode Load (0.9ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes"."id" = "edges"."dobject_id" WHERE "edges"."subject_id" = $1 LIMIT $2[0m  [["subject_id", 1], ["LIMIT", 11]]
+  [1m[36mNode Load (0.5ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mNode Load (1.0ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes"."id" = "edges"."subject_id" WHERE "edges"."dobject_id" = $1 LIMIT $2[0m  [["dobject_id", 2], ["LIMIT", 11]]
+  [1m[36mNode Load (1.0ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes"."id" = "edges"."dobject_id" WHERE "edges"."subject_id" = $1 LIMIT $2[0m  [["subject_id", 2], ["LIMIT", 11]]
+  [1m[36mEdge Load (0.3ms)[0m  [1m[34mSELECT  "edges".* FROM "edges" WHERE "edges"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  [1m[36mEdge Load (0.7ms)[0m  [1m[34mSELECT  "edges".* FROM "edges" WHERE "edges"."subject_id" = 1 AND "edges"."dobject_id" = 2 LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mEdge Load (0.6ms)[0m  [1m[34mSELECT  "edges".* FROM "edges" WHERE "edges"."dobject_id" = $1 LIMIT $2[0m  [["dobject_id", 1], ["LIMIT", 11]]
+  [1m[36mEdge Load (0.6ms)[0m  [1m[34mSELECT  "edges".* FROM "edges" WHERE "edges"."subject_id" = $1 LIMIT $2[0m  [["subject_id", 1], ["LIMIT", 11]]

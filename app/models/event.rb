@@ -1,0 +1,2 @@
+class Event < Node
+end

@@ -10,10 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180103212509) do
+ActiveRecord::Schema.define(version: 20180105220241) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "edges", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "subject_id"
+    t.string "predicate"
+    t.bigint "dobject_id"
+    t.index ["dobject_id"], name: "index_edges_on_dobject_id"
+    t.index ["subject_id", "predicate", "dobject_id"], name: "index_edges_on_subject_id_and_predicate_and_dobject_id", unique: true
+    t.index ["subject_id"], name: "index_edges_on_subject_id"
+  end
+
+  create_table "nodes", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "pages", force: :cascade do |t|
     t.string "title"

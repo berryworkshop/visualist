@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :relations
+  resources :events
+  resources :things
   post 'user_token' => 'user_token#create'
 
   jsonapi_resources :users
