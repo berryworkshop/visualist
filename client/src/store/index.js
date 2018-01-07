@@ -13,10 +13,14 @@ export default new Vuex.Store({
       return `${protocol}//${hostname}:${port}`;
     })(),
     pages: [],
+    events: [],
   },
   mutations: {
-    pagesSet(state, pagesArray) {
-      state.pages = pagesArray;
+    pagesSet(state, arr) {
+      state.pages = arr;
+    },
+    eventsSet(state, arr) {
+      state.events = arr;
     },
   },
   actions: {
@@ -25,6 +29,15 @@ export default new Vuex.Store({
       try {
         const response = await request.get(url);
         context.commit('pagesSet', JSON.parse(response.text).data);
+      } catch (err) {
+        console.error(err); // eslint-disable-line no-console
+      }
+    },
+    async eventsFetch(context) {
+      const url = `${context.rootState.apiUrl}/events`;
+      try {
+        const response = await request.get(url);
+        context.commit('eventsSet', JSON.parse(response.text).data);
       } catch (err) {
         console.error(err); // eslint-disable-line no-console
       }

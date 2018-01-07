@@ -1,4 +1,4 @@
 class EventResource < JSONAPI::Resource
-  attributes :type, :body, :categories,
-    :user_id, :is_active, :is_approved, :is_featured, :is_public
+  attributes :name, :body, :categories,
+    :user_id, :is_active, :is_approved, :is_featured, :is_public, :status
 end

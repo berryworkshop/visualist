@@ -1,2 +1,2 @@
-class EventsController < NodesController
+class EventsController < ApplicationController
 end

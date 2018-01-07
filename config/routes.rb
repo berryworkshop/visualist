@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   jsonapi_resources :users
   jsonapi_resources :pages
 
-  jsonapi_resources :nodes
+  # nodes
   jsonapi_resources :events
 
 
