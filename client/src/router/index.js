@@ -5,6 +5,8 @@ import Map from '@/components/Map';
 import Calendar from '@/components/Calendar';
 import Directory from '@/components/Directory';
 import Pages from '@/components/Pages';
+import Login from '@/components/Login';
+import Search from '@/components/Search';
 import Error404 from '@/components/404';
 import Error500 from '@/components/500';
 
@@ -36,6 +38,16 @@ export default new Router({
       path: '/pages',
       name: 'Pages',
       component: Pages,
+    },
+    {
+      path: '/search',
+      name: 'Search',
+      component: Search,
+    },
+    {
+      path: '/login',
+      name: 'Login',
+      component: Login,
     },
     {
       path: '/404',

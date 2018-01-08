@@ -6,6 +6,15 @@
         <router-link :to="{ name: i.name }">{{ i.text }}</router-link>
       </li>
     </ul>
+    <ul id="user-nav">
+      <li v-if="!this.$store.getters.loggedIn">
+        <router-link :to="{ name: 'Login' }">Login</router-link>
+      <li v-else>
+        <button name="logout" class="link"
+          v-on:click="$store.dispatch('logout')">Logout</button>
+      </li>
+      <!-- <li v-if="!isObjectEmpty(user)">User</li> -->
+    </ul>
   </header>
 </template>
 
@@ -20,8 +29,14 @@ export default {
         { name: 'Directory', text: 'Directory' },
         { name: 'Map', text: 'Map' },
         { name: 'Pages', text: 'Pages' },
+        { name: 'Search', text: 'Search' },
       ],
     };
+  },
+  methods: {
+    isObjectEmpty(obj) {
+      return Object.keys(obj).length === 0;
+    },
   },
 };
 </script>
@@ -31,7 +46,7 @@ export default {
     padding: 1rem;
     background-color: #eee;
 
-    #primary-nav {
+    ul {
       list-style-type: none;
       padding-left: 0;
 

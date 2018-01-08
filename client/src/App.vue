@@ -12,4 +12,26 @@ export default {
 
 <style lang="scss">
   @import "assets/bootstrap-reboot.css";
+
+  $link-color: #007bff;
+  $link-color-hover: #0056b3;
+
+  button.link {
+    background:none;
+    color: $link-color;
+    border:none;
+    padding:0;
+    font: inherit;
+    cursor: pointer;
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+
+    &:hover, &:focus {
+      color: $link-color-hover;
+      text-decoration: underline;
+      outline: none;
+    }
+  }
+
 </style>

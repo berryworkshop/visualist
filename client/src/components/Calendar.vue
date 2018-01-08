@@ -1,10 +1,11 @@
 <template>
   <layout id="calendar">
     <h2>Calendar</h2>
-    <event-add></event-add>
-    <ul>
+    <ul v-if="events && events.length > 0">
       <li v-for="e in events">{{ e.attributes.name }}</li>
     </ul>
+    <p v-else>No events are available.</p>
+    <event-add></event-add>
   </layout>
 </template>
 

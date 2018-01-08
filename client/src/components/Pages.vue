@@ -1,9 +1,10 @@
 <template>
   <layout id="pages">
     <h2>Pages</h2>
-    <ul>
+    <ul v-if="pages.length > 0">
       <li v-for="p in pages">{{ p.attributes.title }}</li>
     </ul>
+    <p v-else>No pages are available.  Please login.</p>
   </layout>
 </template>
 
