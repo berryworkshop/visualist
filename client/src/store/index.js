@@ -76,23 +76,31 @@ export default new Vuex.Store({
       const url = `${context.rootState.apiUrl}/events`;
       try {
         const response = await request.get(url)
+          .set('Content-Type', 'application/vnd.api+json')
           .set('Authorization', context.rootState.user.jwt);
+        console.log('events fetched', response.statusCode); // eslint-disable-line no-console // TODO: fixme
         context.commit('eventsSet', JSON.parse(response.text).data);
       } catch (err) {
         console.error(err); // eslint-disable-line no-console
       }
     },
-    // async eventCreate(context) {
-    //   const url = `${context.rootState.apiUrl}/events`;
-    //   try {
-    //     const response = await request.post(url)
-
-    //       .set('Authorization', context.rootState.user.jwt);
-    //     eventsFetch(context);
-    //     // context.commit('eventsSet', JSON.parse(response.text).data);
-    //   } catch (err) {
-    //     console.error(err); // eslint-disable-line no-console
-    //   }
-    // },
+    async eventCreate(context, event) {
+      const url = `${context.rootState.apiUrl}/events`;
+      try {
+        const response = await request.post(url)
+          .send({
+            data: event,
+          })
+          .set('Content-Type', 'application/vnd.api+json')
+          .set('Accept', 'application/vnd.api+json')
+          .set('Authorization', context.rootState.user.jwt);
+        console.log('event posted', response.statusCode); // eslint-disable-line no-console // TODO: fixme
+        context.dispatch('eventsFetch');
+        // console.log(context);
+        // context.commit('eventsSet', JSON.parse(response.text).data);
+      } catch (err) {
+        console.error(err); // eslint-disable-line no-console // TODO: fixme
+      }
+    },
   },
 });

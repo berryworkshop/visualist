@@ -5928,3 +5928,908 @@ Processing by EventsController#index as */*
 Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.9ms)
 
 
+Started GET "/pages" for 127.0.0.1 at 2018-01-07 21:27:27 -0600
+Processing by PagesController#index as */*
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/user_token" for 127.0.0.1 at 2018-01-07 21:27:32 -0600
+Processing by UserTokenController#create as */*
+  Parameters: {"auth"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+Completed 201 Created in 105ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/pages" for 127.0.0.1 at 2018-01-07 21:27:34 -0600
+Processing by PagesController#index as */*
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPage Load (4.1ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Completed 200 OK in 13ms (Views: 0.1ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 21:27:45 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (2.3ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 10ms (Views: 0.1ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/pages" for 127.0.0.1 at 2018-01-07 21:27:48 -0600
+Processing by PagesController#index as */*
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 21:27:50 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 21:38:18 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 21:40:38 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 21:41:16 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 21:41:52 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 21:44:36 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2018-01-07 21:44:51 -0600
+Processing by EventsController#create as */*
+  Parameters: {"name"=>"Flurg", "body"=>"Blork", "categories"=>[], "user-id"=>nil, "is-active"=>nil, "is-approved"=>nil, "is-featured"=>false, "is-public"=>true, "event"=>{"body"=>"Blork", "categories"=>[], "name"=>"Flurg"}}
+Completed 415 Unsupported Media Type in 99ms (Views: 2.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 21:44:54 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 21:45:16 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 21:45:44 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2018-01-07 21:45:51 -0600
+Processing by EventsController#create as */*
+  Parameters: {"name"=>"asdf", "body"=>"asdf", "categories"=>[], "user-id"=>nil, "is-active"=>nil, "is-approved"=>nil, "is-featured"=>false, "is-public"=>true, "event"=>{"body"=>"asdf", "categories"=>[], "name"=>"asdf"}}
+Completed 415 Unsupported Media Type in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 21:46:56 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2018-01-07 21:47:01 -0600
+Processing by EventsController#create as */*
+  Parameters: {"name"=>"flurg", "body"=>"blork", "categories"=>[], "user-id"=>nil, "is-active"=>nil, "is-approved"=>nil, "is-featured"=>false, "is-public"=>true}
+Completed 400 Bad Request in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/user_token" for 127.0.0.1 at 2018-01-07 21:49:36 -0600
+Processing by UserTokenController#create as */*
+  Parameters: {"auth"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+Completed 201 Created in 95ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 21:49:40 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 11ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2018-01-07 21:49:45 -0600
+Processing by EventsController#create as */*
+  Parameters: {"name"=>"blork", "body"=>"flurm", "categories"=>[], "user-id"=>nil, "is-active"=>nil, "is-approved"=>nil, "is-featured"=>false, "is-public"=>true}
+Completed 400 Bad Request in 2ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2018-01-07 21:50:38 -0600
+Processing by EventsController#create as HTML
+  Parameters: {"name"=>"Flurm", "body"=>"blork"}
+Completed 400 Bad Request in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 21:58:10 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2018-01-07 21:59:58 -0600
+Processing by EventsController#create as API_JSON
+  Parameters: {"data"=>{"type"=>"events", "attributes"=>{"name"=>"", "body"=>"", "categories"=>[]}, "name"=>"flarm", "body"=>"blurm"}}
+Completed 400 Bad Request in 2ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2018-01-07 22:00:08 -0600
+Processing by EventsController#create as API_JSON
+  Parameters: {"data"=>{"type"=>"events", "attributes"=>{"name"=>"", "body"=>"", "categories"=>[]}, "name"=>"flarm", "body"=>"blurm"}}
+Completed 400 Bad Request in 2ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/user_token" for 127.0.0.1 at 2018-01-07 22:02:50 -0600
+Processing by UserTokenController#create as */*
+  Parameters: {"auth"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+Completed 201 Created in 94ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 22:02:53 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 11ms (Views: 0.1ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2018-01-07 22:02:57 -0600
+Processing by EventsController#create as API_JSON
+  Parameters: {"data"=>{"type"=>"events", "attributes"=>{"name"=>"", "body"=>"", "categories"=>[]}, "name"=>"asdf", "body"=>"asdf"}}
+Completed 400 Bad Request in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 22:04:48 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2018-01-07 22:04:52 -0600
+Processing by EventsController#create as API_JSON
+  Parameters: {"data"=>{"type"=>"events", "attributes"=>{"name"=>"", "body"=>"", "categories"=>[]}, "name"=>"asdf", "body"=>"asdf"}}
+Completed 400 Bad Request in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 22:05:41 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/user_token" for 127.0.0.1 at 2018-01-07 22:05:46 -0600
+Processing by UserTokenController#create as */*
+  Parameters: {"auth"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+Completed 201 Created in 91ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 22:05:47 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 9ms (Views: 0.1ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2018-01-07 22:05:50 -0600
+Processing by EventsController#create as API_JSON
+  Parameters: {"data"=>{"type"=>"events", "attributes"=>{"name"=>"", "body"=>"", "categories"=>[]}, "name"=>"asdf", "body"=>"asdf"}}
+Completed 400 Bad Request in 2ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 22:06:03 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 22:06:11 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/user_token" for 127.0.0.1 at 2018-01-07 22:07:32 -0600
+Processing by UserTokenController#create as */*
+  Parameters: {"auth"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+Completed 201 Created in 91ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 22:07:33 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/user_token" for 127.0.0.1 at 2018-01-07 22:09:18 -0600
+Processing by UserTokenController#create as */*
+  Parameters: {"auth"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+Completed 201 Created in 93ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 22:09:19 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2018-01-07 22:09:22 -0600
+Processing by EventsController#create as API_JSON
+  Parameters: {"data"=>{"isTrusted"=>true}}
+Completed 400 Bad Request in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/user_token" for 127.0.0.1 at 2018-01-07 22:10:23 -0600
+Processing by UserTokenController#create as */*
+  Parameters: {"auth"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+Completed 201 Created in 91ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 22:10:24 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (1.9ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 10ms (Views: 0.1ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2018-01-07 22:10:29 -0600
+Processing by EventsController#create as API_JSON
+  Parameters: {"data"=>{"type"=>"events", "attributes"=>{"name"=>"", "body"=>"", "categories"=>[]}, "name"=>"asdf", "body"=>"asdf"}}
+Completed 400 Bad Request in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2018-01-07 22:11:42 -0600
+Processing by EventsController#create as API_JSON
+  Parameters: {"data"=>"{\"type\":\"events\",\"attributes\":{\"name\":\"\",\"body\":\"\",\"categories\":[]},\"name\":\"asdf\",\"body\":\"asdf\"}"}
+Completed 400 Bad Request in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/user_token" for 127.0.0.1 at 2018-01-07 22:12:28 -0600
+Processing by UserTokenController#create as */*
+  Parameters: {"auth"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+Completed 201 Created in 94ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 22:12:29 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (2.4ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 10ms (Views: 0.1ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2018-01-07 22:12:35 -0600
+Processing by EventsController#create as API_JSON
+  Parameters: {"data"=>"{\"type\":\"events\",\"attributes\":{\"name\":\"\",\"body\":\"\"},\"name\":\"asdf\",\"body\":\"asdf\"}"}
+Completed 400 Bad Request in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2018-01-07 22:13:07 -0600
+Processing by EventsController#create as HTML
+  Parameters: {"data"=>"pre-send {\"type\":\"events\",\"attributes\":{\"name\":\"\",\"body\":\"\"},\"name\":\"asdf\",\"body\":\"asdf\"}\n"}
+Completed 400 Bad Request in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2018-01-07 22:14:41 -0600
+Processing by EventsController#create as HTML
+  Parameters: {"data"=>"{\"type\":\"events\",\"attributes\":{\"name\":\"\",\"body\":\"\"},\"name\":\"asdf\",\"body\":\"asdf\"}"}
+Completed 400 Bad Request in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2018-01-07 22:15:09 -0600
+Processing by EventsController#create as HTML
+  Parameters: {"data"=>{"type"=>"events", "attributes"=>{"name"=>"", "body"=>""}, "name"=>"asdf", "body"=>"asdf"}}
+Completed 400 Bad Request in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2018-01-07 22:21:51 -0600
+Processing by EventsController#create as HTML
+  Parameters: {"data"=>{"type"=>"events", "attributes"=>{"name"=>"", "body"=>""}, "name"=>"asdf", "body"=>"asdf"}}
+Completed 400 Bad Request in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2018-01-07 22:28:12 -0600
+Processing by EventsController#create as HTML
+  Parameters: {"data"=>{"type"=>"events", "attributes"=>{"name"=>"", "body"=>""}}}
+  [1m[35m (3.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (16.3ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "body", "created_at", "updated_at", "name") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["type", "Event"], ["body", ""], ["created_at", "2018-01-08 04:28:12.141179"], ["updated_at", "2018-01-08 04:28:12.141179"], ["name", ""]]
+  [1m[35m (368.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 465ms (Views: 0.1ms | ActiveRecord: 410.9ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 22:28:26 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (1.1ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2018-01-07 22:28:53 -0600
+Processing by EventsController#create as HTML
+  Parameters: {"data"=>{"type"=>"events", "attributes"=>{"name"=>"", "body"=>""}}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "body", "created_at", "updated_at", "name") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["type", "Event"], ["body", ""], ["created_at", "2018-01-08 04:28:53.246918"], ["updated_at", "2018-01-08 04:28:53.246918"], ["name", ""]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 7ms (Views: 0.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 22:29:04 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2018-01-07 22:29:22 -0600
+Processing by EventsController#create as HTML
+  Parameters: {"data"=>{"type"=>"events", "attributes"=>{"name"=>"asdf", "body"=>"asdf"}}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "body", "created_at", "updated_at", "name") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["type", "Event"], ["body", "asdf"], ["created_at", "2018-01-08 04:29:22.326131"], ["updated_at", "2018-01-08 04:29:22.326131"], ["name", "asdf"]]
+  [1m[35m (8.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 14ms (Views: 0.1ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 22:29:25 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 22:32:11 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 22:32:14 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 22:33:04 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (1.1ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 22:34:34 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/user_token" for 127.0.0.1 at 2018-01-07 22:34:43 -0600
+Processing by UserTokenController#create as */*
+  Parameters: {"auth"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+Completed 201 Created in 116ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 22:34:44 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (1.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 9ms (Views: 0.1ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2018-01-07 22:35:18 -0600
+Processing by EventsController#create as API_JSON
+  Parameters: {"data"=>"{\"type\":\"events\",\"attributes\":{\"name\":\"New Event\",\"body\":\"This is a cool event\"}}"}
+Completed 400 Bad Request in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2018-01-07 22:35:54 -0600
+Processing by EventsController#create as HTML
+  Parameters: {"data"=>{"type"=>"events", "attributes"=>{"name"=>"New Event", "body"=>"This is a cool event"}}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "body", "created_at", "updated_at", "name") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["type", "Event"], ["body", "This is a cool event"], ["created_at", "2018-01-08 04:35:54.035325"], ["updated_at", "2018-01-08 04:35:54.035325"], ["name", "New Event"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 7ms (Views: 0.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 22:36:10 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 22:37:42 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/user_token" for 127.0.0.1 at 2018-01-07 22:39:20 -0600
+Processing by UserTokenController#create as */*
+  Parameters: {"auth"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+Completed 201 Created in 98ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 22:39:22 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2018-01-07 22:39:25 -0600
+Processing by EventsController#create as API_JSON
+  Parameters: {"data"=>"{\"type\":\"events\",\"attributes\":{\"name\":\"sdf\",\"body\":\"asdf\"}}"}
+Completed 400 Bad Request in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 22:40:50 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (1.2ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/user_token" for 127.0.0.1 at 2018-01-07 22:40:52 -0600
+Processing by UserTokenController#create as */*
+  Parameters: {"auth"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+Completed 201 Created in 96ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 22:40:53 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2018-01-07 22:40:57 -0600
+Processing by EventsController#create as */*
+  Parameters: {"data"=>"{\"type\":\"events\",\"attributes\":{\"name\":\"asdf\",\"body\":\"asdf\"}}"}
+Completed 400 Bad Request in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 22:43:29 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 22:44:22 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (1.1ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 22:44:24 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2018-01-07 22:44:27 -0600
+Processing by EventsController#create as */*
+  Parameters: {"data"=>"{\"type\":\"events\",\"attributes\":{\"name\":\"asdf\",\"body\":\"asdf\"}}"}
+Completed 400 Bad Request in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 22:44:56 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2018-01-07 22:44:59 -0600
+Processing by EventsController#create as */*
+  Parameters: {"data"=>"{\"type\":\"events\",\"attributes\":{\"name\":\"asdf\",\"body\":\"asdf\"}}"}
+Completed 400 Bad Request in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 22:46:05 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 10ms (Views: 0.1ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2018-01-07 22:46:08 -0600
+Processing by EventsController#create as */*
+  Parameters: {"data"=>"{\"type\":\"events\",\"attributes\":{\"name\":\"asdf\",\"body\":\"asdf\"}}"}
+Completed 400 Bad Request in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 22:49:11 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 22:49:33 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (1.5ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 10ms (Views: 0.1ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2018-01-07 22:49:38 -0600
+Processing by EventsController#create as */*
+  Parameters: {"data"=>"{\"type\":\"events\",\"attributes\":{\"name\":\"asasdf\",\"body\":\"asdf\"}}"}
+Completed 400 Bad Request in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2018-01-07 22:49:38 -0600
+Processing by EventsController#create as */*
+  Parameters: {"data"=>"{\"type\":\"events\",\"attributes\":{\"name\":\"asasdf\",\"body\":\"asdf\"}}"}
+Completed 400 Bad Request in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 22:50:34 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 22:50:35 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2018-01-07 22:50:39 -0600
+Processing by EventsController#create as */*
+  Parameters: {"data"=>"{\"type\":\"events\",\"attributes\":{\"name\":\"asdf\",\"body\":\"asdf\"}}"}
+Completed 400 Bad Request in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 22:50:58 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 22:51:11 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 22:52:33 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 22:52:40 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 22:52:56 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 22:53:07 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 22:53:13 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 22:53:17 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/user_token" for 127.0.0.1 at 2018-01-07 22:53:20 -0600
+Processing by UserTokenController#create as */*
+  Parameters: {"auth"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+Completed 201 Created in 95ms (Views: 0.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 22:53:21 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (1.3ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 11ms (Views: 0.1ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2018-01-07 22:53:24 -0600
+Processing by EventsController#create as */*
+  Parameters: {"data"=>"{\"type\":\"events\",\"attributes\":{\"name\":\"asdf\",\"body\":\"asdf\"}}"}
+Completed 400 Bad Request in 2ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 22:53:47 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 22:53:56 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2018-01-07 22:53:58 -0600
+Processing by EventsController#create as */*
+  Parameters: {"data"=>"{\"type\":\"events\",\"attributes\":{\"name\":\"asdf\",\"body\":\"asdf\"}}"}
+Completed 400 Bad Request in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/user_token" for 127.0.0.1 at 2018-01-07 22:54:28 -0600
+Processing by UserTokenController#create as */*
+  Parameters: {"auth"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+Completed 201 Created in 95ms (Views: 0.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 22:54:30 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2018-01-07 22:54:36 -0600
+Processing by EventsController#create as */*
+  Parameters: {"data"=>"{\"type\":\"events\",\"attributes\":{\"name\":\"asdf\",\"body\":\"asdf\"}}"}
+Completed 400 Bad Request in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2018-01-07 22:56:07 -0600
+Processing by EventsController#create as */*
+  Parameters: {"data"=>{"type"=>"events", "attributes"=>{"name"=>"asdf", "body"=>"asdf"}}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "body", "created_at", "updated_at", "name") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["type", "Event"], ["body", "asdf"], ["created_at", "2018-01-08 04:56:07.696680"], ["updated_at", "2018-01-08 04:56:07.696680"], ["name", "asdf"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 9ms (Views: 0.1ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 22:56:10 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 22:56:49 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2018-01-07 22:56:54 -0600
+Processing by EventsController#create as API_JSON
+  Parameters: {"data"=>{"type"=>"events", "attributes"=>{"name"=>"flurg", "body"=>"blarg"}}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "body", "created_at", "updated_at", "name") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["type", "Event"], ["body", "blarg"], ["created_at", "2018-01-08 04:56:54.846986"], ["updated_at", "2018-01-08 04:56:54.846986"], ["name", "flurg"]]
+  [1m[35m (8.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 15ms (Views: 0.1ms | ActiveRecord: 9.2ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 22:56:57 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2018-01-07 22:57:38 -0600
+Processing by EventsController#create as API_JSON
+  Parameters: {"data"=>{"type"=>"events", "attributes"=>{"name"=>"Blarg", "body"=>""}}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "body", "created_at", "updated_at", "name") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["type", "Event"], ["body", ""], ["created_at", "2018-01-08 04:57:38.091397"], ["updated_at", "2018-01-08 04:57:38.091397"], ["name", "Blarg"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 9ms (Views: 0.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 22:58:35 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2018-01-07 22:58:41 -0600
+Processing by EventsController#create as API_JSON
+  Parameters: {"data"=>{"type"=>"events", "attributes"=>{"name"=>"asdf", "body"=>""}}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "body", "created_at", "updated_at", "name") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["type", "Event"], ["body", ""], ["created_at", "2018-01-08 04:58:41.466403"], ["updated_at", "2018-01-08 04:58:41.466403"], ["name", "asdf"]]
+  [1m[35m (7.8ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 15ms (Views: 0.2ms | ActiveRecord: 8.8ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 22:58:56 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2018-01-07 22:59:01 -0600
+Processing by EventsController#create as API_JSON
+  Parameters: {"data"=>{"type"=>"events", "attributes"=>{"name"=>"gdsdas", "body"=>""}}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "body", "created_at", "updated_at", "name") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["type", "Event"], ["body", ""], ["created_at", "2018-01-08 04:59:01.636946"], ["updated_at", "2018-01-08 04:59:01.636946"], ["name", "gdsdas"]]
+  [1m[35m (7.8ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 15ms (Views: 0.1ms | ActiveRecord: 8.6ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 22:59:20 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2018-01-07 22:59:25 -0600
+Processing by EventsController#create as API_JSON
+  Parameters: {"data"=>{"type"=>"events", "attributes"=>{"name"=>"fdasdf", "body"=>""}}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "body", "created_at", "updated_at", "name") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["type", "Event"], ["body", ""], ["created_at", "2018-01-08 04:59:25.678382"], ["updated_at", "2018-01-08 04:59:25.678382"], ["name", "fdasdf"]]
+  [1m[35m (8.6ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 16ms (Views: 0.2ms | ActiveRecord: 9.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 23:00:25 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (2.8ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 13ms (Views: 0.1ms | ActiveRecord: 2.8ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2018-01-07 23:00:29 -0600
+Processing by EventsController#create as API_JSON
+  Parameters: {"data"=>{"type"=>"events", "attributes"=>{"name"=>"asdfasdf", "body"=>"a"}}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "body", "created_at", "updated_at", "name") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["type", "Event"], ["body", "a"], ["created_at", "2018-01-08 05:00:29.532949"], ["updated_at", "2018-01-08 05:00:29.532949"], ["name", "asdfasdf"]]
+  [1m[35m (8.7ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 15ms (Views: 0.1ms | ActiveRecord: 9.3ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 23:02:30 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 23:02:49 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 23:04:17 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 23:05:07 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2018-01-07 23:05:11 -0600
+Processing by EventsController#create as API_JSON
+  Parameters: {"data"=>{"type"=>"events", "attributes"=>{"name"=>"asdf", "body"=>"asdf"}}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "body", "created_at", "updated_at", "name") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["type", "Event"], ["body", "asdf"], ["created_at", "2018-01-08 05:05:11.121155"], ["updated_at", "2018-01-08 05:05:11.121155"], ["name", "asdf"]]
+  [1m[35m (7.7ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 15ms (Views: 0.2ms | ActiveRecord: 8.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 23:05:11 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2018-01-07 23:05:20 -0600
+Processing by EventsController#create as API_JSON
+  Parameters: {"data"=>{"type"=>"events", "attributes"=>{"name"=>"Flurg", "body"=>"Flurg"}}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "body", "created_at", "updated_at", "name") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["type", "Event"], ["body", "Flurg"], ["created_at", "2018-01-08 05:05:20.229629"], ["updated_at", "2018-01-08 05:05:20.229629"], ["name", "Flurg"]]
+  [1m[35m (8.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 16ms (Views: 0.1ms | ActiveRecord: 9.3ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 23:05:20 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/user_token" for 127.0.0.1 at 2018-01-07 23:05:25 -0600
+Processing by UserTokenController#create as */*
+  Parameters: {"auth"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+Completed 201 Created in 94ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/pages" for 127.0.0.1 at 2018-01-07 23:05:27 -0600
+Processing by PagesController#index as */*
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPage Load (0.5ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Completed 200 OK in 21ms (Views: 0.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 23:05:29 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2018-01-07 23:05:33 -0600
+Processing by EventsController#create as API_JSON
+  Parameters: {"data"=>{"type"=>"events", "attributes"=>{"name"=>"New Event", "body"=>""}}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "body", "created_at", "updated_at", "name") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["type", "Event"], ["body", ""], ["created_at", "2018-01-08 05:05:33.337901"], ["updated_at", "2018-01-08 05:05:33.337901"], ["name", "New Event"]]
+  [1m[35m (7.9ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 19ms (Views: 0.1ms | ActiveRecord: 8.7ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 23:05:33 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (1.1ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 23:06:54 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2018-01-07 23:07:02 -0600
+Processing by EventsController#create as API_JSON
+  Parameters: {"data"=>{"type"=>"events", "attributes"=>{"name"=>"a new event", "body"=>""}}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "body", "created_at", "updated_at", "name") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["type", "Event"], ["body", ""], ["created_at", "2018-01-08 05:07:02.950623"], ["updated_at", "2018-01-08 05:07:02.950623"], ["name", "a new event"]]
+  [1m[35m (7.6ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 15ms (Views: 0.1ms | ActiveRecord: 8.4ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 23:07:02 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2018-01-07 23:07:10 -0600
+Processing by EventsController#create as API_JSON
+  Parameters: {"data"=>{"type"=>"events", "attributes"=>{"name"=>"Wow another one", "body"=>""}}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "body", "created_at", "updated_at", "name") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["type", "Event"], ["body", ""], ["created_at", "2018-01-08 05:07:10.864568"], ["updated_at", "2018-01-08 05:07:10.864568"], ["name", "Wow another one"]]
+  [1m[35m (8.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 16ms (Views: 0.1ms | ActiveRecord: 9.3ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-01-07 23:07:10 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC[0m
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/user_token" for 127.0.0.1 at 2018-01-07 23:07:23 -0600
+Processing by UserTokenController#create as */*
+  Parameters: {"auth"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+Completed 201 Created in 97ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+

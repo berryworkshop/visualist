@@ -5,7 +5,7 @@
       <label for="event-name">Name </label>
       <input type="text"
         name="event-name"
-        v-model="event.name"
+        v-model="event.attributes.name"
         placeholder="Provide a name for this Event">
     </div>
     <div>
@@ -13,11 +13,12 @@
       <textarea
         name="event-body"
         rows="5"
-        v-model="event.body"
+        v-model="event.attributes.body"
         placeholder="Provide a description for this Event"
         ></textarea>
     </div>
-
+    <button name="user-button"
+        v-on:click="$store.dispatch('eventCreate', eventSerialized)">Submit</button>
   </div>
 </template>
 
@@ -28,16 +29,18 @@ export default {
   data() {
     return {
       event: {
-        name: '',
-        body: '',
-        categories: [],
-        'user-id': null,
-        'is-active': null,
-        'is-approved': null,
-        'is-featured': false,
-        'is-public': true,
+        type: 'events',
+        attributes: {
+          name: '',
+          body: '',
+        },
       },
     };
+  },
+  computed: {
+    eventSerialized() {
+      return this.event;
+    },
   },
 };
 </script>
