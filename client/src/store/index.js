@@ -78,7 +78,7 @@ export default new Vuex.Store({
         const response = await request.get(url)
           .set('Content-Type', 'application/vnd.api+json')
           .set('Authorization', context.rootState.user.jwt);
-        console.log('events fetched', response.statusCode); // eslint-disable-line no-console // TODO: fixme
+        console.log('events fetched', response.statusCode); // eslint-disable-line no-console
         context.commit('eventsSet', JSON.parse(response.text).data);
       } catch (err) {
         console.error(err); // eslint-disable-line no-console
@@ -94,12 +94,10 @@ export default new Vuex.Store({
           .set('Content-Type', 'application/vnd.api+json')
           .set('Accept', 'application/vnd.api+json')
           .set('Authorization', context.rootState.user.jwt);
-        console.log('event posted', response.statusCode); // eslint-disable-line no-console // TODO: fixme
+        console.log('event posted', response.statusCode); // eslint-disable-line no-console
         context.dispatch('eventsFetch');
-        // console.log(context);
-        // context.commit('eventsSet', JSON.parse(response.text).data);
       } catch (err) {
-        console.error(err); // eslint-disable-line no-console // TODO: fixme
+        console.error(err); // eslint-disable-line no-console
       }
     },
   },
