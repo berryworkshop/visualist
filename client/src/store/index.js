@@ -23,7 +23,7 @@ export default new Vuex.Store({
       state.user.jwt = jwt;
     },
     logout(state) {
-      state.user = {jwt: ''};
+      state.user = { jwt: '' };
     },
     pagesSet(state, arr) {
       state.pages = arr;
@@ -35,10 +35,8 @@ export default new Vuex.Store({
   getters: {
     loggedIn(state) {
       if (state.user.jwt && state.user.jwt.length > 0) {
-        console.log(state.user.loggedIn);
         return true;
       }
-      console.log(state.user.loggedIn);
       return false;
     },
   },
