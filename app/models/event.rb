@@ -1,2 +1,2 @@
-class Event < Node
+class Event < ApplicationRecord
 end

@@ -1,0 +1,2 @@
+class Article < Source
+end

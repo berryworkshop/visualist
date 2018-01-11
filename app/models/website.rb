@@ -1,0 +1,2 @@
+class Website < Source
+end

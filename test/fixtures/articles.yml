@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: MyString
+  volume: MyString
+  issue: MyString
+  section: MyString
+  pages: MyString
+  journal: MyString
+
+two:
+  date: MyString
+  volume: MyString
+  issue: MyString
+  section: MyString
+  pages: MyString
+  journal: MyString
