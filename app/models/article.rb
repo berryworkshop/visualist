@@ -1,2 +1,2 @@
-class Article < Source
+class Article < Citation
 end

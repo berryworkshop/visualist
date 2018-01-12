@@ -1,9 +1,7 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
 one:
-  title: MyString
-  body: MyText
+  name: Page 1
+  body: This is some body text.
 
 two:
-  title: MyString
-  body: MyText
+  name: MyString
+  body: This is some more body text.

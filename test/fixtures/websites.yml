@@ -1,9 +1,7 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+# one:
+#   site: MyString
+#   accessed: 2018-01-09 21:12:47
 
-one:
-  site: MyString
-  accessed: 2018-01-09 21:12:47
-
-two:
-  site: MyString
-  accessed: 2018-01-09 21:12:47
+# two:
+#   site: MyString
+#   accessed: 2018-01-09 21:12:47

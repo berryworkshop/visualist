@@ -1,2 +1,2 @@
-class Book < Source
+class Book < Citation
 end

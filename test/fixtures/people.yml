@@ -1,17 +1,15 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+# one:
+#   name_given: MyString
+#   name_family: MyString
+#   name_prefix: MyString
+#   name_suffix: MyString
+#   body: MyText
+#   categories: MyString
 
-one:
-  name_given: MyString
-  name_family: MyString
-  name_prefix: MyString
-  name_suffix: MyString
-  body: MyText
-  categories: MyString
-
-two:
-  name_given: MyString
-  name_family: MyString
-  name_prefix: MyString
-  name_suffix: MyString
-  body: MyText
-  categories: MyString
+# two:
+#   name_given: MyString
+#   name_family: MyString
+#   name_prefix: MyString
+#   name_suffix: MyString
+#   body: MyText
+#   categories: MyString

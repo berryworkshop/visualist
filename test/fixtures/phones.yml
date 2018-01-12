@@ -1,19 +1,17 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+# one:
+#   label: MyString
+#   description: MyString
+#   country_code: 1
+#   area_code: 1
+#   exchange_code: 1
+#   number: 1
+#   extension: MyString
 
-one:
-  label: MyString
-  description: MyString
-  country_code: 1
-  area_code: 1
-  exchange_code: 1
-  number: 1
-  extension: MyString
-
-two:
-  label: MyString
-  description: MyString
-  country_code: 1
-  area_code: 1
-  exchange_code: 1
-  number: 1
-  extension: MyString
+# two:
+#   label: MyString
+#   description: MyString
+#   country_code: 1
+#   area_code: 1
+#   exchange_code: 1
+#   number: 1
+#   extension: MyString

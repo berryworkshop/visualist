@@ -1,13 +1,17 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+# one:
+  # type: books
+  # title: Book 1
+  # url: http://example.com/1
+  # series: MyString
+  # date: MyString
+  # edition: MyString
+  # series: MyString
 
-one:
-  series: MyString
-  date: MyString
-  edition: MyString
-  series: MyString
-
-two:
-  series: MyString
-  date: MyString
-  edition: MyString
-  series: MyString
+# two:
+  # type: books
+  # title: Book 2
+  # url: http://example.com/2
+  # series: MyString
+  # date: MyString
+  # edition: MyString
+  # series: MyString

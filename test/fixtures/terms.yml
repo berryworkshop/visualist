@@ -1,13 +1,11 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+# one:
+#   value: MyString
+#   vocabulary: MyString
+#   remote_id: MyString
+#   remote_url: MyString
 
-one:
-  value: MyString
-  vocabulary: MyString
-  remote_id: MyString
-  remote_url: MyString
-
-two:
-  value: MyString
-  vocabulary: MyString
-  remote_id: MyString
-  remote_url: MyString
+# two:
+#   value: MyString
+#   vocabulary: MyString
+#   remote_id: MyString
+#   remote_url: MyString

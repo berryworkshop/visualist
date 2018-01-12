@@ -74,18 +74,18 @@ ActiveRecord::Schema.define(version: 20180110042014) do
   end
 
   create_table "images", force: :cascade do |t|
-    t.string "title"
+    t.string "name"
     t.string "caption"
     t.string "url"
     t.string "aspect"
     t.string "checksum"
-    t.bigint "source_id"
+    t.bigint "citation_id"
     t.string "imageable_type"
     t.bigint "imageable_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["citation_id"], name: "index_images_on_citation_id"
     t.index ["imageable_type", "imageable_id"], name: "index_images_on_imageable_type_and_imageable_id"
-    t.index ["source_id"], name: "index_images_on_source_id"
   end
 
   create_table "licenses", force: :cascade do |t|
@@ -126,7 +126,7 @@ ActiveRecord::Schema.define(version: 20180110042014) do
   end
 
   create_table "pages", force: :cascade do |t|
-    t.string "title"
+    t.string "name"
     t.text "body"
     t.bigint "parent_id"
     t.datetime "created_at", null: false
@@ -166,13 +166,13 @@ ActiveRecord::Schema.define(version: 20180110042014) do
 
   create_table "snippets", force: :cascade do |t|
     t.string "value"
-    t.bigint "source_id"
+    t.bigint "citation_id"
     t.string "snippetable_type"
     t.bigint "snippetable_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["citation_id"], name: "index_snippets_on_citation_id"
     t.index ["snippetable_type", "snippetable_id"], name: "index_snippets_on_snippetable_type_and_snippetable_id"
-    t.index ["source_id"], name: "index_snippets_on_source_id"
   end
 
   create_table "social_accounts", force: :cascade do |t|

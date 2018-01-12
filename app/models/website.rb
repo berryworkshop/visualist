@@ -1,2 +1,2 @@
-class Website < Source
+class Website < Citation
 end

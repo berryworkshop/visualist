@@ -1,3 +1,3 @@
 class PageResource < JSONAPI::Resource
-  attributes :title, :body
+  attributes :name, :body
 end
