@@ -1,3 +1,3 @@
 class EventResource < JSONAPI::Resource
-  attributes :name
+  attributes :name, :body
 end

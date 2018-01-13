@@ -8,9 +8,12 @@ end
 ruby '2.5.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.4'
+# gem 'rails', '~> 5.1.4'
+gem 'rails', git: 'https://github.com/rails/rails.git'
+
+
 # Use sqlite3 as the database for Active Record
-gem 'pg'
+gem 'pg', '~> 0.21.0'
 
 # for getting data in
 gem 'activerecord-import'
