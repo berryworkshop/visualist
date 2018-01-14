@@ -11,7 +11,6 @@ ruby '2.5.0'
 # gem 'rails', '~> 5.1.4'
 gem 'rails', git: 'https://github.com/rails/rails.git'
 
-
 # Use sqlite3 as the database for Active Record
 gem 'pg', '~> 0.21.0'
 

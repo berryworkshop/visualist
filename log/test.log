@@ -8065,3 +8065,1547 @@ Processing by EventsController#show as HTML
   [1m[36mEvent Load (1.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 ORDER BY "events"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
 Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 1.1ms)
   [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.2ms)[0m  [1m[35mALTER TABLE "citations" DISABLE TRIGGER ALL;ALTER TABLE "connections" DISABLE TRIGGER ALL;ALTER TABLE "contacts" DISABLE TRIGGER ALL;ALTER TABLE "emails" DISABLE TRIGGER ALL;ALTER TABLE "events" DISABLE TRIGGER ALL;ALTER TABLE "flags" DISABLE TRIGGER ALL;ALTER TABLE "images" DISABLE TRIGGER ALL;ALTER TABLE "licenses" DISABLE TRIGGER ALL;ALTER TABLE "locations" DISABLE TRIGGER ALL;ALTER TABLE "organizations" DISABLE TRIGGER ALL;ALTER TABLE "pages" DISABLE TRIGGER ALL;ALTER TABLE "people" DISABLE TRIGGER ALL;ALTER TABLE "phones" DISABLE TRIGGER ALL;ALTER TABLE "places" DISABLE TRIGGER ALL;ALTER TABLE "snippets" DISABLE TRIGGER ALL;ALTER TABLE "social_accounts" DISABLE TRIGGER ALL;ALTER TABLE "terms" DISABLE TRIGGER ALL;ALTER TABLE "time_periods" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "websites" DISABLE TRIGGER ALL;ALTER TABLE "works" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "citations"[0m
+  [1m[36mFixture Delete (0.8ms)[0m  [1m[31mDELETE FROM "emails"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "events"[0m
+  [1m[36mFixtures Insert (0.5ms)[0m  [1m[32mINSERT INTO "events" ("id", "name", "body", "categories", "status", "created_at", "updated_at") VALUES (980190962, 'Book 1', 'This is body text.', 'opening', NULL, '2018-01-14 18:56:00.719295', '2018-01-14 18:56:00.719295'), (298486374, 'Book 2', 'This is more body text', 'exhitibion', 'cancelled', '2018-01-14 18:56:00.719295', '2018-01-14 18:56:00.719295')[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "images"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "licenses"[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "locations"[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "organizations"[0m
+  [1m[36mFixture Delete (0.7ms)[0m  [1m[31mDELETE FROM "pages"[0m
+  [1m[36mFixtures Insert (0.6ms)[0m  [1m[32mINSERT INTO "pages" ("id", "name", "body", "parent_id", "created_at", "updated_at") VALUES (980190962, 'Page 1', 'This is some body text.', DEFAULT, '2018-01-14 18:56:00.750102', '2018-01-14 18:56:00.750102'), (298486374, 'MyString', 'This is some more body text.', DEFAULT, '2018-01-14 18:56:00.750102', '2018-01-14 18:56:00.750102')[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "people"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "phones"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "places"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "snippets"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "social_accounts"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "terms"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixtures Insert (0.4ms)[0m  [1m[32mINSERT INTO "users" ("id", "name", "email", "password_digest", "admin", "created_at", "updated_at") VALUES (980190962, 'admin-1', 'MyString', 'MyString', TRUE, '2018-01-14 18:56:00.790770', '2018-01-14 18:56:00.790770'), (298486374, 'user-1', 'MyString', 'MyString', FALSE, '2018-01-14 18:56:00.790770', '2018-01-14 18:56:00.790770')[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "works"[0m
+  [1m[35m (8.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "citations" ENABLE TRIGGER ALL;ALTER TABLE "connections" ENABLE TRIGGER ALL;ALTER TABLE "contacts" ENABLE TRIGGER ALL;ALTER TABLE "emails" ENABLE TRIGGER ALL;ALTER TABLE "events" ENABLE TRIGGER ALL;ALTER TABLE "flags" ENABLE TRIGGER ALL;ALTER TABLE "images" ENABLE TRIGGER ALL;ALTER TABLE "licenses" ENABLE TRIGGER ALL;ALTER TABLE "locations" ENABLE TRIGGER ALL;ALTER TABLE "organizations" ENABLE TRIGGER ALL;ALTER TABLE "pages" ENABLE TRIGGER ALL;ALTER TABLE "people" ENABLE TRIGGER ALL;ALTER TABLE "phones" ENABLE TRIGGER ALL;ALTER TABLE "places" ENABLE TRIGGER ALL;ALTER TABLE "snippets" ENABLE TRIGGER ALL;ALTER TABLE "social_accounts" ENABLE TRIGGER ALL;ALTER TABLE "terms" ENABLE TRIGGER ALL;ALTER TABLE "time_periods" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "websites" ENABLE TRIGGER ALL;ALTER TABLE "works" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------
+EventsControllerTest: test_should_show_event
+--------------------------------------------
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/events/980190962" for 127.0.0.1 at 2018-01-14 12:56:00 -0600
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 ORDER BY "events"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------
+EventsControllerTest: test_should_get_index
+-------------------------------------------
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/events" for 127.0.0.1 at 2018-01-14 12:56:00 -0600
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" ASC[0m
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------
+EventsControllerTest: test_should_update_event
+----------------------------------------------
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started PATCH "/events/980190962" for 127.0.0.1 at 2018-01-14 12:56:00 -0600
+Processing by EventsController#update as HTML
+  Parameters: {"data"=>{"type"=>"events", "id"=>980190962, "attributes"=>{"name"=>"Different Name", "body"=>"A different body text."}}, "id"=>"980190962"}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 ORDER BY "events"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mEvent Update (0.5ms)[0m  [1m[33mUPDATE "events" SET "name" = $1, "body" = $2, "updated_at" = $3 WHERE "events"."id" = $4[0m  [["name", "Different Name"], ["body", "A different body text."], ["updated_at", "2018-01-14 18:56:00.989264"], ["id", 980190962]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 9ms (Views: 0.1ms | ActiveRecord: 1.5ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------
+EventsControllerTest: test_should_create_event
+----------------------------------------------
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started POST "/events" for 127.0.0.1 at 2018-01-14 12:56:01 -0600
+Processing by EventsController#create as HTML
+  Parameters: {"data"=>{"type"=>"events", "attributes"=>{"name"=>"Book 1", "body"=>"This is body text."}}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEvent Create (0.4ms)[0m  [1m[32mINSERT INTO "events" ("name", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Book 1"], ["body", "This is body text."], ["created_at", "2018-01-14 18:56:01.003043"], ["updated_at", "2018-01-14 18:56:01.003043"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 5ms (Views: 0.1ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------
+EventsControllerTest: test_should_destroy_event
+-----------------------------------------------
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started DELETE "/events/980190962" for 127.0.0.1 at 2018-01-14 12:56:01 -0600
+Processing by EventsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 ORDER BY "events"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mEvent Destroy (0.5ms)[0m  [1m[31mDELETE FROM "events" WHERE "events"."id" = $1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 6ms (Views: 0.1ms | ActiveRecord: 1.4ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------
+PagesControllerTest: test_should_create_page
+--------------------------------------------
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT  "pages".* FROM "pages" WHERE "pages"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "pages"[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started POST "/pages" for 127.0.0.1 at 2018-01-14 12:56:01 -0600
+Processing by PagesController#create as HTML
+  Parameters: {"data"=>{"type"=>"pages", "attributes"=>{"name"=>"Page 1", "body"=>"This is some body text."}}}
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPage Create (0.5ms)[0m  [1m[32mINSERT INTO "pages" ("name", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Page 1"], ["body", "This is some body text."], ["created_at", "2018-01-14 18:56:01.039239"], ["updated_at", "2018-01-14 18:56:01.039239"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 7ms (Views: 0.1ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "pages"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------
+PagesControllerTest: test_should_show_page
+------------------------------------------
+  [1m[36mPage Load (0.5ms)[0m  [1m[34mSELECT  "pages".* FROM "pages" WHERE "pages"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/pages/980190962" for 127.0.0.1 at 2018-01-14 12:56:01 -0600
+Processing by PagesController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mPage Load (0.5ms)[0m  [1m[34mSELECT  "pages".* FROM "pages" WHERE "pages"."id" = $1 ORDER BY "pages"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------
+PagesControllerTest: test_should_destroy_page
+---------------------------------------------
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT  "pages".* FROM "pages" WHERE "pages"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "pages"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started DELETE "/pages/980190962" for 127.0.0.1 at 2018-01-14 12:56:01 -0600
+Processing by PagesController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPage Load (0.8ms)[0m  [1m[34mSELECT  "pages".* FROM "pages" WHERE "pages"."id" = $1 ORDER BY "pages"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPage Destroy (0.4ms)[0m  [1m[31mDELETE FROM "pages" WHERE "pages"."id" = $1[0m  [["id", 980190962]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 6ms (Views: 0.1ms | ActiveRecord: 1.6ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "pages"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------
+PagesControllerTest: test_should_get_index
+------------------------------------------
+  [1m[36mPage Load (0.3ms)[0m  [1m[34mSELECT  "pages".* FROM "pages" WHERE "pages"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/pages" for 127.0.0.1 at 2018-01-14 12:56:01 -0600
+Processing by PagesController#index as HTML
+  [1m[36mPage Load (0.5ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------
+PagesControllerTest: test_should_update_page
+--------------------------------------------
+  [1m[36mPage Load (0.3ms)[0m  [1m[34mSELECT  "pages".* FROM "pages" WHERE "pages"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started PATCH "/pages/980190962" for 127.0.0.1 at 2018-01-14 12:56:01 -0600
+Processing by PagesController#update as HTML
+  Parameters: {"data"=>{"type"=>"pages", "id"=>980190962, "attributes"=>{"name"=>"Different Name", "body"=>"A different body text."}}, "id"=>"980190962"}
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPage Load (0.5ms)[0m  [1m[34mSELECT  "pages".* FROM "pages" WHERE "pages"."id" = $1 ORDER BY "pages"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPage Update (0.4ms)[0m  [1m[33mUPDATE "pages" SET "name" = $1, "body" = $2, "updated_at" = $3 WHERE "pages"."id" = $4[0m  [["name", "Different Name"], ["body", "A different body text."], ["updated_at", "2018-01-14 18:56:01.084723"], ["id", 980190962]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 1.4ms)
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.0ms)[0m  [1m[35mALTER TABLE "citations" DISABLE TRIGGER ALL;ALTER TABLE "connections" DISABLE TRIGGER ALL;ALTER TABLE "contacts" DISABLE TRIGGER ALL;ALTER TABLE "emails" DISABLE TRIGGER ALL;ALTER TABLE "events" DISABLE TRIGGER ALL;ALTER TABLE "flags" DISABLE TRIGGER ALL;ALTER TABLE "images" DISABLE TRIGGER ALL;ALTER TABLE "licenses" DISABLE TRIGGER ALL;ALTER TABLE "locations" DISABLE TRIGGER ALL;ALTER TABLE "organizations" DISABLE TRIGGER ALL;ALTER TABLE "pages" DISABLE TRIGGER ALL;ALTER TABLE "people" DISABLE TRIGGER ALL;ALTER TABLE "phones" DISABLE TRIGGER ALL;ALTER TABLE "places" DISABLE TRIGGER ALL;ALTER TABLE "snippets" DISABLE TRIGGER ALL;ALTER TABLE "social_accounts" DISABLE TRIGGER ALL;ALTER TABLE "terms" DISABLE TRIGGER ALL;ALTER TABLE "time_periods" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "websites" DISABLE TRIGGER ALL;ALTER TABLE "works" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "citations"[0m
+  [1m[36mFixture Delete (0.8ms)[0m  [1m[31mDELETE FROM "emails"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "events"[0m
+  [1m[36mFixtures Insert (0.4ms)[0m  [1m[32mINSERT INTO "events" ("id", "name", "body", "categories", "status", "created_at", "updated_at") VALUES (980190962, 'Book 1', 'This is body text.', 'opening', NULL, '2018-01-14 18:58:47.691592', '2018-01-14 18:58:47.691592'), (298486374, 'Book 2', 'This is more body text', 'exhitibion', 'cancelled', '2018-01-14 18:58:47.691592', '2018-01-14 18:58:47.691592')[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "images"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "licenses"[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "locations"[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "organizations"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "pages"[0m
+  [1m[36mFixtures Insert (0.4ms)[0m  [1m[32mINSERT INTO "pages" ("id", "name", "body", "parent_id", "created_at", "updated_at") VALUES (980190962, 'Page 1', 'This is some body text.', DEFAULT, '2018-01-14 18:58:47.722505', '2018-01-14 18:58:47.722505'), (298486374, 'MyString', 'This is some more body text.', DEFAULT, '2018-01-14 18:58:47.722505', '2018-01-14 18:58:47.722505')[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "people"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "phones"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "places"[0m
+  [1m[36mFixture Delete (0.8ms)[0m  [1m[31mDELETE FROM "snippets"[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "social_accounts"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "terms"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixtures Insert (0.4ms)[0m  [1m[32mINSERT INTO "users" ("id", "name", "email", "password_digest", "admin", "created_at", "updated_at") VALUES (980190962, 'admin-1', 'MyString', 'MyString', TRUE, '2018-01-14 18:58:47.761599', '2018-01-14 18:58:47.761599'), (298486374, 'user-1', 'MyString', 'MyString', FALSE, '2018-01-14 18:58:47.761599', '2018-01-14 18:58:47.761599')[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "works"[0m
+  [1m[35m (8.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "citations" ENABLE TRIGGER ALL;ALTER TABLE "connections" ENABLE TRIGGER ALL;ALTER TABLE "contacts" ENABLE TRIGGER ALL;ALTER TABLE "emails" ENABLE TRIGGER ALL;ALTER TABLE "events" ENABLE TRIGGER ALL;ALTER TABLE "flags" ENABLE TRIGGER ALL;ALTER TABLE "images" ENABLE TRIGGER ALL;ALTER TABLE "licenses" ENABLE TRIGGER ALL;ALTER TABLE "locations" ENABLE TRIGGER ALL;ALTER TABLE "organizations" ENABLE TRIGGER ALL;ALTER TABLE "pages" ENABLE TRIGGER ALL;ALTER TABLE "people" ENABLE TRIGGER ALL;ALTER TABLE "phones" ENABLE TRIGGER ALL;ALTER TABLE "places" ENABLE TRIGGER ALL;ALTER TABLE "snippets" ENABLE TRIGGER ALL;ALTER TABLE "social_accounts" ENABLE TRIGGER ALL;ALTER TABLE "terms" ENABLE TRIGGER ALL;ALTER TABLE "time_periods" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "websites" ENABLE TRIGGER ALL;ALTER TABLE "works" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------
+UsersControllerTest: test_should_show_user
+------------------------------------------
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/users/980190962" for 127.0.0.1 at 2018-01-14 12:58:47 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 1.1ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------
+UsersControllerTest: test_should_get_index
+------------------------------------------
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/users" for 127.0.0.1 at 2018-01-14 12:58:47 -0600
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------
+UsersControllerTest: test_should_create_user
+--------------------------------------------
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------
+UsersControllerTest: test_should_update_user
+--------------------------------------------
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started PATCH "/users/980190962" for 127.0.0.1 at 2018-01-14 12:58:47 -0600
+Processing by UsersController#update as HTML
+  Parameters: {"data"=>{"type"=>"users", "id"=>980190962, "attributes"=>{"name"=>"Different Name", "body"=>"A different body text."}}, "id"=>"980190962"}
+Completed 400 Bad Request in 6ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------
+UsersControllerTest: test_should_destroy_user
+---------------------------------------------
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started DELETE "/users/980190962" for 127.0.0.1 at 2018-01-14 12:58:47 -0600
+Processing by UsersController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 5ms (Views: 0.1ms | ActiveRecord: 1.1ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------
+EventsControllerTest: test_should_update_event
+----------------------------------------------
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started PATCH "/events/980190962" for 127.0.0.1 at 2018-01-14 12:58:47 -0600
+Processing by EventsController#update as HTML
+  Parameters: {"data"=>{"type"=>"events", "id"=>980190962, "attributes"=>{"name"=>"Different Name", "body"=>"A different body text."}}, "id"=>"980190962"}
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 ORDER BY "events"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mEvent Update (0.5ms)[0m  [1m[33mUPDATE "events" SET "name" = $1, "body" = $2, "updated_at" = $3 WHERE "events"."id" = $4[0m  [["name", "Different Name"], ["body", "A different body text."], ["updated_at", "2018-01-14 18:58:48.006308"], ["id", 980190962]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 11ms (Views: 0.1ms | ActiveRecord: 2.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------
+EventsControllerTest: test_should_create_event
+----------------------------------------------
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started POST "/events" for 127.0.0.1 at 2018-01-14 12:58:48 -0600
+Processing by EventsController#create as HTML
+  Parameters: {"data"=>{"type"=>"events", "attributes"=>{"name"=>"Book 1", "body"=>"This is body text."}}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEvent Create (0.4ms)[0m  [1m[32mINSERT INTO "events" ("name", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Book 1"], ["body", "This is body text."], ["created_at", "2018-01-14 18:58:48.019900"], ["updated_at", "2018-01-14 18:58:48.019900"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 5ms (Views: 0.1ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------
+EventsControllerTest: test_should_get_index
+-------------------------------------------
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/events" for 127.0.0.1 at 2018-01-14 12:58:48 -0600
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" ASC[0m
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------
+EventsControllerTest: test_should_show_event
+--------------------------------------------
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/events/980190962" for 127.0.0.1 at 2018-01-14 12:58:48 -0600
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 ORDER BY "events"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------
+EventsControllerTest: test_should_destroy_event
+-----------------------------------------------
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started DELETE "/events/980190962" for 127.0.0.1 at 2018-01-14 12:58:48 -0600
+Processing by EventsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 ORDER BY "events"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mEvent Destroy (0.4ms)[0m  [1m[31mDELETE FROM "events" WHERE "events"."id" = $1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 5ms (Views: 0.1ms | ActiveRecord: 1.2ms)
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------
+PagesControllerTest: test_should_show_page
+------------------------------------------
+  [1m[36mPage Load (0.6ms)[0m  [1m[34mSELECT  "pages".* FROM "pages" WHERE "pages"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/pages/980190962" for 127.0.0.1 at 2018-01-14 12:58:48 -0600
+Processing by PagesController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mPage Load (1.5ms)[0m  [1m[34mSELECT  "pages".* FROM "pages" WHERE "pages"."id" = $1 ORDER BY "pages"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.5ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------
+PagesControllerTest: test_should_update_page
+--------------------------------------------
+  [1m[36mPage Load (0.3ms)[0m  [1m[34mSELECT  "pages".* FROM "pages" WHERE "pages"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started PATCH "/pages/980190962" for 127.0.0.1 at 2018-01-14 12:58:48 -0600
+Processing by PagesController#update as HTML
+  Parameters: {"data"=>{"type"=>"pages", "id"=>980190962, "attributes"=>{"name"=>"Different Name", "body"=>"A different body text."}}, "id"=>"980190962"}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT  "pages".* FROM "pages" WHERE "pages"."id" = $1 ORDER BY "pages"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPage Update (0.4ms)[0m  [1m[33mUPDATE "pages" SET "name" = $1, "body" = $2, "updated_at" = $3 WHERE "pages"."id" = $4[0m  [["name", "Different Name"], ["body", "A different body text."], ["updated_at", "2018-01-14 18:58:48.078975"], ["id", 980190962]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 1.2ms)
+  [1m[35m (0.9ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------
+PagesControllerTest: test_should_destroy_page
+---------------------------------------------
+  [1m[36mPage Load (0.3ms)[0m  [1m[34mSELECT  "pages".* FROM "pages" WHERE "pages"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "pages"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started DELETE "/pages/980190962" for 127.0.0.1 at 2018-01-14 12:58:48 -0600
+Processing by PagesController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT  "pages".* FROM "pages" WHERE "pages"."id" = $1 ORDER BY "pages"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPage Destroy (0.3ms)[0m  [1m[31mDELETE FROM "pages" WHERE "pages"."id" = $1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 4ms (Views: 0.1ms | ActiveRecord: 1.0ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "pages"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------
+PagesControllerTest: test_should_create_page
+--------------------------------------------
+  [1m[36mPage Load (0.3ms)[0m  [1m[34mSELECT  "pages".* FROM "pages" WHERE "pages"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "pages"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started POST "/pages" for 127.0.0.1 at 2018-01-14 12:58:48 -0600
+Processing by PagesController#create as HTML
+  Parameters: {"data"=>{"type"=>"pages", "attributes"=>{"name"=>"Page 1", "body"=>"This is some body text."}}}
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPage Create (0.4ms)[0m  [1m[32mINSERT INTO "pages" ("name", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Page 1"], ["body", "This is some body text."], ["created_at", "2018-01-14 18:58:48.109480"], ["updated_at", "2018-01-14 18:58:48.109480"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 4ms (Views: 0.1ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "pages"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------
+PagesControllerTest: test_should_get_index
+------------------------------------------
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT  "pages".* FROM "pages" WHERE "pages"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/pages" for 127.0.0.1 at 2018-01-14 12:58:48 -0600
+Processing by PagesController#index as HTML
+  [1m[36mPage Load (0.5ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.0ms)[0m  [1m[35mALTER TABLE "citations" DISABLE TRIGGER ALL;ALTER TABLE "connections" DISABLE TRIGGER ALL;ALTER TABLE "contacts" DISABLE TRIGGER ALL;ALTER TABLE "emails" DISABLE TRIGGER ALL;ALTER TABLE "events" DISABLE TRIGGER ALL;ALTER TABLE "flags" DISABLE TRIGGER ALL;ALTER TABLE "images" DISABLE TRIGGER ALL;ALTER TABLE "licenses" DISABLE TRIGGER ALL;ALTER TABLE "locations" DISABLE TRIGGER ALL;ALTER TABLE "organizations" DISABLE TRIGGER ALL;ALTER TABLE "pages" DISABLE TRIGGER ALL;ALTER TABLE "people" DISABLE TRIGGER ALL;ALTER TABLE "phones" DISABLE TRIGGER ALL;ALTER TABLE "places" DISABLE TRIGGER ALL;ALTER TABLE "snippets" DISABLE TRIGGER ALL;ALTER TABLE "social_accounts" DISABLE TRIGGER ALL;ALTER TABLE "terms" DISABLE TRIGGER ALL;ALTER TABLE "time_periods" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "websites" DISABLE TRIGGER ALL;ALTER TABLE "works" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "citations"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "emails"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "events"[0m
+  [1m[36mFixtures Insert (0.5ms)[0m  [1m[32mINSERT INTO "events" ("id", "name", "body", "categories", "status", "created_at", "updated_at") VALUES (980190962, 'Book 1', 'This is body text.', 'opening', NULL, '2018-01-14 19:00:28.793716', '2018-01-14 19:00:28.793716'), (298486374, 'Book 2', 'This is more body text', 'exhitibion', 'cancelled', '2018-01-14 19:00:28.793716', '2018-01-14 19:00:28.793716')[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "images"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "licenses"[0m
+  [1m[36mFixture Delete (0.8ms)[0m  [1m[31mDELETE FROM "locations"[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "organizations"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "pages"[0m
+  [1m[36mFixtures Insert (0.4ms)[0m  [1m[32mINSERT INTO "pages" ("id", "name", "body", "parent_id", "created_at", "updated_at") VALUES (980190962, 'Page 1', 'This is some body text.', DEFAULT, '2018-01-14 19:00:28.825695', '2018-01-14 19:00:28.825695'), (298486374, 'MyString', 'This is some more body text.', DEFAULT, '2018-01-14 19:00:28.825695', '2018-01-14 19:00:28.825695')[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "people"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "phones"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "places"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "snippets"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "social_accounts"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "terms"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixtures Insert (0.4ms)[0m  [1m[32mINSERT INTO "users" ("id", "name", "email", "password_digest", "admin", "created_at", "updated_at") VALUES (980190962, 'admin-1', 'MyString', 'MyString', TRUE, '2018-01-14 19:00:28.860580', '2018-01-14 19:00:28.860580'), (298486374, 'user-1', 'MyString', 'MyString', FALSE, '2018-01-14 19:00:28.860580', '2018-01-14 19:00:28.860580')[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "works"[0m
+  [1m[35m (8.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.0ms)[0m  [1m[35mALTER TABLE "citations" ENABLE TRIGGER ALL;ALTER TABLE "connections" ENABLE TRIGGER ALL;ALTER TABLE "contacts" ENABLE TRIGGER ALL;ALTER TABLE "emails" ENABLE TRIGGER ALL;ALTER TABLE "events" ENABLE TRIGGER ALL;ALTER TABLE "flags" ENABLE TRIGGER ALL;ALTER TABLE "images" ENABLE TRIGGER ALL;ALTER TABLE "licenses" ENABLE TRIGGER ALL;ALTER TABLE "locations" ENABLE TRIGGER ALL;ALTER TABLE "organizations" ENABLE TRIGGER ALL;ALTER TABLE "pages" ENABLE TRIGGER ALL;ALTER TABLE "people" ENABLE TRIGGER ALL;ALTER TABLE "phones" ENABLE TRIGGER ALL;ALTER TABLE "places" ENABLE TRIGGER ALL;ALTER TABLE "snippets" ENABLE TRIGGER ALL;ALTER TABLE "social_accounts" ENABLE TRIGGER ALL;ALTER TABLE "terms" ENABLE TRIGGER ALL;ALTER TABLE "time_periods" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "websites" ENABLE TRIGGER ALL;ALTER TABLE "works" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------
+UsersControllerTest: test_should_get_index
+------------------------------------------
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/users" for 127.0.0.1 at 2018-01-14 13:00:29 -0600
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------
+UsersControllerTest: test_should_show_user
+------------------------------------------
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/users/980190962" for 127.0.0.1 at 2018-01-14 13:00:29 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------
+UsersControllerTest: test_should_create_user
+--------------------------------------------
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started POST "/users" for 127.0.0.1 at 2018-01-14 13:00:29 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"data"=>{"type"=>"users", "attributes"=>{"name"=>"admin-1", "email"=>"MyString"}}}
+Completed 400 Bad Request in 6ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------
+UsersControllerTest: test_should_destroy_user
+---------------------------------------------
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started DELETE "/users/980190962" for 127.0.0.1 at 2018-01-14 13:00:29 -0600
+Processing by UsersController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 980190962]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 7ms (Views: 0.1ms | ActiveRecord: 1.4ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------
+UsersControllerTest: test_should_update_user
+--------------------------------------------
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started PATCH "/users/980190962" for 127.0.0.1 at 2018-01-14 13:00:29 -0600
+Processing by UsersController#update as HTML
+  Parameters: {"data"=>{"type"=>"users", "id"=>980190962, "attributes"=>{"name"=>"Different Name", "email"=>"anotheremail@example.com"}}, "id"=>"980190962"}
+Completed 400 Bad Request in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------
+EventsControllerTest: test_should_show_event
+--------------------------------------------
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/events/980190962" for 127.0.0.1 at 2018-01-14 13:00:29 -0600
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 ORDER BY "events"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------
+EventsControllerTest: test_should_create_event
+----------------------------------------------
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started POST "/events" for 127.0.0.1 at 2018-01-14 13:00:29 -0600
+Processing by EventsController#create as HTML
+  Parameters: {"data"=>{"type"=>"events", "attributes"=>{"name"=>"Book 1", "body"=>"This is body text."}}}
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEvent Create (1.4ms)[0m  [1m[32mINSERT INTO "events" ("name", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Book 1"], ["body", "This is body text."], ["created_at", "2018-01-14 19:00:29.099962"], ["updated_at", "2018-01-14 19:00:29.099962"]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 11ms (Views: 0.1ms | ActiveRecord: 2.1ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------
+EventsControllerTest: test_should_destroy_event
+-----------------------------------------------
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started DELETE "/events/980190962" for 127.0.0.1 at 2018-01-14 13:00:29 -0600
+Processing by EventsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 ORDER BY "events"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mEvent Destroy (0.6ms)[0m  [1m[31mDELETE FROM "events" WHERE "events"."id" = $1[0m  [["id", 980190962]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 7ms (Views: 0.1ms | ActiveRecord: 1.7ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------
+EventsControllerTest: test_should_get_index
+-------------------------------------------
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/events" for 127.0.0.1 at 2018-01-14 13:00:29 -0600
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" ASC[0m
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------
+EventsControllerTest: test_should_update_event
+----------------------------------------------
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started PATCH "/events/980190962" for 127.0.0.1 at 2018-01-14 13:00:29 -0600
+Processing by EventsController#update as HTML
+  Parameters: {"data"=>{"type"=>"events", "id"=>980190962, "attributes"=>{"name"=>"Different Name", "body"=>"A different body text."}}, "id"=>"980190962"}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 ORDER BY "events"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mEvent Update (0.5ms)[0m  [1m[33mUPDATE "events" SET "name" = $1, "body" = $2, "updated_at" = $3 WHERE "events"."id" = $4[0m  [["name", "Different Name"], ["body", "A different body text."], ["updated_at", "2018-01-14 19:00:29.141198"], ["id", 980190962]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 9ms (Views: 0.1ms | ActiveRecord: 1.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------
+PagesControllerTest: test_should_destroy_page
+---------------------------------------------
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT  "pages".* FROM "pages" WHERE "pages"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "pages"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started DELETE "/pages/980190962" for 127.0.0.1 at 2018-01-14 13:00:29 -0600
+Processing by PagesController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPage Load (0.6ms)[0m  [1m[34mSELECT  "pages".* FROM "pages" WHERE "pages"."id" = $1 ORDER BY "pages"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPage Destroy (0.7ms)[0m  [1m[31mDELETE FROM "pages" WHERE "pages"."id" = $1[0m  [["id", 980190962]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 6ms (Views: 0.1ms | ActiveRecord: 1.7ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "pages"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------
+PagesControllerTest: test_should_get_index
+------------------------------------------
+  [1m[36mPage Load (0.3ms)[0m  [1m[34mSELECT  "pages".* FROM "pages" WHERE "pages"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/pages" for 127.0.0.1 at 2018-01-14 13:00:29 -0600
+Processing by PagesController#index as HTML
+  [1m[36mPage Load (0.5ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------
+PagesControllerTest: test_should_show_page
+------------------------------------------
+  [1m[36mPage Load (0.3ms)[0m  [1m[34mSELECT  "pages".* FROM "pages" WHERE "pages"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/pages/980190962" for 127.0.0.1 at 2018-01-14 13:00:29 -0600
+Processing by PagesController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mPage Load (0.5ms)[0m  [1m[34mSELECT  "pages".* FROM "pages" WHERE "pages"."id" = $1 ORDER BY "pages"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------
+PagesControllerTest: test_should_create_page
+--------------------------------------------
+  [1m[36mPage Load (0.3ms)[0m  [1m[34mSELECT  "pages".* FROM "pages" WHERE "pages"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "pages"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started POST "/pages" for 127.0.0.1 at 2018-01-14 13:00:29 -0600
+Processing by PagesController#create as HTML
+  Parameters: {"data"=>{"type"=>"pages", "attributes"=>{"name"=>"Page 1", "body"=>"This is some body text."}}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPage Create (0.5ms)[0m  [1m[32mINSERT INTO "pages" ("name", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Page 1"], ["body", "This is some body text."], ["created_at", "2018-01-14 19:00:29.197671"], ["updated_at", "2018-01-14 19:00:29.197671"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 4ms (Views: 0.1ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "pages"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------
+PagesControllerTest: test_should_update_page
+--------------------------------------------
+  [1m[36mPage Load (0.6ms)[0m  [1m[34mSELECT  "pages".* FROM "pages" WHERE "pages"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started PATCH "/pages/980190962" for 127.0.0.1 at 2018-01-14 13:00:29 -0600
+Processing by PagesController#update as HTML
+  Parameters: {"data"=>{"type"=>"pages", "id"=>980190962, "attributes"=>{"name"=>"Different Name", "body"=>"A different body text."}}, "id"=>"980190962"}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPage Load (0.5ms)[0m  [1m[34mSELECT  "pages".* FROM "pages" WHERE "pages"."id" = $1 ORDER BY "pages"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPage Update (0.5ms)[0m  [1m[33mUPDATE "pages" SET "name" = $1, "body" = $2, "updated_at" = $3 WHERE "pages"."id" = $4[0m  [["name", "Different Name"], ["body", "A different body text."], ["updated_at", "2018-01-14 19:00:29.212068"], ["id", 980190962]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 1.4ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.9ms)[0m  [1m[35mALTER TABLE "citations" DISABLE TRIGGER ALL;ALTER TABLE "connections" DISABLE TRIGGER ALL;ALTER TABLE "contacts" DISABLE TRIGGER ALL;ALTER TABLE "emails" DISABLE TRIGGER ALL;ALTER TABLE "events" DISABLE TRIGGER ALL;ALTER TABLE "flags" DISABLE TRIGGER ALL;ALTER TABLE "images" DISABLE TRIGGER ALL;ALTER TABLE "licenses" DISABLE TRIGGER ALL;ALTER TABLE "locations" DISABLE TRIGGER ALL;ALTER TABLE "organizations" DISABLE TRIGGER ALL;ALTER TABLE "pages" DISABLE TRIGGER ALL;ALTER TABLE "people" DISABLE TRIGGER ALL;ALTER TABLE "phones" DISABLE TRIGGER ALL;ALTER TABLE "places" DISABLE TRIGGER ALL;ALTER TABLE "snippets" DISABLE TRIGGER ALL;ALTER TABLE "social_accounts" DISABLE TRIGGER ALL;ALTER TABLE "terms" DISABLE TRIGGER ALL;ALTER TABLE "time_periods" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "websites" DISABLE TRIGGER ALL;ALTER TABLE "works" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "citations"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "emails"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "events"[0m
+  [1m[36mFixtures Insert (0.5ms)[0m  [1m[32mINSERT INTO "events" ("id", "name", "body", "categories", "status", "created_at", "updated_at") VALUES (980190962, 'Book 1', 'This is body text.', 'opening', NULL, '2018-01-14 19:01:47.332573', '2018-01-14 19:01:47.332573'), (298486374, 'Book 2', 'This is more body text', 'exhitibion', 'cancelled', '2018-01-14 19:01:47.332573', '2018-01-14 19:01:47.332573')[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "images"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "licenses"[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "locations"[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "organizations"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "pages"[0m
+  [1m[36mFixtures Insert (0.4ms)[0m  [1m[32mINSERT INTO "pages" ("id", "name", "body", "parent_id", "created_at", "updated_at") VALUES (980190962, 'Page 1', 'This is some body text.', DEFAULT, '2018-01-14 19:01:47.367283', '2018-01-14 19:01:47.367283'), (298486374, 'MyString', 'This is some more body text.', DEFAULT, '2018-01-14 19:01:47.367283', '2018-01-14 19:01:47.367283')[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "people"[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "phones"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "places"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "snippets"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "social_accounts"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "terms"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixtures Insert (0.6ms)[0m  [1m[32mINSERT INTO "users" ("id", "name", "email", "password_digest", "admin", "created_at", "updated_at") VALUES (980190962, 'admin-1', 'MyString', 'MyString', TRUE, '2018-01-14 19:01:47.411810', '2018-01-14 19:01:47.411810'), (298486374, 'user-1', 'MyString', 'MyString', FALSE, '2018-01-14 19:01:47.411810', '2018-01-14 19:01:47.411810')[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "works"[0m
+  [1m[35m (7.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "citations" ENABLE TRIGGER ALL;ALTER TABLE "connections" ENABLE TRIGGER ALL;ALTER TABLE "contacts" ENABLE TRIGGER ALL;ALTER TABLE "emails" ENABLE TRIGGER ALL;ALTER TABLE "events" ENABLE TRIGGER ALL;ALTER TABLE "flags" ENABLE TRIGGER ALL;ALTER TABLE "images" ENABLE TRIGGER ALL;ALTER TABLE "licenses" ENABLE TRIGGER ALL;ALTER TABLE "locations" ENABLE TRIGGER ALL;ALTER TABLE "organizations" ENABLE TRIGGER ALL;ALTER TABLE "pages" ENABLE TRIGGER ALL;ALTER TABLE "people" ENABLE TRIGGER ALL;ALTER TABLE "phones" ENABLE TRIGGER ALL;ALTER TABLE "places" ENABLE TRIGGER ALL;ALTER TABLE "snippets" ENABLE TRIGGER ALL;ALTER TABLE "social_accounts" ENABLE TRIGGER ALL;ALTER TABLE "terms" ENABLE TRIGGER ALL;ALTER TABLE "time_periods" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "websites" ENABLE TRIGGER ALL;ALTER TABLE "works" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------
+EventsControllerTest: test_should_get_index
+-------------------------------------------
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/events" for 127.0.0.1 at 2018-01-14 13:01:47 -0600
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" ASC[0m
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------
+EventsControllerTest: test_should_update_event
+----------------------------------------------
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started PATCH "/events/980190962" for 127.0.0.1 at 2018-01-14 13:01:47 -0600
+Processing by EventsController#update as HTML
+  Parameters: {"data"=>{"type"=>"events", "id"=>980190962, "attributes"=>{"name"=>"Different Name", "body"=>"A different body text."}}, "id"=>"980190962"}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 ORDER BY "events"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mEvent Update (0.5ms)[0m  [1m[33mUPDATE "events" SET "name" = $1, "body" = $2, "updated_at" = $3 WHERE "events"."id" = $4[0m  [["name", "Different Name"], ["body", "A different body text."], ["updated_at", "2018-01-14 19:01:47.642137"], ["id", 980190962]]
+  [1m[35m (0.8ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 10ms (Views: 0.1ms | ActiveRecord: 2.0ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------
+EventsControllerTest: test_should_destroy_event
+-----------------------------------------------
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started DELETE "/events/980190962" for 127.0.0.1 at 2018-01-14 13:01:47 -0600
+Processing by EventsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 ORDER BY "events"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mEvent Destroy (0.3ms)[0m  [1m[31mDELETE FROM "events" WHERE "events"."id" = $1[0m  [["id", 980190962]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 6ms (Views: 0.1ms | ActiveRecord: 1.2ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------
+EventsControllerTest: test_should_create_event
+----------------------------------------------
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started POST "/events" for 127.0.0.1 at 2018-01-14 13:01:47 -0600
+Processing by EventsController#create as HTML
+  Parameters: {"data"=>{"type"=>"events", "attributes"=>{"name"=>"Book 1", "body"=>"This is body text."}}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEvent Create (0.6ms)[0m  [1m[32mINSERT INTO "events" ("name", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Book 1"], ["body", "This is body text."], ["created_at", "2018-01-14 19:01:47.677227"], ["updated_at", "2018-01-14 19:01:47.677227"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 8ms (Views: 0.7ms | ActiveRecord: 1.0ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------
+EventsControllerTest: test_should_show_event
+--------------------------------------------
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/events/980190962" for 127.0.0.1 at 2018-01-14 13:01:47 -0600
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 ORDER BY "events"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Completed 200 OK in 14ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------
+UsersControllerTest: test_should_create_user
+--------------------------------------------
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started POST "/users" for 127.0.0.1 at 2018-01-14 13:01:47 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"data"=>{"type"=>"users", "attributes"=>{"name"=>"admin-1", "email"=>"MyString"}}}
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.9ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 422 Unprocessable Entity in 10ms (Views: 0.3ms | ActiveRecord: 1.1ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------
+UsersControllerTest: test_should_get_index
+------------------------------------------
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/users" for 127.0.0.1 at 2018-01-14 13:01:47 -0600
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------
+UsersControllerTest: test_should_show_user
+------------------------------------------
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/users/980190962" for 127.0.0.1 at 2018-01-14 13:01:47 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------
+UsersControllerTest: test_should_destroy_user
+---------------------------------------------
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started DELETE "/users/980190962" for 127.0.0.1 at 2018-01-14 13:01:47 -0600
+Processing by UsersController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 5ms (Views: 0.1ms | ActiveRecord: 1.4ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------
+UsersControllerTest: test_should_update_user
+--------------------------------------------
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started PATCH "/users/980190962" for 127.0.0.1 at 2018-01-14 13:01:47 -0600
+Processing by UsersController#update as HTML
+  Parameters: {"data"=>{"type"=>"users", "id"=>980190962, "attributes"=>{"name"=>"Different Name", "email"=>"anotheremail@example.com"}}, "id"=>"980190962"}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "name" = $1, "email" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["name", "Different Name"], ["email", "anotheremail@example.com"], ["updated_at", "2018-01-14 19:01:47.765557"], ["id", 980190962]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 1.5ms)
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------
+PagesControllerTest: test_should_create_page
+--------------------------------------------
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT  "pages".* FROM "pages" WHERE "pages"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "pages"[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started POST "/pages" for 127.0.0.1 at 2018-01-14 13:01:47 -0600
+Processing by PagesController#create as HTML
+  Parameters: {"data"=>{"type"=>"pages", "attributes"=>{"name"=>"Page 1", "body"=>"This is some body text."}}}
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPage Create (0.5ms)[0m  [1m[32mINSERT INTO "pages" ("name", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Page 1"], ["body", "This is some body text."], ["created_at", "2018-01-14 19:01:47.792847"], ["updated_at", "2018-01-14 19:01:47.792847"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 5ms (Views: 0.1ms | ActiveRecord: 1.0ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "pages"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------
+PagesControllerTest: test_should_update_page
+--------------------------------------------
+  [1m[36mPage Load (0.3ms)[0m  [1m[34mSELECT  "pages".* FROM "pages" WHERE "pages"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started PATCH "/pages/980190962" for 127.0.0.1 at 2018-01-14 13:01:47 -0600
+Processing by PagesController#update as HTML
+  Parameters: {"data"=>{"type"=>"pages", "id"=>980190962, "attributes"=>{"name"=>"Different Name", "body"=>"A different body text."}}, "id"=>"980190962"}
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPage Load (0.5ms)[0m  [1m[34mSELECT  "pages".* FROM "pages" WHERE "pages"."id" = $1 ORDER BY "pages"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPage Update (0.5ms)[0m  [1m[33mUPDATE "pages" SET "name" = $1, "body" = $2, "updated_at" = $3 WHERE "pages"."id" = $4[0m  [["name", "Different Name"], ["body", "A different body text."], ["updated_at", "2018-01-14 19:01:47.807315"], ["id", 980190962]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 9ms (Views: 0.1ms | ActiveRecord: 1.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------
+PagesControllerTest: test_should_destroy_page
+---------------------------------------------
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT  "pages".* FROM "pages" WHERE "pages"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "pages"[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started DELETE "/pages/980190962" for 127.0.0.1 at 2018-01-14 13:01:47 -0600
+Processing by PagesController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPage Load (0.7ms)[0m  [1m[34mSELECT  "pages".* FROM "pages" WHERE "pages"."id" = $1 ORDER BY "pages"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPage Destroy (0.4ms)[0m  [1m[31mDELETE FROM "pages" WHERE "pages"."id" = $1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 6ms (Views: 0.1ms | ActiveRecord: 1.5ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "pages"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------
+PagesControllerTest: test_should_get_index
+------------------------------------------
+  [1m[36mPage Load (0.3ms)[0m  [1m[34mSELECT  "pages".* FROM "pages" WHERE "pages"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/pages" for 127.0.0.1 at 2018-01-14 13:01:47 -0600
+Processing by PagesController#index as HTML
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------
+PagesControllerTest: test_should_show_page
+------------------------------------------
+  [1m[36mPage Load (0.3ms)[0m  [1m[34mSELECT  "pages".* FROM "pages" WHERE "pages"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/pages/980190962" for 127.0.0.1 at 2018-01-14 13:01:47 -0600
+Processing by PagesController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mPage Load (0.6ms)[0m  [1m[34mSELECT  "pages".* FROM "pages" WHERE "pages"."id" = $1 ORDER BY "pages"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.5ms)[0m  [1m[35mALTER TABLE "citations" DISABLE TRIGGER ALL;ALTER TABLE "connections" DISABLE TRIGGER ALL;ALTER TABLE "contacts" DISABLE TRIGGER ALL;ALTER TABLE "emails" DISABLE TRIGGER ALL;ALTER TABLE "events" DISABLE TRIGGER ALL;ALTER TABLE "flags" DISABLE TRIGGER ALL;ALTER TABLE "images" DISABLE TRIGGER ALL;ALTER TABLE "licenses" DISABLE TRIGGER ALL;ALTER TABLE "locations" DISABLE TRIGGER ALL;ALTER TABLE "organizations" DISABLE TRIGGER ALL;ALTER TABLE "pages" DISABLE TRIGGER ALL;ALTER TABLE "people" DISABLE TRIGGER ALL;ALTER TABLE "phones" DISABLE TRIGGER ALL;ALTER TABLE "places" DISABLE TRIGGER ALL;ALTER TABLE "snippets" DISABLE TRIGGER ALL;ALTER TABLE "social_accounts" DISABLE TRIGGER ALL;ALTER TABLE "terms" DISABLE TRIGGER ALL;ALTER TABLE "time_periods" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "websites" DISABLE TRIGGER ALL;ALTER TABLE "works" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (3.1ms)[0m  [1m[31mDELETE FROM "citations"[0m
+  [1m[36mFixture Delete (1.1ms)[0m  [1m[31mDELETE FROM "emails"[0m
+  [1m[36mFixture Delete (1.0ms)[0m  [1m[31mDELETE FROM "events"[0m
+  [1m[36mFixtures Insert (0.6ms)[0m  [1m[32mINSERT INTO "events" ("id", "name", "body", "categories", "status", "created_at", "updated_at") VALUES (980190962, 'Book 1', 'This is body text.', 'opening', NULL, '2018-01-14 19:16:07.728973', '2018-01-14 19:16:07.728973'), (298486374, 'Book 2', 'This is more body text', 'exhitibion', 'cancelled', '2018-01-14 19:16:07.728973', '2018-01-14 19:16:07.728973')[0m
+  [1m[36mFixture Delete (2.3ms)[0m  [1m[31mDELETE FROM "images"[0m
+  [1m[36mFixture Delete (1.7ms)[0m  [1m[31mDELETE FROM "licenses"[0m
+  [1m[36mFixture Delete (4.0ms)[0m  [1m[31mDELETE FROM "locations"[0m
+  [1m[36mFixture Delete (1.1ms)[0m  [1m[31mDELETE FROM "organizations"[0m
+  [1m[36mFixture Delete (1.7ms)[0m  [1m[31mDELETE FROM "pages"[0m
+  [1m[36mFixtures Insert (0.8ms)[0m  [1m[32mINSERT INTO "pages" ("id", "name", "body", "parent_id", "created_at", "updated_at") VALUES (980190962, 'Page 1', 'This is some body text.', DEFAULT, '2018-01-14 19:16:07.772735', '2018-01-14 19:16:07.772735'), (298486374, 'MyString', 'This is some more body text.', DEFAULT, '2018-01-14 19:16:07.772735', '2018-01-14 19:16:07.772735')[0m
+  [1m[36mFixture Delete (1.0ms)[0m  [1m[31mDELETE FROM "people"[0m
+  [1m[36mFixture Delete (1.0ms)[0m  [1m[31mDELETE FROM "phones"[0m
+  [1m[36mFixture Delete (0.9ms)[0m  [1m[31mDELETE FROM "places"[0m
+  [1m[36mFixture Delete (2.4ms)[0m  [1m[31mDELETE FROM "snippets"[0m
+  [1m[36mFixture Delete (1.0ms)[0m  [1m[31mDELETE FROM "social_accounts"[0m
+  [1m[36mFixture Delete (0.9ms)[0m  [1m[31mDELETE FROM "terms"[0m
+  [1m[36mFixture Delete (0.8ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixtures Insert (0.8ms)[0m  [1m[32mINSERT INTO "users" ("id", "name", "email", "password_digest", "admin", "created_at", "updated_at") VALUES (980190962, 'admin-1', 'MyString', 'MyString', TRUE, '2018-01-14 19:16:07.821656', '2018-01-14 19:16:07.821656'), (298486374, 'user-1', 'MyString', 'MyString', FALSE, '2018-01-14 19:16:07.821656', '2018-01-14 19:16:07.821656')[0m
+  [1m[36mFixture Delete (1.0ms)[0m  [1m[31mDELETE FROM "works"[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "citations" ENABLE TRIGGER ALL;ALTER TABLE "connections" ENABLE TRIGGER ALL;ALTER TABLE "contacts" ENABLE TRIGGER ALL;ALTER TABLE "emails" ENABLE TRIGGER ALL;ALTER TABLE "events" ENABLE TRIGGER ALL;ALTER TABLE "flags" ENABLE TRIGGER ALL;ALTER TABLE "images" ENABLE TRIGGER ALL;ALTER TABLE "licenses" ENABLE TRIGGER ALL;ALTER TABLE "locations" ENABLE TRIGGER ALL;ALTER TABLE "organizations" ENABLE TRIGGER ALL;ALTER TABLE "pages" ENABLE TRIGGER ALL;ALTER TABLE "people" ENABLE TRIGGER ALL;ALTER TABLE "phones" ENABLE TRIGGER ALL;ALTER TABLE "places" ENABLE TRIGGER ALL;ALTER TABLE "snippets" ENABLE TRIGGER ALL;ALTER TABLE "social_accounts" ENABLE TRIGGER ALL;ALTER TABLE "terms" ENABLE TRIGGER ALL;ALTER TABLE "time_periods" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "websites" ENABLE TRIGGER ALL;ALTER TABLE "works" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------
+PagesControllerTest: test_should_get_index
+------------------------------------------
+  [1m[36mPage Load (0.3ms)[0m  [1m[34mSELECT  "pages".* FROM "pages" WHERE "pages"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/pages" for 127.0.0.1 at 2018-01-14 13:16:08 -0600
+Processing by PagesController#index as HTML
+  [1m[36mPage Load (0.8ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------
+PagesControllerTest: test_should_show_page
+------------------------------------------
+  [1m[36mPage Load (0.3ms)[0m  [1m[34mSELECT  "pages".* FROM "pages" WHERE "pages"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/pages/980190962" for 127.0.0.1 at 2018-01-14 13:16:08 -0600
+Processing by PagesController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mPage Load (0.5ms)[0m  [1m[34mSELECT  "pages".* FROM "pages" WHERE "pages"."id" = $1 ORDER BY "pages"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------
+PagesControllerTest: test_should_destroy_page
+---------------------------------------------
+  [1m[36mPage Load (0.3ms)[0m  [1m[34mSELECT  "pages".* FROM "pages" WHERE "pages"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "pages"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started DELETE "/pages/980190962" for 127.0.0.1 at 2018-01-14 13:16:08 -0600
+Processing by PagesController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPage Load (0.5ms)[0m  [1m[34mSELECT  "pages".* FROM "pages" WHERE "pages"."id" = $1 ORDER BY "pages"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPage Destroy (0.4ms)[0m  [1m[31mDELETE FROM "pages" WHERE "pages"."id" = $1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 5ms (Views: 0.1ms | ActiveRecord: 1.2ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "pages"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------
+PagesControllerTest: test_should_update_page
+--------------------------------------------
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT  "pages".* FROM "pages" WHERE "pages"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started PATCH "/pages/980190962" for 127.0.0.1 at 2018-01-14 13:16:08 -0600
+Processing by PagesController#update as HTML
+  Parameters: {"data"=>{"type"=>"pages", "id"=>980190962, "attributes"=>{"name"=>"Different Name", "body"=>"A different body text."}}, "id"=>"980190962"}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT  "pages".* FROM "pages" WHERE "pages"."id" = $1 ORDER BY "pages"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPage Update (0.6ms)[0m  [1m[33mUPDATE "pages" SET "name" = $1, "body" = $2, "updated_at" = $3 WHERE "pages"."id" = $4[0m  [["name", "Different Name"], ["body", "A different body text."], ["updated_at", "2018-01-14 19:16:08.065040"], ["id", 980190962]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 1.4ms)
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------
+PagesControllerTest: test_should_create_page
+--------------------------------------------
+  [1m[36mPage Load (0.3ms)[0m  [1m[34mSELECT  "pages".* FROM "pages" WHERE "pages"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "pages"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started POST "/pages" for 127.0.0.1 at 2018-01-14 13:16:08 -0600
+Processing by PagesController#create as HTML
+  Parameters: {"data"=>{"type"=>"pages", "attributes"=>{"name"=>"Page 1", "body"=>"This is some body text."}}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPage Create (0.5ms)[0m  [1m[32mINSERT INTO "pages" ("name", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Page 1"], ["body", "This is some body text."], ["created_at", "2018-01-14 19:16:08.079287"], ["updated_at", "2018-01-14 19:16:08.079287"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 6ms (Views: 0.3ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "pages"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------
+UsersControllerTest: test_should_destroy_user
+---------------------------------------------
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started DELETE "/users/980190962" for 127.0.0.1 at 2018-01-14 13:16:08 -0600
+Processing by UsersController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 7ms (Views: 0.1ms | ActiveRecord: 2.1ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------
+UsersControllerTest: test_should_get_index
+------------------------------------------
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/users" for 127.0.0.1 at 2018-01-14 13:16:08 -0600
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------
+UsersControllerTest: test_should_show_user
+------------------------------------------
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/users/980190962" for 127.0.0.1 at 2018-01-14 13:16:08 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------
+UsersControllerTest: test_should_create_user
+--------------------------------------------
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started POST "/users" for 127.0.0.1 at 2018-01-14 13:16:08 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"data"=>{"type"=>"users", "attributes"=>{"name"=>"admin-1", "email"=>"MyString"}}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 422 Unprocessable Entity in 10ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------
+UsersControllerTest: test_should_update_user
+--------------------------------------------
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started PATCH "/users/980190962" for 127.0.0.1 at 2018-01-14 13:16:08 -0600
+Processing by UsersController#update as HTML
+  Parameters: {"data"=>{"type"=>"users", "id"=>980190962, "attributes"=>{"name"=>"Different Name", "email"=>"anotheremail@example.com"}}, "id"=>"980190962"}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "name" = $1, "email" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["name", "Different Name"], ["email", "anotheremail@example.com"], ["updated_at", "2018-01-14 19:16:08.140114"], ["id", 980190962]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 9ms (Views: 0.1ms | ActiveRecord: 1.7ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------
+EventsControllerTest: test_should_create_event
+----------------------------------------------
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started POST "/events" for 127.0.0.1 at 2018-01-14 13:16:08 -0600
+Processing by EventsController#create as HTML
+  Parameters: {"data"=>{"type"=>"events", "attributes"=>{"name"=>"Book 1", "body"=>"This is body text.", "password"=>"[FILTERED]"}}}
+Completed 400 Bad Request in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------
+EventsControllerTest: test_should_destroy_event
+-----------------------------------------------
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started DELETE "/events/980190962" for 127.0.0.1 at 2018-01-14 13:16:08 -0600
+Processing by EventsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 ORDER BY "events"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mEvent Destroy (0.5ms)[0m  [1m[31mDELETE FROM "events" WHERE "events"."id" = $1[0m  [["id", 980190962]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 5ms (Views: 0.1ms | ActiveRecord: 1.4ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------
+EventsControllerTest: test_should_update_event
+----------------------------------------------
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started PATCH "/events/980190962" for 127.0.0.1 at 2018-01-14 13:16:08 -0600
+Processing by EventsController#update as HTML
+  Parameters: {"data"=>{"type"=>"events", "id"=>980190962, "attributes"=>{"name"=>"Different Name", "body"=>"A different body text."}}, "id"=>"980190962"}
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 ORDER BY "events"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mEvent Update (0.5ms)[0m  [1m[33mUPDATE "events" SET "name" = $1, "body" = $2, "updated_at" = $3 WHERE "events"."id" = $4[0m  [["name", "Different Name"], ["body", "A different body text."], ["updated_at", "2018-01-14 19:16:08.201284"], ["id", 980190962]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 10ms (Views: 0.1ms | ActiveRecord: 1.6ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------
+EventsControllerTest: test_should_get_index
+-------------------------------------------
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/events" for 127.0.0.1 at 2018-01-14 13:16:08 -0600
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" ASC[0m
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------
+EventsControllerTest: test_should_show_event
+--------------------------------------------
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/events/980190962" for 127.0.0.1 at 2018-01-14 13:16:08 -0600
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 ORDER BY "events"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.0ms)[0m  [1m[35mALTER TABLE "citations" DISABLE TRIGGER ALL;ALTER TABLE "connections" DISABLE TRIGGER ALL;ALTER TABLE "contacts" DISABLE TRIGGER ALL;ALTER TABLE "emails" DISABLE TRIGGER ALL;ALTER TABLE "events" DISABLE TRIGGER ALL;ALTER TABLE "flags" DISABLE TRIGGER ALL;ALTER TABLE "images" DISABLE TRIGGER ALL;ALTER TABLE "licenses" DISABLE TRIGGER ALL;ALTER TABLE "locations" DISABLE TRIGGER ALL;ALTER TABLE "organizations" DISABLE TRIGGER ALL;ALTER TABLE "pages" DISABLE TRIGGER ALL;ALTER TABLE "people" DISABLE TRIGGER ALL;ALTER TABLE "phones" DISABLE TRIGGER ALL;ALTER TABLE "places" DISABLE TRIGGER ALL;ALTER TABLE "snippets" DISABLE TRIGGER ALL;ALTER TABLE "social_accounts" DISABLE TRIGGER ALL;ALTER TABLE "terms" DISABLE TRIGGER ALL;ALTER TABLE "time_periods" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "websites" DISABLE TRIGGER ALL;ALTER TABLE "works" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.7ms)[0m  [1m[31mDELETE FROM "citations"[0m
+  [1m[36mFixture Delete (0.8ms)[0m  [1m[31mDELETE FROM "emails"[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "events"[0m
+  [1m[36mFixtures Insert (0.5ms)[0m  [1m[32mINSERT INTO "events" ("id", "name", "body", "categories", "status", "created_at", "updated_at") VALUES (980190962, 'Book 1', 'This is body text.', 'opening', NULL, '2018-01-14 19:16:27.851200', '2018-01-14 19:16:27.851200'), (298486374, 'Book 2', 'This is more body text', 'exhitibion', 'cancelled', '2018-01-14 19:16:27.851200', '2018-01-14 19:16:27.851200')[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "images"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "licenses"[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "locations"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "organizations"[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "pages"[0m
+  [1m[36mFixtures Insert (0.4ms)[0m  [1m[32mINSERT INTO "pages" ("id", "name", "body", "parent_id", "created_at", "updated_at") VALUES (980190962, 'Page 1', 'This is some body text.', DEFAULT, '2018-01-14 19:16:27.882409', '2018-01-14 19:16:27.882409'), (298486374, 'MyString', 'This is some more body text.', DEFAULT, '2018-01-14 19:16:27.882409', '2018-01-14 19:16:27.882409')[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "people"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "phones"[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "places"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "snippets"[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "social_accounts"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "terms"[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixtures Insert (0.4ms)[0m  [1m[32mINSERT INTO "users" ("id", "name", "email", "password_digest", "admin", "created_at", "updated_at") VALUES (980190962, 'admin-1', 'MyString', 'MyString', TRUE, '2018-01-14 19:16:27.917339', '2018-01-14 19:16:27.917339'), (298486374, 'user-1', 'MyString', 'MyString', FALSE, '2018-01-14 19:16:27.917339', '2018-01-14 19:16:27.917339')[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "works"[0m
+  [1m[35m (8.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "citations" ENABLE TRIGGER ALL;ALTER TABLE "connections" ENABLE TRIGGER ALL;ALTER TABLE "contacts" ENABLE TRIGGER ALL;ALTER TABLE "emails" ENABLE TRIGGER ALL;ALTER TABLE "events" ENABLE TRIGGER ALL;ALTER TABLE "flags" ENABLE TRIGGER ALL;ALTER TABLE "images" ENABLE TRIGGER ALL;ALTER TABLE "licenses" ENABLE TRIGGER ALL;ALTER TABLE "locations" ENABLE TRIGGER ALL;ALTER TABLE "organizations" ENABLE TRIGGER ALL;ALTER TABLE "pages" ENABLE TRIGGER ALL;ALTER TABLE "people" ENABLE TRIGGER ALL;ALTER TABLE "phones" ENABLE TRIGGER ALL;ALTER TABLE "places" ENABLE TRIGGER ALL;ALTER TABLE "snippets" ENABLE TRIGGER ALL;ALTER TABLE "social_accounts" ENABLE TRIGGER ALL;ALTER TABLE "terms" ENABLE TRIGGER ALL;ALTER TABLE "time_periods" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "websites" ENABLE TRIGGER ALL;ALTER TABLE "works" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------
+EventsControllerTest: test_should_create_event
+----------------------------------------------
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started POST "/events" for 127.0.0.1 at 2018-01-14 13:16:28 -0600
+Processing by EventsController#create as HTML
+  Parameters: {"data"=>{"type"=>"events", "attributes"=>{"name"=>"Book 1", "body"=>"This is body text.", "password"=>"[FILTERED]"}}}
+Completed 400 Bad Request in 10ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------
+EventsControllerTest: test_should_show_event
+--------------------------------------------
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/events/980190962" for 127.0.0.1 at 2018-01-14 13:16:28 -0600
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 ORDER BY "events"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------
+EventsControllerTest: test_should_get_index
+-------------------------------------------
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/events" for 127.0.0.1 at 2018-01-14 13:16:28 -0600
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" ASC[0m
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------
+EventsControllerTest: test_should_destroy_event
+-----------------------------------------------
+  [1m[36mEvent Load (1.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started DELETE "/events/980190962" for 127.0.0.1 at 2018-01-14 13:16:28 -0600
+Processing by EventsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 ORDER BY "events"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mEvent Destroy (0.6ms)[0m  [1m[31mDELETE FROM "events" WHERE "events"."id" = $1[0m  [["id", 980190962]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 11ms (Views: 0.1ms | ActiveRecord: 2.0ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------
+EventsControllerTest: test_should_update_event
+----------------------------------------------
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started PATCH "/events/980190962" for 127.0.0.1 at 2018-01-14 13:16:28 -0600
+Processing by EventsController#update as HTML
+  Parameters: {"data"=>{"type"=>"events", "id"=>980190962, "attributes"=>{"name"=>"Different Name", "body"=>"A different body text."}}, "id"=>"980190962"}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 ORDER BY "events"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mEvent Update (2.4ms)[0m  [1m[33mUPDATE "events" SET "name" = $1, "body" = $2, "updated_at" = $3 WHERE "events"."id" = $4[0m  [["name", "Different Name"], ["body", "A different body text."], ["updated_at", "2018-01-14 19:16:28.207828"], ["id", 980190962]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 15ms (Views: 0.1ms | ActiveRecord: 3.5ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------
+PagesControllerTest: test_should_create_page
+--------------------------------------------
+  [1m[36mPage Load (0.3ms)[0m  [1m[34mSELECT  "pages".* FROM "pages" WHERE "pages"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "pages"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started POST "/pages" for 127.0.0.1 at 2018-01-14 13:16:28 -0600
+Processing by PagesController#create as HTML
+  Parameters: {"data"=>{"type"=>"pages", "attributes"=>{"name"=>"Page 1", "body"=>"This is some body text."}}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPage Create (0.5ms)[0m  [1m[32mINSERT INTO "pages" ("name", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Page 1"], ["body", "This is some body text."], ["created_at", "2018-01-14 19:16:28.241317"], ["updated_at", "2018-01-14 19:16:28.241317"]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 6ms (Views: 0.1ms | ActiveRecord: 1.1ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "pages"[0m
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------
+PagesControllerTest: test_should_show_page
+------------------------------------------
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT  "pages".* FROM "pages" WHERE "pages"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/pages/980190962" for 127.0.0.1 at 2018-01-14 13:16:28 -0600
+Processing by PagesController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mPage Load (0.5ms)[0m  [1m[34mSELECT  "pages".* FROM "pages" WHERE "pages"."id" = $1 ORDER BY "pages"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------
+PagesControllerTest: test_should_destroy_page
+---------------------------------------------
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT  "pages".* FROM "pages" WHERE "pages"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "pages"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started DELETE "/pages/980190962" for 127.0.0.1 at 2018-01-14 13:16:28 -0600
+Processing by PagesController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT  "pages".* FROM "pages" WHERE "pages"."id" = $1 ORDER BY "pages"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPage Destroy (0.3ms)[0m  [1m[31mDELETE FROM "pages" WHERE "pages"."id" = $1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 4ms (Views: 0.1ms | ActiveRecord: 1.1ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "pages"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------
+PagesControllerTest: test_should_update_page
+--------------------------------------------
+  [1m[36mPage Load (0.3ms)[0m  [1m[34mSELECT  "pages".* FROM "pages" WHERE "pages"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started PATCH "/pages/980190962" for 127.0.0.1 at 2018-01-14 13:16:28 -0600
+Processing by PagesController#update as HTML
+  Parameters: {"data"=>{"type"=>"pages", "id"=>980190962, "attributes"=>{"name"=>"Different Name", "body"=>"A different body text."}}, "id"=>"980190962"}
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPage Load (0.5ms)[0m  [1m[34mSELECT  "pages".* FROM "pages" WHERE "pages"."id" = $1 ORDER BY "pages"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPage Update (0.5ms)[0m  [1m[33mUPDATE "pages" SET "name" = $1, "body" = $2, "updated_at" = $3 WHERE "pages"."id" = $4[0m  [["name", "Different Name"], ["body", "A different body text."], ["updated_at", "2018-01-14 19:16:28.278252"], ["id", 980190962]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 1.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------
+PagesControllerTest: test_should_get_index
+------------------------------------------
+  [1m[36mPage Load (0.3ms)[0m  [1m[34mSELECT  "pages".* FROM "pages" WHERE "pages"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/pages" for 127.0.0.1 at 2018-01-14 13:16:28 -0600
+Processing by PagesController#index as HTML
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------
+UsersControllerTest: test_should_get_index
+------------------------------------------
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/users" for 127.0.0.1 at 2018-01-14 13:16:28 -0600
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------
+UsersControllerTest: test_should_create_user
+--------------------------------------------
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started POST "/users" for 127.0.0.1 at 2018-01-14 13:16:28 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"data"=>{"type"=>"users", "attributes"=>{"name"=>"admin-1", "email"=>"MyString"}}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 422 Unprocessable Entity in 4ms (Views: 0.4ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------
+UsersControllerTest: test_should_destroy_user
+---------------------------------------------
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started DELETE "/users/980190962" for 127.0.0.1 at 2018-01-14 13:16:28 -0600
+Processing by UsersController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 4ms (Views: 0.1ms | ActiveRecord: 1.2ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------
+UsersControllerTest: test_should_show_user
+------------------------------------------
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/users/980190962" for 127.0.0.1 at 2018-01-14 13:16:28 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------
+UsersControllerTest: test_should_update_user
+--------------------------------------------
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started PATCH "/users/980190962" for 127.0.0.1 at 2018-01-14 13:16:28 -0600
+Processing by UsersController#update as HTML
+  Parameters: {"data"=>{"type"=>"users", "id"=>980190962, "attributes"=>{"name"=>"Different Name", "email"=>"anotheremail@example.com"}}, "id"=>"980190962"}
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "name" = $1, "email" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["name", "Different Name"], ["email", "anotheremail@example.com"], ["updated_at", "2018-01-14 19:16:28.341786"], ["id", 980190962]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 1.7ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.0ms)[0m  [1m[35mALTER TABLE "citations" DISABLE TRIGGER ALL;ALTER TABLE "connections" DISABLE TRIGGER ALL;ALTER TABLE "contacts" DISABLE TRIGGER ALL;ALTER TABLE "emails" DISABLE TRIGGER ALL;ALTER TABLE "events" DISABLE TRIGGER ALL;ALTER TABLE "flags" DISABLE TRIGGER ALL;ALTER TABLE "images" DISABLE TRIGGER ALL;ALTER TABLE "licenses" DISABLE TRIGGER ALL;ALTER TABLE "locations" DISABLE TRIGGER ALL;ALTER TABLE "organizations" DISABLE TRIGGER ALL;ALTER TABLE "pages" DISABLE TRIGGER ALL;ALTER TABLE "people" DISABLE TRIGGER ALL;ALTER TABLE "phones" DISABLE TRIGGER ALL;ALTER TABLE "places" DISABLE TRIGGER ALL;ALTER TABLE "snippets" DISABLE TRIGGER ALL;ALTER TABLE "social_accounts" DISABLE TRIGGER ALL;ALTER TABLE "terms" DISABLE TRIGGER ALL;ALTER TABLE "time_periods" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "websites" DISABLE TRIGGER ALL;ALTER TABLE "works" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "citations"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "emails"[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "events"[0m
+  [1m[36mFixtures Insert (0.4ms)[0m  [1m[32mINSERT INTO "events" ("id", "name", "body", "categories", "status", "created_at", "updated_at") VALUES (980190962, 'Book 1', 'This is body text.', 'opening', NULL, '2018-01-14 19:17:30.594801', '2018-01-14 19:17:30.594801'), (298486374, 'Book 2', 'This is more body text', 'exhitibion', 'cancelled', '2018-01-14 19:17:30.594801', '2018-01-14 19:17:30.594801')[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "images"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "licenses"[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "locations"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "organizations"[0m
+  [1m[36mFixture Delete (0.8ms)[0m  [1m[31mDELETE FROM "pages"[0m
+  [1m[36mFixtures Insert (0.6ms)[0m  [1m[32mINSERT INTO "pages" ("id", "name", "body", "parent_id", "created_at", "updated_at") VALUES (980190962, 'Page 1', 'This is some body text.', DEFAULT, '2018-01-14 19:17:30.625042', '2018-01-14 19:17:30.625042'), (298486374, 'MyString', 'This is some more body text.', DEFAULT, '2018-01-14 19:17:30.625042', '2018-01-14 19:17:30.625042')[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "people"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "phones"[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "places"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "snippets"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "social_accounts"[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "terms"[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixtures Insert (0.4ms)[0m  [1m[32mINSERT INTO "users" ("id", "name", "email", "password_digest", "admin", "created_at", "updated_at") VALUES (980190962, 'admin-1', 'MyString', 'MyString', TRUE, '2018-01-14 19:17:30.666036', '2018-01-14 19:17:30.666036'), (298486374, 'user-1', 'MyString', 'MyString', FALSE, '2018-01-14 19:17:30.666036', '2018-01-14 19:17:30.666036')[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "works"[0m
+  [1m[35m (8.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "citations" ENABLE TRIGGER ALL;ALTER TABLE "connections" ENABLE TRIGGER ALL;ALTER TABLE "contacts" ENABLE TRIGGER ALL;ALTER TABLE "emails" ENABLE TRIGGER ALL;ALTER TABLE "events" ENABLE TRIGGER ALL;ALTER TABLE "flags" ENABLE TRIGGER ALL;ALTER TABLE "images" ENABLE TRIGGER ALL;ALTER TABLE "licenses" ENABLE TRIGGER ALL;ALTER TABLE "locations" ENABLE TRIGGER ALL;ALTER TABLE "organizations" ENABLE TRIGGER ALL;ALTER TABLE "pages" ENABLE TRIGGER ALL;ALTER TABLE "people" ENABLE TRIGGER ALL;ALTER TABLE "phones" ENABLE TRIGGER ALL;ALTER TABLE "places" ENABLE TRIGGER ALL;ALTER TABLE "snippets" ENABLE TRIGGER ALL;ALTER TABLE "social_accounts" ENABLE TRIGGER ALL;ALTER TABLE "terms" ENABLE TRIGGER ALL;ALTER TABLE "time_periods" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "websites" ENABLE TRIGGER ALL;ALTER TABLE "works" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------
+UsersControllerTest: test_should_update_user
+--------------------------------------------
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started PATCH "/users/980190962" for 127.0.0.1 at 2018-01-14 13:17:30 -0600
+Processing by UsersController#update as HTML
+  Parameters: {"data"=>{"type"=>"users", "id"=>980190962, "attributes"=>{"name"=>"Different Name", "email"=>"anotheremail@example.com"}}, "id"=>"980190962"}
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "name" = $1, "email" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["name", "Different Name"], ["email", "anotheremail@example.com"], ["updated_at", "2018-01-14 19:17:30.872142"], ["id", 980190962]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 10ms (Views: 0.1ms | ActiveRecord: 1.8ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------
+UsersControllerTest: test_should_show_user
+------------------------------------------
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/users/980190962" for 127.0.0.1 at 2018-01-14 13:17:30 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------
+UsersControllerTest: test_should_destroy_user
+---------------------------------------------
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started DELETE "/users/980190962" for 127.0.0.1 at 2018-01-14 13:17:30 -0600
+Processing by UsersController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 4ms (Views: 0.1ms | ActiveRecord: 1.2ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------
+UsersControllerTest: test_should_get_index
+------------------------------------------
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/users" for 127.0.0.1 at 2018-01-14 13:17:30 -0600
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------
+UsersControllerTest: test_should_create_user
+--------------------------------------------
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started POST "/users" for 127.0.0.1 at 2018-01-14 13:17:30 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"data"=>{"type"=>"users", "attributes"=>{"name"=>"admin-1", "email"=>"MyString", "password"=>"[FILTERED]"}}}
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "admin-1"], ["email", "MyString"], ["password_digest", "$2a$04$Q0JXaG5HQypk6rgLpLY96uBEjBw9RwzhdSR0bsZpl.vuu9.8SaKi6"], ["created_at", "2018-01-14 19:17:30.916067"], ["updated_at", "2018-01-14 19:17:30.916067"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 8ms (Views: 0.1ms | ActiveRecord: 1.0ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------
+PagesControllerTest: test_should_update_page
+--------------------------------------------
+  [1m[36mPage Load (0.3ms)[0m  [1m[34mSELECT  "pages".* FROM "pages" WHERE "pages"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started PATCH "/pages/980190962" for 127.0.0.1 at 2018-01-14 13:17:30 -0600
+Processing by PagesController#update as HTML
+  Parameters: {"data"=>{"type"=>"pages", "id"=>980190962, "attributes"=>{"name"=>"Different Name", "body"=>"A different body text."}}, "id"=>"980190962"}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPage Load (0.7ms)[0m  [1m[34mSELECT  "pages".* FROM "pages" WHERE "pages"."id" = $1 ORDER BY "pages"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPage Update (0.5ms)[0m  [1m[33mUPDATE "pages" SET "name" = $1, "body" = $2, "updated_at" = $3 WHERE "pages"."id" = $4[0m  [["name", "Different Name"], ["body", "A different body text."], ["updated_at", "2018-01-14 19:17:30.938371"], ["id", 980190962]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 1.6ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------
+PagesControllerTest: test_should_destroy_page
+---------------------------------------------
+  [1m[36mPage Load (0.3ms)[0m  [1m[34mSELECT  "pages".* FROM "pages" WHERE "pages"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "pages"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started DELETE "/pages/980190962" for 127.0.0.1 at 2018-01-14 13:17:30 -0600
+Processing by PagesController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPage Load (0.5ms)[0m  [1m[34mSELECT  "pages".* FROM "pages" WHERE "pages"."id" = $1 ORDER BY "pages"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mPage Destroy (0.4ms)[0m  [1m[31mDELETE FROM "pages" WHERE "pages"."id" = $1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 5ms (Views: 0.1ms | ActiveRecord: 1.3ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "pages"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------
+PagesControllerTest: test_should_get_index
+------------------------------------------
+  [1m[36mPage Load (0.3ms)[0m  [1m[34mSELECT  "pages".* FROM "pages" WHERE "pages"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/pages" for 127.0.0.1 at 2018-01-14 13:17:30 -0600
+Processing by PagesController#index as HTML
+  [1m[36mPage Load (0.5ms)[0m  [1m[34mSELECT "pages".* FROM "pages" ORDER BY "pages"."id" ASC[0m
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------
+PagesControllerTest: test_should_create_page
+--------------------------------------------
+  [1m[36mPage Load (0.3ms)[0m  [1m[34mSELECT  "pages".* FROM "pages" WHERE "pages"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "pages"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started POST "/pages" for 127.0.0.1 at 2018-01-14 13:17:30 -0600
+Processing by PagesController#create as HTML
+  Parameters: {"data"=>{"type"=>"pages", "attributes"=>{"name"=>"Page 1", "body"=>"This is some body text."}}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPage Create (0.4ms)[0m  [1m[32mINSERT INTO "pages" ("name", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Page 1"], ["body", "This is some body text."], ["created_at", "2018-01-14 19:17:30.972635"], ["updated_at", "2018-01-14 19:17:30.972635"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 4ms (Views: 0.1ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "pages"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------
+PagesControllerTest: test_should_show_page
+------------------------------------------
+  [1m[36mPage Load (0.4ms)[0m  [1m[34mSELECT  "pages".* FROM "pages" WHERE "pages"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/pages/980190962" for 127.0.0.1 at 2018-01-14 13:17:30 -0600
+Processing by PagesController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mPage Load (0.5ms)[0m  [1m[34mSELECT  "pages".* FROM "pages" WHERE "pages"."id" = $1 ORDER BY "pages"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------
+EventsControllerTest: test_should_create_event
+----------------------------------------------
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started POST "/events" for 127.0.0.1 at 2018-01-14 13:17:31 -0600
+Processing by EventsController#create as HTML
+  Parameters: {"data"=>{"type"=>"events", "attributes"=>{"name"=>"Book 1", "body"=>"This is body text."}}}
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEvent Create (0.4ms)[0m  [1m[32mINSERT INTO "events" ("name", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Book 1"], ["body", "This is body text."], ["created_at", "2018-01-14 19:17:31.005946"], ["updated_at", "2018-01-14 19:17:31.005946"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 5ms (Views: 0.1ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------
+EventsControllerTest: test_should_update_event
+----------------------------------------------
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started PATCH "/events/980190962" for 127.0.0.1 at 2018-01-14 13:17:31 -0600
+Processing by EventsController#update as HTML
+  Parameters: {"data"=>{"type"=>"events", "id"=>980190962, "attributes"=>{"name"=>"Different Name", "body"=>"A different body text."}}, "id"=>"980190962"}
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 ORDER BY "events"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mEvent Update (0.5ms)[0m  [1m[33mUPDATE "events" SET "name" = $1, "body" = $2, "updated_at" = $3 WHERE "events"."id" = $4[0m  [["name", "Different Name"], ["body", "A different body text."], ["updated_at", "2018-01-14 19:17:31.021312"], ["id", 980190962]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 1.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------
+EventsControllerTest: test_should_show_event
+--------------------------------------------
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/events/980190962" for 127.0.0.1 at 2018-01-14 13:17:31 -0600
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 ORDER BY "events"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------
+EventsControllerTest: test_should_get_index
+-------------------------------------------
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/events" for 127.0.0.1 at 2018-01-14 13:17:31 -0600
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" ASC[0m
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------
+EventsControllerTest: test_should_destroy_event
+-----------------------------------------------
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started DELETE "/events/980190962" for 127.0.0.1 at 2018-01-14 13:17:31 -0600
+Processing by EventsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 ORDER BY "events"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mEvent Destroy (0.4ms)[0m  [1m[31mDELETE FROM "events" WHERE "events"."id" = $1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 5ms (Views: 0.1ms | ActiveRecord: 1.2ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
