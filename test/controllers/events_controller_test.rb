@@ -1,12 +1,11 @@
 require 'test_helper'
 
 class EventsControllerTest < ActionDispatch::IntegrationTest
-  def authenticated_header
+  def headers
     token = Knock::AuthToken.new(payload: { sub: users(:one).id }).token
     {
-      'Authorization': "Bearer #{token}",
-      'Accept' => JSONAPI::MEDIA_TYPE,
-      'CONTENT_TYPE' => JSONAPI::MEDIA_TYPE
+      Authorization: "Bearer #{token}",
+      CONTENT_TYPE: JSONAPI::MEDIA_TYPE
     }
   end
 
@@ -30,29 +29,38 @@ class EventsControllerTest < ActionDispatch::IntegrationTest
           }
         }
       }.to_json,
-      headers: authenticated_header
-
-      # puts @response.body
+      headers: headers
     end
 
     assert_response 201
   end
 
   test 'should show event' do
-    get event_url(@event), as: 'application/vnd.api+json'
+    get event_url(@event), headers: headers
     assert_response :success
   end
 
-  # test 'should update event' do
-  #   patch event_url(@event), params: { event: { body: @event.body, categories: @event.categories, name: @event.name, status: @event.status } }, as: :json
-  #   assert_response 200
-  # end
+  test 'should update event' do
+    patch event_url(@event), params: {
+        data: {
+          type: 'events',
+          id: @event.id,
+          attributes: {
+            name: "Different Name",
+            body: "A different body text."
+          }
+        }
+      }.to_json,
+      headers: headers
+    assert_response 200
+  end
 
-  # test 'should destroy event' do
-  #   assert_difference('Event.count', -1) do
-  #     delete event_url(@event), as: :json
-  #   end
+  test 'should destroy event' do
+    assert_difference('Event.count', -1) do
+      delete event_url(@event),
+        headers: headers
+    end
 
-  #   assert_response 204
-  # end
+    assert_response 204
+  end
 end
