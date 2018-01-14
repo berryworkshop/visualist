@@ -5799,3 +5799,1060 @@ Processing by EventsController#show as HTML
   [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 ORDER BY "events"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
 Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.5ms)
   [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.1ms)[0m  [1m[35mALTER TABLE "citations" DISABLE TRIGGER ALL;ALTER TABLE "connections" DISABLE TRIGGER ALL;ALTER TABLE "contacts" DISABLE TRIGGER ALL;ALTER TABLE "emails" DISABLE TRIGGER ALL;ALTER TABLE "events" DISABLE TRIGGER ALL;ALTER TABLE "flags" DISABLE TRIGGER ALL;ALTER TABLE "images" DISABLE TRIGGER ALL;ALTER TABLE "licenses" DISABLE TRIGGER ALL;ALTER TABLE "locations" DISABLE TRIGGER ALL;ALTER TABLE "organizations" DISABLE TRIGGER ALL;ALTER TABLE "pages" DISABLE TRIGGER ALL;ALTER TABLE "people" DISABLE TRIGGER ALL;ALTER TABLE "phones" DISABLE TRIGGER ALL;ALTER TABLE "places" DISABLE TRIGGER ALL;ALTER TABLE "snippets" DISABLE TRIGGER ALL;ALTER TABLE "social_accounts" DISABLE TRIGGER ALL;ALTER TABLE "terms" DISABLE TRIGGER ALL;ALTER TABLE "time_periods" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "websites" DISABLE TRIGGER ALL;ALTER TABLE "works" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (3.2ms)[0m  [1m[31mDELETE FROM "citations"[0m
+  [1m[36mFixture Delete (1.0ms)[0m  [1m[31mDELETE FROM "emails"[0m
+  [1m[36mFixture Delete (1.4ms)[0m  [1m[31mDELETE FROM "events"[0m
+  [1m[36mFixtures Insert (6.5ms)[0m  [1m[32mINSERT INTO "events" ("id", "name", "body", "categories", "status", "created_at", "updated_at") VALUES (980190962, 'Book 1', 'This is body text.', 'opening', NULL, '2018-01-14 05:43:46.175522', '2018-01-14 05:43:46.175522'), (298486374, 'Book 2', 'This is more body text', 'exhitibion', 'cancelled', '2018-01-14 05:43:46.175522', '2018-01-14 05:43:46.175522')[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "images"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "licenses"[0m
+  [1m[36mFixture Delete (1.0ms)[0m  [1m[31mDELETE FROM "locations"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "organizations"[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "pages"[0m
+  [1m[36mFixtures Insert (0.6ms)[0m  [1m[32mINSERT INTO "pages" ("id", "name", "body", "parent_id", "created_at", "updated_at") VALUES (980190962, 'Page 1', 'This is some body text.', DEFAULT, '2018-01-14 05:43:46.223093', '2018-01-14 05:43:46.223093'), (298486374, 'MyString', 'This is some more body text.', DEFAULT, '2018-01-14 05:43:46.223093', '2018-01-14 05:43:46.223093')[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "people"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "phones"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "places"[0m
+  [1m[36mFixture Delete (1.5ms)[0m  [1m[31mDELETE FROM "snippets"[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "social_accounts"[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "terms"[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixtures Insert (0.5ms)[0m  [1m[32mINSERT INTO "users" ("id", "name", "email", "password_digest", "admin", "created_at", "updated_at") VALUES (980190962, 'admin-1', 'MyString', 'MyString', TRUE, '2018-01-14 05:43:46.267327', '2018-01-14 05:43:46.267327'), (298486374, 'user-1', 'MyString', 'MyString', FALSE, '2018-01-14 05:43:46.267327', '2018-01-14 05:43:46.267327')[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "works"[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "citations" ENABLE TRIGGER ALL;ALTER TABLE "connections" ENABLE TRIGGER ALL;ALTER TABLE "contacts" ENABLE TRIGGER ALL;ALTER TABLE "emails" ENABLE TRIGGER ALL;ALTER TABLE "events" ENABLE TRIGGER ALL;ALTER TABLE "flags" ENABLE TRIGGER ALL;ALTER TABLE "images" ENABLE TRIGGER ALL;ALTER TABLE "licenses" ENABLE TRIGGER ALL;ALTER TABLE "locations" ENABLE TRIGGER ALL;ALTER TABLE "organizations" ENABLE TRIGGER ALL;ALTER TABLE "pages" ENABLE TRIGGER ALL;ALTER TABLE "people" ENABLE TRIGGER ALL;ALTER TABLE "phones" ENABLE TRIGGER ALL;ALTER TABLE "places" ENABLE TRIGGER ALL;ALTER TABLE "snippets" ENABLE TRIGGER ALL;ALTER TABLE "social_accounts" ENABLE TRIGGER ALL;ALTER TABLE "terms" ENABLE TRIGGER ALL;ALTER TABLE "time_periods" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "websites" ENABLE TRIGGER ALL;ALTER TABLE "works" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------
+EventsControllerTest: test_should_show_event
+--------------------------------------------
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/events/980190962" for 127.0.0.1 at 2018-01-13 23:43:46 -0600
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 ORDER BY "events"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------
+EventsControllerTest: test_should_get_index
+-------------------------------------------
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/events" for 127.0.0.1 at 2018-01-13 23:43:46 -0600
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" ASC[0m
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------
+EventsControllerTest: test_should_create_event
+----------------------------------------------
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started POST "/events" for 127.0.0.1 at 2018-01-13 23:43:46 -0600
+Processing by EventsController#create as HTML
+  Parameters: {"data"=>{"type"=>"events", "attributes"=>{"name"=>"Book 1", "body"=>"This is body text."}}}
+Completed 415 Unsupported Media Type in 8ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.0ms)[0m  [1m[35mALTER TABLE "citations" DISABLE TRIGGER ALL;ALTER TABLE "connections" DISABLE TRIGGER ALL;ALTER TABLE "contacts" DISABLE TRIGGER ALL;ALTER TABLE "emails" DISABLE TRIGGER ALL;ALTER TABLE "events" DISABLE TRIGGER ALL;ALTER TABLE "flags" DISABLE TRIGGER ALL;ALTER TABLE "images" DISABLE TRIGGER ALL;ALTER TABLE "licenses" DISABLE TRIGGER ALL;ALTER TABLE "locations" DISABLE TRIGGER ALL;ALTER TABLE "organizations" DISABLE TRIGGER ALL;ALTER TABLE "pages" DISABLE TRIGGER ALL;ALTER TABLE "people" DISABLE TRIGGER ALL;ALTER TABLE "phones" DISABLE TRIGGER ALL;ALTER TABLE "places" DISABLE TRIGGER ALL;ALTER TABLE "snippets" DISABLE TRIGGER ALL;ALTER TABLE "social_accounts" DISABLE TRIGGER ALL;ALTER TABLE "terms" DISABLE TRIGGER ALL;ALTER TABLE "time_periods" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "websites" DISABLE TRIGGER ALL;ALTER TABLE "works" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "citations"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "emails"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "events"[0m
+  [1m[36mFixtures Insert (0.6ms)[0m  [1m[32mINSERT INTO "events" ("id", "name", "body", "categories", "status", "created_at", "updated_at") VALUES (980190962, 'Book 1', 'This is body text.', 'opening', NULL, '2018-01-14 05:47:43.900228', '2018-01-14 05:47:43.900228'), (298486374, 'Book 2', 'This is more body text', 'exhitibion', 'cancelled', '2018-01-14 05:47:43.900228', '2018-01-14 05:47:43.900228')[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "images"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "licenses"[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "locations"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "organizations"[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "pages"[0m
+  [1m[36mFixtures Insert (0.4ms)[0m  [1m[32mINSERT INTO "pages" ("id", "name", "body", "parent_id", "created_at", "updated_at") VALUES (980190962, 'Page 1', 'This is some body text.', DEFAULT, '2018-01-14 05:47:43.931070', '2018-01-14 05:47:43.931070'), (298486374, 'MyString', 'This is some more body text.', DEFAULT, '2018-01-14 05:47:43.931070', '2018-01-14 05:47:43.931070')[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "people"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "phones"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "places"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "snippets"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "social_accounts"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "terms"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixtures Insert (0.4ms)[0m  [1m[32mINSERT INTO "users" ("id", "name", "email", "password_digest", "admin", "created_at", "updated_at") VALUES (980190962, 'admin-1', 'MyString', 'MyString', TRUE, '2018-01-14 05:47:43.967006', '2018-01-14 05:47:43.967006'), (298486374, 'user-1', 'MyString', 'MyString', FALSE, '2018-01-14 05:47:43.967006', '2018-01-14 05:47:43.967006')[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "works"[0m
+  [1m[35m (121.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "citations" ENABLE TRIGGER ALL;ALTER TABLE "connections" ENABLE TRIGGER ALL;ALTER TABLE "contacts" ENABLE TRIGGER ALL;ALTER TABLE "emails" ENABLE TRIGGER ALL;ALTER TABLE "events" ENABLE TRIGGER ALL;ALTER TABLE "flags" ENABLE TRIGGER ALL;ALTER TABLE "images" ENABLE TRIGGER ALL;ALTER TABLE "licenses" ENABLE TRIGGER ALL;ALTER TABLE "locations" ENABLE TRIGGER ALL;ALTER TABLE "organizations" ENABLE TRIGGER ALL;ALTER TABLE "pages" ENABLE TRIGGER ALL;ALTER TABLE "people" ENABLE TRIGGER ALL;ALTER TABLE "phones" ENABLE TRIGGER ALL;ALTER TABLE "places" ENABLE TRIGGER ALL;ALTER TABLE "snippets" ENABLE TRIGGER ALL;ALTER TABLE "social_accounts" ENABLE TRIGGER ALL;ALTER TABLE "terms" ENABLE TRIGGER ALL;ALTER TABLE "time_periods" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "websites" ENABLE TRIGGER ALL;ALTER TABLE "works" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------
+EventsControllerTest: test_should_get_index
+-------------------------------------------
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/events" for 127.0.0.1 at 2018-01-13 23:47:44 -0600
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" ASC[0m
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------
+EventsControllerTest: test_should_create_event
+----------------------------------------------
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started POST "/events" for 127.0.0.1 at 2018-01-13 23:47:44 -0600
+Processing by EventsController#create as HTML
+  Parameters: {"data"=>{"type"=>"events", "attributes"=>{"name"=>"Book 1", "body"=>"This is body text."}}}
+Completed 415 Unsupported Media Type in 5ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------
+EventsControllerTest: test_should_show_event
+--------------------------------------------
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/events/980190962" for 127.0.0.1 at 2018-01-13 23:47:44 -0600
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 ORDER BY "events"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.6ms)[0m  [1m[35mALTER TABLE "citations" DISABLE TRIGGER ALL;ALTER TABLE "connections" DISABLE TRIGGER ALL;ALTER TABLE "contacts" DISABLE TRIGGER ALL;ALTER TABLE "emails" DISABLE TRIGGER ALL;ALTER TABLE "events" DISABLE TRIGGER ALL;ALTER TABLE "flags" DISABLE TRIGGER ALL;ALTER TABLE "images" DISABLE TRIGGER ALL;ALTER TABLE "licenses" DISABLE TRIGGER ALL;ALTER TABLE "locations" DISABLE TRIGGER ALL;ALTER TABLE "organizations" DISABLE TRIGGER ALL;ALTER TABLE "pages" DISABLE TRIGGER ALL;ALTER TABLE "people" DISABLE TRIGGER ALL;ALTER TABLE "phones" DISABLE TRIGGER ALL;ALTER TABLE "places" DISABLE TRIGGER ALL;ALTER TABLE "snippets" DISABLE TRIGGER ALL;ALTER TABLE "social_accounts" DISABLE TRIGGER ALL;ALTER TABLE "terms" DISABLE TRIGGER ALL;ALTER TABLE "time_periods" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "websites" DISABLE TRIGGER ALL;ALTER TABLE "works" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "citations"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "emails"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "events"[0m
+  [1m[36mFixtures Insert (0.4ms)[0m  [1m[32mINSERT INTO "events" ("id", "name", "body", "categories", "status", "created_at", "updated_at") VALUES (980190962, 'Book 1', 'This is body text.', 'opening', NULL, '2018-01-14 05:48:05.737264', '2018-01-14 05:48:05.737264'), (298486374, 'Book 2', 'This is more body text', 'exhitibion', 'cancelled', '2018-01-14 05:48:05.737264', '2018-01-14 05:48:05.737264')[0m
+  [1m[36mFixture Delete (0.8ms)[0m  [1m[31mDELETE FROM "images"[0m
+  [1m[36mFixture Delete (0.7ms)[0m  [1m[31mDELETE FROM "licenses"[0m
+  [1m[36mFixture Delete (0.9ms)[0m  [1m[31mDELETE FROM "locations"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "organizations"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "pages"[0m
+  [1m[36mFixtures Insert (0.4ms)[0m  [1m[32mINSERT INTO "pages" ("id", "name", "body", "parent_id", "created_at", "updated_at") VALUES (980190962, 'Page 1', 'This is some body text.', DEFAULT, '2018-01-14 05:48:05.775735', '2018-01-14 05:48:05.775735'), (298486374, 'MyString', 'This is some more body text.', DEFAULT, '2018-01-14 05:48:05.775735', '2018-01-14 05:48:05.775735')[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "people"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "phones"[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "places"[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "snippets"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "social_accounts"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "terms"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixtures Insert (0.4ms)[0m  [1m[32mINSERT INTO "users" ("id", "name", "email", "password_digest", "admin", "created_at", "updated_at") VALUES (980190962, 'admin-1', 'MyString', 'MyString', TRUE, '2018-01-14 05:48:05.813928', '2018-01-14 05:48:05.813928'), (298486374, 'user-1', 'MyString', 'MyString', FALSE, '2018-01-14 05:48:05.813928', '2018-01-14 05:48:05.813928')[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "works"[0m
+  [1m[35m (8.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "citations" ENABLE TRIGGER ALL;ALTER TABLE "connections" ENABLE TRIGGER ALL;ALTER TABLE "contacts" ENABLE TRIGGER ALL;ALTER TABLE "emails" ENABLE TRIGGER ALL;ALTER TABLE "events" ENABLE TRIGGER ALL;ALTER TABLE "flags" ENABLE TRIGGER ALL;ALTER TABLE "images" ENABLE TRIGGER ALL;ALTER TABLE "licenses" ENABLE TRIGGER ALL;ALTER TABLE "locations" ENABLE TRIGGER ALL;ALTER TABLE "organizations" ENABLE TRIGGER ALL;ALTER TABLE "pages" ENABLE TRIGGER ALL;ALTER TABLE "people" ENABLE TRIGGER ALL;ALTER TABLE "phones" ENABLE TRIGGER ALL;ALTER TABLE "places" ENABLE TRIGGER ALL;ALTER TABLE "snippets" ENABLE TRIGGER ALL;ALTER TABLE "social_accounts" ENABLE TRIGGER ALL;ALTER TABLE "terms" ENABLE TRIGGER ALL;ALTER TABLE "time_periods" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "websites" ENABLE TRIGGER ALL;ALTER TABLE "works" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------
+EventsControllerTest: test_should_create_event
+----------------------------------------------
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started POST "/events" for 127.0.0.1 at 2018-01-13 23:48:06 -0600
+Processing by EventsController#create as HTML
+  Parameters: {"data"=>{"type"=>"events", "attributes"=>{"name"=>"Book 1", "body"=>"This is body text."}}}
+Completed 415 Unsupported Media Type in 7ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------
+EventsControllerTest: test_should_get_index
+-------------------------------------------
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/events" for 127.0.0.1 at 2018-01-13 23:48:06 -0600
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" ASC[0m
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------
+EventsControllerTest: test_should_show_event
+--------------------------------------------
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/events/980190962" for 127.0.0.1 at 2018-01-13 23:48:06 -0600
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 ORDER BY "events"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.0ms)[0m  [1m[35mALTER TABLE "citations" DISABLE TRIGGER ALL;ALTER TABLE "connections" DISABLE TRIGGER ALL;ALTER TABLE "contacts" DISABLE TRIGGER ALL;ALTER TABLE "emails" DISABLE TRIGGER ALL;ALTER TABLE "events" DISABLE TRIGGER ALL;ALTER TABLE "flags" DISABLE TRIGGER ALL;ALTER TABLE "images" DISABLE TRIGGER ALL;ALTER TABLE "licenses" DISABLE TRIGGER ALL;ALTER TABLE "locations" DISABLE TRIGGER ALL;ALTER TABLE "organizations" DISABLE TRIGGER ALL;ALTER TABLE "pages" DISABLE TRIGGER ALL;ALTER TABLE "people" DISABLE TRIGGER ALL;ALTER TABLE "phones" DISABLE TRIGGER ALL;ALTER TABLE "places" DISABLE TRIGGER ALL;ALTER TABLE "snippets" DISABLE TRIGGER ALL;ALTER TABLE "social_accounts" DISABLE TRIGGER ALL;ALTER TABLE "terms" DISABLE TRIGGER ALL;ALTER TABLE "time_periods" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "websites" DISABLE TRIGGER ALL;ALTER TABLE "works" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "citations"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "emails"[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "events"[0m
+  [1m[36mFixtures Insert (0.6ms)[0m  [1m[32mINSERT INTO "events" ("id", "name", "body", "categories", "status", "created_at", "updated_at") VALUES (980190962, 'Book 1', 'This is body text.', 'opening', NULL, '2018-01-14 05:48:19.971326', '2018-01-14 05:48:19.971326'), (298486374, 'Book 2', 'This is more body text', 'exhitibion', 'cancelled', '2018-01-14 05:48:19.971326', '2018-01-14 05:48:19.971326')[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "images"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "licenses"[0m
+  [1m[36mFixture Delete (0.7ms)[0m  [1m[31mDELETE FROM "locations"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "organizations"[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "pages"[0m
+  [1m[36mFixtures Insert (0.4ms)[0m  [1m[32mINSERT INTO "pages" ("id", "name", "body", "parent_id", "created_at", "updated_at") VALUES (980190962, 'Page 1', 'This is some body text.', DEFAULT, '2018-01-14 05:48:20.008569', '2018-01-14 05:48:20.008569'), (298486374, 'MyString', 'This is some more body text.', DEFAULT, '2018-01-14 05:48:20.008569', '2018-01-14 05:48:20.008569')[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "people"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "phones"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "places"[0m
+  [1m[36mFixture Delete (0.7ms)[0m  [1m[31mDELETE FROM "snippets"[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "social_accounts"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "terms"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixtures Insert (0.5ms)[0m  [1m[32mINSERT INTO "users" ("id", "name", "email", "password_digest", "admin", "created_at", "updated_at") VALUES (980190962, 'admin-1', 'MyString', 'MyString', TRUE, '2018-01-14 05:48:20.051771', '2018-01-14 05:48:20.051771'), (298486374, 'user-1', 'MyString', 'MyString', FALSE, '2018-01-14 05:48:20.051771', '2018-01-14 05:48:20.051771')[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "works"[0m
+  [1m[35m (8.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "citations" ENABLE TRIGGER ALL;ALTER TABLE "connections" ENABLE TRIGGER ALL;ALTER TABLE "contacts" ENABLE TRIGGER ALL;ALTER TABLE "emails" ENABLE TRIGGER ALL;ALTER TABLE "events" ENABLE TRIGGER ALL;ALTER TABLE "flags" ENABLE TRIGGER ALL;ALTER TABLE "images" ENABLE TRIGGER ALL;ALTER TABLE "licenses" ENABLE TRIGGER ALL;ALTER TABLE "locations" ENABLE TRIGGER ALL;ALTER TABLE "organizations" ENABLE TRIGGER ALL;ALTER TABLE "pages" ENABLE TRIGGER ALL;ALTER TABLE "people" ENABLE TRIGGER ALL;ALTER TABLE "phones" ENABLE TRIGGER ALL;ALTER TABLE "places" ENABLE TRIGGER ALL;ALTER TABLE "snippets" ENABLE TRIGGER ALL;ALTER TABLE "social_accounts" ENABLE TRIGGER ALL;ALTER TABLE "terms" ENABLE TRIGGER ALL;ALTER TABLE "time_periods" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "websites" ENABLE TRIGGER ALL;ALTER TABLE "works" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------
+EventsControllerTest: test_should_get_index
+-------------------------------------------
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/events" for 127.0.0.1 at 2018-01-13 23:48:20 -0600
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" ASC[0m
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------
+EventsControllerTest: test_should_show_event
+--------------------------------------------
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/events/980190962" for 127.0.0.1 at 2018-01-13 23:48:20 -0600
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 ORDER BY "events"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------
+EventsControllerTest: test_should_create_event
+----------------------------------------------
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started POST "/events" for 127.0.0.1 at 2018-01-13 23:48:20 -0600
+Processing by EventsController#create as HTML
+  Parameters: {"data"=>{"type"=>"events", "attributes"=>{"name"=>"Book 1", "body"=>"This is body text."}}}
+Completed 415 Unsupported Media Type in 4ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.0ms)[0m  [1m[35mALTER TABLE "citations" DISABLE TRIGGER ALL;ALTER TABLE "connections" DISABLE TRIGGER ALL;ALTER TABLE "contacts" DISABLE TRIGGER ALL;ALTER TABLE "emails" DISABLE TRIGGER ALL;ALTER TABLE "events" DISABLE TRIGGER ALL;ALTER TABLE "flags" DISABLE TRIGGER ALL;ALTER TABLE "images" DISABLE TRIGGER ALL;ALTER TABLE "licenses" DISABLE TRIGGER ALL;ALTER TABLE "locations" DISABLE TRIGGER ALL;ALTER TABLE "organizations" DISABLE TRIGGER ALL;ALTER TABLE "pages" DISABLE TRIGGER ALL;ALTER TABLE "people" DISABLE TRIGGER ALL;ALTER TABLE "phones" DISABLE TRIGGER ALL;ALTER TABLE "places" DISABLE TRIGGER ALL;ALTER TABLE "snippets" DISABLE TRIGGER ALL;ALTER TABLE "social_accounts" DISABLE TRIGGER ALL;ALTER TABLE "terms" DISABLE TRIGGER ALL;ALTER TABLE "time_periods" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "websites" DISABLE TRIGGER ALL;ALTER TABLE "works" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "citations"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "emails"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "events"[0m
+  [1m[36mFixtures Insert (0.5ms)[0m  [1m[32mINSERT INTO "events" ("id", "name", "body", "categories", "status", "created_at", "updated_at") VALUES (980190962, 'Book 1', 'This is body text.', 'opening', NULL, '2018-01-14 05:48:51.594397', '2018-01-14 05:48:51.594397'), (298486374, 'Book 2', 'This is more body text', 'exhitibion', 'cancelled', '2018-01-14 05:48:51.594397', '2018-01-14 05:48:51.594397')[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "images"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "licenses"[0m
+  [1m[36mFixture Delete (0.8ms)[0m  [1m[31mDELETE FROM "locations"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "organizations"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "pages"[0m
+  [1m[36mFixtures Insert (0.4ms)[0m  [1m[32mINSERT INTO "pages" ("id", "name", "body", "parent_id", "created_at", "updated_at") VALUES (980190962, 'Page 1', 'This is some body text.', DEFAULT, '2018-01-14 05:48:51.633643', '2018-01-14 05:48:51.633643'), (298486374, 'MyString', 'This is some more body text.', DEFAULT, '2018-01-14 05:48:51.633643', '2018-01-14 05:48:51.633643')[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "people"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "phones"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "places"[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "snippets"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "social_accounts"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "terms"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixtures Insert (0.4ms)[0m  [1m[32mINSERT INTO "users" ("id", "name", "email", "password_digest", "admin", "created_at", "updated_at") VALUES (980190962, 'admin-1', 'MyString', 'MyString', TRUE, '2018-01-14 05:48:51.675239', '2018-01-14 05:48:51.675239'), (298486374, 'user-1', 'MyString', 'MyString', FALSE, '2018-01-14 05:48:51.675239', '2018-01-14 05:48:51.675239')[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "works"[0m
+  [1m[35m (8.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "citations" ENABLE TRIGGER ALL;ALTER TABLE "connections" ENABLE TRIGGER ALL;ALTER TABLE "contacts" ENABLE TRIGGER ALL;ALTER TABLE "emails" ENABLE TRIGGER ALL;ALTER TABLE "events" ENABLE TRIGGER ALL;ALTER TABLE "flags" ENABLE TRIGGER ALL;ALTER TABLE "images" ENABLE TRIGGER ALL;ALTER TABLE "licenses" ENABLE TRIGGER ALL;ALTER TABLE "locations" ENABLE TRIGGER ALL;ALTER TABLE "organizations" ENABLE TRIGGER ALL;ALTER TABLE "pages" ENABLE TRIGGER ALL;ALTER TABLE "people" ENABLE TRIGGER ALL;ALTER TABLE "phones" ENABLE TRIGGER ALL;ALTER TABLE "places" ENABLE TRIGGER ALL;ALTER TABLE "snippets" ENABLE TRIGGER ALL;ALTER TABLE "social_accounts" ENABLE TRIGGER ALL;ALTER TABLE "terms" ENABLE TRIGGER ALL;ALTER TABLE "time_periods" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "websites" ENABLE TRIGGER ALL;ALTER TABLE "works" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------
+EventsControllerTest: test_should_create_event
+----------------------------------------------
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started POST "/events" for 127.0.0.1 at 2018-01-13 23:48:51 -0600
+Processing by EventsController#create as HTML
+  Parameters: {"data"=>{"type"=>"events", "attributes"=>{"name"=>"Book 1", "body"=>"\"This is body text.\""}}}
+Completed 415 Unsupported Media Type in 5ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------
+EventsControllerTest: test_should_get_index
+-------------------------------------------
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/events" for 127.0.0.1 at 2018-01-13 23:48:51 -0600
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" ASC[0m
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------
+EventsControllerTest: test_should_show_event
+--------------------------------------------
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/events/980190962" for 127.0.0.1 at 2018-01-13 23:48:51 -0600
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 ORDER BY "events"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.7ms)[0m  [1m[35mALTER TABLE "citations" DISABLE TRIGGER ALL;ALTER TABLE "connections" DISABLE TRIGGER ALL;ALTER TABLE "contacts" DISABLE TRIGGER ALL;ALTER TABLE "emails" DISABLE TRIGGER ALL;ALTER TABLE "events" DISABLE TRIGGER ALL;ALTER TABLE "flags" DISABLE TRIGGER ALL;ALTER TABLE "images" DISABLE TRIGGER ALL;ALTER TABLE "licenses" DISABLE TRIGGER ALL;ALTER TABLE "locations" DISABLE TRIGGER ALL;ALTER TABLE "organizations" DISABLE TRIGGER ALL;ALTER TABLE "pages" DISABLE TRIGGER ALL;ALTER TABLE "people" DISABLE TRIGGER ALL;ALTER TABLE "phones" DISABLE TRIGGER ALL;ALTER TABLE "places" DISABLE TRIGGER ALL;ALTER TABLE "snippets" DISABLE TRIGGER ALL;ALTER TABLE "social_accounts" DISABLE TRIGGER ALL;ALTER TABLE "terms" DISABLE TRIGGER ALL;ALTER TABLE "time_periods" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "websites" DISABLE TRIGGER ALL;ALTER TABLE "works" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.9ms)[0m  [1m[31mDELETE FROM "citations"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "emails"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "events"[0m
+  [1m[36mFixtures Insert (0.5ms)[0m  [1m[32mINSERT INTO "events" ("id", "name", "body", "categories", "status", "created_at", "updated_at") VALUES (980190962, 'Book 1', 'This is body text.', 'opening', NULL, '2018-01-14 05:50:58.822494', '2018-01-14 05:50:58.822494'), (298486374, 'Book 2', 'This is more body text', 'exhitibion', 'cancelled', '2018-01-14 05:50:58.822494', '2018-01-14 05:50:58.822494')[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "images"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "licenses"[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "locations"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "organizations"[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "pages"[0m
+  [1m[36mFixtures Insert (0.4ms)[0m  [1m[32mINSERT INTO "pages" ("id", "name", "body", "parent_id", "created_at", "updated_at") VALUES (980190962, 'Page 1', 'This is some body text.', DEFAULT, '2018-01-14 05:50:58.855675', '2018-01-14 05:50:58.855675'), (298486374, 'MyString', 'This is some more body text.', DEFAULT, '2018-01-14 05:50:58.855675', '2018-01-14 05:50:58.855675')[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "people"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "phones"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "places"[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "snippets"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "social_accounts"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "terms"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixtures Insert (0.4ms)[0m  [1m[32mINSERT INTO "users" ("id", "name", "email", "password_digest", "admin", "created_at", "updated_at") VALUES (980190962, 'admin-1', 'MyString', 'MyString', TRUE, '2018-01-14 05:50:58.891065', '2018-01-14 05:50:58.891065'), (298486374, 'user-1', 'MyString', 'MyString', FALSE, '2018-01-14 05:50:58.891065', '2018-01-14 05:50:58.891065')[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "works"[0m
+  [1m[35m (8.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "citations" ENABLE TRIGGER ALL;ALTER TABLE "connections" ENABLE TRIGGER ALL;ALTER TABLE "contacts" ENABLE TRIGGER ALL;ALTER TABLE "emails" ENABLE TRIGGER ALL;ALTER TABLE "events" ENABLE TRIGGER ALL;ALTER TABLE "flags" ENABLE TRIGGER ALL;ALTER TABLE "images" ENABLE TRIGGER ALL;ALTER TABLE "licenses" ENABLE TRIGGER ALL;ALTER TABLE "locations" ENABLE TRIGGER ALL;ALTER TABLE "organizations" ENABLE TRIGGER ALL;ALTER TABLE "pages" ENABLE TRIGGER ALL;ALTER TABLE "people" ENABLE TRIGGER ALL;ALTER TABLE "phones" ENABLE TRIGGER ALL;ALTER TABLE "places" ENABLE TRIGGER ALL;ALTER TABLE "snippets" ENABLE TRIGGER ALL;ALTER TABLE "social_accounts" ENABLE TRIGGER ALL;ALTER TABLE "terms" ENABLE TRIGGER ALL;ALTER TABLE "time_periods" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "websites" ENABLE TRIGGER ALL;ALTER TABLE "works" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------
+EventsControllerTest: test_should_create_event
+----------------------------------------------
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+Started POST "/events" for 127.0.0.1 at 2018-01-13 23:50:59 -0600
+Processing by EventsController#create as HTML
+  Parameters: {"_parser_exception"=>#<JSONAPI::Exceptions::BadRequest: JSONAPI::Exceptions::BadRequest>}
+Completed 400 Bad Request in 5ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------
+EventsControllerTest: test_should_get_index
+-------------------------------------------
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/events" for 127.0.0.1 at 2018-01-13 23:50:59 -0600
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" ASC[0m
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------
+EventsControllerTest: test_should_show_event
+--------------------------------------------
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/events/980190962" for 127.0.0.1 at 2018-01-13 23:50:59 -0600
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 ORDER BY "events"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.0ms)[0m  [1m[35mALTER TABLE "citations" DISABLE TRIGGER ALL;ALTER TABLE "connections" DISABLE TRIGGER ALL;ALTER TABLE "contacts" DISABLE TRIGGER ALL;ALTER TABLE "emails" DISABLE TRIGGER ALL;ALTER TABLE "events" DISABLE TRIGGER ALL;ALTER TABLE "flags" DISABLE TRIGGER ALL;ALTER TABLE "images" DISABLE TRIGGER ALL;ALTER TABLE "licenses" DISABLE TRIGGER ALL;ALTER TABLE "locations" DISABLE TRIGGER ALL;ALTER TABLE "organizations" DISABLE TRIGGER ALL;ALTER TABLE "pages" DISABLE TRIGGER ALL;ALTER TABLE "people" DISABLE TRIGGER ALL;ALTER TABLE "phones" DISABLE TRIGGER ALL;ALTER TABLE "places" DISABLE TRIGGER ALL;ALTER TABLE "snippets" DISABLE TRIGGER ALL;ALTER TABLE "social_accounts" DISABLE TRIGGER ALL;ALTER TABLE "terms" DISABLE TRIGGER ALL;ALTER TABLE "time_periods" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "websites" DISABLE TRIGGER ALL;ALTER TABLE "works" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "citations"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "emails"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "events"[0m
+  [1m[36mFixtures Insert (0.5ms)[0m  [1m[32mINSERT INTO "events" ("id", "name", "body", "categories", "status", "created_at", "updated_at") VALUES (980190962, 'Book 1', 'This is body text.', 'opening', NULL, '2018-01-14 05:51:17.522385', '2018-01-14 05:51:17.522385'), (298486374, 'Book 2', 'This is more body text', 'exhitibion', 'cancelled', '2018-01-14 05:51:17.522385', '2018-01-14 05:51:17.522385')[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "images"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "licenses"[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "locations"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "organizations"[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "pages"[0m
+  [1m[36mFixtures Insert (0.5ms)[0m  [1m[32mINSERT INTO "pages" ("id", "name", "body", "parent_id", "created_at", "updated_at") VALUES (980190962, 'Page 1', 'This is some body text.', DEFAULT, '2018-01-14 05:51:17.553245', '2018-01-14 05:51:17.553245'), (298486374, 'MyString', 'This is some more body text.', DEFAULT, '2018-01-14 05:51:17.553245', '2018-01-14 05:51:17.553245')[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "people"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "phones"[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "places"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "snippets"[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "social_accounts"[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "terms"[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixtures Insert (0.5ms)[0m  [1m[32mINSERT INTO "users" ("id", "name", "email", "password_digest", "admin", "created_at", "updated_at") VALUES (980190962, 'admin-1', 'MyString', 'MyString', TRUE, '2018-01-14 05:51:17.591599', '2018-01-14 05:51:17.591599'), (298486374, 'user-1', 'MyString', 'MyString', FALSE, '2018-01-14 05:51:17.591599', '2018-01-14 05:51:17.591599')[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "works"[0m
+  [1m[35m (8.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "citations" ENABLE TRIGGER ALL;ALTER TABLE "connections" ENABLE TRIGGER ALL;ALTER TABLE "contacts" ENABLE TRIGGER ALL;ALTER TABLE "emails" ENABLE TRIGGER ALL;ALTER TABLE "events" ENABLE TRIGGER ALL;ALTER TABLE "flags" ENABLE TRIGGER ALL;ALTER TABLE "images" ENABLE TRIGGER ALL;ALTER TABLE "licenses" ENABLE TRIGGER ALL;ALTER TABLE "locations" ENABLE TRIGGER ALL;ALTER TABLE "organizations" ENABLE TRIGGER ALL;ALTER TABLE "pages" ENABLE TRIGGER ALL;ALTER TABLE "people" ENABLE TRIGGER ALL;ALTER TABLE "phones" ENABLE TRIGGER ALL;ALTER TABLE "places" ENABLE TRIGGER ALL;ALTER TABLE "snippets" ENABLE TRIGGER ALL;ALTER TABLE "social_accounts" ENABLE TRIGGER ALL;ALTER TABLE "terms" ENABLE TRIGGER ALL;ALTER TABLE "time_periods" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "websites" ENABLE TRIGGER ALL;ALTER TABLE "works" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------
+EventsControllerTest: test_should_create_event
+----------------------------------------------
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+Started POST "/events" for 127.0.0.1 at 2018-01-13 23:51:17 -0600
+Error occurred while parsing request parameters.
+Contents:
+
+data[type]=events&data[attributes][name]=Book+1&data[attributes][body]=This+is+body+text.
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------
+EventsControllerTest: test_should_get_index
+-------------------------------------------
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/events" for 127.0.0.1 at 2018-01-13 23:51:17 -0600
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" ASC[0m
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------
+EventsControllerTest: test_should_show_event
+--------------------------------------------
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/events/980190962" for 127.0.0.1 at 2018-01-13 23:51:17 -0600
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 ORDER BY "events"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.6ms)[0m  [1m[35mALTER TABLE "citations" DISABLE TRIGGER ALL;ALTER TABLE "connections" DISABLE TRIGGER ALL;ALTER TABLE "contacts" DISABLE TRIGGER ALL;ALTER TABLE "emails" DISABLE TRIGGER ALL;ALTER TABLE "events" DISABLE TRIGGER ALL;ALTER TABLE "flags" DISABLE TRIGGER ALL;ALTER TABLE "images" DISABLE TRIGGER ALL;ALTER TABLE "licenses" DISABLE TRIGGER ALL;ALTER TABLE "locations" DISABLE TRIGGER ALL;ALTER TABLE "organizations" DISABLE TRIGGER ALL;ALTER TABLE "pages" DISABLE TRIGGER ALL;ALTER TABLE "people" DISABLE TRIGGER ALL;ALTER TABLE "phones" DISABLE TRIGGER ALL;ALTER TABLE "places" DISABLE TRIGGER ALL;ALTER TABLE "snippets" DISABLE TRIGGER ALL;ALTER TABLE "social_accounts" DISABLE TRIGGER ALL;ALTER TABLE "terms" DISABLE TRIGGER ALL;ALTER TABLE "time_periods" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "websites" DISABLE TRIGGER ALL;ALTER TABLE "works" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (1.0ms)[0m  [1m[31mDELETE FROM "citations"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "emails"[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "events"[0m
+  [1m[36mFixtures Insert (0.5ms)[0m  [1m[32mINSERT INTO "events" ("id", "name", "body", "categories", "status", "created_at", "updated_at") VALUES (980190962, 'Book 1', 'This is body text.', 'opening', NULL, '2018-01-14 05:52:12.224291', '2018-01-14 05:52:12.224291'), (298486374, 'Book 2', 'This is more body text', 'exhitibion', 'cancelled', '2018-01-14 05:52:12.224291', '2018-01-14 05:52:12.224291')[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "images"[0m
+  [1m[36mFixture Delete (0.7ms)[0m  [1m[31mDELETE FROM "licenses"[0m
+  [1m[36mFixture Delete (1.1ms)[0m  [1m[31mDELETE FROM "locations"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "organizations"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "pages"[0m
+  [1m[36mFixtures Insert (0.4ms)[0m  [1m[32mINSERT INTO "pages" ("id", "name", "body", "parent_id", "created_at", "updated_at") VALUES (980190962, 'Page 1', 'This is some body text.', DEFAULT, '2018-01-14 05:52:12.263872', '2018-01-14 05:52:12.263872'), (298486374, 'MyString', 'This is some more body text.', DEFAULT, '2018-01-14 05:52:12.263872', '2018-01-14 05:52:12.263872')[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "people"[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "phones"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "places"[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "snippets"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "social_accounts"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "terms"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixtures Insert (0.4ms)[0m  [1m[32mINSERT INTO "users" ("id", "name", "email", "password_digest", "admin", "created_at", "updated_at") VALUES (980190962, 'admin-1', 'MyString', 'MyString', TRUE, '2018-01-14 05:52:12.301996', '2018-01-14 05:52:12.301996'), (298486374, 'user-1', 'MyString', 'MyString', FALSE, '2018-01-14 05:52:12.301996', '2018-01-14 05:52:12.301996')[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "works"[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "citations" ENABLE TRIGGER ALL;ALTER TABLE "connections" ENABLE TRIGGER ALL;ALTER TABLE "contacts" ENABLE TRIGGER ALL;ALTER TABLE "emails" ENABLE TRIGGER ALL;ALTER TABLE "events" ENABLE TRIGGER ALL;ALTER TABLE "flags" ENABLE TRIGGER ALL;ALTER TABLE "images" ENABLE TRIGGER ALL;ALTER TABLE "licenses" ENABLE TRIGGER ALL;ALTER TABLE "locations" ENABLE TRIGGER ALL;ALTER TABLE "organizations" ENABLE TRIGGER ALL;ALTER TABLE "pages" ENABLE TRIGGER ALL;ALTER TABLE "people" ENABLE TRIGGER ALL;ALTER TABLE "phones" ENABLE TRIGGER ALL;ALTER TABLE "places" ENABLE TRIGGER ALL;ALTER TABLE "snippets" ENABLE TRIGGER ALL;ALTER TABLE "social_accounts" ENABLE TRIGGER ALL;ALTER TABLE "terms" ENABLE TRIGGER ALL;ALTER TABLE "time_periods" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "websites" ENABLE TRIGGER ALL;ALTER TABLE "works" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------
+EventsControllerTest: test_should_create_event
+----------------------------------------------
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started POST "/events" for 127.0.0.1 at 2018-01-13 23:52:12 -0600
+Processing by EventsController#create as JSON
+  Parameters: {"data"=>{"type"=>"events", "attributes"=>{"name"=>"Book 1", "body"=>"This is body text."}}, "event"=>{}}
+Completed 415 Unsupported Media Type in 5ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------
+EventsControllerTest: test_should_get_index
+-------------------------------------------
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/events" for 127.0.0.1 at 2018-01-13 23:52:12 -0600
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" ASC[0m
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------
+EventsControllerTest: test_should_show_event
+--------------------------------------------
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/events/980190962" for 127.0.0.1 at 2018-01-13 23:52:12 -0600
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 ORDER BY "events"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.0ms)[0m  [1m[35mALTER TABLE "citations" DISABLE TRIGGER ALL;ALTER TABLE "connections" DISABLE TRIGGER ALL;ALTER TABLE "contacts" DISABLE TRIGGER ALL;ALTER TABLE "emails" DISABLE TRIGGER ALL;ALTER TABLE "events" DISABLE TRIGGER ALL;ALTER TABLE "flags" DISABLE TRIGGER ALL;ALTER TABLE "images" DISABLE TRIGGER ALL;ALTER TABLE "licenses" DISABLE TRIGGER ALL;ALTER TABLE "locations" DISABLE TRIGGER ALL;ALTER TABLE "organizations" DISABLE TRIGGER ALL;ALTER TABLE "pages" DISABLE TRIGGER ALL;ALTER TABLE "people" DISABLE TRIGGER ALL;ALTER TABLE "phones" DISABLE TRIGGER ALL;ALTER TABLE "places" DISABLE TRIGGER ALL;ALTER TABLE "snippets" DISABLE TRIGGER ALL;ALTER TABLE "social_accounts" DISABLE TRIGGER ALL;ALTER TABLE "terms" DISABLE TRIGGER ALL;ALTER TABLE "time_periods" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "websites" DISABLE TRIGGER ALL;ALTER TABLE "works" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "citations"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "emails"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "events"[0m
+  [1m[36mFixtures Insert (0.5ms)[0m  [1m[32mINSERT INTO "events" ("id", "name", "body", "categories", "status", "created_at", "updated_at") VALUES (980190962, 'Book 1', 'This is body text.', 'opening', NULL, '2018-01-14 05:52:23.633183', '2018-01-14 05:52:23.633183'), (298486374, 'Book 2', 'This is more body text', 'exhitibion', 'cancelled', '2018-01-14 05:52:23.633183', '2018-01-14 05:52:23.633183')[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "images"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "licenses"[0m
+  [1m[36mFixture Delete (0.7ms)[0m  [1m[31mDELETE FROM "locations"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "organizations"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "pages"[0m
+  [1m[36mFixtures Insert (0.4ms)[0m  [1m[32mINSERT INTO "pages" ("id", "name", "body", "parent_id", "created_at", "updated_at") VALUES (980190962, 'Page 1', 'This is some body text.', DEFAULT, '2018-01-14 05:52:23.664228', '2018-01-14 05:52:23.664228'), (298486374, 'MyString', 'This is some more body text.', DEFAULT, '2018-01-14 05:52:23.664228', '2018-01-14 05:52:23.664228')[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "people"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "phones"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "places"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "snippets"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "social_accounts"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "terms"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixtures Insert (0.4ms)[0m  [1m[32mINSERT INTO "users" ("id", "name", "email", "password_digest", "admin", "created_at", "updated_at") VALUES (980190962, 'admin-1', 'MyString', 'MyString', TRUE, '2018-01-14 05:52:23.699044', '2018-01-14 05:52:23.699044'), (298486374, 'user-1', 'MyString', 'MyString', FALSE, '2018-01-14 05:52:23.699044', '2018-01-14 05:52:23.699044')[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "works"[0m
+  [1m[35m (8.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "citations" ENABLE TRIGGER ALL;ALTER TABLE "connections" ENABLE TRIGGER ALL;ALTER TABLE "contacts" ENABLE TRIGGER ALL;ALTER TABLE "emails" ENABLE TRIGGER ALL;ALTER TABLE "events" ENABLE TRIGGER ALL;ALTER TABLE "flags" ENABLE TRIGGER ALL;ALTER TABLE "images" ENABLE TRIGGER ALL;ALTER TABLE "licenses" ENABLE TRIGGER ALL;ALTER TABLE "locations" ENABLE TRIGGER ALL;ALTER TABLE "organizations" ENABLE TRIGGER ALL;ALTER TABLE "pages" ENABLE TRIGGER ALL;ALTER TABLE "people" ENABLE TRIGGER ALL;ALTER TABLE "phones" ENABLE TRIGGER ALL;ALTER TABLE "places" ENABLE TRIGGER ALL;ALTER TABLE "snippets" ENABLE TRIGGER ALL;ALTER TABLE "social_accounts" ENABLE TRIGGER ALL;ALTER TABLE "terms" ENABLE TRIGGER ALL;ALTER TABLE "time_periods" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "websites" ENABLE TRIGGER ALL;ALTER TABLE "works" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------
+EventsControllerTest: test_should_get_index
+-------------------------------------------
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/events" for 127.0.0.1 at 2018-01-13 23:52:23 -0600
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" ASC[0m
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------
+EventsControllerTest: test_should_create_event
+----------------------------------------------
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started POST "/events" for 127.0.0.1 at 2018-01-13 23:52:23 -0600
+Processing by EventsController#create as JSON
+  Parameters: {"data"=>{"type"=>"events", "attributes"=>{"name"=>"Book 1", "body"=>"This is body text."}}, "event"=>{}}
+Completed 415 Unsupported Media Type in 5ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------
+EventsControllerTest: test_should_show_event
+--------------------------------------------
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/events/980190962" for 127.0.0.1 at 2018-01-13 23:52:23 -0600
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 ORDER BY "events"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.4ms)[0m  [1m[35mALTER TABLE "citations" DISABLE TRIGGER ALL;ALTER TABLE "connections" DISABLE TRIGGER ALL;ALTER TABLE "contacts" DISABLE TRIGGER ALL;ALTER TABLE "emails" DISABLE TRIGGER ALL;ALTER TABLE "events" DISABLE TRIGGER ALL;ALTER TABLE "flags" DISABLE TRIGGER ALL;ALTER TABLE "images" DISABLE TRIGGER ALL;ALTER TABLE "licenses" DISABLE TRIGGER ALL;ALTER TABLE "locations" DISABLE TRIGGER ALL;ALTER TABLE "organizations" DISABLE TRIGGER ALL;ALTER TABLE "pages" DISABLE TRIGGER ALL;ALTER TABLE "people" DISABLE TRIGGER ALL;ALTER TABLE "phones" DISABLE TRIGGER ALL;ALTER TABLE "places" DISABLE TRIGGER ALL;ALTER TABLE "snippets" DISABLE TRIGGER ALL;ALTER TABLE "social_accounts" DISABLE TRIGGER ALL;ALTER TABLE "terms" DISABLE TRIGGER ALL;ALTER TABLE "time_periods" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "websites" DISABLE TRIGGER ALL;ALTER TABLE "works" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "citations"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "emails"[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "events"[0m
+  [1m[36mFixtures Insert (0.6ms)[0m  [1m[32mINSERT INTO "events" ("id", "name", "body", "categories", "status", "created_at", "updated_at") VALUES (980190962, 'Book 1', 'This is body text.', 'opening', NULL, '2018-01-14 05:52:31.941091', '2018-01-14 05:52:31.941091'), (298486374, 'Book 2', 'This is more body text', 'exhitibion', 'cancelled', '2018-01-14 05:52:31.941091', '2018-01-14 05:52:31.941091')[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "images"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "licenses"[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "locations"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "organizations"[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "pages"[0m
+  [1m[36mFixtures Insert (0.4ms)[0m  [1m[32mINSERT INTO "pages" ("id", "name", "body", "parent_id", "created_at", "updated_at") VALUES (980190962, 'Page 1', 'This is some body text.', DEFAULT, '2018-01-14 05:52:31.974591', '2018-01-14 05:52:31.974591'), (298486374, 'MyString', 'This is some more body text.', DEFAULT, '2018-01-14 05:52:31.974591', '2018-01-14 05:52:31.974591')[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "people"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "phones"[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "places"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "snippets"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "social_accounts"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "terms"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixtures Insert (0.4ms)[0m  [1m[32mINSERT INTO "users" ("id", "name", "email", "password_digest", "admin", "created_at", "updated_at") VALUES (980190962, 'admin-1', 'MyString', 'MyString', TRUE, '2018-01-14 05:52:32.014367', '2018-01-14 05:52:32.014367'), (298486374, 'user-1', 'MyString', 'MyString', FALSE, '2018-01-14 05:52:32.014367', '2018-01-14 05:52:32.014367')[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "works"[0m
+  [1m[35m (8.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "citations" ENABLE TRIGGER ALL;ALTER TABLE "connections" ENABLE TRIGGER ALL;ALTER TABLE "contacts" ENABLE TRIGGER ALL;ALTER TABLE "emails" ENABLE TRIGGER ALL;ALTER TABLE "events" ENABLE TRIGGER ALL;ALTER TABLE "flags" ENABLE TRIGGER ALL;ALTER TABLE "images" ENABLE TRIGGER ALL;ALTER TABLE "licenses" ENABLE TRIGGER ALL;ALTER TABLE "locations" ENABLE TRIGGER ALL;ALTER TABLE "organizations" ENABLE TRIGGER ALL;ALTER TABLE "pages" ENABLE TRIGGER ALL;ALTER TABLE "people" ENABLE TRIGGER ALL;ALTER TABLE "phones" ENABLE TRIGGER ALL;ALTER TABLE "places" ENABLE TRIGGER ALL;ALTER TABLE "snippets" ENABLE TRIGGER ALL;ALTER TABLE "social_accounts" ENABLE TRIGGER ALL;ALTER TABLE "terms" ENABLE TRIGGER ALL;ALTER TABLE "time_periods" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "websites" ENABLE TRIGGER ALL;ALTER TABLE "works" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------
+EventsControllerTest: test_should_get_index
+-------------------------------------------
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/events" for 127.0.0.1 at 2018-01-13 23:52:32 -0600
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" ASC[0m
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------
+EventsControllerTest: test_should_show_event
+--------------------------------------------
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/events/980190962" for 127.0.0.1 at 2018-01-13 23:52:32 -0600
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 ORDER BY "events"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------
+EventsControllerTest: test_should_create_event
+----------------------------------------------
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started POST "/events" for 127.0.0.1 at 2018-01-13 23:52:32 -0600
+Processing by EventsController#create as JSON
+  Parameters: {"data"=>{"type"=>"events", "attributes"=>{"name"=>"Book 1", "body"=>"This is body text."}}, "event"=>{}}
+Completed 415 Unsupported Media Type in 4ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.0ms)[0m  [1m[35mALTER TABLE "citations" DISABLE TRIGGER ALL;ALTER TABLE "connections" DISABLE TRIGGER ALL;ALTER TABLE "contacts" DISABLE TRIGGER ALL;ALTER TABLE "emails" DISABLE TRIGGER ALL;ALTER TABLE "events" DISABLE TRIGGER ALL;ALTER TABLE "flags" DISABLE TRIGGER ALL;ALTER TABLE "images" DISABLE TRIGGER ALL;ALTER TABLE "licenses" DISABLE TRIGGER ALL;ALTER TABLE "locations" DISABLE TRIGGER ALL;ALTER TABLE "organizations" DISABLE TRIGGER ALL;ALTER TABLE "pages" DISABLE TRIGGER ALL;ALTER TABLE "people" DISABLE TRIGGER ALL;ALTER TABLE "phones" DISABLE TRIGGER ALL;ALTER TABLE "places" DISABLE TRIGGER ALL;ALTER TABLE "snippets" DISABLE TRIGGER ALL;ALTER TABLE "social_accounts" DISABLE TRIGGER ALL;ALTER TABLE "terms" DISABLE TRIGGER ALL;ALTER TABLE "time_periods" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "websites" DISABLE TRIGGER ALL;ALTER TABLE "works" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.9ms)[0m  [1m[31mDELETE FROM "citations"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "emails"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "events"[0m
+  [1m[36mFixtures Insert (0.5ms)[0m  [1m[32mINSERT INTO "events" ("id", "name", "body", "categories", "status", "created_at", "updated_at") VALUES (980190962, 'Book 1', 'This is body text.', 'opening', NULL, '2018-01-14 05:53:43.674726', '2018-01-14 05:53:43.674726'), (298486374, 'Book 2', 'This is more body text', 'exhitibion', 'cancelled', '2018-01-14 05:53:43.674726', '2018-01-14 05:53:43.674726')[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "images"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "licenses"[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "locations"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "organizations"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "pages"[0m
+  [1m[36mFixtures Insert (0.4ms)[0m  [1m[32mINSERT INTO "pages" ("id", "name", "body", "parent_id", "created_at", "updated_at") VALUES (980190962, 'Page 1', 'This is some body text.', DEFAULT, '2018-01-14 05:53:43.712664', '2018-01-14 05:53:43.712664'), (298486374, 'MyString', 'This is some more body text.', DEFAULT, '2018-01-14 05:53:43.712664', '2018-01-14 05:53:43.712664')[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "people"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "phones"[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "places"[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "snippets"[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "social_accounts"[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "terms"[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixtures Insert (0.6ms)[0m  [1m[32mINSERT INTO "users" ("id", "name", "email", "password_digest", "admin", "created_at", "updated_at") VALUES (980190962, 'admin-1', 'MyString', 'MyString', TRUE, '2018-01-14 05:53:43.748179', '2018-01-14 05:53:43.748179'), (298486374, 'user-1', 'MyString', 'MyString', FALSE, '2018-01-14 05:53:43.748179', '2018-01-14 05:53:43.748179')[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "works"[0m
+  [1m[35m (8.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "citations" ENABLE TRIGGER ALL;ALTER TABLE "connections" ENABLE TRIGGER ALL;ALTER TABLE "contacts" ENABLE TRIGGER ALL;ALTER TABLE "emails" ENABLE TRIGGER ALL;ALTER TABLE "events" ENABLE TRIGGER ALL;ALTER TABLE "flags" ENABLE TRIGGER ALL;ALTER TABLE "images" ENABLE TRIGGER ALL;ALTER TABLE "licenses" ENABLE TRIGGER ALL;ALTER TABLE "locations" ENABLE TRIGGER ALL;ALTER TABLE "organizations" ENABLE TRIGGER ALL;ALTER TABLE "pages" ENABLE TRIGGER ALL;ALTER TABLE "people" ENABLE TRIGGER ALL;ALTER TABLE "phones" ENABLE TRIGGER ALL;ALTER TABLE "places" ENABLE TRIGGER ALL;ALTER TABLE "snippets" ENABLE TRIGGER ALL;ALTER TABLE "social_accounts" ENABLE TRIGGER ALL;ALTER TABLE "terms" ENABLE TRIGGER ALL;ALTER TABLE "time_periods" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "websites" ENABLE TRIGGER ALL;ALTER TABLE "works" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------
+EventsControllerTest: test_should_get_index
+-------------------------------------------
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/events" for 127.0.0.1 at 2018-01-13 23:53:43 -0600
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (1.2ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" ASC[0m
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 1.2ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------
+EventsControllerTest: test_should_show_event
+--------------------------------------------
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/events/980190962" for 127.0.0.1 at 2018-01-13 23:53:43 -0600
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 ORDER BY "events"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------
+EventsControllerTest: test_should_create_event
+----------------------------------------------
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started POST "/events" for 127.0.0.1 at 2018-01-13 23:53:43 -0600
+Processing by EventsController#create as JSON
+  Parameters: {"data"=>{"type"=>"events", "attributes"=>{"name"=>"Book 1", "body"=>"This is body text."}}, "event"=>{}}
+Completed 415 Unsupported Media Type in 4ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.7ms)[0m  [1m[35mALTER TABLE "citations" DISABLE TRIGGER ALL;ALTER TABLE "connections" DISABLE TRIGGER ALL;ALTER TABLE "contacts" DISABLE TRIGGER ALL;ALTER TABLE "emails" DISABLE TRIGGER ALL;ALTER TABLE "events" DISABLE TRIGGER ALL;ALTER TABLE "flags" DISABLE TRIGGER ALL;ALTER TABLE "images" DISABLE TRIGGER ALL;ALTER TABLE "licenses" DISABLE TRIGGER ALL;ALTER TABLE "locations" DISABLE TRIGGER ALL;ALTER TABLE "organizations" DISABLE TRIGGER ALL;ALTER TABLE "pages" DISABLE TRIGGER ALL;ALTER TABLE "people" DISABLE TRIGGER ALL;ALTER TABLE "phones" DISABLE TRIGGER ALL;ALTER TABLE "places" DISABLE TRIGGER ALL;ALTER TABLE "snippets" DISABLE TRIGGER ALL;ALTER TABLE "social_accounts" DISABLE TRIGGER ALL;ALTER TABLE "terms" DISABLE TRIGGER ALL;ALTER TABLE "time_periods" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "websites" DISABLE TRIGGER ALL;ALTER TABLE "works" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "citations"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "emails"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "events"[0m
+  [1m[36mFixtures Insert (0.5ms)[0m  [1m[32mINSERT INTO "events" ("id", "name", "body", "categories", "status", "created_at", "updated_at") VALUES (980190962, 'Book 1', 'This is body text.', 'opening', NULL, '2018-01-14 05:53:51.454572', '2018-01-14 05:53:51.454572'), (298486374, 'Book 2', 'This is more body text', 'exhitibion', 'cancelled', '2018-01-14 05:53:51.454572', '2018-01-14 05:53:51.454572')[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "images"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "licenses"[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "locations"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "organizations"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "pages"[0m
+  [1m[36mFixtures Insert (0.4ms)[0m  [1m[32mINSERT INTO "pages" ("id", "name", "body", "parent_id", "created_at", "updated_at") VALUES (980190962, 'Page 1', 'This is some body text.', DEFAULT, '2018-01-14 05:53:51.485121', '2018-01-14 05:53:51.485121'), (298486374, 'MyString', 'This is some more body text.', DEFAULT, '2018-01-14 05:53:51.485121', '2018-01-14 05:53:51.485121')[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "people"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "phones"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "places"[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "snippets"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "social_accounts"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "terms"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixtures Insert (0.4ms)[0m  [1m[32mINSERT INTO "users" ("id", "name", "email", "password_digest", "admin", "created_at", "updated_at") VALUES (980190962, 'admin-1', 'MyString', 'MyString', TRUE, '2018-01-14 05:53:51.520190', '2018-01-14 05:53:51.520190'), (298486374, 'user-1', 'MyString', 'MyString', FALSE, '2018-01-14 05:53:51.520190', '2018-01-14 05:53:51.520190')[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "works"[0m
+  [1m[35m (8.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "citations" ENABLE TRIGGER ALL;ALTER TABLE "connections" ENABLE TRIGGER ALL;ALTER TABLE "contacts" ENABLE TRIGGER ALL;ALTER TABLE "emails" ENABLE TRIGGER ALL;ALTER TABLE "events" ENABLE TRIGGER ALL;ALTER TABLE "flags" ENABLE TRIGGER ALL;ALTER TABLE "images" ENABLE TRIGGER ALL;ALTER TABLE "licenses" ENABLE TRIGGER ALL;ALTER TABLE "locations" ENABLE TRIGGER ALL;ALTER TABLE "organizations" ENABLE TRIGGER ALL;ALTER TABLE "pages" ENABLE TRIGGER ALL;ALTER TABLE "people" ENABLE TRIGGER ALL;ALTER TABLE "phones" ENABLE TRIGGER ALL;ALTER TABLE "places" ENABLE TRIGGER ALL;ALTER TABLE "snippets" ENABLE TRIGGER ALL;ALTER TABLE "social_accounts" ENABLE TRIGGER ALL;ALTER TABLE "terms" ENABLE TRIGGER ALL;ALTER TABLE "time_periods" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "websites" ENABLE TRIGGER ALL;ALTER TABLE "works" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------
+EventsControllerTest: test_should_create_event
+----------------------------------------------
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started POST "/events" for 127.0.0.1 at 2018-01-13 23:53:51 -0600
+Processing by EventsController#create as JSON
+  Parameters: {"data"=>{"type"=>"events", "attributes"=>{"name"=>"Book 1", "body"=>"This is body text."}}, "event"=>{}}
+Completed 415 Unsupported Media Type in 5ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------
+EventsControllerTest: test_should_get_index
+-------------------------------------------
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/events" for 127.0.0.1 at 2018-01-13 23:53:51 -0600
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" ASC[0m
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------
+EventsControllerTest: test_should_show_event
+--------------------------------------------
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/events/980190962" for 127.0.0.1 at 2018-01-13 23:53:51 -0600
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 ORDER BY "events"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.1ms)[0m  [1m[35mALTER TABLE "citations" DISABLE TRIGGER ALL;ALTER TABLE "connections" DISABLE TRIGGER ALL;ALTER TABLE "contacts" DISABLE TRIGGER ALL;ALTER TABLE "emails" DISABLE TRIGGER ALL;ALTER TABLE "events" DISABLE TRIGGER ALL;ALTER TABLE "flags" DISABLE TRIGGER ALL;ALTER TABLE "images" DISABLE TRIGGER ALL;ALTER TABLE "licenses" DISABLE TRIGGER ALL;ALTER TABLE "locations" DISABLE TRIGGER ALL;ALTER TABLE "organizations" DISABLE TRIGGER ALL;ALTER TABLE "pages" DISABLE TRIGGER ALL;ALTER TABLE "people" DISABLE TRIGGER ALL;ALTER TABLE "phones" DISABLE TRIGGER ALL;ALTER TABLE "places" DISABLE TRIGGER ALL;ALTER TABLE "snippets" DISABLE TRIGGER ALL;ALTER TABLE "social_accounts" DISABLE TRIGGER ALL;ALTER TABLE "terms" DISABLE TRIGGER ALL;ALTER TABLE "time_periods" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "websites" DISABLE TRIGGER ALL;ALTER TABLE "works" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "citations"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "emails"[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "events"[0m
+  [1m[36mFixtures Insert (0.5ms)[0m  [1m[32mINSERT INTO "events" ("id", "name", "body", "categories", "status", "created_at", "updated_at") VALUES (980190962, 'Book 1', 'This is body text.', 'opening', NULL, '2018-01-14 05:54:09.235148', '2018-01-14 05:54:09.235148'), (298486374, 'Book 2', 'This is more body text', 'exhitibion', 'cancelled', '2018-01-14 05:54:09.235148', '2018-01-14 05:54:09.235148')[0m
+  [1m[36mFixture Delete (1.4ms)[0m  [1m[31mDELETE FROM "images"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "licenses"[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "locations"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "organizations"[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "pages"[0m
+  [1m[36mFixtures Insert (0.4ms)[0m  [1m[32mINSERT INTO "pages" ("id", "name", "body", "parent_id", "created_at", "updated_at") VALUES (980190962, 'Page 1', 'This is some body text.', DEFAULT, '2018-01-14 05:54:09.270044', '2018-01-14 05:54:09.270044'), (298486374, 'MyString', 'This is some more body text.', DEFAULT, '2018-01-14 05:54:09.270044', '2018-01-14 05:54:09.270044')[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "people"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "phones"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "places"[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "snippets"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "social_accounts"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "terms"[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixtures Insert (0.5ms)[0m  [1m[32mINSERT INTO "users" ("id", "name", "email", "password_digest", "admin", "created_at", "updated_at") VALUES (980190962, 'admin-1', 'MyString', 'MyString', TRUE, '2018-01-14 05:54:09.307160', '2018-01-14 05:54:09.307160'), (298486374, 'user-1', 'MyString', 'MyString', FALSE, '2018-01-14 05:54:09.307160', '2018-01-14 05:54:09.307160')[0m
+  [1m[36mFixture Delete (0.7ms)[0m  [1m[31mDELETE FROM "works"[0m
+  [1m[35m (8.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "citations" ENABLE TRIGGER ALL;ALTER TABLE "connections" ENABLE TRIGGER ALL;ALTER TABLE "contacts" ENABLE TRIGGER ALL;ALTER TABLE "emails" ENABLE TRIGGER ALL;ALTER TABLE "events" ENABLE TRIGGER ALL;ALTER TABLE "flags" ENABLE TRIGGER ALL;ALTER TABLE "images" ENABLE TRIGGER ALL;ALTER TABLE "licenses" ENABLE TRIGGER ALL;ALTER TABLE "locations" ENABLE TRIGGER ALL;ALTER TABLE "organizations" ENABLE TRIGGER ALL;ALTER TABLE "pages" ENABLE TRIGGER ALL;ALTER TABLE "people" ENABLE TRIGGER ALL;ALTER TABLE "phones" ENABLE TRIGGER ALL;ALTER TABLE "places" ENABLE TRIGGER ALL;ALTER TABLE "snippets" ENABLE TRIGGER ALL;ALTER TABLE "social_accounts" ENABLE TRIGGER ALL;ALTER TABLE "terms" ENABLE TRIGGER ALL;ALTER TABLE "time_periods" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "websites" ENABLE TRIGGER ALL;ALTER TABLE "works" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------
+EventsControllerTest: test_should_create_event
+----------------------------------------------
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started POST "/events" for 127.0.0.1 at 2018-01-13 23:54:09 -0600
+Processing by EventsController#create as HTML
+  Parameters: {"data"=>{"type"=>"events", "attributes"=>{"name"=>"Book 1", "body"=>"This is body text."}}}
+Completed 415 Unsupported Media Type in 5ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------
+EventsControllerTest: test_should_show_event
+--------------------------------------------
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/events/980190962" for 127.0.0.1 at 2018-01-13 23:54:09 -0600
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 ORDER BY "events"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------
+EventsControllerTest: test_should_get_index
+-------------------------------------------
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/events" for 127.0.0.1 at 2018-01-13 23:54:09 -0600
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" ASC[0m
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.0ms)[0m  [1m[35mALTER TABLE "citations" DISABLE TRIGGER ALL;ALTER TABLE "connections" DISABLE TRIGGER ALL;ALTER TABLE "contacts" DISABLE TRIGGER ALL;ALTER TABLE "emails" DISABLE TRIGGER ALL;ALTER TABLE "events" DISABLE TRIGGER ALL;ALTER TABLE "flags" DISABLE TRIGGER ALL;ALTER TABLE "images" DISABLE TRIGGER ALL;ALTER TABLE "licenses" DISABLE TRIGGER ALL;ALTER TABLE "locations" DISABLE TRIGGER ALL;ALTER TABLE "organizations" DISABLE TRIGGER ALL;ALTER TABLE "pages" DISABLE TRIGGER ALL;ALTER TABLE "people" DISABLE TRIGGER ALL;ALTER TABLE "phones" DISABLE TRIGGER ALL;ALTER TABLE "places" DISABLE TRIGGER ALL;ALTER TABLE "snippets" DISABLE TRIGGER ALL;ALTER TABLE "social_accounts" DISABLE TRIGGER ALL;ALTER TABLE "terms" DISABLE TRIGGER ALL;ALTER TABLE "time_periods" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "websites" DISABLE TRIGGER ALL;ALTER TABLE "works" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "citations"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "emails"[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "events"[0m
+  [1m[36mFixtures Insert (0.5ms)[0m  [1m[32mINSERT INTO "events" ("id", "name", "body", "categories", "status", "created_at", "updated_at") VALUES (980190962, 'Book 1', 'This is body text.', 'opening', NULL, '2018-01-14 05:56:42.279517', '2018-01-14 05:56:42.279517'), (298486374, 'Book 2', 'This is more body text', 'exhitibion', 'cancelled', '2018-01-14 05:56:42.279517', '2018-01-14 05:56:42.279517')[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "images"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "licenses"[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "locations"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "organizations"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "pages"[0m
+  [1m[36mFixtures Insert (0.4ms)[0m  [1m[32mINSERT INTO "pages" ("id", "name", "body", "parent_id", "created_at", "updated_at") VALUES (980190962, 'Page 1', 'This is some body text.', DEFAULT, '2018-01-14 05:56:42.310894', '2018-01-14 05:56:42.310894'), (298486374, 'MyString', 'This is some more body text.', DEFAULT, '2018-01-14 05:56:42.310894', '2018-01-14 05:56:42.310894')[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "people"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "phones"[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "places"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "snippets"[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "social_accounts"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "terms"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixtures Insert (0.4ms)[0m  [1m[32mINSERT INTO "users" ("id", "name", "email", "password_digest", "admin", "created_at", "updated_at") VALUES (980190962, 'admin-1', 'MyString', 'MyString', TRUE, '2018-01-14 05:56:42.346363', '2018-01-14 05:56:42.346363'), (298486374, 'user-1', 'MyString', 'MyString', FALSE, '2018-01-14 05:56:42.346363', '2018-01-14 05:56:42.346363')[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "works"[0m
+  [1m[35m (8.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "citations" ENABLE TRIGGER ALL;ALTER TABLE "connections" ENABLE TRIGGER ALL;ALTER TABLE "contacts" ENABLE TRIGGER ALL;ALTER TABLE "emails" ENABLE TRIGGER ALL;ALTER TABLE "events" ENABLE TRIGGER ALL;ALTER TABLE "flags" ENABLE TRIGGER ALL;ALTER TABLE "images" ENABLE TRIGGER ALL;ALTER TABLE "licenses" ENABLE TRIGGER ALL;ALTER TABLE "locations" ENABLE TRIGGER ALL;ALTER TABLE "organizations" ENABLE TRIGGER ALL;ALTER TABLE "pages" ENABLE TRIGGER ALL;ALTER TABLE "people" ENABLE TRIGGER ALL;ALTER TABLE "phones" ENABLE TRIGGER ALL;ALTER TABLE "places" ENABLE TRIGGER ALL;ALTER TABLE "snippets" ENABLE TRIGGER ALL;ALTER TABLE "social_accounts" ENABLE TRIGGER ALL;ALTER TABLE "terms" ENABLE TRIGGER ALL;ALTER TABLE "time_periods" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "websites" ENABLE TRIGGER ALL;ALTER TABLE "works" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------
+EventsControllerTest: test_should_get_index
+-------------------------------------------
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/events" for 127.0.0.1 at 2018-01-13 23:56:42 -0600
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" ASC[0m
+Completed 200 OK in 8ms (Views: 0.7ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------
+EventsControllerTest: test_should_show_event
+--------------------------------------------
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/events/980190962" for 127.0.0.1 at 2018-01-13 23:56:42 -0600
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 ORDER BY "events"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------
+EventsControllerTest: test_should_create_event
+----------------------------------------------
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started POST "/events" for 127.0.0.1 at 2018-01-13 23:56:42 -0600
+Processing by EventsController#create as HTML
+  Parameters: {"data"=>{"type"=>"events", "attributes"=>{"name"=>"Book 1", "body"=>"This is body text."}}}
+Completed 415 Unsupported Media Type in 5ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.0ms)[0m  [1m[35mALTER TABLE "citations" DISABLE TRIGGER ALL;ALTER TABLE "connections" DISABLE TRIGGER ALL;ALTER TABLE "contacts" DISABLE TRIGGER ALL;ALTER TABLE "emails" DISABLE TRIGGER ALL;ALTER TABLE "events" DISABLE TRIGGER ALL;ALTER TABLE "flags" DISABLE TRIGGER ALL;ALTER TABLE "images" DISABLE TRIGGER ALL;ALTER TABLE "licenses" DISABLE TRIGGER ALL;ALTER TABLE "locations" DISABLE TRIGGER ALL;ALTER TABLE "organizations" DISABLE TRIGGER ALL;ALTER TABLE "pages" DISABLE TRIGGER ALL;ALTER TABLE "people" DISABLE TRIGGER ALL;ALTER TABLE "phones" DISABLE TRIGGER ALL;ALTER TABLE "places" DISABLE TRIGGER ALL;ALTER TABLE "snippets" DISABLE TRIGGER ALL;ALTER TABLE "social_accounts" DISABLE TRIGGER ALL;ALTER TABLE "terms" DISABLE TRIGGER ALL;ALTER TABLE "time_periods" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "websites" DISABLE TRIGGER ALL;ALTER TABLE "works" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "citations"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "emails"[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "events"[0m
+  [1m[36mFixtures Insert (0.5ms)[0m  [1m[32mINSERT INTO "events" ("id", "name", "body", "categories", "status", "created_at", "updated_at") VALUES (980190962, 'Book 1', 'This is body text.', 'opening', NULL, '2018-01-14 05:57:39.952136', '2018-01-14 05:57:39.952136'), (298486374, 'Book 2', 'This is more body text', 'exhitibion', 'cancelled', '2018-01-14 05:57:39.952136', '2018-01-14 05:57:39.952136')[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "images"[0m
+  [1m[36mFixture Delete (0.7ms)[0m  [1m[31mDELETE FROM "licenses"[0m
+  [1m[36mFixture Delete (0.8ms)[0m  [1m[31mDELETE FROM "locations"[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "organizations"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "pages"[0m
+  [1m[36mFixtures Insert (0.4ms)[0m  [1m[32mINSERT INTO "pages" ("id", "name", "body", "parent_id", "created_at", "updated_at") VALUES (980190962, 'Page 1', 'This is some body text.', DEFAULT, '2018-01-14 05:57:39.987897', '2018-01-14 05:57:39.987897'), (298486374, 'MyString', 'This is some more body text.', DEFAULT, '2018-01-14 05:57:39.987897', '2018-01-14 05:57:39.987897')[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "people"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "phones"[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "places"[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "snippets"[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "social_accounts"[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "terms"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixtures Insert (0.4ms)[0m  [1m[32mINSERT INTO "users" ("id", "name", "email", "password_digest", "admin", "created_at", "updated_at") VALUES (980190962, 'admin-1', 'MyString', 'MyString', TRUE, '2018-01-14 05:57:40.025619', '2018-01-14 05:57:40.025619'), (298486374, 'user-1', 'MyString', 'MyString', FALSE, '2018-01-14 05:57:40.025619', '2018-01-14 05:57:40.025619')[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "works"[0m
+  [1m[35m (8.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "citations" ENABLE TRIGGER ALL;ALTER TABLE "connections" ENABLE TRIGGER ALL;ALTER TABLE "contacts" ENABLE TRIGGER ALL;ALTER TABLE "emails" ENABLE TRIGGER ALL;ALTER TABLE "events" ENABLE TRIGGER ALL;ALTER TABLE "flags" ENABLE TRIGGER ALL;ALTER TABLE "images" ENABLE TRIGGER ALL;ALTER TABLE "licenses" ENABLE TRIGGER ALL;ALTER TABLE "locations" ENABLE TRIGGER ALL;ALTER TABLE "organizations" ENABLE TRIGGER ALL;ALTER TABLE "pages" ENABLE TRIGGER ALL;ALTER TABLE "people" ENABLE TRIGGER ALL;ALTER TABLE "phones" ENABLE TRIGGER ALL;ALTER TABLE "places" ENABLE TRIGGER ALL;ALTER TABLE "snippets" ENABLE TRIGGER ALL;ALTER TABLE "social_accounts" ENABLE TRIGGER ALL;ALTER TABLE "terms" ENABLE TRIGGER ALL;ALTER TABLE "time_periods" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "websites" ENABLE TRIGGER ALL;ALTER TABLE "works" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------
+EventsControllerTest: test_should_create_event
+----------------------------------------------
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started POST "/events" for 127.0.0.1 at 2018-01-13 23:57:40 -0600
+Processing by EventsController#create as HTML
+  Parameters: {"data"=>{"type"=>"events", "attributes"=>{"name"=>"Book 1", "body"=>"This is body text."}}}
+Completed 415 Unsupported Media Type in 6ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------
+EventsControllerTest: test_should_get_index
+-------------------------------------------
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/events" for 127.0.0.1 at 2018-01-13 23:57:40 -0600
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" ASC[0m
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------
+EventsControllerTest: test_should_show_event
+--------------------------------------------
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/events/980190962" for 127.0.0.1 at 2018-01-13 23:57:40 -0600
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 ORDER BY "events"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Completed 200 OK in 10ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.2ms)[0m  [1m[35mALTER TABLE "citations" DISABLE TRIGGER ALL;ALTER TABLE "connections" DISABLE TRIGGER ALL;ALTER TABLE "contacts" DISABLE TRIGGER ALL;ALTER TABLE "emails" DISABLE TRIGGER ALL;ALTER TABLE "events" DISABLE TRIGGER ALL;ALTER TABLE "flags" DISABLE TRIGGER ALL;ALTER TABLE "images" DISABLE TRIGGER ALL;ALTER TABLE "licenses" DISABLE TRIGGER ALL;ALTER TABLE "locations" DISABLE TRIGGER ALL;ALTER TABLE "organizations" DISABLE TRIGGER ALL;ALTER TABLE "pages" DISABLE TRIGGER ALL;ALTER TABLE "people" DISABLE TRIGGER ALL;ALTER TABLE "phones" DISABLE TRIGGER ALL;ALTER TABLE "places" DISABLE TRIGGER ALL;ALTER TABLE "snippets" DISABLE TRIGGER ALL;ALTER TABLE "social_accounts" DISABLE TRIGGER ALL;ALTER TABLE "terms" DISABLE TRIGGER ALL;ALTER TABLE "time_periods" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "websites" DISABLE TRIGGER ALL;ALTER TABLE "works" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.7ms)[0m  [1m[31mDELETE FROM "citations"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "emails"[0m
+  [1m[36mFixture Delete (0.8ms)[0m  [1m[31mDELETE FROM "events"[0m
+  [1m[36mFixtures Insert (0.8ms)[0m  [1m[32mINSERT INTO "events" ("id", "name", "body", "categories", "status", "created_at", "updated_at") VALUES (980190962, 'Book 1', 'This is body text.', 'opening', NULL, '2018-01-14 06:07:24.057040', '2018-01-14 06:07:24.057040'), (298486374, 'Book 2', 'This is more body text', 'exhitibion', 'cancelled', '2018-01-14 06:07:24.057040', '2018-01-14 06:07:24.057040')[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "images"[0m
+  [1m[36mFixture Delete (0.8ms)[0m  [1m[31mDELETE FROM "licenses"[0m
+  [1m[36mFixture Delete (0.9ms)[0m  [1m[31mDELETE FROM "locations"[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "organizations"[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "pages"[0m
+  [1m[36mFixtures Insert (0.5ms)[0m  [1m[32mINSERT INTO "pages" ("id", "name", "body", "parent_id", "created_at", "updated_at") VALUES (980190962, 'Page 1', 'This is some body text.', DEFAULT, '2018-01-14 06:07:24.100955', '2018-01-14 06:07:24.100955'), (298486374, 'MyString', 'This is some more body text.', DEFAULT, '2018-01-14 06:07:24.100955', '2018-01-14 06:07:24.100955')[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "people"[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "phones"[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "places"[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "snippets"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "social_accounts"[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "terms"[0m
+  [1m[36mFixture Delete (1.3ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixtures Insert (0.5ms)[0m  [1m[32mINSERT INTO "users" ("id", "name", "email", "password_digest", "admin", "created_at", "updated_at") VALUES (980190962, 'admin-1', 'MyString', 'MyString', TRUE, '2018-01-14 06:07:24.152167', '2018-01-14 06:07:24.152167'), (298486374, 'user-1', 'MyString', 'MyString', FALSE, '2018-01-14 06:07:24.152167', '2018-01-14 06:07:24.152167')[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "works"[0m
+  [1m[35m (8.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.5ms)[0m  [1m[35mALTER TABLE "citations" ENABLE TRIGGER ALL;ALTER TABLE "connections" ENABLE TRIGGER ALL;ALTER TABLE "contacts" ENABLE TRIGGER ALL;ALTER TABLE "emails" ENABLE TRIGGER ALL;ALTER TABLE "events" ENABLE TRIGGER ALL;ALTER TABLE "flags" ENABLE TRIGGER ALL;ALTER TABLE "images" ENABLE TRIGGER ALL;ALTER TABLE "licenses" ENABLE TRIGGER ALL;ALTER TABLE "locations" ENABLE TRIGGER ALL;ALTER TABLE "organizations" ENABLE TRIGGER ALL;ALTER TABLE "pages" ENABLE TRIGGER ALL;ALTER TABLE "people" ENABLE TRIGGER ALL;ALTER TABLE "phones" ENABLE TRIGGER ALL;ALTER TABLE "places" ENABLE TRIGGER ALL;ALTER TABLE "snippets" ENABLE TRIGGER ALL;ALTER TABLE "social_accounts" ENABLE TRIGGER ALL;ALTER TABLE "terms" ENABLE TRIGGER ALL;ALTER TABLE "time_periods" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "websites" ENABLE TRIGGER ALL;ALTER TABLE "works" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------
+EventsControllerTest: test_should_get_index
+-------------------------------------------
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/events" for 127.0.0.1 at 2018-01-14 00:07:24 -0600
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (1.1ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" ASC[0m
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.1ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------
+EventsControllerTest: test_should_show_event
+--------------------------------------------
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/events/980190962" for 127.0.0.1 at 2018-01-14 00:07:24 -0600
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 ORDER BY "events"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------
+EventsControllerTest: test_should_create_event
+----------------------------------------------
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started POST "/events" for 127.0.0.1 at 2018-01-14 00:07:24 -0600
+Processing by EventsController#create as API_JSON
+  Parameters: {"data"=>{"type"=>"events", "attributes"=>{"name"=>"Book 1", "body"=>"This is body text."}}}
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEvent Create (0.5ms)[0m  [1m[32mINSERT INTO "events" ("name", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Book 1"], ["body", "This is body text."], ["created_at", "2018-01-14 06:07:24.396430"], ["updated_at", "2018-01-14 06:07:24.396430"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 8ms (Views: 0.1ms | ActiveRecord: 1.0ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.1ms)[0m  [1m[35mALTER TABLE "citations" DISABLE TRIGGER ALL;ALTER TABLE "connections" DISABLE TRIGGER ALL;ALTER TABLE "contacts" DISABLE TRIGGER ALL;ALTER TABLE "emails" DISABLE TRIGGER ALL;ALTER TABLE "events" DISABLE TRIGGER ALL;ALTER TABLE "flags" DISABLE TRIGGER ALL;ALTER TABLE "images" DISABLE TRIGGER ALL;ALTER TABLE "licenses" DISABLE TRIGGER ALL;ALTER TABLE "locations" DISABLE TRIGGER ALL;ALTER TABLE "organizations" DISABLE TRIGGER ALL;ALTER TABLE "pages" DISABLE TRIGGER ALL;ALTER TABLE "people" DISABLE TRIGGER ALL;ALTER TABLE "phones" DISABLE TRIGGER ALL;ALTER TABLE "places" DISABLE TRIGGER ALL;ALTER TABLE "snippets" DISABLE TRIGGER ALL;ALTER TABLE "social_accounts" DISABLE TRIGGER ALL;ALTER TABLE "terms" DISABLE TRIGGER ALL;ALTER TABLE "time_periods" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "websites" DISABLE TRIGGER ALL;ALTER TABLE "works" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.7ms)[0m  [1m[31mDELETE FROM "citations"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "emails"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "events"[0m
+  [1m[36mFixtures Insert (0.5ms)[0m  [1m[32mINSERT INTO "events" ("id", "name", "body", "categories", "status", "created_at", "updated_at") VALUES (980190962, 'Book 1', 'This is body text.', 'opening', NULL, '2018-01-14 06:07:37.935982', '2018-01-14 06:07:37.935982'), (298486374, 'Book 2', 'This is more body text', 'exhitibion', 'cancelled', '2018-01-14 06:07:37.935982', '2018-01-14 06:07:37.935982')[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "images"[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "licenses"[0m
+  [1m[36mFixture Delete (0.7ms)[0m  [1m[31mDELETE FROM "locations"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "organizations"[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "pages"[0m
+  [1m[36mFixtures Insert (0.5ms)[0m  [1m[32mINSERT INTO "pages" ("id", "name", "body", "parent_id", "created_at", "updated_at") VALUES (980190962, 'Page 1', 'This is some body text.', DEFAULT, '2018-01-14 06:07:37.974678', '2018-01-14 06:07:37.974678'), (298486374, 'MyString', 'This is some more body text.', DEFAULT, '2018-01-14 06:07:37.974678', '2018-01-14 06:07:37.974678')[0m
+  [1m[36mFixture Delete (0.9ms)[0m  [1m[31mDELETE FROM "people"[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "phones"[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "places"[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "snippets"[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "social_accounts"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "terms"[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixtures Insert (0.5ms)[0m  [1m[32mINSERT INTO "users" ("id", "name", "email", "password_digest", "admin", "created_at", "updated_at") VALUES (980190962, 'admin-1', 'MyString', 'MyString', TRUE, '2018-01-14 06:07:38.018858', '2018-01-14 06:07:38.018858'), (298486374, 'user-1', 'MyString', 'MyString', FALSE, '2018-01-14 06:07:38.018858', '2018-01-14 06:07:38.018858')[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "works"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "citations" ENABLE TRIGGER ALL;ALTER TABLE "connections" ENABLE TRIGGER ALL;ALTER TABLE "contacts" ENABLE TRIGGER ALL;ALTER TABLE "emails" ENABLE TRIGGER ALL;ALTER TABLE "events" ENABLE TRIGGER ALL;ALTER TABLE "flags" ENABLE TRIGGER ALL;ALTER TABLE "images" ENABLE TRIGGER ALL;ALTER TABLE "licenses" ENABLE TRIGGER ALL;ALTER TABLE "locations" ENABLE TRIGGER ALL;ALTER TABLE "organizations" ENABLE TRIGGER ALL;ALTER TABLE "pages" ENABLE TRIGGER ALL;ALTER TABLE "people" ENABLE TRIGGER ALL;ALTER TABLE "phones" ENABLE TRIGGER ALL;ALTER TABLE "places" ENABLE TRIGGER ALL;ALTER TABLE "snippets" ENABLE TRIGGER ALL;ALTER TABLE "social_accounts" ENABLE TRIGGER ALL;ALTER TABLE "terms" ENABLE TRIGGER ALL;ALTER TABLE "time_periods" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "websites" ENABLE TRIGGER ALL;ALTER TABLE "works" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------
+EventsControllerTest: test_should_get_index
+-------------------------------------------
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/events" for 127.0.0.1 at 2018-01-14 00:07:38 -0600
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" ASC[0m
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------
+EventsControllerTest: test_should_show_event
+--------------------------------------------
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/events/980190962" for 127.0.0.1 at 2018-01-14 00:07:38 -0600
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 ORDER BY "events"."id" ASC LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------
+EventsControllerTest: test_should_create_event
+----------------------------------------------
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+Started POST "/events" for 127.0.0.1 at 2018-01-14 00:07:38 -0600
+Processing by EventsController#create as API_JSON
+  Parameters: {"data"=>{"type"=>"events", "attributes"=>{"name"=>"Book 1", "body"=>"This is body text."}}}
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEvent Create (0.6ms)[0m  [1m[32mINSERT INTO "events" ("name", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Book 1"], ["body", "This is body text."], ["created_at", "2018-01-14 06:07:38.278872"], ["updated_at", "2018-01-14 06:07:38.278872"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 8ms (Views: 0.1ms | ActiveRecord: 1.0ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m

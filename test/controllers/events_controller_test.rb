@@ -4,7 +4,9 @@ class EventsControllerTest < ActionDispatch::IntegrationTest
   def authenticated_header
     token = Knock::AuthToken.new(payload: { sub: users(:one).id }).token
     {
-      'Authorization': "Bearer #{token}"
+      'Authorization': "Bearer #{token}",
+      'Accept' => JSONAPI::MEDIA_TYPE,
+      'CONTENT_TYPE' => JSONAPI::MEDIA_TYPE
     }
   end
 
@@ -27,9 +29,10 @@ class EventsControllerTest < ActionDispatch::IntegrationTest
             body: @event.body
           }
         }
-      },
-      as: 'application/vnd.api+json',
+      }.to_json,
       headers: authenticated_header
+
+      # puts @response.body
     end
 
     assert_response 201
