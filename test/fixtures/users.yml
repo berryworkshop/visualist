@@ -1,11 +1,13 @@
-one:
-  name: admin-1
-  email: MyString
-  password_digest: MyString
+admin:
+  name: Admin
+  email: admin@example.com
+  # password: 'secretpassword',
+  password_digest: '$2a$10$.trwwoGf7BVYTreAwBG0FOoY5zRBMUqlzNY0D300NG.PuSMEHn.HG'
   admin: true
 
-two:
-  name: user-1
-  email: MyString
-  password_digest: MyString
+valid:
+  name: John
+  email: john@example.com
+  # password: 'secretpassword',
+  password_digest: '$2a$10$.trwwoGf7BVYTreAwBG0FOoY5zRBMUqlzNY0D300NG.PuSMEHn.HG'
   admin: false

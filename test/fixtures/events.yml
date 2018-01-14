@@ -1,11 +1,13 @@
-one:
-  name: Book 1
-  body: This is body text.
-  categories: opening
+exhibition:
+  name: An Exhibition
+  body: This is body text for this exhibition.
+  categories: exhibition
   status: null
+  # user: valid
 
-two:
-  name: Book 2
-  body: This is more body text
-  categories: exhitibion
+opening:
+  name: An Opening
+  body: This is body text for this opening.  Unfortunately, this opening has been cancelled.
+  categories: opening
   status: cancelled
+  # user: valid

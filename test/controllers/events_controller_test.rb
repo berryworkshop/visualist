@@ -2,7 +2,11 @@ require 'test_helper'
 
 class EventsControllerTest < ActionDispatch::IntegrationTest
   def headers
-    token = Knock::AuthToken.new(payload: { sub: users(:one).id }).token
+    token = Knock::AuthToken.new(
+      payload: {
+        sub: users(:valid).id
+      }
+    ).token
     {
       Authorization: "Bearer #{token}",
       CONTENT_TYPE: JSONAPI::MEDIA_TYPE
@@ -10,7 +14,7 @@ class EventsControllerTest < ActionDispatch::IntegrationTest
   end
 
   setup do
-    @event = events(:one)
+    @event = events(:exhibition)
   end
 
   test 'should get index' do

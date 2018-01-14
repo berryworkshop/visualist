@@ -2,7 +2,7 @@ require 'test_helper'
 
 class PagesControllerTest < ActionDispatch::IntegrationTest
   def headers
-    token = Knock::AuthToken.new(payload: { sub: users(:one).id }).token
+    token = Knock::AuthToken.new(payload: { sub: users(:valid).id }).token
     {
       Authorization: "Bearer #{token}",
       CONTENT_TYPE: JSONAPI::MEDIA_TYPE
