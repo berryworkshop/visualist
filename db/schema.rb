@@ -27,15 +27,15 @@ ActiveRecord::Schema.define(version: 2018_01_10_042014) do
   end
 
   create_table "connections", force: :cascade do |t|
-    t.string "subjectable_type"
-    t.bigint "subjectable_id"
+    t.string "subject_type"
+    t.bigint "subject_id"
     t.string "predicate"
-    t.string "dobjectable_type"
-    t.bigint "dobjectable_id"
+    t.string "dobject_type"
+    t.bigint "dobject_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["dobjectable_type", "dobjectable_id"], name: "index_connections_on_dobjectable_type_and_dobjectable_id"
-    t.index ["subjectable_type", "subjectable_id"], name: "index_connections_on_subjectable_type_and_subjectable_id"
+    t.index ["dobject_type", "dobject_id"], name: "index_connections_on_dobject_type_and_dobject_id"
+    t.index ["subject_type", "subject_id"], name: "index_connections_on_subject_type_and_subject_id"
   end
 
   create_table "contacts", force: :cascade do |t|

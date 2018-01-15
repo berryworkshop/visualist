@@ -1,9 +1,9 @@
 class SetupInitialTables < ActiveRecord::Migration[5.1]
   def change
     create_table :connections, force: :cascade do |t|
-      t.references :subjectable, polymorphic: true, index: true
+      t.references :subject, polymorphic: true, index: true
       t.string :predicate
-      t.references :dobjectable, polymorphic: true, index: true
+      t.references :dobject, polymorphic: true, index: true
       t.timestamps
     end
 
