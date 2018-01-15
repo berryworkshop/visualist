@@ -1,4 +1,4 @@
 class Event < ApplicationRecord
-  validates :name, :body, presence: true
-  # has_many :users
+  validates :name, :body, :user, presence: true
+  belongs_to :user
 end

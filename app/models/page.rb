@@ -1,3 +1,4 @@
 class Page < ApplicationRecord
-  validates :name, presence: true
+  validates :name, :body, :user, presence: true
+  belongs_to :user
 end

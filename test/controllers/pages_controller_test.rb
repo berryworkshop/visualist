@@ -2,7 +2,7 @@ require 'test_helper'
 
 class PagesControllerTest < ActionDispatch::IntegrationTest
   def headers
-    token = Knock::AuthToken.new(payload: { sub: users(:valid).id }).token
+    token = Knock::AuthToken.new(payload: { sub: users(:valid_user).id }).token
     {
       Authorization: "Bearer #{token}",
       CONTENT_TYPE: JSONAPI::MEDIA_TYPE
@@ -11,6 +11,7 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
 
   setup do
     @page = pages(:one)
+    @user = users(:valid_user)
   end
 
   test 'should get index' do
@@ -26,6 +27,14 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
           attributes: {
             name: @page.name,
             body: @page.body
+          },
+          relationships: {
+            user: {
+              data: {
+                type: 'users',
+                id: @user.id
+              }
+            }
           }
         }
       }.to_json,

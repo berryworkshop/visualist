@@ -2,7 +2,7 @@ require 'test_helper'
 
 class UsersControllerTest < ActionDispatch::IntegrationTest
   def headers
-    token = Knock::AuthToken.new(payload: { sub: users(:valid).id }).token
+    token = Knock::AuthToken.new(payload: { sub: users(:valid_user).id }).token
     {
       Authorization: "Bearer #{token}",
       CONTENT_TYPE: JSONAPI::MEDIA_TYPE
@@ -10,7 +10,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   end
 
   setup do
-    @user = users(:valid)
+    @user = users(:valid_user)
   end
 
   test 'should get index' do

@@ -44,8 +44,7 @@ class SetupInitialTables < ActiveRecord::Migration[5.1]
       t.text :body
       t.string :categories
       t.string :status
-      # t.belongs_to :user, index: true
-
+      t.references :user, index: true
       t.timestamps
     end
 
@@ -93,6 +92,7 @@ class SetupInitialTables < ActiveRecord::Migration[5.1]
       t.string :name
       t.text :body
       t.references :parent, index: true
+      t.references :user, index: true
       t.timestamps
     end
 
@@ -189,7 +189,6 @@ class SetupInitialTables < ActiveRecord::Migration[5.1]
       t.string :email
       t.string :password_digest
       t.boolean :admin, default: false
-      # t.has_many :events
       t.timestamps
     end
 

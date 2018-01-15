@@ -21,4 +21,10 @@ class EventTest < ActiveSupport::TestCase
     assert_not_nil @event.errors[:email]
   end
 
+  test 'invalid without user' do
+    @event.user = nil
+    refute @event.valid?, 'event should be invalid without an body'
+    assert_not_nil @event.errors[:email]
+  end
+
 end

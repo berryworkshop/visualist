@@ -4,7 +4,7 @@ class EventsControllerTest < ActionDispatch::IntegrationTest
   def headers
     token = Knock::AuthToken.new(
       payload: {
-        sub: users(:valid).id
+        sub: users(:valid_user).id
       }
     ).token
     {
@@ -15,6 +15,7 @@ class EventsControllerTest < ActionDispatch::IntegrationTest
 
   setup do
     @event = events(:exhibition)
+    @user = users(:valid_user)
   end
 
   test 'should get index' do
@@ -29,7 +30,15 @@ class EventsControllerTest < ActionDispatch::IntegrationTest
           type: 'events',
           attributes: {
             name: @event.name,
-            body: @event.body
+            body: @event.body,
+          },
+          relationships: {
+            user: {
+              data: {
+                type: 'users',
+                id: @user.id
+              }
+            }
           }
         }
       }.to_json,

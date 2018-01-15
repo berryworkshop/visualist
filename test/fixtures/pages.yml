@@ -1,7 +1,9 @@
 one:
   name: Page 1
   body: This is some body text.
+  user: valid_user
 
 two:
   name: MyString
   body: This is some more body text.
+  user: valid_user

@@ -58,8 +58,10 @@ ActiveRecord::Schema.define(version: 2018_01_10_042014) do
     t.text "body"
     t.string "categories"
     t.string "status"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_events_on_user_id"
   end
 
   create_table "flags", force: :cascade do |t|
@@ -129,9 +131,11 @@ ActiveRecord::Schema.define(version: 2018_01_10_042014) do
     t.string "name"
     t.text "body"
     t.bigint "parent_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["parent_id"], name: "index_pages_on_parent_id"
+    t.index ["user_id"], name: "index_pages_on_user_id"
   end
 
   create_table "people", force: :cascade do |t|

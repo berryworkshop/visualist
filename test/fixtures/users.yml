@@ -1,11 +1,11 @@
-admin:
+admin_user:
   name: Admin
   email: admin@example.com
   # password: 'secretpassword',
   password_digest: '$2a$10$.trwwoGf7BVYTreAwBG0FOoY5zRBMUqlzNY0D300NG.PuSMEHn.HG'
   admin: true
 
-valid:
+valid_user:
   name: John
   email: john@example.com
   # password: 'secretpassword',

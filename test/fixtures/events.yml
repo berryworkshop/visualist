@@ -3,11 +3,11 @@ exhibition:
   body: This is body text for this exhibition.
   categories: exhibition
   status: null
-  # user: valid
+  user: valid_user
 
 opening:
   name: An Opening
   body: This is body text for this opening.  Unfortunately, this opening has been cancelled.
   categories: opening
   status: cancelled
-  # user: valid
+  user: valid_user
