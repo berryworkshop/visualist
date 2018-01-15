@@ -3,6 +3,7 @@ require 'test_helper'
 class PageTest < ActiveSupport::TestCase
   setup do
     @page = pages(:one)
+    @user = users(:valid_user)
   end
 
   test 'valid page' do
@@ -17,7 +18,7 @@ class PageTest < ActiveSupport::TestCase
 
   test 'invalid without body' do
     @page.body = nil
-    refute @page.valid?, 'page should be invalid without an body'
+    refute @page.valid?, 'page should be invalid without a body'
     assert_not_nil @page.errors[:email]
   end
 
@@ -25,6 +26,10 @@ class PageTest < ActiveSupport::TestCase
     @page.user = nil
     refute @page.valid?, 'page should be invalid without a user'
     assert_not_nil @page.errors[:email]
+  end
+
+  test '#users' do
+    assert_equal 2, @user.events.size
   end
 
 end

@@ -27,7 +27,7 @@ class UserTest < ActiveSupport::TestCase
     assert_not_nil @user.errors[:email]
   end
 
-  # test '#posted events' do
-  #   assert_equal 2, @user.events.size
-  # end
+  test '#users' do
+    assert_equal 2, @user.events.size
+  end
 end
