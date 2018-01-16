@@ -1,15 +1,37 @@
-# one:
-#   name_given: MyString
-#   name_family: MyString
-#   name_prefix: MyString
-#   name_suffix: MyString
-#   body: MyText
-#   categories: MyString
+allan:
+  name: Berry
+  name_given: Allan James
+  name_suffix: null
+  body: Allan helped to make this site.
+  user: valid_user
+  categories:
+    - artist
+    - programmer
 
-# two:
-#   name_given: MyString
-#   name_family: MyString
-#   name_prefix: MyString
-#   name_suffix: MyString
-#   body: MyText
-#   categories: MyString
+meg:
+  name: Duguid
+  name_given: Meg
+  name_suffix: null
+  body: Meg does shows around Chicago, and is a founding member of Culture/Math.
+  user: valid_user
+  categories:
+    - artist
+    - curator
+
+michael:
+  name: Duguid
+  name_given: Meg
+  name_suffix: null
+  body: Michael does shows around Chicago, and is a founding member of Culture/Math.
+  user: valid_user
+  categories:
+    - artist
+    - curator
+
+mick:
+  name: Reed
+  name_given: Michael
+  name_suffix: Esq.
+  body: Mick is a really great lawyer.
+  user: valid_user
+  categories: null

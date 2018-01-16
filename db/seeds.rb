@@ -14,38 +14,45 @@ user = User.create(
   admin: false
 )
 
-page1 = Page.new
-page1.name = 'Page No. 1'
-page1.body = 'This is a new page.'
-page1.user = user
-page1.save
+page1 = Page.create(
+  name: 'Page No. 1',
+  body: 'This is a new page.',
+  user: user
+)
 
-page2 = Page.new
-page2.name = 'Page No. 2'
-page2.body = 'This is another new page.'
-page2.user = user
-page2.save
 
-page3 = Page.new
-page3.name = 'Page No. 3'
-page3.body = 'This is yet another new page.'
-page3.user = user
-page3.save
+page2 = Page.create(
+  name: 'Page No. 2',
+  body: 'This is another new page.',
+  user: user
+)
 
-event1 = Event.new
-event1.name = 'Event No. 1'
-event1.body = 'This is a new event.'
-event1.user = user
-event1.save
+page3 = Page.create(
+  name: 'Page No. 3',
+  body: 'This is yet another new page.',
+  user: user
+)
 
-event2 = Event.new
-event2.name = 'Event No. 2'
-event2.body = 'This is another new event.'
-event2.user = user
-event2.save
+event1 = Event.create(
+  name: 'Event No. 1',
+  body: 'This is a new event.',
+  user: user
+)
 
-event3 = Event.new
-event3.name = 'Event No. 3'
-event3.body = 'This is yet another new event.'
-event3.user = user
-event3.save
+event2 = Event.create(
+  name: 'Event No. 2',
+  body: 'This is another new event.',
+  user: user
+)
+
+event3 = Event.create(
+  name: 'Event No. 3',
+  body: 'This is yet another new event.',
+  user: user
+)
+
+vector1 = Vector.create(
+  subject: event2,
+  predicate: 'has_parent',
+  dobject: event1
+)

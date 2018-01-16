@@ -26,18 +26,6 @@ ActiveRecord::Schema.define(version: 2018_01_10_042014) do
     t.index ["citeable_type", "citeable_id"], name: "index_citations_on_citeable_type_and_citeable_id"
   end
 
-  create_table "connections", force: :cascade do |t|
-    t.string "subject_type"
-    t.bigint "subject_id"
-    t.string "predicate"
-    t.string "dobject_type"
-    t.bigint "dobject_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["dobject_type", "dobject_id"], name: "index_connections_on_dobject_type_and_dobject_id"
-    t.index ["subject_type", "subject_id"], name: "index_connections_on_subject_type_and_subject_id"
-  end
-
   create_table "contacts", force: :cascade do |t|
     t.string "contactable_type"
     t.bigint "contactable_id"
@@ -56,7 +44,7 @@ ActiveRecord::Schema.define(version: 2018_01_10_042014) do
   create_table "events", force: :cascade do |t|
     t.string "name"
     t.text "body"
-    t.string "categories"
+    t.string "categories", array: true
     t.string "status"
     t.bigint "user_id"
     t.datetime "created_at", null: false
@@ -122,14 +110,17 @@ ActiveRecord::Schema.define(version: 2018_01_10_042014) do
   create_table "organizations", force: :cascade do |t|
     t.string "name"
     t.text "body"
-    t.string "categories"
+    t.string "categories", array: true
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_organizations_on_user_id"
   end
 
   create_table "pages", force: :cascade do |t|
     t.string "name"
     t.text "body"
+    t.string "categories", array: true
     t.bigint "parent_id"
     t.bigint "user_id"
     t.datetime "created_at", null: false
@@ -139,14 +130,15 @@ ActiveRecord::Schema.define(version: 2018_01_10_042014) do
   end
 
   create_table "people", force: :cascade do |t|
+    t.string "name"
     t.string "name_given"
-    t.string "name_family"
-    t.string "name_prefix"
     t.string "name_suffix"
     t.text "body"
-    t.string "categories"
+    t.string "categories", array: true
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_people_on_user_id"
   end
 
   create_table "phones", force: :cascade do |t|
@@ -163,9 +155,11 @@ ActiveRecord::Schema.define(version: 2018_01_10_042014) do
   create_table "places", force: :cascade do |t|
     t.string "name"
     t.text "body"
-    t.string "categories"
+    t.string "categories", array: true
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_places_on_user_id"
   end
 
   create_table "snippets", force: :cascade do |t|
@@ -220,6 +214,18 @@ ActiveRecord::Schema.define(version: 2018_01_10_042014) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "vectors", force: :cascade do |t|
+    t.string "subject_type"
+    t.bigint "subject_id"
+    t.string "predicate"
+    t.string "dobject_type"
+    t.bigint "dobject_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["dobject_type", "dobject_id"], name: "index_vectors_on_dobject_type_and_dobject_id"
+    t.index ["subject_type", "subject_id"], name: "index_vectors_on_subject_type_and_subject_id"
+  end
+
   create_table "websites", force: :cascade do |t|
     t.string "name"
     t.string "url"
@@ -230,9 +236,11 @@ ActiveRecord::Schema.define(version: 2018_01_10_042014) do
   create_table "works", force: :cascade do |t|
     t.string "name"
     t.text "body"
-    t.string "categories"
+    t.string "categories", array: true
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_works_on_user_id"
   end
 
 end

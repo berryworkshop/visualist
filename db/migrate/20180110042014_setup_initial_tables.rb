@@ -1,6 +1,6 @@
 class SetupInitialTables < ActiveRecord::Migration[5.1]
   def change
-    create_table :connections, force: :cascade do |t|
+    create_table :vectors, force: :cascade do |t|
       t.references :subject, polymorphic: true, index: true
       t.string :predicate
       t.references :dobject, polymorphic: true, index: true
@@ -42,7 +42,7 @@ class SetupInitialTables < ActiveRecord::Migration[5.1]
     create_table :events do |t|
       t.string :name
       t.text :body
-      t.string :categories
+      t.string :categories, array: true
       t.string :status
       t.references :user, index: true
       t.timestamps
@@ -91,6 +91,7 @@ class SetupInitialTables < ActiveRecord::Migration[5.1]
     create_table :pages, force: :cascade do |t|
       t.string :name
       t.text :body
+      t.string :categories, array: true
       t.references :parent, index: true
       t.references :user, index: true
       t.timestamps
@@ -116,27 +117,26 @@ class SetupInitialTables < ActiveRecord::Migration[5.1]
     create_table :organizations do |t|
       t.string :name
       t.text :body
-      t.string :categories
-
+      t.string :categories, array: true
+      t.references :user, index: true
       t.timestamps
     end
 
     create_table :people do |t|
+      t.string :name
       t.string :name_given
-      t.string :name_family
-      t.string :name_prefix
       t.string :name_suffix
       t.text :body
-      t.string :categories
-
+      t.string :categories, array: true
+      t.references :user, index: true
       t.timestamps
     end
 
     create_table :places do |t|
       t.string :name
       t.text :body
-      t.string :categories
-
+      t.string :categories, array: true
+      t.references :user, index: true
       t.timestamps
     end
 
@@ -195,8 +195,8 @@ class SetupInitialTables < ActiveRecord::Migration[5.1]
     create_table :works do |t|
       t.string :name
       t.text :body
-      t.string :categories
-
+      t.string :categories, array: true
+      t.references :user, index: true
       t.timestamps
     end
 

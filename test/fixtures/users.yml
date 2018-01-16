@@ -1,6 +1,7 @@
 admin_user:
   name: Admin
   email: admin@example.com
+  # TODO: fix passwords in repo
   # password: 'secretpassword',
   password_digest: '$2a$10$.trwwoGf7BVYTreAwBG0FOoY5zRBMUqlzNY0D300NG.PuSMEHn.HG'
   admin: true
@@ -8,6 +9,7 @@ admin_user:
 valid_user:
   name: John
   email: john@example.com
+  # TODO: fix passwords in repo
   # password: 'secretpassword',
   password_digest: '$2a$10$.trwwoGf7BVYTreAwBG0FOoY5zRBMUqlzNY0D300NG.PuSMEHn.HG'
   admin: false
