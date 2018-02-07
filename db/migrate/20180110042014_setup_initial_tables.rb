@@ -1,11 +1,55 @@
 class SetupInitialTables < ActiveRecord::Migration[5.1]
   def change
-    create_table :vectors, force: :cascade do |t|
+
+    create_table :associations do |t|
       t.references :subject, polymorphic: true, index: true
       t.string :predicate
       t.references :dobject, polymorphic: true, index: true
+
       t.timestamps
     end
+
+    create_table :agents do |t|
+      t.string :type # STI for people, organizations
+      t.string :name_prefix
+      t.string :name
+      t.string :name_given
+      t.string :name_suffix
+      t.text :body
+      t.string :categories, array: true
+
+      t.references :user, index: true
+      t.timestamps
+    end
+
+    create_table :events do |t|
+      t.string :name
+      t.text :body
+      t.string :categories, array: true
+      t.string :status
+
+      t.references :user, index: true
+      t.timestamps
+    end
+
+    create_table :places do |t|
+      t.string :name
+      t.text :body
+      t.string :categories, array: true
+
+      t.references :user, index: true
+      t.timestamps
+    end
+
+    create_table :works do |t|
+      t.string :name
+      t.text :body
+      t.string :categories, array: true
+
+      t.references :user, index: true
+      t.timestamps
+    end
+
 
     create_table :contacts, force: :cascade do |t|
       t.references :contactable, polymorphic: true, index: true
@@ -36,15 +80,6 @@ class SetupInitialTables < ActiveRecord::Migration[5.1]
     create_table :emails, force: :cascade do |t|
       t.string :label
       t.string :value
-      t.timestamps
-    end
-
-    create_table :events do |t|
-      t.string :name
-      t.text :body
-      t.string :categories, array: true
-      t.string :status
-      t.references :user, index: true
       t.timestamps
     end
 
@@ -114,32 +149,6 @@ class SetupInitialTables < ActiveRecord::Migration[5.1]
       t.timestamps
     end
 
-    create_table :organizations do |t|
-      t.string :name
-      t.text :body
-      t.string :categories, array: true
-      t.references :user, index: true
-      t.timestamps
-    end
-
-    create_table :people do |t|
-      t.string :name
-      t.string :name_given
-      t.string :name_suffix
-      t.text :body
-      t.string :categories, array: true
-      t.references :user, index: true
-      t.timestamps
-    end
-
-    create_table :places do |t|
-      t.string :name
-      t.text :body
-      t.string :categories, array: true
-      t.references :user, index: true
-      t.timestamps
-    end
-
     create_table :snippets, force: :cascade do |t|
       t.string :value
       t.references :citation, index: true
@@ -189,14 +198,6 @@ class SetupInitialTables < ActiveRecord::Migration[5.1]
       t.string :email
       t.string :password_digest
       t.boolean :admin, default: false
-      t.timestamps
-    end
-
-    create_table :works do |t|
-      t.string :name
-      t.text :body
-      t.string :categories, array: true
-      t.references :user, index: true
       t.timestamps
     end
 

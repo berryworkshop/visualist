@@ -10,10 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_01_10_042014) do
+ActiveRecord::Schema.define(version: 20180110042014) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "agents", force: :cascade do |t|
+    t.string "type"
+    t.string "name_prefix"
+    t.string "name"
+    t.string "name_given"
+    t.string "name_suffix"
+    t.text "body"
+    t.string "categories", array: true
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_agents_on_user_id"
+  end
+
+  create_table "associations", force: :cascade do |t|
+    t.string "subject_type"
+    t.bigint "subject_id"
+    t.string "predicate"
+    t.string "dobject_type"
+    t.bigint "dobject_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["dobject_type", "dobject_id"], name: "index_associations_on_dobject_type_and_dobject_id"
+    t.index ["subject_type", "subject_id"], name: "index_associations_on_subject_type_and_subject_id"
+  end
 
   create_table "citations", force: :cascade do |t|
     t.string "type"
@@ -107,16 +133,6 @@ ActiveRecord::Schema.define(version: 2018_01_10_042014) do
     t.index ["region_id"], name: "index_locations_on_region_id"
   end
 
-  create_table "organizations", force: :cascade do |t|
-    t.string "name"
-    t.text "body"
-    t.string "categories", array: true
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_organizations_on_user_id"
-  end
-
   create_table "pages", force: :cascade do |t|
     t.string "name"
     t.text "body"
@@ -127,18 +143,6 @@ ActiveRecord::Schema.define(version: 2018_01_10_042014) do
     t.datetime "updated_at", null: false
     t.index ["parent_id"], name: "index_pages_on_parent_id"
     t.index ["user_id"], name: "index_pages_on_user_id"
-  end
-
-  create_table "people", force: :cascade do |t|
-    t.string "name"
-    t.string "name_given"
-    t.string "name_suffix"
-    t.text "body"
-    t.string "categories", array: true
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_people_on_user_id"
   end
 
   create_table "phones", force: :cascade do |t|
@@ -212,18 +216,6 @@ ActiveRecord::Schema.define(version: 2018_01_10_042014) do
     t.boolean "admin", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "vectors", force: :cascade do |t|
-    t.string "subject_type"
-    t.bigint "subject_id"
-    t.string "predicate"
-    t.string "dobject_type"
-    t.bigint "dobject_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["dobject_type", "dobject_id"], name: "index_vectors_on_dobject_type_and_dobject_id"
-    t.index ["subject_type", "subject_id"], name: "index_vectors_on_subject_type_and_subject_id"
   end
 
   create_table "websites", force: :cascade do |t|

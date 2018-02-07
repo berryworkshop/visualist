@@ -1,4 +1,5 @@
 allan:
+  type: Person
   name: Berry
   name_given: Allan James
   name_suffix: null
@@ -9,6 +10,7 @@ allan:
     - programmer
 
 meg:
+  type: Person
   name: Duguid
   name_given: Meg
   name_suffix: null
@@ -19,6 +21,7 @@ meg:
     - curator
 
 michael:
+  type: Person
   name: Duguid
   name_given: Meg
   name_suffix: null
@@ -29,6 +32,7 @@ michael:
     - curator
 
 mick:
+  type: Person
   name: Reed
   name_given: Michael
   name_suffix: Esq.

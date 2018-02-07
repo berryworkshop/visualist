@@ -1,0 +1,14 @@
+allan_has_friend_meg:
+  subject: allan (Person)
+  predicate: :has_friend
+  dobject: meg (Person)
+
+allan_has_friend_michael:
+  subject: allan (Person)
+  predicate: :has_friend
+  dobject: michael (Person)
+
+allan_has_friend_mick:
+  subject: allan (Person)
+  predicate: :has_friend
+  dobject: mick (Person)

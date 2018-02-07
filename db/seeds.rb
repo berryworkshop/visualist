@@ -6,53 +6,80 @@ admin = User.create(
   admin: true
 )
 
-user = User.create(
-  name: 'allan',
-  email: 'user@example.com',
-  password: 'secretpassword',
-  password_confirmation: 'secretpassword',
-  admin: false
+page_about = Page.create(
+  name: 'About',
+  body: 'This is information about the Visualist.',
+  user: admin
 )
 
-page1 = Page.create(
-  name: 'Page No. 1',
-  body: 'This is a new page.',
-  user: user
+culturemath = Organization.create(
+  type: Organization,
+  name: 'Culture/Math',
+  body: 'Culture/Math does great things for artists in Chicago.',
+  user: admin,
+  categories: ['association']
 )
 
-
-page2 = Page.create(
-  name: 'Page No. 2',
-  body: 'This is another new page.',
-  user: user
+allan = Person.create(
+  type: 'Person',
+  name: 'Berry',
+  name_given: 'Allan James',
+  name_suffix: nil,
+  body: 'Allan helped to make this site.',
+  user: admin,
+  categories: ['artist', 'programmer']
 )
 
-page3 = Page.create(
-  name: 'Page No. 3',
-  body: 'This is yet another new page.',
-  user: user
+meg = Person.create(
+  type: Person,
+  name: 'Duguid',
+  name_given: 'Meg',
+  name_suffix: nil,
+  body: 'Meg does shows around Chicago, and is a founding member of Culture/Math.',
+  user: admin,
+  categories: [
+    'artist',
+    'curator'
+  ]
 )
 
-event1 = Event.create(
-  name: 'Event No. 1',
-  body: 'This is a new event.',
-  user: user
+michael = Person.create(
+  type: Person,
+  name: 'Thomas',
+  name_given: 'Michael',
+  name_suffix: nil,
+  body: 'Michael does shows around Chicago, and is a founding member of Culture/Math.',
+  user: admin,
+  categories: [
+    'artist',
+    'curator'
+  ]
 )
 
-event2 = Event.create(
-  name: 'Event No. 2',
-  body: 'This is another new event.',
-  user: user
+mick = Person.create(
+  type: Person,
+  name: 'Reed',
+  name_given: 'Michael',
+  name_suffix: 'Esq.',
+  body: 'Mick is a really great lawyer.',
+  user: admin,
+  categories: nil
 )
 
-event3 = Event.create(
-  name: 'Event No. 3',
-  body: 'This is yet another new event.',
-  user: user
+allan_has_friend_meg = Association.create(
+  subject: allan,
+  predicate: :has_friend,
+  dobject: meg,
 )
 
-vector1 = Vector.create(
-  subject: event2,
-  predicate: 'has_parent',
-  dobject: event1
+allan_has_friend_michael = Association.create(
+  subject: allan,
+  predicate: :has_friend,
+  dobject: michael,
+)
+
+allan_has_friend_mick = Association.create(
+  subject: allan,
+  predicate: :has_friend,
+  dobject: mick,
 )
