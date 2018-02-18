@@ -3,14 +3,9 @@ culturemath:
   name: Culture/Math
   body: Culture/Math does great things for artists in Chicago.
   user: valid_user
-  categories:
-    - association
 
 aic:
   type: Organization
   name: Art Institute of Chicago
   body: The primary art institution of Chicago.
   user: valid_user
-  categories:
-    - museum
-    - school

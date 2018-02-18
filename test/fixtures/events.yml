@@ -1,15 +1,11 @@
 exhibition:
+  type: Event
   name: An Exhibition
   body: This is body text for this exhibition.
-  categories:
-    - exhibition
-  status: null
   user: valid_user
 
 opening:
+  type: Event
   name: An Opening
   body: This is body text for this opening.  Unfortunately, this opening has been cancelled.
-  categories:
-    - opening
-  status: cancelled
   user: valid_user

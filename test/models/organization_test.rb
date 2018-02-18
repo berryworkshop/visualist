@@ -28,8 +28,4 @@ class OrganizationTest < ActiveSupport::TestCase
     assert_not_nil @organization.errors[:email]
   end
 
-  test '#users' do
-    assert_equal 2, @user.events.size
-  end
-
 end

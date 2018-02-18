@@ -1,2 +1,2 @@
-class Work < ApplicationRecord
+class Work < Record
 end

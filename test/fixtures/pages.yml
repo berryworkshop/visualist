@@ -1,9 +1,11 @@
-one:
-  name: Page 1
-  body: This is some body text.
+contact:
+  type: Page
+  name: Contact Us
+  body: You can't contact us.  Give up now.
   user: valid_user
 
-two:
-  name: MyString
-  body: This is some more body text.
+about:
+  type: Page
+  name: About This Website
+  body: This website is the best.
   user: valid_user

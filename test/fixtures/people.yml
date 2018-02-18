@@ -1,41 +1,23 @@
 allan:
   type: Person
-  name: Berry
-  name_given: Allan James
-  name_suffix: null
+  name: Berry, Allan James
   body: Allan helped to make this site.
   user: valid_user
-  categories:
-    - artist
-    - programmer
 
 meg:
   type: Person
-  name: Duguid
-  name_given: Meg
-  name_suffix: null
+  name: Duguid, Meg
   body: Meg does shows around Chicago, and is a founding member of Culture/Math.
   user: valid_user
-  categories:
-    - artist
-    - curator
 
 michael:
   type: Person
-  name: Duguid
-  name_given: Meg
-  name_suffix: null
+  name: Thomas, Michael
   body: Michael does shows around Chicago, and is a founding member of Culture/Math.
   user: valid_user
-  categories:
-    - artist
-    - curator
 
 mick:
   type: Person
-  name: Reed
-  name_given: Michael
-  name_suffix: Esq.
+  name: Reed, Michael, Esq.
   body: Mick is a really great lawyer.
   user: valid_user
-  categories: null

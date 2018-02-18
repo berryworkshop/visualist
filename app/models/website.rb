@@ -1,2 +1,2 @@
-class Website < Citation
+class Website < ApplicationRecord
 end

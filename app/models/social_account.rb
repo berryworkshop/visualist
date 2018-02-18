@@ -1,2 +1,0 @@
-class SocialAccount < ApplicationRecord
-end

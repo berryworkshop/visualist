@@ -1,2 +1,0 @@
-class TimePeriod < ApplicationRecord
-end

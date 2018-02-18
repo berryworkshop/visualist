@@ -13,73 +13,61 @@ page_about = Page.create(
 )
 
 culturemath = Organization.create(
-  type: Organization,
   name: 'Culture/Math',
   body: 'Culture/Math does great things for artists in Chicago.',
   user: admin,
-  categories: ['association']
+  # categories: ['association']
 )
 
 allan = Person.create(
-  type: 'Person',
-  name: 'Berry',
-  name_given: 'Allan James',
-  name_suffix: nil,
+  name: 'Berry, Allan James',
   body: 'Allan helped to make this site.',
   user: admin,
-  categories: ['artist', 'programmer']
+  # categories: ['artist', 'programmer']
 )
 
 meg = Person.create(
-  type: Person,
-  name: 'Duguid',
-  name_given: 'Meg',
-  name_suffix: nil,
+  name: 'Duguid, Meg',
   body: 'Meg does shows around Chicago, and is a founding member of Culture/Math.',
   user: admin,
-  categories: [
-    'artist',
-    'curator'
-  ]
+  # categories: [
+  #   'artist',
+  #   'curator'
+  # ]
 )
 
 michael = Person.create(
-  type: Person,
-  name: 'Thomas',
-  name_given: 'Michael',
-  name_suffix: nil,
+  name: 'Thomas, Michael',
   body: 'Michael does shows around Chicago, and is a founding member of Culture/Math.',
   user: admin,
-  categories: [
-    'artist',
-    'curator'
-  ]
+  # categories: [
+  #   'artist',
+  #   'curator'
+  # ]
 )
 
 mick = Person.create(
   type: Person,
-  name: 'Reed',
-  name_given: 'Michael',
-  name_suffix: 'Esq.',
+  name: 'Reed, Michael, Esq.',
   body: 'Mick is a really great lawyer.',
   user: admin,
-  categories: nil
+  # categories: nil
 )
 
-allan_has_friend_meg = Association.create(
-  subject: allan,
-  predicate: :has_friend,
-  dobject: meg,
-)
+# allan_has_friend_meg = Association.create(
+#   subject: allan,
+#   predicate: :has_friend,
+#   dobject: meg,
+# )
 
-allan_has_friend_michael = Association.create(
-  subject: allan,
-  predicate: :has_friend,
-  dobject: michael,
-)
+# allan_has_friend_michael = Association.create(
+#   subject: allan,
+#   predicate: :has_friend,
+#   dobject: michael,
+# )
 
-allan_has_friend_mick = Association.create(
-  subject: allan,
-  predicate: :has_friend,
-  dobject: mick,
-)
+# allan_has_friend_mick = Association.create(
+#   subject: allan,
+#   predicate: :has_friend,
+#   dobject: mick,
+# )

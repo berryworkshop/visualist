@@ -2,7 +2,13 @@ require 'test_helper'
 
 class AssociationTest < ActiveSupport::TestCase
   setup do
-    @association = associations(:allan_has_friend_meg)
+    allan = people(:allan)
+    mick = people(:mick)
+    @association = Association.create(
+      subject: allan,
+      predicate: "has_friend",
+      dobject: mick,
+    )
   end
 
   test 'valid association' do
@@ -26,9 +32,5 @@ class AssociationTest < ActiveSupport::TestCase
     refute @association.valid?, 'association should be invalid without a  direct object'
     assert_not_nil @association.errors[:name]
   end
-
-  # test '#users' do
-  #   assert_equal 2, @user.events.size
-  # end
 
 end

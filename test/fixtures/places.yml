@@ -1,9 +1,9 @@
-# one:
-#   name: MyString
-#   body: MyText
-#   categories: MyString
+grantpark:
+  type: Place
+  name: Grant Park
+  body: Part of Chicago's front lawn.
 
-# two:
-#   name: MyString
-#   body: MyText
-#   categories: MyString
+pilsen:
+  type: Place
+  name: Pilsen
+  body: The place to go for good food.

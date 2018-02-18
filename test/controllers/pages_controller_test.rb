@@ -10,7 +10,7 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
   end
 
   setup do
-    @page = pages(:one)
+    @page = pages(:about)
     @user = users(:valid_user)
   end
 

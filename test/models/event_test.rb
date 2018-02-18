@@ -28,8 +28,4 @@ class EventTest < ActiveSupport::TestCase
     assert_not_nil @event_1.errors[:email]
   end
 
-  # test 'valid connected to another event' do
-
-  # end
-
 end

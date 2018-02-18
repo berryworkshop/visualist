@@ -15,198 +15,104 @@ ActiveRecord::Schema.define(version: 20180110042014) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "agents", force: :cascade do |t|
-    t.string "type"
-    t.string "name_prefix"
-    t.string "name"
-    t.string "name_given"
-    t.string "name_suffix"
-    t.text "body"
-    t.string "categories", array: true
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_agents_on_user_id"
-  end
-
   create_table "associations", force: :cascade do |t|
-    t.string "subject_type"
     t.bigint "subject_id"
     t.string "predicate"
-    t.string "dobject_type"
     t.bigint "dobject_id"
+    t.string "properties"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["dobject_type", "dobject_id"], name: "index_associations_on_dobject_type_and_dobject_id"
-    t.index ["subject_type", "subject_id"], name: "index_associations_on_subject_type_and_subject_id"
-  end
-
-  create_table "citations", force: :cascade do |t|
-    t.string "type"
-    t.string "title"
-    t.string "url"
-    t.string "citeable_type"
-    t.bigint "citeable_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["citeable_type", "citeable_id"], name: "index_citations_on_citeable_type_and_citeable_id"
-  end
-
-  create_table "contacts", force: :cascade do |t|
-    t.string "contactable_type"
-    t.bigint "contactable_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["contactable_type", "contactable_id"], name: "index_contacts_on_contactable_type_and_contactable_id"
+    t.index ["dobject_id"], name: "index_associations_on_dobject_id"
+    t.index ["subject_id"], name: "index_associations_on_subject_id"
   end
 
   create_table "emails", force: :cascade do |t|
-    t.string "label"
-    t.string "value"
+    t.string "address"
+    t.bigint "record_id"
+    t.string "properties"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "events", force: :cascade do |t|
-    t.string "name"
-    t.text "body"
-    t.string "categories", array: true
-    t.string "status"
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_events_on_user_id"
-  end
-
-  create_table "flags", force: :cascade do |t|
-    t.boolean "is_featured"
-    t.boolean "is_approved"
-    t.boolean "is_public"
-    t.string "flaggable_type"
-    t.bigint "flaggable_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["flaggable_type", "flaggable_id"], name: "index_flags_on_flaggable_type_and_flaggable_id"
-  end
-
-  create_table "images", force: :cascade do |t|
-    t.string "name"
-    t.string "caption"
-    t.string "url"
-    t.string "aspect"
-    t.string "checksum"
-    t.bigint "citation_id"
-    t.string "imageable_type"
-    t.bigint "imageable_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["citation_id"], name: "index_images_on_citation_id"
-    t.index ["imageable_type", "imageable_id"], name: "index_images_on_imageable_type_and_imageable_id"
-  end
-
-  create_table "licenses", force: :cascade do |t|
-    t.string "name"
-    t.string "url"
-    t.string "licenseable_type"
-    t.bigint "licenseable_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["licenseable_type", "licenseable_id"], name: "index_licenses_on_licenseable_type_and_licenseable_id"
+    t.index ["record_id"], name: "index_emails_on_record_id"
   end
 
   create_table "locations", force: :cascade do |t|
     t.decimal "latitude", precision: 8, scale: 5
     t.decimal "longitude", precision: 8, scale: 5
-    t.string "street"
-    t.string "locality"
-    t.bigint "region_id"
-    t.bigint "country_id"
-    t.string "postal_code"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.text "address"
     t.string "locatable_type"
     t.bigint "locatable_id"
-    t.index ["country_id"], name: "index_locations_on_country_id"
-    t.index ["latitude"], name: "index_locations_on_latitude"
-    t.index ["locatable_type", "locatable_id"], name: "index_locations_on_locatable_type_and_locatable_id"
-    t.index ["longitude"], name: "index_locations_on_longitude"
-    t.index ["region_id"], name: "index_locations_on_region_id"
-  end
-
-  create_table "pages", force: :cascade do |t|
-    t.string "name"
-    t.text "body"
-    t.string "categories", array: true
-    t.bigint "parent_id"
-    t.bigint "user_id"
+    t.string "properties"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["parent_id"], name: "index_pages_on_parent_id"
-    t.index ["user_id"], name: "index_pages_on_user_id"
+    t.index ["locatable_type", "locatable_id"], name: "index_locations_on_locatable_type_and_locatable_id"
+  end
+
+  create_table "media", force: :cascade do |t|
+    t.string "mime_type"
+    t.string "checksum"
+    t.string "url"
+    t.string "mediable_type"
+    t.bigint "mediable_id"
+    t.string "properties"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["mediable_type", "mediable_id"], name: "index_media_on_mediable_type_and_mediable_id"
+  end
+
+  create_table "periods", force: :cascade do |t|
+    t.datetime "start"
+    t.string "start_precision"
+    t.datetime "end"
+    t.string "end_precision"
+    t.string "timeable_type"
+    t.bigint "timeable_id"
+    t.string "properties"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["timeable_type", "timeable_id"], name: "index_periods_on_timeable_type_and_timeable_id"
   end
 
   create_table "phones", force: :cascade do |t|
-    t.string "label"
-    t.integer "country_code"
-    t.integer "area_code"
-    t.integer "exchange_code"
-    t.integer "number"
-    t.string "extension"
+    t.string "number"
+    t.bigint "record_id"
+    t.string "properties"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["record_id"], name: "index_phones_on_record_id"
   end
 
-  create_table "places", force: :cascade do |t|
+  create_table "records", force: :cascade do |t|
+    t.string "type"
     t.string "name"
     t.text "body"
-    t.string "categories", array: true
     t.bigint "user_id"
+    t.string "properties"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_places_on_user_id"
+    t.index ["user_id"], name: "index_records_on_user_id"
   end
 
-  create_table "snippets", force: :cascade do |t|
-    t.string "value"
-    t.bigint "citation_id"
-    t.string "snippetable_type"
-    t.bigint "snippetable_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["citation_id"], name: "index_snippets_on_citation_id"
-    t.index ["snippetable_type", "snippetable_id"], name: "index_snippets_on_snippetable_type_and_snippetable_id"
-  end
-
-  create_table "social_accounts", force: :cascade do |t|
-    t.string "label"
-    t.string "service"
+  create_table "socials", force: :cascade do |t|
     t.string "account"
+    t.string "system"
+    t.bigint "record_id"
+    t.string "properties"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["record_id"], name: "index_socials_on_record_id"
   end
 
-  create_table "terms", force: :cascade do |t|
-    t.string "type"
-    t.string "value"
-    t.string "vocabulary"
-    t.string "remote_id"
-    t.string "remote_url"
+  create_table "tags", force: :cascade do |t|
+    t.bigint "parent_id", default: 0
+    t.string "term"
+    t.string "vocabulary", default: "visualist"
+    t.string "taggable_type"
+    t.bigint "taggable_id"
+    t.string "properties"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "time_periods", force: :cascade do |t|
-    t.datetime "start"
-    t.datetime "end"
-    t.integer "duration"
-    t.integer "precision"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "timelineable_type"
-    t.bigint "timelineable_id"
-    t.index ["end"], name: "index_time_periods_on_end"
-    t.index ["start"], name: "index_time_periods_on_start"
-    t.index ["timelineable_type", "timelineable_id"], name: "index_time_periods_on_timelineable_type_and_timelineable_id"
+    t.index ["parent_id"], name: "index_tags_on_parent_id"
+    t.index ["taggable_type", "taggable_id"], name: "index_tags_on_taggable_type_and_taggable_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -214,25 +120,21 @@ ActiveRecord::Schema.define(version: 20180110042014) do
     t.string "email"
     t.string "password_digest"
     t.boolean "admin", default: false
+    t.string "ownable_type"
+    t.bigint "ownable_id"
+    t.string "properties"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["ownable_type", "ownable_id"], name: "index_users_on_ownable_type_and_ownable_id"
   end
 
   create_table "websites", force: :cascade do |t|
-    t.string "name"
     t.string "url"
+    t.bigint "record_id"
+    t.string "properties"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "works", force: :cascade do |t|
-    t.string "name"
-    t.text "body"
-    t.string "categories", array: true
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_works_on_user_id"
+    t.index ["record_id"], name: "index_websites_on_record_id"
   end
 
 end
