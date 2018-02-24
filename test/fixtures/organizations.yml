@@ -1,11 +1,11 @@
-culturemath:
-  type: Organization
-  name: Culture/Math
-  body: Culture/Math does great things for artists in Chicago.
-  user: valid_user
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-aic:
-  type: Organization
-  name: Art Institute of Chicago
-  body: The primary art institution of Chicago.
-  user: valid_user
+# This model initially had no columns defined. If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+one: {}
+# column: value
+#
+two: {}
+# column: value

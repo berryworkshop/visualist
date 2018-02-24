@@ -1,2 +1,2 @@
-class Organization < Record
+class Organization < Node
 end

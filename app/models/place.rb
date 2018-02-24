@@ -1,2 +1,2 @@
-class Place < Record
+class Place < Node
 end

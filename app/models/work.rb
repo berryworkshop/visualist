@@ -1,2 +1,2 @@
-class Work < Record
+class Work < Node
 end

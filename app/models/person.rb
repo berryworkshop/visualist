@@ -1,2 +1,2 @@
-class Person < Record
+class Person < Node
 end

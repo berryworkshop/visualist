@@ -1,73 +1,121 @@
-admin = User.create(
-  name: 'admin',
-  email: 'admin@example.com',
-  password: 'secretpassword',
-  password_confirmation: 'secretpassword',
-  admin: true
+# This file should contain all the record creation needed to seed the database with its default values.
+# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
+#
+# Examples:
+#
+#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
+#   Character.create(name: 'Luke', movie: movies.first)
+
+berry_allan = Person.create(
+  type: 'Person',
+  slug: 'berry_allan',
+  title: 'Berry, Allan',
+  body: 'Allan is awesome.'
 )
 
-page_about = Page.create(
-  name: 'About',
-  body: 'This is information about the Visualist.',
-  user: admin
+duguid_meg = Person.create(
+  type: 'Person',
+  slug: 'duguid_meg',
+  title: 'Duguid, Meg',
+  body: 'Meg is magnificent.'
 )
 
-culturemath = Organization.create(
-  name: 'Culture/Math',
-  body: 'Culture/Math does great things for artists in Chicago.',
-  user: admin,
-  # categories: ['association']
+thomas_michael = Person.create(
+  type: 'Person',
+  slug: 'thomas_michael',
+  title: 'Thomas, Michael',
+  body: 'Michael is magical.'
 )
 
-allan = Person.create(
-  name: 'Berry, Allan James',
-  body: 'Allan helped to make this site.',
-  user: admin,
-  # categories: ['artist', 'programmer']
+wood_grant = Person.create(
+  type: 'Person',
+  slug: 'wood_grant',
+  title: 'Wood, Grant',
+  body: 'A great American artist.'
 )
 
-meg = Person.create(
-  name: 'Duguid, Meg',
-  body: 'Meg does shows around Chicago, and is a founding member of Culture/Math.',
-  user: admin,
-  # categories: [
-  #   'artist',
-  #   'curator'
-  # ]
+culture_math = Organization.create(
+  type: 'Organization',
+  slug: 'culture_math',
+  title: 'Culture/Math',
+  body: 'Culture/Math is great.'
 )
 
-michael = Person.create(
-  name: 'Thomas, Michael',
-  body: 'Michael does shows around Chicago, and is a founding member of Culture/Math.',
-  user: admin,
-  # categories: [
-  #   'artist',
-  #   'curator'
-  # ]
+aic = Organization.create(
+  type: 'Organization',
+  slug: 'aic',
+  title: 'Art Institute of Chicago',
+  body: 'Chicago\'s crown jewel.'
 )
 
-mick = Person.create(
-  type: Person,
-  name: 'Reed, Michael, Esq.',
-  body: 'Mick is a really great lawyer.',
-  user: admin,
-  # categories: nil
+chicago = Place.create(
+  type: 'Place',
+  slug: 'chicago',
+  title: 'Chicago',
+  body: 'The Windy City.'
 )
 
-# allan_has_friend_meg = Association.create(
-#   subject: allan,
-#   predicate: :has_friend,
-#   dobject: meg,
-# )
+grant_park = Place.create(
+  type: 'Place',
+  slug: 'grant_park',
+  title: 'Grant Park',
+  body: 'The great lawn of Chicago.'
+)
 
-# allan_has_friend_michael = Association.create(
-#   subject: allan,
-#   predicate: :has_friend,
-#   dobject: michael,
-# )
+pilsen = Place.create(
+  type: 'Place',
+  slug: 'pilsen',
+  title: 'Pilsen',
+  body: 'The best neighborhood for tacos.'
+)
 
-# allan_has_friend_mick = Association.create(
-#   subject: allan,
-#   predicate: :has_friend,
-#   dobject: mick,
-# )
+american_gothic = Work.create(
+  type: 'Work',
+  slug: 'american_gothic',
+  title: 'American Gothic',
+  body: 'A nice painting of two lovely people.'
+)
+
+visualist = Work.create(
+  type: 'Work',
+  slug: 'visualist',
+  title: 'The Visualist',
+  body: 'Chicago\'s Visual Arts Calendar.'
+)
+
+allan_friend_meg = Edge.create(
+  subject: berry_allan,
+  predicate: :has_friend,
+  dobject: duguid_meg
+)
+
+meg_friend_allan = Edge.create(
+  subject: duguid_meg,
+  predicate: :has_friend,
+  dobject: berry_allan
+)
+
+allan_friend_michael = Edge.create(
+  subject: berry_allan,
+  predicate: :has_friend,
+  dobject: thomas_michael
+)
+
+meg_spouse_michael = Edge.create(
+  subject: duguid_meg,
+  predicate: :has_spouse,
+  dobject: thomas_michael
+)
+
+americangothic_owned_aic = Edge.create(
+  subject: american_gothic,
+  predicate: :has_owner,
+  dobject: aic
+)
+
+allan_livesin_pilsen = Edge.create(
+  subject: american_gothic,
+  predicate: :has_place_lived,
+  dobject: pilsen
+)
+
