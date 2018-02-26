@@ -2,37 +2,45 @@ require 'test_helper'
 
 class NodesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @node = nodes(:one)
+    @allan = nodes(:berry_allan)
   end
 
-  # test "should get index" do
-  #   get nodes_url, as: :json
-  #   assert_response :success
-  # end
+  test "should get index" do
+    get nodes_url, as: :json
+    assert_response :success
+  end
 
-  # test "should create node" do
-  #   assert_difference('Node.count') do
-  #     post nodes_url, params: { node: { body: @node.body, properties: @node.properties, slug: @node.slug, title: @node.title, type: @node.type } }, as: :json
-  #   end
+  test "should create node" do
+    assert_difference('Node.count') do
+      post nodes_url, params: {
+        node: {
+          type: "Person",
+          slug: "test_slug",
+          title: "A Title",
+          body: "This is a body.",
+          properties: nil,
+        }
+      }, as: :json
+    end
 
-  #   assert_response 201
-  # end
+    assert_response 201
+  end
 
-  # test "should show node" do
-  #   get node_url(@node), as: :json
-  #   assert_response :success
-  # end
+  test "should show node" do
+    get node_url(@allan), as: :json
+    assert_response :success
+  end
 
-  # test "should update node" do
-  #   patch node_url(@node), params: { node: { body: @node.body, properties: @node.properties, slug: @node.slug, title: @node.title, type: @node.type } }, as: :json
-  #   assert_response 200
-  # end
+  test "should update node" do
+    patch node_url(@allan), params: { node: { body: @allan.body, properties: @allan.properties, slug: @allan.slug, title: @allan.title, type: @allan.type } }, as: :json
+    assert_response 200
+  end
 
-  # test "should destroy node" do
-  #   assert_difference('Node.count', -1) do
-  #     delete node_url(@node), as: :json
-  #   end
+  test "should destroy node" do
+    assert_difference('Node.count', -1) do
+      delete node_url(@allan), as: :json
+    end
 
-  #   assert_response 204
-  # end
+    assert_response 204
+  end
 end

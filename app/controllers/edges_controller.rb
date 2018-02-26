@@ -1,3 +1,5 @@
+require_relative '../serializers/edge_serializer.rb'
+
 class EdgesController < ApplicationController
   before_action :set_edge, only: [:show, :update, :destroy]
 
@@ -5,16 +7,17 @@ class EdgesController < ApplicationController
   def index
     @edges = Edge.all
 
-    render json: @edges
+    render json: EdgeSerializer.new(@edges).serializable_hash
   end
 
   # GET /edges/1
   def show
-    render json: @edge
+    render json: EdgeSerializer.new(@edge).serializable_hash
   end
 
   # POST /edges
   def create
+
     @edge = Edge.new(edge_params)
 
     if @edge.save
@@ -46,6 +49,6 @@ class EdgesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def edge_params
-      params.require(:edge).permit(:predicate, :properties, :node_id)
+      params.require(:edge).permit(:subject_id, :predicate, :dobject_id, :properties)
     end
 end

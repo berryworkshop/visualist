@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2018_02_24_040121) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["dobject_id"], name: "index_edges_on_dobject_id"
+    t.index ["subject_id", "predicate", "dobject_id"], name: "index_edges_on_subject_id_and_predicate_and_dobject_id", unique: true
     t.index ["subject_id"], name: "index_edges_on_subject_id"
   end
 
@@ -34,6 +35,7 @@ ActiveRecord::Schema.define(version: 2018_02_24_040121) do
     t.jsonb "properties"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["slug"], name: "index_nodes_on_slug", unique: true
   end
 
 end

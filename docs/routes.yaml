@@ -1,0 +1,63 @@
+# GET requests use the Netflix FastJsonapi::ObjectSerializer.
+# Other verbs have a flat structure, because the serializer does not currently provide a deserializer.
+
+Edge
+  edges:
+    GET:
+      url: /edges(.:format)
+      name: edges#index
+      examples:
+        - > http :3000/edges
+    POST:
+      url: /edges(.:format)
+      name: edges#create
+      examples:
+        - > http POST :3000/edges edge:='{"predicate": "has_friend"}'
+  edge:
+    GET:
+      url: /edges/:id(.:format)
+      name: edges#show
+      examples:
+        - > http :3000/edges/1
+    PATCH/PUT:
+      url: /edges/:id(.:format)
+      name: edges#update
+      examples:
+        - > http PATCH :3000/edges/1 edge:='{"predicate": "has_enemy"}'
+        - > http PUT :3000/edges/1 edge:='{"predicate": "has_enemy"}'
+    DELETE:
+      url: /edges/:id(.:format)
+      name: edges#destroy
+      examples:
+        - > http DELETE :3000/edges/1
+
+Node
+  nodes:
+    GET:
+      url: /nodes(.:format)
+      name: nodes#index
+      examples:
+        - > http :3000/nodes
+    POST:
+      url: /nodes(.:format)
+      name: nodes#create
+      examples:
+        - > http POST :3000/nodes node:='{"slug": "test_slug"}'
+        - > http POST :3000/nodes node:='{"type": "Person", "slug": "test_slug", "title": "Test Title", "body": "Test body.", "properties": null}'
+  node:
+    GET:
+      url: /nodes/:id(.:format)
+      name: nodes#show
+      examples:
+    PATCH:
+      url: /nodes/:id(.:format)
+      name: nodes#update
+      examples:
+    PUT:
+      url: /nodes/:id(.:format)
+      name: nodes#update
+      examples:
+    DELETE:
+      url: /nodes/:id(.:format)
+      name: nodes#destroy
+      examples:

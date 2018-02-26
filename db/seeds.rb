@@ -84,38 +84,37 @@ visualist = Work.create(
 )
 
 allan_friend_meg = Edge.create(
-  subject: berry_allan,
+  # subject: berry_allan,
   predicate: :has_friend,
-  dobject: duguid_meg
+  # dobject: duguid_meg
 )
 
 meg_friend_allan = Edge.create(
-  subject: duguid_meg,
+  # subject: duguid_meg,
   predicate: :has_friend,
-  dobject: berry_allan
+  # dobject: berry_allan
 )
 
 allan_friend_michael = Edge.create(
-  subject: berry_allan,
+  # subject: berry_allan,
   predicate: :has_friend,
-  dobject: thomas_michael
+  # dobject: thomas_michael
 )
 
 meg_spouse_michael = Edge.create(
-  subject: duguid_meg,
+  # subject: duguid_meg,
   predicate: :has_spouse,
-  dobject: thomas_michael
+  # dobject: thomas_michael
 )
 
-americangothic_owned_aic = Edge.create(
-  subject: american_gothic,
+americangothic_own_aic = Edge.create(
+  # subject: american_gothic,
   predicate: :has_owner,
-  dobject: aic
+  # dobject: aic
 )
 
-allan_livesin_pilsen = Edge.create(
-  subject: american_gothic,
+allan_lives_pilsen = Edge.create(
+  # subject: american_gothic,
   predicate: :has_place_lived,
-  dobject: pilsen
+  # dobject: pilsen
 )
-

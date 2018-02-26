@@ -2,7 +2,7 @@ class Edge < ApplicationRecord
   belongs_to :subject, class_name: "Node"
   belongs_to :dobject, class_name: "Node"
 
-  validates :subject, :predicate, :dobject, presence: true
+  validates :subject_id, :predicate, :dobject_id, presence: true
   validates :predicate,
     inclusion: {
       message: "%{value} is not a valid predicate",
@@ -13,6 +13,7 @@ class Edge < ApplicationRecord
         # :has_curator,
         # :has_editor,
         # :has_employee,
+        :has_enemy,
         # :has_exhibitor,
         :has_friend,
         :has_member,

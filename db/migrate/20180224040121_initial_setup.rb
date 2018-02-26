@@ -7,6 +7,7 @@ class InitialSetup < ActiveRecord::Migration[5.2]
       t.text :body
       t.jsonb :properties
 
+      t.index :slug, unique: true
       t.timestamps
     end
 
@@ -16,6 +17,7 @@ class InitialSetup < ActiveRecord::Migration[5.2]
       t.references :dobject, class_name: 'Node'
       t.jsonb :properties
 
+      t.index [:subject_id, :predicate, :dobject_id], unique: true
       t.timestamps
     end
   end

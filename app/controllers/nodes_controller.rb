@@ -1,3 +1,5 @@
+require_relative '../serializers/node_serializer.rb'
+
 class NodesController < ApplicationController
   before_action :set_node, only: [:show, :update, :destroy]
 
@@ -5,12 +7,12 @@ class NodesController < ApplicationController
   def index
     @nodes = Node.all
 
-    render json: @nodes
+    render json: NodeSerializer.new(@nodes).serializable_hash
   end
 
   # GET /nodes/1
   def show
-    render json: @node
+    render json: NodeSerializer.new(@node).serializable_hash
   end
 
   # POST /nodes

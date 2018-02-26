@@ -1,11 +1,31 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  predicate: MyString
-  properties:
-  # node: one
+allan_friend_meg:
+  subject: berry_allan (Person)
+  predicate: has_friend
+  dobject: duguid_meg (Person)
 
-two:
-  predicate: MyString
-  properties:
-  # node: two
+meg_friend_allan:
+  subject: duguid_meg (Person)
+  predicate: has_friend
+  dobject: berry_allan (Person)
+
+allan_friend_michael:
+  subject: berry_allan (Person)
+  predicate: has_friend
+  dobject: thomas_michael (Person)
+
+meg_spouse_michael:
+  subject: duguid_meg (Person)
+  predicate: has_spouse
+  dobject: thomas_michael (Person)
+
+americangothic_own_aic:
+  subject: american_gothic (Work)
+  predicate: has_owner
+  dobject: aic (Organization)
+
+allan_lives_pilsen:
+  subject: berry_allan (Person)
+  predicate: has_place_lived
+  dobject: pilsen (Place)
