@@ -9,3 +9,17 @@
 #
 # two: {}
 # column: value
+
+american_gothic:
+  type: Work
+  slug: american_gothic
+  title: American Gothic
+  body: A nice painting of two lovely people.
+  properties: null
+
+visualist:
+  type: Work
+  slug: visualist
+  title: The Visualist
+  body: Chicago's Visual Arts Calendar.
+  properties: null

@@ -2,7 +2,7 @@ require 'test_helper'
 
 class NodesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @allan = nodes(:berry_allan)
+    @allan = people(:berry_allan)
   end
 
   test "should get index" do
@@ -32,7 +32,11 @@ class NodesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update node" do
-    patch node_url(@allan), params: { node: { body: @allan.body, properties: @allan.properties, slug: @allan.slug, title: @allan.title, type: @allan.type } }, as: :json
+    patch node_url(@allan), params: {
+      node: {
+        body: "This is some new text for the body.",
+      }
+    }, as: :json
     assert_response 200
   end
 

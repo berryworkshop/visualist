@@ -1,78 +1,94 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-berry_allan:
-  type: Person
-  slug: berry_allan
-  title: Berry, Allan
-  body: Allan is awesome.
-  properties: null
+# berry_allan:
+#   type: Person
+#   slug: berry_allan
+#   title: Berry, Allan
+#   body: Allan is awesome.
+#   properties: null
 
-duguid_meg:
-  type: Person
-  slug: duguid_meg
-  title: Duguid, Meg
-  body: Meg is magnificent.
-  properties: null
+# duguid_meg:
+#   type: Person
+#   slug: duguid_meg
+#   title: Duguid, Meg
+#   body: Meg is magnificent.
+#   properties: null
 
-thomas_michael:
-  type: Person
-  slug: thomas_michael
-  title: Thomas, Michael
-  body: Michael is magical.
-  properties: null
+# thomas_michael:
+#   type: Person
+#   slug: thomas_michael
+#   title: Thomas, Michael
+#   body: Michael is magical.
+#   properties: null
 
-wood_grant:
-  type: Person
-  slug: wood_grant
-  title: Wood, Grant
-  body: A great American artist.
-  properties: null
+# wood_grant:
+#   type: Person
+#   slug: wood_grant
+#   title: Wood, Grant
+#   body: A great American artist.
+#   properties: null
 
-culture_math:
-  type: Organization
-  slug: culture_math
-  title: Culture/Math
-  body: Culture/Math is great.
-  properties: null
+# culture_math:
+#   type: Organization
+#   slug: culture_math
+#   title: Culture/Math
+#   body: Culture/Math is great.
+#   properties: null
 
-aic:
-  type: Organization
-  slug: aic
-  title: Art Institute of Chicago
-  body: Chicago's crown jewel.
-  properties: null
+# aic:
+#   type: Organization
+#   slug: aic
+#   title: Art Institute of Chicago
+#   body: Chicago's crown jewel.
+#   properties: null
 
-chicago:
-  type: Place
-  slug: chicago
-  title: Chicago
-  body: The Windy City.
-  properties: null
+# illinois:
+#   type: Place
+#   slug: illinois
+#   title: Illinois
+#   body: The State of Illinois, home of Lincoln.
+#   properties: null
 
-grant_park:
-  type: Place
-  slug: grant_park
-  title: Grant Park
-  body: The great lawn of Chicago.
-  properties: null
+# usa:
+#   type: Place
+#   slug: usa
+#   title: United States of America
+#   body: Land of the free, home of the brave.
+#   properties: null
 
-pilsen:
-  type: Place
-  slug: pilsen
-  title: Pilsen
-  body: The best neighborhood for tacos.
-  properties: null
+# chicago:
+#   type: Place
+#   slug: chicago
+#   title: Chicago
+#   body: The Windy City.
+#   properties: null
 
-american_gothic:
-  type: Work
-  slug: american_gothic
-  title: American Gothic
-  body: A nice painting of two lovely people.
-  properties: null
+# pilsen:
+#   type: Place
+#   slug: pilsen
+#   title: Pilsen
+#   body: The best neighborhood for tacos.
+#   properties: null
 
-visualist:
-  type: Work
-  slug: visualist
-  title: The Visualist
-  body: Chicago's Visual Arts Calendar.
-  properties: null
+# grant_park:
+#   type: Place
+#   slug: grant_park
+#   title: Grant Park
+#   body: The great lawn of Chicago.
+#   properties: null
+
+
+
+# american_gothic:
+#   type: Work
+#   slug: american_gothic
+#   title: American Gothic
+#   body: A nice painting of two lovely people.
+#   properties: null
+
+# visualist:
+#   type: Work
+#   slug: visualist
+#   title: The Visualist
+#   body: Chicago's Visual Arts Calendar.
+#   properties: null

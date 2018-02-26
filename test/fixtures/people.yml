@@ -9,3 +9,31 @@
 #
 # two: {}
 # column: value
+
+berry_allan:
+  type: Person
+  slug: berry_allan
+  title: Berry, Allan
+  body: Allan is awesome.
+  properties: null
+
+duguid_meg:
+  type: Person
+  slug: duguid_meg
+  title: Duguid, Meg
+  body: Meg is magnificent.
+  properties: null
+
+thomas_michael:
+  type: Person
+  slug: thomas_michael
+  title: Thomas, Michael
+  body: Michael is magical.
+  properties: null
+
+wood_grant:
+  type: Person
+  slug: wood_grant
+  title: Wood, Grant
+  body: A great American artist.
+  properties: null

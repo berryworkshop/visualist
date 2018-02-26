@@ -9,3 +9,17 @@
 #
 # two: {}
 # column: value
+
+culture_math:
+  type: Organization
+  slug: culture_math
+  title: Culture/Math
+  body: Culture/Math is great.
+  properties: null
+
+aic:
+  type: Organization
+  slug: aic
+  title: Art Institute of Chicago
+  body: Chicago's crown jewel.
+  properties: null
