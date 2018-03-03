@@ -5962,3 +5962,363 @@ Processing by NodesController#create as HTML
 Completed 201 Created in 15ms (Views: 0.8ms | ActiveRecord: 9.2ms)
 
 
+Started GET "/events" for 127.0.0.1 at 2018-03-03 13:48:59 -0600
+  [1m[35m (3.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/aljabear/.gem/ruby/2.5.0/gems/activerecord-5.2.0.rc1/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (No route matches [GET] "/events"):
+  
+actionpack (5.2.0.rc1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.0.rc1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0.rc1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0.rc1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0.rc1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0.rc1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0.rc1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0.rc1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.0.rc1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0.rc1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0.rc1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0.rc1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0.rc1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0.rc1) lib/rails/engine.rb:524:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/nodes" for 127.0.0.1 at 2018-03-03 13:49:21 -0600
+Processing by NodesController#index as */*
+  [1m[36mNode Load (4.4ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes"[0m
+  ↳ app/controllers/nodes_controller.rb:10
+Completed 200 OK in 110ms (Views: 1.5ms | ActiveRecord: 22.0ms)
+
+
+Started GET "/works" for 127.0.0.1 at 2018-03-03 13:56:20 -0600
+Processing by WorksController#index as */*
+  [1m[36mWork Load (2.5ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Work')[0m
+  ↳ app/controllers/works_controller.rb:8
+Completed 200 OK in 7ms (Views: 3.3ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-03 13:56:25 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/events"):
+  
+actionpack (5.2.0.rc1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.0.rc1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0.rc1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0.rc1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0.rc1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0.rc1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0.rc1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0.rc1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.0.rc1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0.rc1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0.rc1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0.rc1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0.rc1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0.rc1) lib/rails/engine.rb:524:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started OPTIONS "/events" for 127.0.0.1 at 2018-03-03 14:37:07 -0600
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/events"):
+  
+actionpack (5.2.0.rc1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.0.rc1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0.rc1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0.rc1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0.rc1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0.rc1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0.rc1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0.rc1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.0.rc1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0.rc1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0.rc1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0.rc1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0.rc1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0.rc1) lib/rails/engine.rb:524:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started OPTIONS "/pages" for 127.0.0.1 at 2018-03-03 14:37:09 -0600
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/pages"):
+  
+actionpack (5.2.0.rc1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.0.rc1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0.rc1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0.rc1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0.rc1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0.rc1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0.rc1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0.rc1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.0.rc1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0.rc1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0.rc1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0.rc1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0.rc1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0.rc1) lib/rails/engine.rb:524:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/events" for 127.0.0.1 at 2018-03-03 14:49:35 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (2.9ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:8
+Completed 200 OK in 29ms (Views: 3.3ms | ActiveRecord: 15.0ms)
+
+
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/aljabear/.rubies/ruby-2.5.0/lib/ruby/gems/2.5.0/gems/rake-12.3.0/lib/rake/task.rb:251
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/aljabear/.rubies/ruby-2.5.0/lib/ruby/gems/2.5.0/gems/rake-12.3.0/lib/rake/task.rb:251
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/aljabear/.rubies/ruby-2.5.0/lib/ruby/gems/2.5.0/gems/rake-12.3.0/lib/rake/task.rb:251
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/aljabear/.rubies/ruby-2.5.0/lib/ruby/gems/2.5.0/gems/rake-12.3.0/lib/rake/task.rb:251
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/aljabear/.rubies/ruby-2.5.0/lib/ruby/gems/2.5.0/gems/rake-12.3.0/lib/rake/task.rb:251
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/aljabear/.rubies/ruby-2.5.0/lib/ruby/gems/2.5.0/gems/rake-12.3.0/lib/rake/task.rb:251
+  [1m[35m (5062.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "visualist_development"[0m
+  ↳ /Users/aljabear/.rubies/ruby-2.5.0/lib/ruby/gems/2.5.0/gems/rake-12.3.0/lib/rake/task.rb:251
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/aljabear/.rubies/ruby-2.5.0/lib/ruby/gems/2.5.0/gems/rake-12.3.0/lib/rake/task.rb:251
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/aljabear/.rubies/ruby-2.5.0/lib/ruby/gems/2.5.0/gems/rake-12.3.0/lib/rake/task.rb:251
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/aljabear/.rubies/ruby-2.5.0/lib/ruby/gems/2.5.0/gems/rake-12.3.0/lib/rake/task.rb:251
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/aljabear/.rubies/ruby-2.5.0/lib/ruby/gems/2.5.0/gems/rake-12.3.0/lib/rake/task.rb:251
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/aljabear/.rubies/ruby-2.5.0/lib/ruby/gems/2.5.0/gems/rake-12.3.0/lib/rake/task.rb:251
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/aljabear/.rubies/ruby-2.5.0/lib/ruby/gems/2.5.0/gems/rake-12.3.0/lib/rake/task.rb:251
+  [1m[35m (142.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "visualist_development"[0m
+  ↳ /Users/aljabear/.rubies/ruby-2.5.0/lib/ruby/gems/2.5.0/gems/rake-12.3.0/lib/rake/task.rb:251
+  [1m[35m (128.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "visualist_test"[0m
+  ↳ /Users/aljabear/.rubies/ruby-2.5.0/lib/ruby/gems/2.5.0/gems/rake-12.3.0/lib/rake/task.rb:251
+  [1m[35m (513.1ms)[0m  [1m[35mCREATE DATABASE "visualist_development" ENCODING = 'unicode'[0m
+  ↳ /Users/aljabear/.rubies/ruby-2.5.0/lib/ruby/gems/2.5.0/gems/rake-12.3.0/lib/rake/task.rb:251
+  [1m[35m (270.5ms)[0m  [1m[35mCREATE DATABASE "visualist_test" ENCODING = 'unicode'[0m
+  ↳ /Users/aljabear/.rubies/ruby-2.5.0/lib/ruby/gems/2.5.0/gems/rake-12.3.0/lib/rake/task.rb:251
+  [1m[35m (18.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ /Users/aljabear/.rubies/ruby-2.5.0/lib/ruby/gems/2.5.0/gems/rake-12.3.0/lib/rake/task.rb:251
+  [1m[35m (52.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ /Users/aljabear/.rubies/ruby-2.5.0/lib/ruby/gems/2.5.0/gems/rake-12.3.0/lib/rake/task.rb:251
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8056133293431660360)[0m
+  ↳ /Users/aljabear/.rubies/ruby-2.5.0/lib/ruby/gems/2.5.0/gems/rake-12.3.0/lib/rake/task.rb:251
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/aljabear/.rubies/ruby-2.5.0/lib/ruby/gems/2.5.0/gems/rake-12.3.0/lib/rake/task.rb:251
+Migrating to InitialSetup (20180224040121)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/aljabear/.rubies/ruby-2.5.0/lib/ruby/gems/2.5.0/gems/rake-12.3.0/lib/rake/task.rb:251
+  [1m[35m (13.7ms)[0m  [1m[35mCREATE TABLE "nodes" ("id" bigserial primary key, "type" character varying, "slug" character varying, "title" character varying, "body" text, "properties" jsonb, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20180224040121_initial_setup.rb:3
+  [1m[35m (7.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_nodes_on_slug" ON "nodes"  ("slug")[0m
+  ↳ db/migrate/20180224040121_initial_setup.rb:3
+  [1m[35m (6.8ms)[0m  [1m[35mCREATE TABLE "edges" ("id" bigserial primary key, "subject_id" bigint, "predicate" character varying, "dobject_id" bigint, "properties" jsonb, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20180224040121_initial_setup.rb:14
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX  "index_edges_on_subject_id" ON "edges"  ("subject_id")[0m
+  ↳ db/migrate/20180224040121_initial_setup.rb:14
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_edges_on_dobject_id" ON "edges"  ("dobject_id")[0m
+  ↳ db/migrate/20180224040121_initial_setup.rb:14
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_edges_on_subject_id_and_predicate_and_dobject_id" ON "edges"  ("subject_id", "predicate", "dobject_id")[0m
+  ↳ db/migrate/20180224040121_initial_setup.rb:14
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180224040121"]]
+  ↳ /Users/aljabear/.rubies/ruby-2.5.0/lib/ruby/gems/2.5.0/gems/rake-12.3.0/lib/rake/task.rb:251
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/aljabear/.rubies/ruby-2.5.0/lib/ruby/gems/2.5.0/gems/rake-12.3.0/lib/rake/task.rb:251
+  [1m[36mActiveRecord::InternalMetadata Load (1.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/aljabear/.rubies/ruby-2.5.0/lib/ruby/gems/2.5.0/gems/rake-12.3.0/lib/rake/task.rb:251
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/aljabear/.rubies/ruby-2.5.0/lib/ruby/gems/2.5.0/gems/rake-12.3.0/lib/rake/task.rb:251
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-03-03 20:52:11.617598"], ["updated_at", "2018-03-03 20:52:11.617598"]]
+  ↳ /Users/aljabear/.rubies/ruby-2.5.0/lib/ruby/gems/2.5.0/gems/rake-12.3.0/lib/rake/task.rb:251
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/aljabear/.rubies/ruby-2.5.0/lib/ruby/gems/2.5.0/gems/rake-12.3.0/lib/rake/task.rb:251
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(8056133293431660360)[0m
+  ↳ /Users/aljabear/.rubies/ruby-2.5.0/lib/ruby/gems/2.5.0/gems/rake-12.3.0/lib/rake/task.rb:251
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/aljabear/.rubies/ruby-2.5.0/lib/ruby/gems/2.5.0/gems/rake-12.3.0/lib/rake/task.rb:251
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/aljabear/.rubies/ruby-2.5.0/lib/ruby/gems/2.5.0/gems/rake-12.3.0/lib/rake/task.rb:251
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mNode Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE "nodes"."slug" = $1 LIMIT $2[0m  [["slug", "berry_allan"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mPerson Create (0.8ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["type", "Person"], ["slug", "berry_allan"], ["title", "Berry, Allan"], ["body", "Allan is awesome."], ["created_at", "2018-03-03 20:52:11.706919"], ["updated_at", "2018-03-03 20:52:11.706919"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mNode Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE "nodes"."slug" = $1 LIMIT $2[0m  [["slug", "duguid_meg"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mPerson Create (0.4ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["type", "Person"], ["slug", "duguid_meg"], ["title", "Duguid, Meg"], ["body", "Meg is magnificent."], ["created_at", "2018-03-03 20:52:11.711232"], ["updated_at", "2018-03-03 20:52:11.711232"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:23
+  [1m[36mNode Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE "nodes"."slug" = $1 LIMIT $2[0m  [["slug", "thomas_michael"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:23
+  [1m[36mPerson Create (0.4ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["type", "Person"], ["slug", "thomas_michael"], ["title", "Thomas, Michael"], ["body", "Michael is magical."], ["created_at", "2018-03-03 20:52:11.714856"], ["updated_at", "2018-03-03 20:52:11.714856"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mNode Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE "nodes"."slug" = $1 LIMIT $2[0m  [["slug", "wood_grant"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:30
+  [1m[36mPerson Create (0.4ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["type", "Person"], ["slug", "wood_grant"], ["title", "Wood, Grant"], ["body", "A great American artist."], ["created_at", "2018-03-03 20:52:11.718398"], ["updated_at", "2018-03-03 20:52:11.718398"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:37
+  [1m[36mNode Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE "nodes"."slug" = $1 LIMIT $2[0m  [["slug", "culture_math"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:37
+  [1m[36mOrganization Create (0.5ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["type", "Organization"], ["slug", "culture_math"], ["title", "Culture/Math"], ["body", "Culture/Math is great."], ["created_at", "2018-03-03 20:52:11.730832"], ["updated_at", "2018-03-03 20:52:11.730832"]]
+  ↳ db/seeds.rb:37
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:44
+  [1m[36mNode Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE "nodes"."slug" = $1 LIMIT $2[0m  [["slug", "aic"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:44
+  [1m[36mOrganization Create (0.4ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["type", "Organization"], ["slug", "aic"], ["title", "Art Institute of Chicago"], ["body", "Chicago's crown jewel."], ["created_at", "2018-03-03 20:52:11.734686"], ["updated_at", "2018-03-03 20:52:11.734686"]]
+  ↳ db/seeds.rb:44
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:44
+  [1m[35m (1.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:51
+  [1m[36mNode Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE "nodes"."slug" = $1 LIMIT $2[0m  [["slug", "chicago"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:51
+  [1m[36mPlace Create (0.5ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["type", "Place"], ["slug", "chicago"], ["title", "Chicago"], ["body", "The Windy City."], ["created_at", "2018-03-03 20:52:11.749442"], ["updated_at", "2018-03-03 20:52:11.749442"]]
+  ↳ db/seeds.rb:51
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:51
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:58
+  [1m[36mNode Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE "nodes"."slug" = $1 LIMIT $2[0m  [["slug", "grant_park"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:58
+  [1m[36mPlace Create (0.6ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["type", "Place"], ["slug", "grant_park"], ["title", "Grant Park"], ["body", "The great lawn of Chicago."], ["created_at", "2018-03-03 20:52:11.753408"], ["updated_at", "2018-03-03 20:52:11.753408"]]
+  ↳ db/seeds.rb:58
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:58
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:65
+  [1m[36mNode Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE "nodes"."slug" = $1 LIMIT $2[0m  [["slug", "pilsen"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:65
+  [1m[36mPlace Create (0.7ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["type", "Place"], ["slug", "pilsen"], ["title", "Pilsen"], ["body", "The best neighborhood for tacos."], ["created_at", "2018-03-03 20:52:11.758004"], ["updated_at", "2018-03-03 20:52:11.758004"]]
+  ↳ db/seeds.rb:65
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:65
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:72
+  [1m[36mNode Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE "nodes"."slug" = $1 LIMIT $2[0m  [["slug", "american_gothic"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:72
+  [1m[36mWork Create (0.4ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["type", "Work"], ["slug", "american_gothic"], ["title", "American Gothic"], ["body", "A nice painting of two lovely people."], ["created_at", "2018-03-03 20:52:11.773122"], ["updated_at", "2018-03-03 20:52:11.773122"]]
+  ↳ db/seeds.rb:72
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:72
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:79
+  [1m[36mNode Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE "nodes"."slug" = $1 LIMIT $2[0m  [["slug", "visualist"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:79
+  [1m[36mWork Create (0.4ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["type", "Work"], ["slug", "visualist"], ["title", "The Visualist"], ["body", "Chicago's Visual Arts Calendar."], ["created_at", "2018-03-03 20:52:11.777302"], ["updated_at", "2018-03-03 20:52:11.777302"]]
+  ↳ db/seeds.rb:79
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:79
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:86
+  [1m[36mNode Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE "nodes"."slug" = $1 LIMIT $2[0m  [["slug", "test_exhibition"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:86
+  [1m[36mEvent Create (0.5ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["type", "Event"], ["slug", "test_exhibition"], ["title", "An Exhibition"], ["body", "A nice exhibition."], ["created_at", "2018-03-03 20:52:11.789912"], ["updated_at", "2018-03-03 20:52:11.789912"]]
+  ↳ db/seeds.rb:86
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:86
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:93
+  [1m[36mNode Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE "nodes"."slug" = $1 LIMIT $2[0m  [["slug", "test_reception"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:93
+  [1m[36mEvent Create (0.4ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["type", "Event"], ["slug", "test_reception"], ["title", "A Reception"], ["body", "A nice reception."], ["created_at", "2018-03-03 20:52:11.794337"], ["updated_at", "2018-03-03 20:52:11.794337"]]
+  ↳ db/seeds.rb:93
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:93
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:100
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:100
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:106
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:106
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:112
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:112
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:118
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:118
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:124
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:124
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:130
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:130
+Started GET "/events" for 127.0.0.1 at 2018-03-03 14:52:27 -0600
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/aljabear/.gem/ruby/2.5.0/gems/activerecord-5.2.0.rc1/lib/active_record/log_subscriber.rb:98
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:8
+Completed 200 OK in 31ms (Views: 16.9ms | ActiveRecord: 10.3ms)
+
+
+Started OPTIONS "/events" for 127.0.0.1 at 2018-03-03 15:54:07 -0600
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/events"):
+  
+actionpack (5.2.0.rc1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.0.rc1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0.rc1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0.rc1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0.rc1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0.rc1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0.rc1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0.rc1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.0.rc1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0.rc1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0.rc1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0.rc1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0.rc1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0.rc1) lib/rails/engine.rb:524:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
