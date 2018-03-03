@@ -14,7 +14,6 @@ export default new Vuex.Store({
         process.env.NODE_ENV === "development" ? 3000 : window.location.port;
       return `${protocol}//${hostname}:${port}`;
     })(),
-    pages: [],
     events: [],
     user: {
       jwt: ""
@@ -26,9 +25,6 @@ export default new Vuex.Store({
     },
     logout(state) {
       state.user = { jwt: "" };
-    },
-    pagesSet(state, arr) {
-      state.pages = arr;
     },
     eventsSet(state, arr) {
       state.events = arr;
@@ -64,17 +60,6 @@ export default new Vuex.Store({
     },
     async logout(context) {
       context.commit("logout");
-    },
-    async pagesFetch(context) {
-      const url = `${context.rootState.apiUrl}/pages`;
-      try {
-        const response = await request
-          .get(url)
-          .set("Authorization", context.rootState.user.jwt);
-        context.commit("pagesSet", JSON.parse(response.text).data);
-      } catch (err) {
-        console.error(err); // eslint-disable-line no-console
-      }
     },
     async eventsFetch(context) {
       const url = `${context.rootState.apiUrl}/events`;

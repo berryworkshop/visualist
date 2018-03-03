@@ -42,10 +42,6 @@ export default {
           text: "Map"
         },
         {
-          name: "pages",
-          text: "Pages"
-        },
-        {
           name: "search",
           text: "Search"
         }

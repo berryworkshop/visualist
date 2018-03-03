@@ -18,6 +18,8 @@ gem 'puma', '~> 3.11'
 
 gem 'fast_jsonapi', '~> 1.0.17'
 
+gem 'rack-cors', '>= 1.0.2', require: 'rack/cors'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
