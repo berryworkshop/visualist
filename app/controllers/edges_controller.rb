@@ -21,7 +21,7 @@ class EdgesController < ApplicationController
     @edge = Edge.new(edge_params)
 
     if @edge.save
-      render json: @edge, status: :created, location: @edge
+      render json: EdgeSerializer.new(@edge).serializable_hash, status: :created, location: @edge
     else
       render json: @edge.errors, status: :unprocessable_entity
     end
@@ -30,7 +30,7 @@ class EdgesController < ApplicationController
   # PATCH/PUT /edges/1
   def update
     if @edge.update(edge_params)
-      render json: @edge
+      render json: EdgeSerializer.new(@edge).serializable_hash
     else
       render json: @edge.errors, status: :unprocessable_entity
     end

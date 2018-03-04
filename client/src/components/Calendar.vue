@@ -3,7 +3,7 @@
     <h2>Calendar</h2>
     <ul v-if="events && events.length > 0">
       <li v-for="e in events"
-          :key="e.attributes.slug">{{ e.attributes.name }}</li>
+          :key="e.attributes.slug">{{ e.attributes.title }}</li>
     </ul>
     <p v-else>No events are available.</p>
     <event-add></event-add>

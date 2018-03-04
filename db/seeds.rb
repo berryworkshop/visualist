@@ -83,20 +83,6 @@ visualist = Work.create(
   body: 'Chicago\'s Visual Arts Calendar.'
 )
 
-test_exhibition = Event.create(
-  type: 'Event',
-  slug: 'test_exhibition',
-  title: 'An Exhibition',
-  body: 'A nice exhibition.'
-)
-
-test_reception = Event.create(
-  type: 'Event',
-  slug: 'test_reception',
-  title: 'A Reception',
-  body: 'A nice reception.'
-)
-
 allan_friend_meg = Edge.create(
   # subject: berry_allan,
   predicate: :has_friend,

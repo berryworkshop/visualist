@@ -5,12 +5,12 @@ class WorksController < ApplicationController
   def index
     @works = Work.all
 
-    render json: @works
+    render json: NodeSerializer.new(@works).serializable_hash
   end
 
   # GET /works/1
   def show
-    render json: @work
+    render json: NodeSerializer.new(@work).serializable_hash
   end
 
   # POST /works
@@ -18,7 +18,7 @@ class WorksController < ApplicationController
     @work = Work.new(work_params)
 
     if @work.save
-      render json: @work, status: :created, location: @work
+      render json: NodeSerializer.new(@work).serializable_hash, status: :created, location: @work
     else
       render json: @work.errors, status: :unprocessable_entity
     end
@@ -27,7 +27,7 @@ class WorksController < ApplicationController
   # PATCH/PUT /works/1
   def update
     if @work.update(work_params)
-      render json: @work
+      render json: NodeSerializer.new(@work).serializable_hash
     else
       render json: @work.errors, status: :unprocessable_entity
     end

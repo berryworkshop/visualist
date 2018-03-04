@@ -5,12 +5,12 @@ class PlacesController < ApplicationController
   def index
     @places = Place.all
 
-    render json: @places
+    render json: NodeSerializer.new(@places).serializable_hash
   end
 
   # GET /places/1
   def show
-    render json: @place
+    render json: NodeSerializer.new(@place).serializable_hash
   end
 
   # POST /places
@@ -18,7 +18,7 @@ class PlacesController < ApplicationController
     @place = Place.new(place_params)
 
     if @place.save
-      render json: @place, status: :created, location: @place
+      render json: NodeSerializer.new(@place).serializable_hash, status: :created, location: @place
     else
       render json: @place.errors, status: :unprocessable_entity
     end
@@ -27,7 +27,7 @@ class PlacesController < ApplicationController
   # PATCH/PUT /places/1
   def update
     if @place.update(place_params)
-      render json: @place
+      render json: NodeSerializer.new(@place).serializable_hash
     else
       render json: @place.errors, status: :unprocessable_entity
     end

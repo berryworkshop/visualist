@@ -20,7 +20,7 @@ class NodesController < ApplicationController
     @node = Node.new(node_params)
 
     if @node.save
-      render json: @node, status: :created, location: @node
+      render json: NodeSerializer.new(@node).serializable_hash, status: :created, location: @node
     else
       render json: @node.errors, status: :unprocessable_entity
     end
@@ -29,7 +29,7 @@ class NodesController < ApplicationController
   # PATCH/PUT /nodes/1
   def update
     if @node.update(node_params)
-      render json: @node
+      render json: NodeSerializer.new(@node).serializable_hash
     else
       render json: @node.errors, status: :unprocessable_entity
     end

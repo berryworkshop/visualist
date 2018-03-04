@@ -12,8 +12,8 @@ class EventsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create event" do
     assert_difference('Event.count') do
-      post nodes_url, params: {
-        node: {
+      post events_url, params: {
+        attributes: {
           type: "Event",
           slug: "groovy_exhibition",
           title: "A Groovy Exhibition",
@@ -33,7 +33,7 @@ class EventsControllerTest < ActionDispatch::IntegrationTest
 
   test "should update event" do
     patch event_url(@event), params: {
-      node: {
+      attributes: {
         body: "This is a new event description."
       }
     }, as: :json

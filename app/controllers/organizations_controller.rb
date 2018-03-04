@@ -5,12 +5,12 @@ class OrganizationsController < ApplicationController
   def index
     @organizations = Organization.all
 
-    render json: @organizations
+    render json: NodeSerializer.new(@organizations).serializable_hash
   end
 
   # GET /organizations/1
   def show
-    render json: @organization
+    render json: NodeSerializer.new(@organization).serializable_hash
   end
 
   # POST /organizations
@@ -18,7 +18,7 @@ class OrganizationsController < ApplicationController
     @organization = Organization.new(organization_params)
 
     if @organization.save
-      render json: @organization, status: :created, location: @organization
+      render json: NodeSerializer.new(@organization).serializable_hash, status: :created, location: @organization
     else
       render json: @organization.errors, status: :unprocessable_entity
     end
@@ -27,7 +27,7 @@ class OrganizationsController < ApplicationController
   # PATCH/PUT /organizations/1
   def update
     if @organization.update(organization_params)
-      render json: @organization
+      render json: NodeSerializer.new(@organization).serializable_hash
     else
       render json: @organization.errors, status: :unprocessable_entity
     end
