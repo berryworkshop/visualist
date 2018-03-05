@@ -1,4 +1,5 @@
 class WorksController < NodesController
+  @@model = Work
 
   private
     def set_node

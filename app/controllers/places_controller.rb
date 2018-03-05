@@ -1,4 +1,5 @@
 class PlacesController < NodesController
+  @@model = Place
 
   private
     def set_node

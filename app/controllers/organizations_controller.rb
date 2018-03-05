@@ -1,4 +1,5 @@
 class OrganizationsController < NodesController
+  @@model = Organization
 
   private
     def set_node

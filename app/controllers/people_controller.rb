@@ -1,4 +1,5 @@
 class PeopleController < NodesController
+  @@model = Person
 
   private
     def set_node
