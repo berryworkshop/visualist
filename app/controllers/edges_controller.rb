@@ -7,12 +7,12 @@ class EdgesController < ApplicationController
   def index
     @edges = Edge.all
 
-    render json: EdgeSerializer.new(@edges).serializable_hash
+    render json: serialize(@edges)
   end
 
   # GET /edges/1
   def show
-    render json: EdgeSerializer.new(@edge).serializable_hash
+    render json: serialize(@edge)
   end
 
   # POST /edges
@@ -21,7 +21,7 @@ class EdgesController < ApplicationController
     @edge = Edge.new(edge_params)
 
     if @edge.save
-      render json: EdgeSerializer.new(@edge).serializable_hash, status: :created, location: @edge
+      render json: serialize(@edge), status: :created, location: @edge
     else
       render json: @edge.errors, status: :unprocessable_entity
     end
@@ -30,7 +30,7 @@ class EdgesController < ApplicationController
   # PATCH/PUT /edges/1
   def update
     if @edge.update(edge_params)
-      render json: EdgeSerializer.new(@edge).serializable_hash
+      render json: serialize(@edge)
     else
       render json: @edge.errors, status: :unprocessable_entity
     end
@@ -45,6 +45,10 @@ class EdgesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_edge
       @edge = Edge.find(params[:id])
+    end
+
+    def serialize(node)
+      EdgeSerializer.new(node).serializable_hash
     end
 
     # Only allow a trusted parameter "white list" through.

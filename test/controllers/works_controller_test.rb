@@ -12,8 +12,8 @@ class WorksControllerTest < ActionDispatch::IntegrationTest
 
   test "should create work" do
     assert_difference('Work.count') do
-      post nodes_url, params: {
-        node: {
+      post works_url, params: {
+        attributes: {
           type: "Work",
           slug: "untitled",
           title: "Untitled",
@@ -33,7 +33,7 @@ class WorksControllerTest < ActionDispatch::IntegrationTest
 
   test "should update work" do
     patch work_url(@work), params: {
-      node: {
+      attributes: {
         body: "This is a revised body."
       }
     }, as: :json

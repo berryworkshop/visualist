@@ -12,8 +12,8 @@ class OrganizationsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create organization" do
     assert_difference('Organization.count') do
-      post nodes_url, params: {
-        node: {
+      post organizations_url, params: {
+        attributes: {
           type: "Organization",
           slug: "test_organization",
           title: "A Title",
@@ -33,7 +33,7 @@ class OrganizationsControllerTest < ActionDispatch::IntegrationTest
 
   test "should update organization" do
     patch organization_url(@organization), params: {
-      node: {
+      attributes: {
         body: "This is a new org."
       }
     }, as: :json

@@ -12,8 +12,8 @@ class PlacesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create place" do
     assert_difference('Place.count') do
-      post nodes_url, params: {
-        node: {
+      post places_url, params: {
+        attributes: {
           type: "Place",
           slug: "test_place",
           title: "A Place",
@@ -33,7 +33,7 @@ class PlacesControllerTest < ActionDispatch::IntegrationTest
 
   test "should update place" do
     patch place_url(@place), params: {
-      node: {
+      attributes: {
         body: "This is a new place."
       }
     }, as: :json

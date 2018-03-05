@@ -1,51 +1,8 @@
-class PeopleController < ApplicationController
-  before_action :set_person, only: [:show, :update, :destroy]
-
-  # GET /people
-  def index
-    @people = Person.all
-
-    render json: NodeSerializer.new(@people).serializable_hash
-  end
-
-  # GET /people/1
-  def show
-    render json: NodeSerializer.new(@person).serializable_hash
-  end
-
-  # POST /people
-  def create
-    @person = Person.new(person_params)
-
-    if @person.save
-      render json: NodeSerializer.new(@person).serializable_hash, status: :created, location: @person
-    else
-      render json: @person.errors, status: :unprocessable_entity
-    end
-  end
-
-  # PATCH/PUT /people/1
-  def update
-    if @person.update(person_params)
-      render json: NodeSerializer.new(@person).serializable_hash
-    else
-      render json: @person.errors, status: :unprocessable_entity
-    end
-  end
-
-  # DELETE /people/1
-  def destroy
-    @person.destroy
-  end
+class PeopleController < NodesController
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_person
-      @person = Person.find(params[:id])
+    def set_node
+      @node = Person.find(params[:id])
     end
 
-    # Only allow a trusted parameter "white list" through.
-    def person_params
-      params.fetch(:person, {})
-    end
 end

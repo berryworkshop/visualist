@@ -13,7 +13,7 @@ class NodesControllerTest < ActionDispatch::IntegrationTest
   test "should create node" do
     assert_difference('Node.count') do
       post nodes_url, params: {
-        node: {
+        attributes: {
           type: "Person",
           slug: "test_slug",
           title: "A Title",
@@ -33,7 +33,7 @@ class NodesControllerTest < ActionDispatch::IntegrationTest
 
   test "should update node" do
     patch node_url(@allan), params: {
-      node: {
+      attributes: {
         body: "This is some new text for the body.",
       }
     }, as: :json

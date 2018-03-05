@@ -12,8 +12,8 @@ class PeopleControllerTest < ActionDispatch::IntegrationTest
 
   test "should create person" do
     assert_difference('Person.count') do
-      post nodes_url, params: {
-        node: {
+      post people_url, params: {
+        attributes: {
           type: "Person",
           slug: "smith_john",
           title: "Smith, John",
@@ -33,7 +33,7 @@ class PeopleControllerTest < ActionDispatch::IntegrationTest
 
   test "should update person" do
     patch person_url(@person), params: {
-      node: {
+      attributes: {
         body: "This is a new person description."
       }
     }, as: :json
