@@ -3,6 +3,7 @@ import Router from "vue-router";
 import Home from "@/components/Home";
 import Map from "@/components/Map";
 import Calendar from "@/components/Calendar";
+import Event from "@/components/calendar/Event";
 import Directory from "@/components/Directory";
 import Login from "@/components/Login";
 import Search from "@/components/Search";
@@ -28,6 +29,11 @@ export default new Router({
       path: "/calendar",
       name: "calendar",
       component: Calendar
+    },
+    {
+      path: "/calendar/:event_id",
+      name: "event",
+      component: Event
     },
     {
       path: "/directory",

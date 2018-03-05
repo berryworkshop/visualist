@@ -6,9 +6,10 @@
           :key="e.attributes.slug">
         <button name="delete" :value="e"
             v-on:click="deleteEventAndUpdate(e)">Delete</button>
-        {{ e.attributes.title }}</li>
+        <router-link :to="{name: 'event', params: { event_id: e.id }}">{{ e.id }} - {{ e.attributes.title }}</router-link></li>
     </ul>
     <p v-else>No events are available.</p>
+
     <event-add></event-add>
   </layout>
 </template>
