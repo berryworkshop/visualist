@@ -25,7 +25,7 @@
         ></textarea>
     </div>
     <button name="user-button"
-        v-on:click="$store.dispatch('eventCreate', event)">Submit</button>
+        v-on:click="createEventAndUpdate(event)">Submit</button>
   </div>
 </template>
 
@@ -45,6 +45,18 @@ export default {
       body: "",
       manualSlug: ""
     };
+  },
+  methods: {
+    /**
+     * Creates an Event, stores it, and updates the Calendar array
+     */
+    createEventAndUpdate(event) {
+      this.$store.dispatch('nodeCreate', {
+          node: event,
+          type: 'event'
+      })
+      this.$store.dispatch(`nodesFetch`, { type: "event" });
+    }
   },
   computed: {
     event() {

@@ -21,7 +21,7 @@ export default {
     EventAdd
   },
   created() {
-    this.$store.dispatch("eventsFetch");
+    this.$store.dispatch("nodesFetch", {type: "event"});
   },
   computed: {
     events() {

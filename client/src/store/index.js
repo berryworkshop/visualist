@@ -1,12 +1,14 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import request from "superagent";
+import railsRoutes from "../router/railsRoutes";
+import { pluralize } from "../utility";
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    apiUrl: (() => {
+    apiHost: (() => {
       const protocol = window.location.protocol;
       const hostname = window.location.hostname;
       const port =
@@ -14,7 +16,10 @@ export default new Vuex.Store({
         process.env.NODE_ENV === "development" ? 3000 : window.location.port;
       return `${protocol}//${hostname}:${port}`;
     })(),
-    events: []
+    events: [],
+    agents: [],
+    pages: [],
+    places: []
     // user: {
     //   jwt: ""
     // }
@@ -41,7 +46,7 @@ export default new Vuex.Store({
   actions: {
     // async login(context, user) {
     //   // user: {email: 'lebowski@example.com', password: 'p455w0rd'}
-    //   const url = `${context.rootState.apiUrl}/user_token`;
+    //   const url = `${context.rootState.apiHost}/user_token`;
     //   try {
     //     const response = await request
     //       .post(url)
@@ -61,22 +66,30 @@ export default new Vuex.Store({
     // async logout(context) {
     //   context.commit("logout");
     // },
-    async eventsFetch(context) {
-      const url = `${context.rootState.apiUrl}/events`;
+    /**
+     * Gets any set (of a single type, e.g. event) from the Rails API,
+     * and commits/fills the respective Vuex array with it.
+     */
+    async nodesFetch(context, { type: type }) {
+      const path = railsRoutes.getPath(pluralize(type));
+      const url = `${context.rootState.apiHost}${path}`;
       try {
         const response = await request.get(url);
-        console.log("events fetched", response.statusCode);
-        context.commit("eventsSet", JSON.parse(response.text).data);
+        console.log(`${pluralize(type)} fetched`, response.statusCode);
+        context.commit(`${pluralize(type)}Set`, JSON.parse(response.text).data);
       } catch (err) {
         console.error(err);
       }
     },
-    async eventCreate(context, event) {
-      const url = `${context.rootState.apiUrl}/events`;
+    /**
+     * Creates a single node and commits it.
+     */
+    async nodeCreate(context, { type: type, node: node }) {
+      const path = railsRoutes.getPath(type);
+      const url = `${context.rootState.apiHost}${path}`;
       try {
-        const response = await request.post(url).send(event);
-        console.log("event posted", response.statusCode);
-        context.dispatch("eventsFetch");
+        const response = await request.post(url).send(node);
+        console.log(`${type} posted`, response.statusCode);
       } catch (err) {
         console.error(err);
       }

@@ -6,6 +6,7 @@ import Calendar from "@/components/Calendar";
 import Directory from "@/components/Directory";
 import Login from "@/components/Login";
 import Search from "@/components/Search";
+import Sitemap from "@/components/Sitemap";
 import Error404 from "@/components/404";
 import Error500 from "@/components/500";
 
@@ -37,6 +38,11 @@ export default new Router({
       path: "/search",
       name: "search",
       component: Search
+    },
+    {
+      path: "/sitemap",
+      name: "sitemap",
+      component: Sitemap
     },
     {
       path: "/login",
