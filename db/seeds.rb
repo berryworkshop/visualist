@@ -83,6 +83,14 @@ visualist = Work.create(
   body: 'Chicago\'s Visual Arts Calendar.'
 )
 
+visualist = Page.create(
+  type: 'Page',
+  slug: 'about',
+  title: 'About The Visualist',
+  body: 'The Visualist connects Chicago with its art.'
+)
+
+
 allan_friend_meg = Edge.create(
   # subject: berry_allan,
   predicate: :has_friend,
