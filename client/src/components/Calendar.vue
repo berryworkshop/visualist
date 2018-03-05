@@ -3,7 +3,10 @@
     <h2>Calendar</h2>
     <ul v-if="events && events.length > 0">
       <li v-for="e in events"
-          :key="e.attributes.slug">{{ e.attributes.title }}</li>
+          :key="e.attributes.slug">
+        <button name="delete" :value="e"
+            v-on:click="deleteEventAndUpdate(e)">Delete</button>
+        {{ e.attributes.title }}</li>
     </ul>
     <p v-else>No events are available.</p>
     <event-add></event-add>
@@ -19,6 +22,12 @@ export default {
   components: {
     Layout,
     EventAdd
+  },
+  methods: {
+    async deleteEventAndUpdate(event) {
+      await this.$store.dispatch('nodeDelete', {type: 'event', node: event});
+      this.$store.dispatch("nodesFetch", {type: "event"});
+    }
   },
   created() {
     this.$store.dispatch("nodesFetch", {type: "event"});

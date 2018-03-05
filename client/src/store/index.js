@@ -68,7 +68,7 @@ export default new Vuex.Store({
     // },
     /**
      * Gets any set (of a single type, e.g. event) from the Rails API,
-     * and commits/fills the respective Vuex array with it.
+     * and commits/fills the respective array with it.
      */
     async nodesFetch(context, { type: type }) {
       const path = railsRoutes.getPath(pluralize(type));
@@ -82,7 +82,7 @@ export default new Vuex.Store({
       }
     },
     /**
-     * Creates a single node and commits it.
+     * Takes a single node from the UI and commits it.
      */
     async nodeCreate(context, { type: type, node: node }) {
       const path = railsRoutes.getPath(type);
@@ -90,6 +90,22 @@ export default new Vuex.Store({
       try {
         const response = await request.post(url).send(node);
         console.log(`${type} posted`, response.statusCode);
+      } catch (err) {
+        console.error(err);
+      }
+    },
+    /**
+     * Destroys a single node.
+     */
+    async nodeDelete(context, { type: type, node: node }) {
+
+
+      const path = railsRoutes.getPath(type);
+      const url = `${context.rootState.apiHost}${path}${node.id}`;
+
+      try {
+        const response = await request.delete(url);
+        console.log(`${type} deleted`, response.statusCode);
       } catch (err) {
         console.error(err);
       }

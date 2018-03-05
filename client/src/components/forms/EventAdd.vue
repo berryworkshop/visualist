@@ -24,7 +24,7 @@
         placeholder="Provide a description for this Event"
         ></textarea>
     </div>
-    <button name="user-button"
+    <button name="submit-button"
         v-on:click="createEventAndUpdate(event)">Submit</button>
   </div>
 </template>
@@ -37,25 +37,35 @@ const slugifyOpts = {
   lower: true
 };
 
+
 export default {
   name: "event-add",
   data() {
     return {
       title: "",
       body: "",
-      manualSlug: ""
+      manualSlug: "",
     };
   },
   methods: {
     /**
      * Creates an Event, stores it, and updates the Calendar array
      */
-    createEventAndUpdate(event) {
-      this.$store.dispatch('nodeCreate', {
+    async createEventAndUpdate(event) {
+      await this.$store.dispatch('nodeCreate', {
           node: event,
           type: 'event'
       })
-      this.$store.dispatch(`nodesFetch`, { type: "event" });
+      this.$store.dispatch("nodesFetch", {type: "event"});
+      this.resetForm();
+    },
+    /**
+     * Resets form data.
+     */
+    resetForm() {
+      this.title = "";
+      this.body = "";
+      this.manualSlug = "";
     }
   },
   computed: {
