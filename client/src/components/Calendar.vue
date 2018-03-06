@@ -37,7 +37,7 @@ export default {
       this.update();
     },
     async update() {
-      const json = await this.nodesFetch("event");
+      const json = await this.nodesGet("event");
       this.$store.dispatch("storeNodes", {
         type: "event",
         nodes: json

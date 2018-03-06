@@ -11,7 +11,7 @@ export default {
     /**
      * Gets a set of nodes.
      */
-    async nodesFetch(type) {
+    async nodesGet(type) {
       const path = railsRoutes.getPath(pluralize(type));
       const url = `${this.$store.state.apiHost}${path}`;
       try {
