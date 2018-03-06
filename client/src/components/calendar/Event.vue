@@ -1,6 +1,9 @@
 <template>
   <layout id="event">
-    <h2>Event</h2>
+    <router-link :to="{name: 'calendar'}">back to calendar</router-link>
+    <h2>Event: {{ event.attributes.title }}</h2>
+    <p v-if="event.attributes.body">{{ event.attributes.body }}</p>
+    <p v-else><em>No body available.</em></p>
   </layout>
 </template>
 
@@ -16,12 +19,15 @@ export default {
   mixins: [nodecrud],
   data() {
     return {
-      event: {}
+      event: {
+        attributes: {}
+      },
     }
   },
-  created() {
-    // this.nodeDelete('event', )
-  }
+  async created() {
+    const event_id = this.$route.params['event_id'];
+    this.event = await this.nodeGet('event', event_id)
+  },
 };
 </script>
 

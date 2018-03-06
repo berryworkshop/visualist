@@ -1,7 +1,7 @@
 import Vue from "vue";
 import Vuex from "vuex";
-import request from "superagent";
-import railsRoutes from "../router/railsRoutes";
+// import request from "superagent";
+// import railsRoutes from "../router/railsRoutes";
 import { pluralize } from "../utility";
 
 Vue.use(Vuex);

@@ -23,6 +23,21 @@ export default {
       }
     },
     /**
+     * Gets a single node.
+     */
+    async nodeGet(type, node_id) {
+      const path = railsRoutes.getPath(type);
+      const url = `${this.$store.state.apiHost}${path}${node_id}`;
+      try {
+        const response = await request.get(url);
+        console.log(`${type} retrieved`, response.statusCode);
+        const json = JSON.parse(response.text).data;
+        return json;
+      } catch (err) {
+        console.error(err);
+      }
+    },
+    /**
      * Creates a single node.
      */
     async nodeCreate(type, node) {
