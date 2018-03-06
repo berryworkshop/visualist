@@ -25,15 +25,15 @@ export default new Vuex.Store({
     // }
   },
   mutations: {
+    eventsSet(state, arr) {
+      state.events = arr;
+    }
     // login(state, jwt) {
     //   state.user.jwt = jwt;
     // },
     // logout(state) {
     //   state.user = { jwt: "" };
     // },
-    eventsSet(state, arr) {
-      state.events = arr;
-    }
   },
   getters: {
     // loggedIn(state) {
@@ -44,6 +44,9 @@ export default new Vuex.Store({
     // }
   },
   actions: {
+    async storeNodes(context, { type: type, nodes: nodes }) {
+      context.commit(`${pluralize(type)}Set`, nodes);
+    },
     // async login(context, user) {
     //   // user: {email: 'lebowski@example.com', password: 'p455w0rd'}
     //   const url = `${context.rootState.apiHost}/user_token`;
@@ -66,47 +69,5 @@ export default new Vuex.Store({
     // async logout(context) {
     //   context.commit("logout");
     // },
-    /**
-     * Gets any set (of a single type, e.g. event) from the Rails API,
-     * and commits/fills the respective state array with it.
-     */
-    async nodesFetch(context, { type: type }) {
-      const path = railsRoutes.getPath(pluralize(type));
-      const url = `${context.rootState.apiHost}${path}`;
-      try {
-        const response = await request.get(url);
-        console.log(`${pluralize(type)} fetched`, response.statusCode);
-        context.commit(`${pluralize(type)}Set`, JSON.parse(response.text).data);
-      } catch (err) {
-        console.error(err);
-      }
-    },
-    /**
-     * Creates a single node
-     */
-    async nodeCreate(context, { type: type, node: node }) {
-      const path = railsRoutes.getPath(type);
-      const url = `${context.rootState.apiHost}${path}`;
-      try {
-        const response = await request.post(url).send(node);
-        console.log(`${type} posted`, response.statusCode);
-      } catch (err) {
-        console.error(err);
-      }
-    },
-    /**
-     * Destroys a single node.
-     */
-    async nodeDelete(context, { type: type, node: node }) {
-      const path = railsRoutes.getPath(type);
-      const url = `${context.rootState.apiHost}${path}${node.id}`;
-
-      try {
-        const response = await request.delete(url);
-        console.log(`${type} deleted`, response.statusCode);
-      } catch (err) {
-        console.error(err);
-      }
-    }
   }
 });

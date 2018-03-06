@@ -25,12 +25,13 @@
         ></textarea>
     </div>
     <button name="submit-button"
-        v-on:click="createEventAndUpdate(event)">Submit</button>
+        v-on:click="createEvent(event)">Submit</button>
   </div>
 </template>
 
 <script>
 import slugify from "slugify";
+import nodecrud from "../../mixins/nodecrud";
 
 const slugifyOpts = {
   replacement: "-",
@@ -47,16 +48,14 @@ export default {
       manualSlug: "",
     };
   },
+  mixins: [nodecrud],
   methods: {
     /**
      * Creates an Event, stores it, and updates the Calendar array
      */
-    async createEventAndUpdate(event) {
-      await this.$store.dispatch('nodeCreate', {
-          node: event,
-          type: 'event'
-      })
-      this.$store.dispatch("nodesFetch", {type: "event"});
+    async createEvent(event) {
+      await this.nodeCreate('event', event);
+      this.nodesFetch("event");
       this.resetForm();
     },
     /**

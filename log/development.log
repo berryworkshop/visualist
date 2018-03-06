@@ -9992,3 +9992,1156 @@ Processing by EventsController#index as */*
 Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 2.1ms)
 
 
+Started GET "/events" for 127.0.0.1 at 2018-03-05 17:28:04 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (2.2ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 2.2ms)
+
+
+Started DELETE "/events/34" for 127.0.0.1 at 2018-03-05 17:28:07 -0600
+Processing by EventsController#destroy as */*
+  Parameters: {"id"=>"34"}
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') AND "nodes"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:8
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:41
+  [1m[36mEvent Destroy (0.6ms)[0m  [1m[31mDELETE FROM "nodes" WHERE "nodes"."type" IN ('Event') AND "nodes"."id" = $1[0m  [["id", 34]]
+  ↳ app/controllers/nodes_controller.rb:41
+  [1m[35m (8.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:41
+Completed 204 No Content in 14ms (ActiveRecord: 10.6ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 17:28:07 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/events/" for 127.0.0.1 at 2018-03-05 17:28:14 -0600
+Processing by EventsController#create as */*
+  Parameters: {"attributes"=>{"title"=>"It's a nice tenetenba", "body"=>"Yep", "slug"=>"it's-a-nice-tenetenba"}, "event"=>{}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:23
+  [1m[36mNode Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE "nodes"."slug" = $1 LIMIT $2[0m  [["slug", "it's-a-nice-tenetenba"], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:23
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["type", "Event"], ["slug", "it's-a-nice-tenetenba"], ["title", "It's a nice tenetenba"], ["body", "Yep"], ["created_at", "2018-03-05 23:28:14.925371"], ["updated_at", "2018-03-05 23:28:14.925371"]]
+  ↳ app/controllers/nodes_controller.rb:23
+  [1m[35m (8.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:23
+Completed 201 Created in 15ms (Views: 0.7ms | ActiveRecord: 9.8ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 17:28:14 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 17:29:39 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 18:48:38 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (2.3ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 2.3ms)
+
+
+Started DELETE "/events/35" for 127.0.0.1 at 2018-03-05 18:48:39 -0600
+Processing by EventsController#destroy as */*
+  Parameters: {"id"=>"35"}
+  [1m[36mEvent Load (1.1ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') AND "nodes"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:8
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:41
+  [1m[36mEvent Destroy (1.0ms)[0m  [1m[31mDELETE FROM "nodes" WHERE "nodes"."type" IN ('Event') AND "nodes"."id" = $1[0m  [["id", 35]]
+  ↳ app/controllers/nodes_controller.rb:41
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:41
+Completed 204 No Content in 7ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 18:48:39 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/events/" for 127.0.0.1 at 2018-03-05 18:48:45 -0600
+Processing by EventsController#create as */*
+  Parameters: {"attributes"=>{"title"=>"Flurg", "body"=>"", "slug"=>"flurg"}, "event"=>{}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:23
+  [1m[36mNode Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE "nodes"."slug" = $1 LIMIT $2[0m  [["slug", "flurg"], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:23
+  [1m[36mEvent Create (1.1ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["type", "Event"], ["slug", "flurg"], ["title", "Flurg"], ["body", ""], ["created_at", "2018-03-06 00:48:45.563301"], ["updated_at", "2018-03-06 00:48:45.563301"]]
+  ↳ app/controllers/nodes_controller.rb:23
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:23
+Completed 201 Created in 8ms (Views: 0.6ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 18:48:45 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 18:49:09 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (5.9ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 8ms (Views: 0.5ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 18:49:30 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 18:49:33 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 20:20:54 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (2.0ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 20:21:53 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 20:22:20 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 5ms (Views: 0.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 20:22:47 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 20:23:00 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 20:23:26 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (3.2ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 6ms (Views: 0.6ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 20:24:56 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (1.2ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 20:24:58 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 20:26:00 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (1.4ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 4ms (Views: 0.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 20:26:01 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 20:26:09 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 20:26:21 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 20:26:26 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 20:26:30 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 20:26:38 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (1.5ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 4ms (Views: 0.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 20:26:58 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 20:27:11 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (2.7ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 5ms (Views: 0.5ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 20:27:12 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 20:27:42 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 20:27:48 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (1.7ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 20:27:50 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 20:28:13 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (2.5ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 6ms (Views: 0.8ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 20:28:14 -0600
+Processing by EventsController#index as */*
+Started DELETE "/events/36" for 127.0.0.1 at 2018-03-05 20:28:14 -0600
+  [1m[36mEvent Load (1.1ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 1.1ms)
+
+
+Processing by EventsController#destroy as */*
+  Parameters: {"id"=>"36"}
+  [1m[36mEvent Load (1.7ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') AND "nodes"."id" = $1 LIMIT $2[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:8
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:41
+  [1m[36mEvent Destroy (0.7ms)[0m  [1m[31mDELETE FROM "nodes" WHERE "nodes"."type" IN ('Event') AND "nodes"."id" = $1[0m  [["id", 36]]
+  ↳ app/controllers/nodes_controller.rb:41
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:41
+Completed 204 No Content in 9ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 20:28:17 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 20:28:29 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/events/" for 127.0.0.1 at 2018-03-05 20:28:33 -0600
+Processing by EventsController#create as */*
+  Parameters: {"attributes"=>{"title"=>"flurg", "body"=>"", "slug"=>"flurg"}, "event"=>{}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:23
+  [1m[36mNode Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE "nodes"."slug" = $1 LIMIT $2[0m  [["slug", "flurg"], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:23
+  [1m[36mEvent Create (0.9ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["type", "Event"], ["slug", "flurg"], ["title", "flurg"], ["body", ""], ["created_at", "2018-03-06 02:28:33.893740"], ["updated_at", "2018-03-06 02:28:33.893740"]]
+  ↳ app/controllers/nodes_controller.rb:23
+  [1m[35m (8.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:23
+Completed 201 Created in 16ms (Views: 0.7ms | ActiveRecord: 9.7ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 20:28:33 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (3.9ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 7ms (Views: 0.7ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 20:28:36 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (7.8ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 11ms (Views: 0.7ms | ActiveRecord: 7.8ms)
+
+
+Started DELETE "/events/37" for 127.0.0.1 at 2018-03-05 20:28:38 -0600
+Processing by EventsController#destroy as */*
+  Parameters: {"id"=>"37"}
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') AND "nodes"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:8
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:41
+  [1m[36mEvent Destroy (0.5ms)[0m  [1m[31mDELETE FROM "nodes" WHERE "nodes"."type" IN ('Event') AND "nodes"."id" = $1[0m  [["id", 37]]
+  ↳ app/controllers/nodes_controller.rb:41
+  [1m[35m (8.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:41
+Completed 204 No Content in 14ms (ActiveRecord: 9.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 20:28:38 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 20:29:22 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 20:32:29 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 20:33:09 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/events/" for 127.0.0.1 at 2018-03-05 20:37:48 -0600
+Processing by EventsController#create as */*
+  Parameters: {"attributes"=>{"title"=>"durf", "body"=>"", "slug"=>"durf"}, "event"=>{}}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:23
+  [1m[36mNode Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE "nodes"."slug" = $1 LIMIT $2[0m  [["slug", "durf"], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:23
+  [1m[36mEvent Create (0.6ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["type", "Event"], ["slug", "durf"], ["title", "durf"], ["body", ""], ["created_at", "2018-03-06 02:37:48.954206"], ["updated_at", "2018-03-06 02:37:48.954206"]]
+  ↳ app/controllers/nodes_controller.rb:23
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:23
+Completed 201 Created in 9ms (Views: 0.6ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 20:37:48 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 5ms (Views: 0.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 20:37:52 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 23ms (Views: 0.4ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/events/38" for 127.0.0.1 at 2018-03-05 20:37:54 -0600
+Processing by EventsController#destroy as */*
+  Parameters: {"id"=>"38"}
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') AND "nodes"."id" = $1 LIMIT $2[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:8
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:41
+  [1m[36mEvent Destroy (0.4ms)[0m  [1m[31mDELETE FROM "nodes" WHERE "nodes"."type" IN ('Event') AND "nodes"."id" = $1[0m  [["id", 38]]
+  ↳ app/controllers/nodes_controller.rb:41
+  [1m[35m (8.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:41
+Completed 204 No Content in 13ms (ActiveRecord: 9.8ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 20:37:54 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 20:37:56 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/events/" for 127.0.0.1 at 2018-03-05 20:55:28 -0600
+Processing by EventsController#create as */*
+  Parameters: {"attributes"=>{"title"=>"flurg", "body"=>"", "slug"=>"flurg"}, "event"=>{}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:23
+  [1m[36mNode Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE "nodes"."slug" = $1 LIMIT $2[0m  [["slug", "flurg"], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:23
+  [1m[36mEvent Create (0.9ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["type", "Event"], ["slug", "flurg"], ["title", "flurg"], ["body", ""], ["created_at", "2018-03-06 02:55:28.367697"], ["updated_at", "2018-03-06 02:55:28.367697"]]
+  ↳ app/controllers/nodes_controller.rb:23
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:23
+Completed 201 Created in 8ms (Views: 0.4ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 20:57:30 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (1.8ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 20:59:41 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (1.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 20:59:57 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (2.0ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 21:00:21 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (1.4ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 21:01:40 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 21:01:45 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/events/" for 127.0.0.1 at 2018-03-05 21:01:49 -0600
+Processing by EventsController#create as */*
+  Parameters: {"attributes"=>{"title"=>"blork", "body"=>"", "slug"=>"blork"}, "event"=>{}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:23
+  [1m[36mNode Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE "nodes"."slug" = $1 LIMIT $2[0m  [["slug", "blork"], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:23
+  [1m[36mEvent Create (0.7ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["type", "Event"], ["slug", "blork"], ["title", "blork"], ["body", ""], ["created_at", "2018-03-06 03:01:49.290750"], ["updated_at", "2018-03-06 03:01:49.290750"]]
+  ↳ app/controllers/nodes_controller.rb:23
+  [1m[35m (7.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:23
+Completed 201 Created in 15ms (Views: 0.5ms | ActiveRecord: 9.2ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 21:01:49 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/events/39" for 127.0.0.1 at 2018-03-05 21:01:51 -0600
+Processing by EventsController#destroy as */*
+  Parameters: {"id"=>"39"}
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') AND "nodes"."id" = $1 LIMIT $2[0m  [["id", 39], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:8
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:41
+  [1m[36mEvent Destroy (0.7ms)[0m  [1m[31mDELETE FROM "nodes" WHERE "nodes"."type" IN ('Event') AND "nodes"."id" = $1[0m  [["id", 39]]
+  ↳ app/controllers/nodes_controller.rb:41
+  [1m[35m (7.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:41
+Completed 204 No Content in 14ms (ActiveRecord: 9.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 21:01:51 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/events/40" for 127.0.0.1 at 2018-03-05 21:01:52 -0600
+Processing by EventsController#destroy as */*
+  Parameters: {"id"=>"40"}
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') AND "nodes"."id" = $1 LIMIT $2[0m  [["id", 40], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:8
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:41
+  [1m[36mEvent Destroy (0.5ms)[0m  [1m[31mDELETE FROM "nodes" WHERE "nodes"."type" IN ('Event') AND "nodes"."id" = $1[0m  [["id", 40]]
+  ↳ app/controllers/nodes_controller.rb:41
+  [1m[35m (8.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:41
+Completed 204 No Content in 13ms (ActiveRecord: 9.9ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 21:01:52 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (1.4ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/events/" for 127.0.0.1 at 2018-03-05 21:01:57 -0600
+Processing by EventsController#create as */*
+  Parameters: {"attributes"=>{"title"=>"battlesmurf", "body"=>"", "slug"=>"battlesmurf"}, "event"=>{}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:23
+  [1m[36mNode Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE "nodes"."slug" = $1 LIMIT $2[0m  [["slug", "battlesmurf"], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:23
+  [1m[36mEvent Create (0.5ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["type", "Event"], ["slug", "battlesmurf"], ["title", "battlesmurf"], ["body", ""], ["created_at", "2018-03-06 03:01:57.676410"], ["updated_at", "2018-03-06 03:01:57.676410"]]
+  ↳ app/controllers/nodes_controller.rb:23
+  [1m[35m (8.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:23
+Completed 201 Created in 15ms (Views: 0.5ms | ActiveRecord: 9.3ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 21:01:57 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 21:01:59 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 21:02:54 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 21:04:11 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (1.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 21:04:44 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 21:07:00 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 21:08:55 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 21:09:17 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/events/" for 127.0.0.1 at 2018-03-05 21:09:20 -0600
+Processing by EventsController#create as */*
+  Parameters: {"attributes"=>{"title"=>"asdf", "body"=>"", "slug"=>"asdf"}, "event"=>{}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:23
+  [1m[36mNode Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE "nodes"."slug" = $1 LIMIT $2[0m  [["slug", "asdf"], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:23
+  [1m[36mEvent Create (0.6ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["type", "Event"], ["slug", "asdf"], ["title", "asdf"], ["body", ""], ["created_at", "2018-03-06 03:09:20.460725"], ["updated_at", "2018-03-06 03:09:20.460725"]]
+  ↳ app/controllers/nodes_controller.rb:23
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:23
+Completed 201 Created in 7ms (Views: 0.5ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 21:09:20 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 21:12:24 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 21:12:28 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (3.0ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 6ms (Views: 0.6ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 21:12:49 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 21:13:06 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (1.4ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 1.4ms)
+
+
+Started DELETE "/events/41" for 127.0.0.1 at 2018-03-05 21:13:25 -0600
+Processing by EventsController#destroy as */*
+  Parameters: {"id"=>"41"}
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') AND "nodes"."id" = $1 LIMIT $2[0m  [["id", 41], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:8
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:41
+  [1m[36mEvent Destroy (0.4ms)[0m  [1m[31mDELETE FROM "nodes" WHERE "nodes"."type" IN ('Event') AND "nodes"."id" = $1[0m  [["id", 41]]
+  ↳ app/controllers/nodes_controller.rb:41
+  [1m[35m (8.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:41
+Completed 204 No Content in 13ms (ActiveRecord: 9.3ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 21:13:25 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/events/42" for 127.0.0.1 at 2018-03-05 21:13:27 -0600
+Processing by EventsController#destroy as */*
+  Parameters: {"id"=>"42"}
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') AND "nodes"."id" = $1 LIMIT $2[0m  [["id", 42], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:8
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:41
+  [1m[36mEvent Destroy (0.5ms)[0m  [1m[31mDELETE FROM "nodes" WHERE "nodes"."type" IN ('Event') AND "nodes"."id" = $1[0m  [["id", 42]]
+  ↳ app/controllers/nodes_controller.rb:41
+  [1m[35m (8.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:41
+Completed 204 No Content in 14ms (ActiveRecord: 9.9ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 21:13:27 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/events/" for 127.0.0.1 at 2018-03-05 21:13:32 -0600
+Processing by EventsController#create as */*
+  Parameters: {"attributes"=>{"title"=>"flurgleblarm", "body"=>"", "slug"=>"flurgleblarm"}, "event"=>{}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:23
+  [1m[36mNode Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE "nodes"."slug" = $1 LIMIT $2[0m  [["slug", "flurgleblarm"], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:23
+  [1m[36mEvent Create (0.7ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["type", "Event"], ["slug", "flurgleblarm"], ["title", "flurgleblarm"], ["body", ""], ["created_at", "2018-03-06 03:13:32.351995"], ["updated_at", "2018-03-06 03:13:32.351995"]]
+  ↳ app/controllers/nodes_controller.rb:23
+  [1m[35m (8.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:23
+Completed 201 Created in 16ms (Views: 0.7ms | ActiveRecord: 10.1ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 21:13:32 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 21:13:35 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/events/43" for 127.0.0.1 at 2018-03-05 21:13:39 -0600
+Processing by EventsController#destroy as */*
+  Parameters: {"id"=>"43"}
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') AND "nodes"."id" = $1 LIMIT $2[0m  [["id", 43], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:8
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:41
+  [1m[36mEvent Destroy (0.6ms)[0m  [1m[31mDELETE FROM "nodes" WHERE "nodes"."type" IN ('Event') AND "nodes"."id" = $1[0m  [["id", 43]]
+  ↳ app/controllers/nodes_controller.rb:41
+  [1m[35m (7.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:41
+Completed 204 No Content in 13ms (ActiveRecord: 9.2ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 21:13:39 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/events/" for 127.0.0.1 at 2018-03-05 21:13:41 -0600
+Processing by EventsController#create as */*
+  Parameters: {"attributes"=>{"title"=>"asdf", "body"=>"", "slug"=>"asdf"}, "event"=>{}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:23
+  [1m[36mNode Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE "nodes"."slug" = $1 LIMIT $2[0m  [["slug", "asdf"], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:23
+  [1m[36mEvent Create (0.6ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["type", "Event"], ["slug", "asdf"], ["title", "asdf"], ["body", ""], ["created_at", "2018-03-06 03:13:41.803240"], ["updated_at", "2018-03-06 03:13:41.803240"]]
+  ↳ app/controllers/nodes_controller.rb:23
+  [1m[35m (8.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:23
+Completed 201 Created in 16ms (Views: 0.7ms | ActiveRecord: 9.9ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 21:13:41 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 21:14:05 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 21:15:21 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 21:17:14 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 1.0ms)
+
+
+Started DELETE "/events/44" for 127.0.0.1 at 2018-03-05 21:17:15 -0600
+Processing by EventsController#destroy as */*
+  Parameters: {"id"=>"44"}
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') AND "nodes"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:8
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:41
+  [1m[36mEvent Destroy (0.9ms)[0m  [1m[31mDELETE FROM "nodes" WHERE "nodes"."type" IN ('Event') AND "nodes"."id" = $1[0m  [["id", 44]]
+  ↳ app/controllers/nodes_controller.rb:41
+  [1m[35m (8.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:41
+Completed 204 No Content in 15ms (ActiveRecord: 10.6ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 21:17:15 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/events/" for 127.0.0.1 at 2018-03-05 21:17:20 -0600
+Processing by EventsController#create as */*
+  Parameters: {"attributes"=>{"title"=>"asdf", "body"=>"", "slug"=>"asdf"}, "event"=>{}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:23
+  [1m[36mNode Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE "nodes"."slug" = $1 LIMIT $2[0m  [["slug", "asdf"], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:23
+  [1m[36mEvent Create (0.5ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["type", "Event"], ["slug", "asdf"], ["title", "asdf"], ["body", ""], ["created_at", "2018-03-06 03:17:20.183340"], ["updated_at", "2018-03-06 03:17:20.183340"]]
+  ↳ app/controllers/nodes_controller.rb:23
+  [1m[35m (7.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:23
+Completed 201 Created in 14ms (Views: 0.8ms | ActiveRecord: 8.9ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 21:17:20 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/events/" for 127.0.0.1 at 2018-03-05 21:19:32 -0600
+Processing by EventsController#create as */*
+  Parameters: {"attributes"=>{"title"=>"asdf", "body"=>"", "slug"=>"asdf"}, "event"=>{}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:23
+  [1m[36mNode Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE "nodes"."slug" = $1 LIMIT $2[0m  [["slug", "asdf"], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:23
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/nodes_controller.rb:23
+Completed 422 Unprocessable Entity in 7ms (Views: 0.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 21:19:32 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/events/" for 127.0.0.1 at 2018-03-05 21:19:36 -0600
+Processing by EventsController#create as */*
+  Parameters: {"attributes"=>{"title"=>"sdfg", "body"=>"", "slug"=>"sdfg"}, "event"=>{}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:23
+  [1m[36mNode Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE "nodes"."slug" = $1 LIMIT $2[0m  [["slug", "sdfg"], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:23
+  [1m[36mEvent Create (0.6ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["type", "Event"], ["slug", "sdfg"], ["title", "sdfg"], ["body", ""], ["created_at", "2018-03-06 03:19:36.171358"], ["updated_at", "2018-03-06 03:19:36.171358"]]
+  ↳ app/controllers/nodes_controller.rb:23
+  [1m[35m (8.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:23
+Completed 201 Created in 15ms (Views: 0.9ms | ActiveRecord: 10.1ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 21:19:36 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 21:19:44 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/events/" for 127.0.0.1 at 2018-03-05 21:19:49 -0600
+Processing by EventsController#create as */*
+  Parameters: {"attributes"=>{"title"=>"jkl", "body"=>"", "slug"=>"jkl"}, "event"=>{}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:23
+  [1m[36mNode Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE "nodes"."slug" = $1 LIMIT $2[0m  [["slug", "jkl"], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:23
+  [1m[36mEvent Create (0.7ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["type", "Event"], ["slug", "jkl"], ["title", "jkl"], ["body", ""], ["created_at", "2018-03-06 03:19:49.492499"], ["updated_at", "2018-03-06 03:19:49.492499"]]
+  ↳ app/controllers/nodes_controller.rb:23
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:23
+Completed 201 Created in 9ms (Views: 0.5ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 21:19:49 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/events/45" for 127.0.0.1 at 2018-03-05 21:24:20 -0600
+Processing by EventsController#destroy as */*
+  Parameters: {"id"=>"45"}
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') AND "nodes"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:8
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:41
+  [1m[36mEvent Destroy (0.7ms)[0m  [1m[31mDELETE FROM "nodes" WHERE "nodes"."type" IN ('Event') AND "nodes"."id" = $1[0m  [["id", 45]]
+  ↳ app/controllers/nodes_controller.rb:41
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:41
+Completed 204 No Content in 7ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 21:24:20 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/events/46" for 127.0.0.1 at 2018-03-05 21:24:22 -0600
+Processing by EventsController#destroy as */*
+  Parameters: {"id"=>"46"}
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') AND "nodes"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:8
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:41
+  [1m[36mEvent Destroy (0.5ms)[0m  [1m[31mDELETE FROM "nodes" WHERE "nodes"."type" IN ('Event') AND "nodes"."id" = $1[0m  [["id", 46]]
+  ↳ app/controllers/nodes_controller.rb:41
+  [1m[35m (8.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:41
+Completed 204 No Content in 13ms (ActiveRecord: 9.9ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 21:24:22 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (1.2ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 1.2ms)
+
+
+Started DELETE "/events/47" for 127.0.0.1 at 2018-03-05 21:24:22 -0600
+Processing by EventsController#destroy as */*
+  Parameters: {"id"=>"47"}
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') AND "nodes"."id" = $1 LIMIT $2[0m  [["id", 47], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:8
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:41
+  [1m[36mEvent Destroy (0.6ms)[0m  [1m[31mDELETE FROM "nodes" WHERE "nodes"."type" IN ('Event') AND "nodes"."id" = $1[0m  [["id", 47]]
+  ↳ app/controllers/nodes_controller.rb:41
+  [1m[35m (8.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:41
+Completed 204 No Content in 14ms (ActiveRecord: 10.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 21:24:22 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/events/" for 127.0.0.1 at 2018-03-05 21:24:25 -0600
+Processing by EventsController#create as */*
+  Parameters: {"attributes"=>{"title"=>"fdsas", "body"=>"", "slug"=>"fdsas"}, "event"=>{}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:23
+  [1m[36mNode Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE "nodes"."slug" = $1 LIMIT $2[0m  [["slug", "fdsas"], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:23
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["type", "Event"], ["slug", "fdsas"], ["title", "fdsas"], ["body", ""], ["created_at", "2018-03-06 03:24:25.947987"], ["updated_at", "2018-03-06 03:24:25.947987"]]
+  ↳ app/controllers/nodes_controller.rb:23
+  [1m[35m (8.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:23
+Completed 201 Created in 16ms (Views: 0.6ms | ActiveRecord: 10.3ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 21:24:25 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (2.2ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 21:24:29 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 21:26:39 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 21:26:52 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 21:27:32 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (2.4ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 6ms (Views: 0.5ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/events/" for 127.0.0.1 at 2018-03-05 21:27:37 -0600
+Processing by EventsController#create as */*
+  Parameters: {"attributes"=>{"title"=>"hjk", "body"=>"", "slug"=>"hjk"}, "event"=>{}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:23
+  [1m[36mNode Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE "nodes"."slug" = $1 LIMIT $2[0m  [["slug", "hjk"], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:23
+  [1m[36mEvent Create (0.5ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["type", "Event"], ["slug", "hjk"], ["title", "hjk"], ["body", ""], ["created_at", "2018-03-06 03:27:37.186610"], ["updated_at", "2018-03-06 03:27:37.186610"]]
+  ↳ app/controllers/nodes_controller.rb:23
+  [1m[35m (8.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:23
+Completed 201 Created in 15ms (Views: 0.6ms | ActiveRecord: 9.4ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 21:27:37 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (1.3ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 1.3ms)
+
+
+Started DELETE "/events/48" for 127.0.0.1 at 2018-03-05 21:27:39 -0600
+Processing by EventsController#destroy as */*
+  Parameters: {"id"=>"48"}
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') AND "nodes"."id" = $1 LIMIT $2[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:8
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:41
+  [1m[36mEvent Destroy (0.6ms)[0m  [1m[31mDELETE FROM "nodes" WHERE "nodes"."type" IN ('Event') AND "nodes"."id" = $1[0m  [["id", 48]]
+  ↳ app/controllers/nodes_controller.rb:41
+  [1m[35m (8.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:41
+Completed 204 No Content in 14ms (ActiveRecord: 10.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 21:27:39 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/events/49" for 127.0.0.1 at 2018-03-05 21:27:40 -0600
+Processing by EventsController#destroy as */*
+  Parameters: {"id"=>"49"}
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') AND "nodes"."id" = $1 LIMIT $2[0m  [["id", 49], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:8
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:41
+  [1m[36mEvent Destroy (0.5ms)[0m  [1m[31mDELETE FROM "nodes" WHERE "nodes"."type" IN ('Event') AND "nodes"."id" = $1[0m  [["id", 49]]
+  ↳ app/controllers/nodes_controller.rb:41
+  [1m[35m (8.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:41
+Completed 204 No Content in 14ms (ActiveRecord: 10.1ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 21:27:40 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/events/" for 127.0.0.1 at 2018-03-05 21:27:43 -0600
+Processing by EventsController#create as */*
+  Parameters: {"attributes"=>{"title"=>"hjoihu", "body"=>"", "slug"=>"hjoihu"}, "event"=>{}}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:23
+  [1m[36mNode Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE "nodes"."slug" = $1 LIMIT $2[0m  [["slug", "hjoihu"], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:23
+  [1m[36mEvent Create (0.5ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["type", "Event"], ["slug", "hjoihu"], ["title", "hjoihu"], ["body", ""], ["created_at", "2018-03-06 03:27:43.471519"], ["updated_at", "2018-03-06 03:27:43.471519"]]
+  ↳ app/controllers/nodes_controller.rb:23
+  [1m[35m (8.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:23
+Completed 201 Created in 15ms (Views: 0.5ms | ActiveRecord: 9.8ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 21:27:43 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (1.4ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 21:27:47 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/events/50" for 127.0.0.1 at 2018-03-05 21:27:48 -0600
+Processing by EventsController#destroy as */*
+  Parameters: {"id"=>"50"}
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') AND "nodes"."id" = $1 LIMIT $2[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:8
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:41
+  [1m[36mEvent Destroy (0.5ms)[0m  [1m[31mDELETE FROM "nodes" WHERE "nodes"."type" IN ('Event') AND "nodes"."id" = $1[0m  [["id", 50]]
+  ↳ app/controllers/nodes_controller.rb:41
+  [1m[35m (8.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:41
+Completed 204 No Content in 14ms (ActiveRecord: 10.1ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 21:27:48 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-05 21:28:08 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.7ms)
+
+

@@ -6,7 +6,7 @@
 
 <script>
 import Layout from "../layouts/Default";
-import nodecrud from "../../mixins/nodecrud"
+import nodecrud from "../../mixins/nodecrud";
 
 export default {
   name: "Event",
