@@ -10,7 +10,7 @@
     </ul>
     <p v-else>No events are available.</p>
 
-    <event-add></event-add>
+    <event-add v-on:updateEvents="update"></event-add>
   </layout>
 </template>
 
@@ -36,8 +36,12 @@ export default {
       await this.nodeDelete("event", event);
       this.update();
     },
-    update() {
-      this.nodesFetch("event");
+    async update() {
+      const json = await this.nodesFetch("event");
+      this.$store.dispatch("storeNodes", {
+        type: "event",
+        nodes: json
+      });
     }
   },
   created() {

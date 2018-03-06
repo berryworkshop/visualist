@@ -55,7 +55,7 @@ export default {
      */
     async createEvent(event) {
       await this.nodeCreate('event', event);
-      this.nodesFetch("event");
+      this.$emit('updateEvents');
       this.resetForm();
     },
     /**
@@ -77,6 +77,9 @@ export default {
         }
       };
     },
+    /**
+     * Slug getters and setters adapt title for slug use
+     */
     slug: {
       get: function() {
         if (this.manualSlug) {
