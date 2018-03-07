@@ -4,19 +4,19 @@ import { pluralize } from "../utility";
 
 /**
  * All nodes, of all types, share a single basic interface
- * signature, below.
+ * BREAD (browse, read, edit, add, delete) signature, below.
  */
 export default {
   methods: {
     /**
      * Gets a set of nodes.
      */
-    async nodesGet(type) {
+    async nodeBrowse(type) {
       const path = railsRoutes.getPath(pluralize(type));
       const url = `${this.$store.state.apiHost}${path}`;
       try {
         const response = await request.get(url);
-        console.log(`${pluralize(type)} fetched`, response.statusCode);
+        console.log(`got ${pluralize(type)}`, response.statusCode);
         return JSON.parse(response.text).data;
       } catch (err) {
         console.error(err);
@@ -25,40 +25,54 @@ export default {
     /**
      * Gets a single node.
      */
-    async nodeGet(type, node_id) {
+    async nodeRead(type, node_id) {
       const path = railsRoutes.getPath(type);
       const url = `${this.$store.state.apiHost}${path}${node_id}`;
       try {
         const response = await request.get(url);
-        console.log(`${type} retrieved`, response.statusCode);
+        console.log(`got ${type}`, response.statusCode);
         return JSON.parse(response.text).data;
       } catch (err) {
         console.error(err);
       }
     },
     /**
-     * Creates a single node.
+     * Updates an existing node, in part
      */
-    async nodeCreate(type, node) {
+    async nodeEdit(type, node) {
+      const path = railsRoutes.getPath(type);
+      const url = `${this.$store.state.apiHost}${path}${node.id}`;
+      try {
+        const response = await request.patch(url).send(node);
+        console.log(`patched ${type}`, response.statusCode);
+        return JSON.parse(response.text).data;
+      } catch (err) {
+        console.error(err);
+      }
+    },
+    /**
+     * Creates a node.
+     */
+    async nodeAdd(type, node) {
       const path = railsRoutes.getPath(type);
       const url = `${this.$store.state.apiHost}${path}`;
       try {
         const response = await request.post(url).send(node);
-        console.log(`${type} posted`, response.statusCode);
+        console.log(`posted ${type}`, response.statusCode);
         return JSON.parse(response.text).data;
       } catch (err) {
         console.error(err);
       }
     },
     /**
-     * Destroys a single node.
+     * Destroys a node.
      */
     async nodeDelete(type, node) {
       const path = railsRoutes.getPath(type);
       const url = `${this.$store.state.apiHost}${path}${node.id}`;
       try {
         const response = await request.delete(url);
-        console.log(`${type} deleted`, response.statusCode);
+        console.log(`deleted ${type}`, response.statusCode);
         return response.text;
       } catch (err) {
         console.error(err);

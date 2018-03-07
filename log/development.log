@@ -11145,3 +11145,212 @@ Processing by EventsController#index as */*
 Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.7ms)
 
 
+Started GET "/events" for 127.0.0.1 at 2018-03-06 22:36:44 -0600
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/aljabear/.gem/ruby/2.5.0/gems/activerecord-5.2.0.rc1/lib/active_record/log_subscriber.rb:98
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 30ms (Views: 0.5ms | ActiveRecord: 9.0ms)
+
+
+  [1m[36mEvent Load (1.6ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/events" for 127.0.0.1 at 2018-03-06 22:38:03 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 35ms (Views: 0.2ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-06 22:38:17 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 26ms (Views: 0.4ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/events/64" for 127.0.0.1 at 2018-03-06 22:40:33 -0600
+Processing by EventsController#show as */*
+  Parameters: {"id"=>"64"}
+  [1m[36mEvent Load (1.8ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') AND "nodes"."id" = $1 LIMIT $2[0m  [["id", 64], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:8
+Completed 200 OK in 42ms (Views: 0.4ms | ActiveRecord: 9.9ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-06 22:40:42 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (4.5ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 9ms (Views: 0.9ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/events/64" for 127.0.0.1 at 2018-03-06 22:40:44 -0600
+Processing by EventsController#show as */*
+  Parameters: {"id"=>"64"}
+  [1m[36mEvent Load (2.8ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') AND "nodes"."id" = $1 LIMIT $2[0m  [["id", 64], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:8
+Completed 200 OK in 6ms (Views: 0.5ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/events/64" for 127.0.0.1 at 2018-03-06 22:40:47 -0600
+Processing by EventsController#show as */*
+  Parameters: {"id"=>"64"}
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') AND "nodes"."id" = $1 LIMIT $2[0m  [["id", 64], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:8
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-06 22:40:49 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (2.3ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 5ms (Views: 0.7ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/events/64" for 127.0.0.1 at 2018-03-06 22:40:51 -0600
+Processing by EventsController#show as */*
+  Parameters: {"id"=>"64"}
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') AND "nodes"."id" = $1 LIMIT $2[0m  [["id", 64], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:8
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-06 22:40:52 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (1.1ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-06 22:40:54 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/events/64" for 127.0.0.1 at 2018-03-06 22:40:55 -0600
+Processing by EventsController#show as */*
+  Parameters: {"id"=>"64"}
+  [1m[36mEvent Load (1.1ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') AND "nodes"."id" = $1 LIMIT $2[0m  [["id", 64], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:8
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/events/64" for 127.0.0.1 at 2018-03-06 22:41:19 -0600
+Processing by EventsController#show as */*
+  Parameters: {"id"=>"64"}
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') AND "nodes"."id" = $1 LIMIT $2[0m  [["id", 64], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:8
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/events/64" for 127.0.0.1 at 2018-03-06 22:42:05 -0600
+Processing by EventsController#show as */*
+  Parameters: {"id"=>"64"}
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') AND "nodes"."id" = $1 LIMIT $2[0m  [["id", 64], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:8
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/events/64" for 127.0.0.1 at 2018-03-06 22:42:07 -0600
+Processing by EventsController#show as */*
+  Parameters: {"id"=>"64"}
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') AND "nodes"."id" = $1 LIMIT $2[0m  [["id", 64], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:8
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/events/64" for 127.0.0.1 at 2018-03-06 22:45:45 -0600
+Processing by EventsController#show as */*
+  Parameters: {"id"=>"64"}
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') AND "nodes"."id" = $1 LIMIT $2[0m  [["id", 64], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:8
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/events/64" for 127.0.0.1 at 2018-03-06 22:48:16 -0600
+Processing by EventsController#show as */*
+  Parameters: {"id"=>"64"}
+  [1m[36mEvent Load (1.4ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') AND "nodes"."id" = $1 LIMIT $2[0m  [["id", 64], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:8
+Completed 200 OK in 6ms (Views: 0.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/events/64" for 127.0.0.1 at 2018-03-06 22:48:56 -0600
+Processing by EventsController#show as */*
+  Parameters: {"id"=>"64"}
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') AND "nodes"."id" = $1 LIMIT $2[0m  [["id", 64], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:8
+Completed 200 OK in 5ms (Views: 1.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/events/64" for 127.0.0.1 at 2018-03-06 22:49:00 -0600
+Processing by EventsController#show as */*
+  Parameters: {"id"=>"64"}
+  [1m[36mEvent Load (2.1ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') AND "nodes"."id" = $1 LIMIT $2[0m  [["id", 64], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:8
+Completed 200 OK in 5ms (Views: 0.7ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/events/64" for 127.0.0.1 at 2018-03-06 22:49:15 -0600
+Processing by EventsController#show as */*
+  Parameters: {"id"=>"64"}
+  [1m[36mEvent Load (3.3ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') AND "nodes"."id" = $1 LIMIT $2[0m  [["id", 64], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:8
+Completed 200 OK in 6ms (Views: 0.5ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/events/64" for 127.0.0.1 at 2018-03-06 22:49:37 -0600
+Processing by EventsController#show as */*
+  Parameters: {"id"=>"64"}
+  [1m[36mEvent Load (1.2ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') AND "nodes"."id" = $1 LIMIT $2[0m  [["id", 64], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:8
+Completed 200 OK in 5ms (Views: 0.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/events/64" for 127.0.0.1 at 2018-03-06 22:50:11 -0600
+Processing by EventsController#show as */*
+  Parameters: {"id"=>"64"}
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') AND "nodes"."id" = $1 LIMIT $2[0m  [["id", 64], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:8
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-06 22:50:30 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (2.9ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 7ms (Views: 1.3ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/events/64" for 127.0.0.1 at 2018-03-06 22:50:31 -0600
+Processing by EventsController#show as */*
+  Parameters: {"id"=>"64"}
+  [1m[36mEvent Load (1.3ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') AND "nodes"."id" = $1 LIMIT $2[0m  [["id", 64], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:8
+Completed 200 OK in 11ms (Views: 0.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-06 22:50:34 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 5ms (Views: 1.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/events/63" for 127.0.0.1 at 2018-03-06 22:50:35 -0600
+Processing by EventsController#show as */*
+  Parameters: {"id"=>"63"}
+  [1m[36mEvent Load (4.9ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') AND "nodes"."id" = $1 LIMIT $2[0m  [["id", 63], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:8
+Completed 200 OK in 8ms (Views: 0.6ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-06 22:50:36 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.7ms)
+
+

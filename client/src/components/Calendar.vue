@@ -5,12 +5,12 @@
       <li v-for="e in events"
           :key="e.attributes.slug">
         <button name="delete" :value="e"
-            v-on:click="deleteEvent(e)">Delete</button>
+            v-on:click="eventDelete(e)">Delete</button>
         <router-link :to="{name: 'event', params: { event_id: e.id }}">{{ e.id }} - {{ e.attributes.title }}</router-link></li>
     </ul>
     <p v-else>No events are available.</p>
 
-    <event-add v-on:updateEvents="update"></event-add>
+    <event-add v-on:updateEvents="updateEvents"></event-add>
   </layout>
 </template>
 
@@ -32,12 +32,12 @@ export default {
     }
   },
   methods: {
-    async deleteEvent(event) {
+    async eventDelete(event) {
       await this.nodeDelete("event", event);
-      this.update();
+      this.updateEvents();
     },
-    async update() {
-      const json = await this.nodesGet("event");
+    async updateEvents() {
+      const json = await this.nodeBrowse("event");
       this.$store.dispatch("storeNodes", {
         type: "event",
         nodes: json
@@ -45,7 +45,7 @@ export default {
     }
   },
   created() {
-    this.update();
+    this.updateEvents();
   }
 };
 </script>

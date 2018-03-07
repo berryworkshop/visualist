@@ -1,5 +1,5 @@
 class Node < ApplicationRecord
-  validates :slug, presence: true
+  validates :slug, :title, :updated_at, :created_at, presence: true
   validates :slug, uniqueness: true
 
   # has_many :edges_out,

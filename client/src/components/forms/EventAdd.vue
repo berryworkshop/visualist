@@ -25,7 +25,7 @@
         ></textarea>
     </div>
     <button name="submit-button"
-        v-on:click="createEvent(event)">Submit</button>
+        v-on:click="eventAdd(event)">Submit</button>
   </div>
 </template>
 
@@ -38,14 +38,13 @@ const slugifyOpts = {
   lower: true
 };
 
-
 export default {
   name: "event-add",
   data() {
     return {
       title: "",
       body: "",
-      manualSlug: "",
+      manualSlug: ""
     };
   },
   mixins: [nodecrud],
@@ -53,9 +52,9 @@ export default {
     /**
      * Creates an Event, stores it, and updates the Calendar array
      */
-    async createEvent(event) {
-      await this.nodeCreate('event', event);
-      this.$emit('updateEvents');
+    async eventAdd(event) {
+      await this.nodeAdd("event", event);
+      this.$emit("updateEvents");
       this.resetForm();
     },
     /**

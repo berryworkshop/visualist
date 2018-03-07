@@ -46,7 +46,7 @@ export default new Vuex.Store({
   actions: {
     async storeNodes(context, { type: type, nodes: nodes }) {
       context.commit(`${pluralize(type)}Set`, nodes);
-    },
+    }
     // async login(context, user) {
     //   // user: {email: 'lebowski@example.com', password: 'p455w0rd'}
     //   const url = `${context.rootState.apiHost}/user_token`;
