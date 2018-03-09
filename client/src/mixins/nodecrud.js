@@ -47,7 +47,7 @@ export default {
         console.log(`patched ${type}`, response.statusCode);
         return JSON.parse(response.text).data;
       } catch (err) {
-        console.error(err);
+        console.error(err, type, path, url, JSON.parse(JSON.stringify(node)))
       }
     },
     /**
@@ -61,7 +61,7 @@ export default {
         console.log(`posted ${type}`, response.statusCode);
         return JSON.parse(response.text).data;
       } catch (err) {
-        console.error(err);
+        console.error(err, type, path, url, JSON.parse(JSON.stringify(node)))
       }
     },
     /**

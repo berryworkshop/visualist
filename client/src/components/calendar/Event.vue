@@ -1,5 +1,5 @@
 <template>
-  <layout id="event">
+  <div id="event">
     <router-link :to="{name: 'calendar'}">back to calendar</router-link>
     <h2>Event: {{ event.attributes.title }}</h2>
     <p v-if="event.attributes.body">{{ event.attributes.body }}</p>
@@ -7,7 +7,7 @@
 
     <p>created: {{ created_at }}</p>
     <p>updated: {{ updated_at }}</p>
-  </layout>
+  </div>
 </template>
 
 <script>
@@ -46,6 +46,3 @@ export default {
   }
 };
 </script>
-
-<style scoped>
-</style>

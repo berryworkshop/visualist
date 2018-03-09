@@ -4,6 +4,8 @@ import Home from "@/components/Home";
 import Map from "@/components/Map";
 import Calendar from "@/components/Calendar";
 import Event from "@/components/calendar/Event";
+import EventBrowse from "@/components/calendar/EventBrowse";
+import EventForm from "@/components/calendar/EventForm";
 import Directory from "@/components/Directory";
 import Login from "@/components/Login";
 import Search from "@/components/Search";
@@ -27,13 +29,29 @@ export default new Router({
     },
     {
       path: "/calendar",
-      name: "calendar",
-      component: Calendar
-    },
-    {
-      path: "/calendar/:event_id",
-      name: "event",
-      component: Event
+      component: Calendar,
+      children: [
+        {
+          path: "events",
+          name: "calendar",
+          component: EventBrowse
+        },
+        {
+          path: "events/add",
+          name: "eventAdd",
+          component: EventForm
+        },
+        {
+          path: "events/:event_id/edit",
+          name: "eventEdit",
+          component: EventForm
+        },
+        {
+          path: "events/:event_id",
+          name: "event",
+          component: Event
+        }
+      ]
     },
     {
       path: "/directory",
