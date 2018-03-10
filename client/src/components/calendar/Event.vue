@@ -1,12 +1,20 @@
 <template>
   <div id="event">
-    <router-link :to="{name: 'calendar'}">back to calendar</router-link>
-    <h2>Event: {{ event.attributes.title }}</h2>
+    <h3>Event: {{ event.attributes.title }}</h3>
     <p v-if="event.attributes.body">{{ event.attributes.body }}</p>
     <p v-else><em>No body available.</em></p>
 
     <p>created: {{ created_at }}</p>
     <p>updated: {{ updated_at }}</p>
+
+    <nav class="controls">
+      <router-link :to="{
+          name: 'eventEdit',
+          params: {
+            event_id: this.$route.params['event_id']
+          }}">Edit Event</router-link>
+      <router-link :to="{name: 'calendar'}">Browse Events</router-link>
+    </nav>
   </div>
 </template>
 

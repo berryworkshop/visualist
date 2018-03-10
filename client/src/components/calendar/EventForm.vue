@@ -1,12 +1,12 @@
 <template>
   <div>
     <h3 v-if="formType === 'add'">Add Event</h3>
-    <h3 v-else>Edit Event</h3>
+    <h3 v-else>Edit Event: {{ event.attributes.title }}</h3>
     <div>
-      <label for="event-title">Name </label>
+      <label for="event-title">Title </label>
       <input type="text"
         name="event-title"
-        v-model="proxy.attributes.title"
+        v-model="event.attributes.title"
         placeholder="Provide a title for this Event">
     </div>
     <div>
@@ -21,19 +21,23 @@
       <textarea
         name="event-body"
         rows="5"
-        v-model="proxy.attributes.body"
+        v-model="event.attributes.body"
         placeholder="Provide a description for this Event"
         ></textarea>
     </div>
-    <template v-if="formType === 'add'">
-      <button name="submit-button"
-          v-on:click="submitDone(event)">Submit</button>
-      <button name="submit-button"
-          v-on:click="submit(event)">Submit and Create Another</button>
-    </template>
-    <button name="submit-button" v-else
-        v-on:click="submitEdit(event)">Submit</button>
-    <router-link :to="{name: 'calendar'}">Cancel</router-link>
+
+    <nav class="controls">
+      <template v-if="formType === 'add'">
+        <button name="submit-button"
+            v-on:click="submitDone(proxyEvent)">Submit</button>
+        <button name="submit-button"
+            v-on:click="submit(proxyEvent)">Submit and Create Another</button>
+      </template>
+      <button name="submit-button" v-else
+          v-on:click="submitEdit(proxyEvent)">Submit</button>
+      <router-link :to="{name: 'calendar'}">Cancel</router-link>
+      <router-link :to="{name: 'calendar'}">Browse Events</router-link>
+    </nav>
   </div>
 </template>
 
@@ -52,7 +56,7 @@ export default {
     return {
       formType: "add", // or "edit"
       manualSlug: "",
-      proxy: {
+      event: {
         id: "",
         attributes: {
           title: "",
@@ -64,12 +68,12 @@ export default {
   },
   mixins: [nodecrud],
   computed: {
-    event() {
+    proxyEvent() {
       return {
-        id: this.proxy.id,
+        id: this.event.id,
         attributes: {
-          title: this.proxy.attributes.title,
-          body: this.proxy.attributes.body,
+          title: this.event.attributes.title,
+          body: this.event.attributes.body,
           slug: this.slug
         }
       };
@@ -79,13 +83,13 @@ export default {
      */
     slug: {
       get: function() {
-        if (this.proxy.attributes.slug) {
-          return this.proxy.attributes.slug;
+        if (this.event.attributes.slug) {
+          return this.event.attributes.slug;
         }
-        return slugify(this.proxy.attributes.title, slugifyOpts);
+        return slugify(this.event.attributes.title, slugifyOpts);
       },
       set: function(newSlug) {
-        this.proxy.attributes.slug = slugify(newSlug, slugifyOpts);
+        this.event.attributes.slug = slugify(newSlug, slugifyOpts);
       }
     }
   },
@@ -94,7 +98,7 @@ export default {
     const event_id = this.$route.params["event_id"];
     if (event_id) {
       this.formType = "edit";
-      this.proxy = await this.nodeRead("event", event_id);
+      this.event = await this.nodeRead("event", event_id);
     }
   },
   methods: {
@@ -119,7 +123,7 @@ export default {
      * Resets form data.
      */
     resetForm() {
-      this.proxy = {
+      this.event = {
         id: "",
         attributes: {
           title: "",
