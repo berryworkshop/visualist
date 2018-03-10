@@ -3,21 +3,21 @@
     <h3 v-if="formType === 'add'">Add Event</h3>
     <h3 v-else>Edit Event: {{ event.attributes.title }}</h3>
     <div>
-      <label for="event-title">Title </label>
+      <label for="event-title">Title</label>
       <input type="text"
         name="event-title"
         v-model="event.attributes.title"
         placeholder="Provide a title for this Event">
     </div>
     <div>
-      <label for="event-slug">Slug </label>
+      <label for="event-slug">Slug</label>
       <input type="slug"
         name="event-slug"
         v-model="slug"
         placeholder="Provide a slug for this Event">
     </div>
     <div>
-      <label for="event-body">Body </label>
+      <label for="event-body">Body</label>
       <textarea
         name="event-body"
         rows="5"
@@ -35,8 +35,9 @@
       </template>
       <button name="submit-button" v-else
           v-on:click="submitEdit(proxyEvent)">Submit</button>
-      <router-link :to="{name: 'calendar'}">Cancel</router-link>
+      <button name="cancel-button" v-on:click.prevent="$router.go(-1)">Cancel</button>
       <router-link :to="{name: 'calendar'}">Browse Events</router-link>
+
     </nav>
   </div>
 </template>

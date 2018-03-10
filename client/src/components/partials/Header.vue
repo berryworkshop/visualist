@@ -7,15 +7,15 @@
         <router-link :to="{ name: i.name }">{{ i.text }}</router-link>
       </li>
     </ul>
-    <ul id="user-nav">
-      <li v-if="!this.$store.getters.loggedIn">
+    <!-- <ul id="user-nav"> -->
+      <!-- <li v-if="!this.$store.getters.loggedIn">
         <router-link :to="{ name: 'login' }">Login</router-link>
       <li v-else>
         <button name="logout" class="link"
           v-on:click="$store.dispatch('logout')">Logout</button>
-      </li>
+      </li> -->
       <!-- <li v-if="!isObjectEmpty(user)">User</li> -->
-    </ul>
+    <!-- </ul> -->
   </header>
 </template>
 
