@@ -16,7 +16,7 @@ export default {
 </script>
 
 <style lang="scss">
-  nav.controls > * {
-    margin-right: 1rem;
-  }
+nav.controls > * {
+  margin-right: 1rem;
+}
 </style>

@@ -5,6 +5,8 @@
     <div>
       <label for="event-title">Title</label>
       <input type="text"
+        autofocus
+        required
         name="event-title"
         v-model="event.attributes.title"
         placeholder="Provide a title for this Event">
@@ -12,9 +14,19 @@
     <div>
       <label for="event-slug">Slug</label>
       <input type="slug"
+        required
         name="event-slug"
         v-model="slug"
         placeholder="Provide a slug for this Event">
+    </div>
+    <div>
+      <label for="event-properties">Properties</label>
+      <textarea
+        name="event-properties"
+        rows="5"
+        v-model="event.attributes.properties"
+        placeholder="Provide properties for this Event, in valid JSON"
+        ></textarea>
     </div>
     <div>
       <label for="event-body">Body</label>
@@ -31,7 +43,7 @@
         <button name="submit-button"
             v-on:click="submitDone(proxyEvent)">Submit</button>
         <button name="submit-button"
-            v-on:click="submit(proxyEvent)">Submit and Create Another</button>
+            v-on:click="submitAndAdd(proxyEvent)">Submit and Create Another</button>
       </template>
       <button name="submit-button" v-else
           v-on:click="submitEdit(proxyEvent)">Submit</button>
@@ -61,6 +73,7 @@ export default {
         id: "",
         attributes: {
           title: "",
+          properties: "",
           body: "",
           slug: ""
         }
@@ -74,6 +87,7 @@ export default {
         id: this.event.id,
         attributes: {
           title: this.event.attributes.title,
+          properties: this.event.attributes.properties,
           body: this.event.attributes.body,
           slug: this.slug
         }
@@ -106,13 +120,14 @@ export default {
     /**
      * Creates an Event, stores it, and updates the Calendar array
      */
-    async submit(event) {
+    async submitAndAdd(event) {
       await this.nodeAdd("event", event);
       this.$emit("updateEvents");
-      this.resetForm();
+      this.clearForm();
     },
     async submitDone(event) {
-      await this.submit(event);
+      await this.nodeAdd("event", event);
+      this.$emit("updateEvents");
       this.$router.push({ name: "calendar" });
     },
     async submitEdit(event) {
@@ -123,15 +138,16 @@ export default {
     /**
      * Resets form data.
      */
-    resetForm() {
+    clearForm() {
       this.event = {
         id: "",
         attributes: {
           title: "",
+          properties: "",
           body: "",
           slug: ""
         }
-      }
+      };
     }
   }
 };
@@ -140,5 +156,9 @@ export default {
 <style scoped lang="scss">
 textarea {
   width: 100%;
+}
+
+textarea[name="event-properties"] {
+  font-family: 'Courier New', Courier, monospace;
 }
 </style>

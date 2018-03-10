@@ -13067,3 +13067,108 @@ Processing by EventsController#index as */*
 Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 1.1ms)
 
 
+Started GET "/events" for 127.0.0.1 at 2018-03-09 22:46:31 -0600
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/aljabear/.gem/ruby/2.5.0/gems/activerecord-5.2.0.rc1/lib/active_record/log_subscriber.rb:98
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (1.4ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 32ms (Views: 0.5ms | ActiveRecord: 10.6ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-09 22:46:50 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (3.9ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 7ms (Views: 0.8ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/events/89" for 127.0.0.1 at 2018-03-09 22:47:04 -0600
+Processing by EventsController#show as */*
+  Parameters: {"id"=>"89"}
+  [1m[36mEvent Load (1.3ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') AND "nodes"."id" = $1 LIMIT $2[0m  [["id", 89], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:8
+Completed 200 OK in 37ms (Views: 1.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/events/89" for 127.0.0.1 at 2018-03-09 22:47:06 -0600
+Processing by EventsController#show as */*
+  Parameters: {"id"=>"89"}
+  [1m[36mEvent Load (6.5ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') AND "nodes"."id" = $1 LIMIT $2[0m  [["id", 89], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:8
+Completed 200 OK in 9ms (Views: 0.5ms | ActiveRecord: 6.5ms)
+
+
+Started PATCH "/events/89" for 127.0.0.1 at 2018-03-09 22:49:26 -0600
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/aljabear/.gem/ruby/2.5.0/gems/activerecord-5.2.0.rc1/lib/active_record/log_subscriber.rb:98
+Processing by EventsController#update as */*
+  Parameters: {"id"=>"89", "attributes"=>{"title"=>"Flurgleblork", "properties"=>"asdf", "body"=>"Blaggleflag", "slug"=>"asdf"}, "event"=>{"id"=>"89"}}
+  [1m[36mEvent Load (1.3ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') AND "nodes"."id" = $1 LIMIT $2[0m  [["id", 89], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:8
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:32
+  [1m[36mNode Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE "nodes"."slug" = $1 AND "nodes"."id" != $2 LIMIT $3[0m  [["slug", "asdf"], ["id", 89], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:32
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:32
+Completed 200 OK in 29ms (Views: 0.5ms | ActiveRecord: 10.6ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-09 22:49:27 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/events/89" for 127.0.0.1 at 2018-03-09 22:49:30 -0600
+Processing by EventsController#destroy as */*
+  Parameters: {"id"=>"89"}
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') AND "nodes"."id" = $1 LIMIT $2[0m  [["id", 89], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:8
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:41
+  [1m[36mEvent Destroy (0.6ms)[0m  [1m[31mDELETE FROM "nodes" WHERE "nodes"."type" IN ('Event') AND "nodes"."id" = $1[0m  [["id", 89]]
+  ↳ app/controllers/nodes_controller.rb:41
+  [1m[35m (8.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:41
+Completed 204 No Content in 14ms (ActiveRecord: 9.8ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-09 22:49:30 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/events/" for 127.0.0.1 at 2018-03-09 22:50:06 -0600
+Processing by EventsController#create as */*
+  Parameters: {"id"=>"", "attributes"=>{"title"=>"blaggle", "properties"=>"flarp: black {} [] THis is Certainly, not JSON<::", "body"=>"", "slug"=>"blaggle"}, "event"=>{"id"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:23
+  [1m[36mNode Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE "nodes"."slug" = $1 LIMIT $2[0m  [["slug", "blaggle"], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:23
+  [1m[36mEvent Create (0.7ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "body", "properties", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["type", "Event"], ["slug", "blaggle"], ["title", "blaggle"], ["body", ""], ["properties", "\"flarp: black {} [] THis is Certainly, not JSON\\u003c::\""], ["created_at", "2018-03-10 04:50:06.321050"], ["updated_at", "2018-03-10 04:50:06.321050"]]
+  ↳ app/controllers/nodes_controller.rb:23
+  [1m[35m (8.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:23
+Completed 201 Created in 16ms (Views: 1.5ms | ActiveRecord: 10.1ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-09 22:50:06 -0600
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:12
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/events/90" for 127.0.0.1 at 2018-03-09 22:50:09 -0600
+Processing by EventsController#show as */*
+  Parameters: {"id"=>"90"}
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') AND "nodes"."id" = $1 LIMIT $2[0m  [["id", 90], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:8
+Completed 200 OK in 5ms (Views: 0.5ms | ActiveRecord: 0.9ms)
+
+

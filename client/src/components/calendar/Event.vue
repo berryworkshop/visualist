@@ -1,6 +1,10 @@
 <template>
   <div id="event">
     <h3>Event: {{ event.attributes.title }}</h3>
+
+    <p v-if="event.attributes.properties">{{ event.attributes.properties }}</p>
+    <p v-else><em>No properties available.</em></p>
+
     <p v-if="event.attributes.body">{{ event.attributes.body }}</p>
     <p v-else><em>No body available.</em></p>
 

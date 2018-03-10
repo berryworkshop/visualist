@@ -4,8 +4,8 @@ class InitialSetup < ActiveRecord::Migration[5.2]
       t.string :type
       t.string :slug
       t.string :title
-      t.text :body
       t.jsonb :properties
+      t.text :body
 
       t.index :slug, unique: true
       t.timestamps
