@@ -18,7 +18,7 @@ class PlacesControllerTest < ActionDispatch::IntegrationTest
           slug: "test_place",
           title: "A Place",
           body: "This is a body.",
-          properties: nil,
+          properties: '{"valid": "json"}'
         }
       }, as: :json
     end

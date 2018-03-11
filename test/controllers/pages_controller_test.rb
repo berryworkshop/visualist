@@ -18,7 +18,7 @@ class PageControllerTest < ActionDispatch::IntegrationTest
           slug: "test_page",
           title: "A Test Page",
           body: "A nice page.",
-          properties: nil,
+          properties: '{}'
         }
       }, as: :json
     end

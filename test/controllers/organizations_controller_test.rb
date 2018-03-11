@@ -18,7 +18,7 @@ class OrganizationsControllerTest < ActionDispatch::IntegrationTest
           slug: "test_organization",
           title: "A Title",
           body: "This is a body.",
-          properties: nil,
+          properties: '{}'
         }
       }, as: :json
     end

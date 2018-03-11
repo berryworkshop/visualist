@@ -31,8 +31,8 @@ ActiveRecord::Schema.define(version: 2018_02_24_040121) do
     t.string "type"
     t.string "slug"
     t.string "title"
-    t.text "body"
     t.jsonb "properties"
+    t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["slug"], name: "index_nodes_on_slug", unique: true

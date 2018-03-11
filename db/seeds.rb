@@ -1,128 +1,138 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
 berry_allan = Person.create(
   type: 'Person',
   slug: 'berry_allan',
   title: 'Berry, Allan',
-  body: 'Allan is awesome.'
+  body: 'Allan is awesome.',
+  properties: '{}'
 )
 
 duguid_meg = Person.create(
   type: 'Person',
   slug: 'duguid_meg',
   title: 'Duguid, Meg',
-  body: 'Meg is magnificent.'
+  body: 'Meg is magnificent.',
+  properties: '{}'
 )
 
 thomas_michael = Person.create(
   type: 'Person',
   slug: 'thomas_michael',
   title: 'Thomas, Michael',
-  body: 'Michael is magical.'
+  body: 'Michael is magical.',
+  properties: '{}'
 )
 
 wood_grant = Person.create(
   type: 'Person',
   slug: 'wood_grant',
   title: 'Wood, Grant',
-  body: 'A great American artist.'
+  body: 'A great American artist.',
+  properties: '{}'
 )
 
 culture_math = Organization.create(
   type: 'Organization',
   slug: 'culture_math',
   title: 'Culture/Math',
-  body: 'Culture/Math is great.'
+  body: 'Culture/Math is great.',
+  properties: '{}'
 )
 
 aic = Organization.create(
   type: 'Organization',
   slug: 'aic',
   title: 'Art Institute of Chicago',
-  body: 'Chicago\'s crown jewel.'
+  body: 'Chicago\'s crown jewel.',
+  properties: '{}'
 )
 
 chicago = Place.create(
   type: 'Place',
   slug: 'chicago',
   title: 'Chicago',
-  body: 'The Windy City.'
+  body: 'The Windy City.',
+  properties: '{}'
 )
 
 grant_park = Place.create(
   type: 'Place',
   slug: 'grant_park',
   title: 'Grant Park',
-  body: 'The great lawn of Chicago.'
+  body: 'The great lawn of Chicago.',
+  properties: '{}'
 )
 
 pilsen = Place.create(
   type: 'Place',
   slug: 'pilsen',
   title: 'Pilsen',
-  body: 'The best neighborhood for tacos.'
+  body: 'The best neighborhood for tacos.',
+  properties: '{}'
 )
 
 american_gothic = Work.create(
   type: 'Work',
   slug: 'american_gothic',
   title: 'American Gothic',
-  body: 'A nice painting of two lovely people.'
+  body: 'A nice painting of two lovely people.',
+  properties: '{}'
 )
 
 visualist = Work.create(
   type: 'Work',
   slug: 'visualist',
   title: 'The Visualist',
-  body: 'Chicago\'s Visual Arts Calendar.'
+  body: 'Chicago\'s Visual Arts Calendar.',
+  properties: '{}'
 )
 
 visualist = Page.create(
   type: 'Page',
   slug: 'about',
   title: 'About The Visualist',
-  body: 'The Visualist connects Chicago with its art.'
+  body: 'The Visualist connects Chicago with its art.',
+  properties: '{}'
 )
 
 
 allan_friend_meg = Edge.create(
   # subject: berry_allan,
   predicate: :has_friend,
-  # dobject: duguid_meg
+  # dobject: duguid_meg,
+  properties: '{}'
 )
 
 meg_friend_allan = Edge.create(
   # subject: duguid_meg,
   predicate: :has_friend,
-  # dobject: berry_allan
+  # dobject: berry_allan,
+  properties: '{}'
 )
 
 allan_friend_michael = Edge.create(
   # subject: berry_allan,
   predicate: :has_friend,
-  # dobject: thomas_michael
+  # dobject: thomas_michael,
+  properties: '{}'
 )
 
 meg_spouse_michael = Edge.create(
   # subject: duguid_meg,
   predicate: :has_spouse,
-  # dobject: thomas_michael
+  # dobject: thomas_michael,
+  properties: '{}'
 )
 
 americangothic_own_aic = Edge.create(
   # subject: american_gothic,
   predicate: :has_owner,
-  # dobject: aic
+  # dobject: aic,
+  properties: '{}'
 )
 
 allan_lives_pilsen = Edge.create(
   # subject: american_gothic,
   predicate: :has_place_lived,
-  # dobject: pilsen
+  # dobject: pilsen,
+  properties: '{}'
 )

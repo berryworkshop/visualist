@@ -14,11 +14,11 @@ class NodesControllerTest < ActionDispatch::IntegrationTest
     assert_difference('Node.count') do
       post nodes_url, params: {
         attributes: {
-          type: "Person",
+          type: nil,
           slug: "test_slug",
           title: "A Title",
           body: "This is a body.",
-          properties: nil,
+          properties: '{}',
         }
       }, as: :json
     end

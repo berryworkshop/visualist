@@ -1,46 +1,34 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-# This model initially had no columns defined. If you add columns to the
-# model remove the '{}' from the fixture names and add the columns immediately
-# below each fixture, per the syntax in the comments below
-#
-# one: {}
-# column: value
-#
-# two: {}
-# column: value
-
 illinois:
   type: Place
   slug: illinois
   title: Illinois
   body: The State of Illinois, home of Lincoln.
-  properties: null
+  properties: '{}'
 
 usa:
   type: Place
   slug: usa
   title: United States of America
   body: Land of the free, home of the brave.
-  properties: null
+  properties: '{}'
 
 chicago:
   type: Place
   slug: chicago
   title: Chicago
   body: The Windy City.
-  properties: null
+  properties: '{}'
 
 pilsen:
   type: Place
   slug: pilsen
   title: Pilsen
   body: The best neighborhood for tacos.
-  properties: null
+  properties: '{}'
 
 grant_park:
   type: Place
   slug: grant_park
   title: Grant Park
   body: The great lawn of Chicago.
-  properties: null
+  properties: '{}'

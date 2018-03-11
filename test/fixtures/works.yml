@@ -1,25 +1,13 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-# This model initially had no columns defined. If you add columns to the
-# model remove the '{}' from the fixture names and add the columns immediately
-# below each fixture, per the syntax in the comments below
-#
-# one: {}
-# column: value
-#
-# two: {}
-# column: value
-
 american_gothic:
   type: Work
   slug: american_gothic
   title: American Gothic
   body: A nice painting of two lovely people.
-  properties: null
+  properties: '{}'
 
 visualist:
   type: Work
   slug: visualist
   title: The Visualist
   body: Chicago's Visual Arts Calendar.
-  properties: null
+  properties: '{}'

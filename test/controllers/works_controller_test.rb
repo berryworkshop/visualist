@@ -18,7 +18,7 @@ class WorksControllerTest < ActionDispatch::IntegrationTest
           slug: "untitled",
           title: "Untitled",
           body: "The most boring of works.",
-          properties: nil,
+          properties: '{"valid": "json"}'
         }
       }, as: :json
     end
