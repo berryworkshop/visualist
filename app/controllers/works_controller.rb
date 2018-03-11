@@ -1,9 +1,12 @@
 class WorksController < NodesController
-  @@model = Work
 
   private
+    def model
+      return Work
+    end
+
     def set_node
-      @node = Work.find(params[:id])
+      @node = model.find(params[:id])
     end
 
 end

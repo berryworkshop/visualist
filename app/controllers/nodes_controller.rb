@@ -2,11 +2,10 @@ require_relative '../serializers/node_serializer.rb'
 
 class NodesController < ApplicationController
   before_action :set_node, only: [:show, :update, :destroy]
-  @@model = Node
 
   # GET /nodes
   def index
-    @nodes = @@model.all
+    @nodes = model.all
 
     render json: serialize(@nodes)
   end
@@ -18,7 +17,7 @@ class NodesController < ApplicationController
 
   # POST /nodes
   def create
-    @node = @@model.new(node_params)
+    @node = model.new(node_params)
 
     if @node.save
       render json: serialize(@node), status: :created, location: @node
@@ -43,8 +42,12 @@ class NodesController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+    def model
+      return Node
+    end
+
     def set_node
-      @node = @@model.find(params[:id])
+      @node = model.find(params[:id])
     end
 
     def serialize(node)

@@ -1,9 +1,12 @@
 class OrganizationsController < NodesController
-  @@model = Organization
 
   private
+    def model
+      return Organization
+    end
+
     def set_node
-      @node = Organization.find(params[:id])
+      @node = model.find(params[:id])
     end
 
 end

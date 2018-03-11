@@ -1,9 +1,12 @@
 class PlacesController < NodesController
-  @@model = Place
 
   private
+    def model
+      return Place
+    end
+
     def set_node
-      @node = Place.find(params[:id])
+      @node = model.find(params[:id])
     end
 
 end

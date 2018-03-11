@@ -1,9 +1,12 @@
 class PeopleController < NodesController
-  @@model = Person
 
   private
+    def model
+      return Person
+    end
+
     def set_node
-      @node = Person.find(params[:id])
+      @node = model.find(params[:id])
     end
 
 end
