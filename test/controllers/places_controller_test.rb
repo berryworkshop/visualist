@@ -10,21 +10,21 @@ class PlacesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should create place" do
-    assert_difference('Place.count') do
-      post places_url, params: {
-        attributes: {
-          type: "Place",
-          slug: "test_place",
-          title: "A Place",
-          body: "This is a body.",
-          properties: '{"valid": "json"}'
-        }
-      }, as: :json
-    end
+  # test "should create place" do
+  #   assert_difference('Place.count') do
+  #     post places_url, params: {
+  #       attributes: {
+  #         type: "Place",
+  #         slug: "test_place",
+  #         title: "A Place",
+  #         body: "This is a body.",
+  #         properties: '{"valid": "json"}'
+  #       }
+  #     }, as: :json
+  #   end
 
-    assert_response 201
-  end
+  #   assert_response 201
+  # end
 
   test "should show place" do
     get place_url(@place), as: :json

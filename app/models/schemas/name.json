@@ -1,0 +1,22 @@
+{
+  "type": ["string", "object"],
+  "$schema": "",
+  "id": "",
+  "properties": {
+    "prefix": {
+      "type": "string"
+    },
+    "first": {
+      "type": "string"
+    },
+    "middle": {
+      "type": "string"
+    },
+    "last": {
+      "type": "string"
+    },
+    "suffix": {
+      "type": "string"
+    }
+  }
+}

@@ -3,7 +3,7 @@ valid_node:
   slug: valid_node
   title: A Valid Node
   body: This is a valid node.
-  properties: '{"test": ["json"]}'
+  properties: '{}'
 
 # invalid_node_json:
 #   type: null
