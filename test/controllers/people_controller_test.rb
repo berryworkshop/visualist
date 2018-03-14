@@ -10,21 +10,21 @@ class PeopleControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  # test "should create person" do
-  #   assert_difference('Person.count') do
-  #     post people_url, params: {
-  #       attributes: {
-  #         type: "Person",
-  #         slug: "smith_john",
-  #         title: "Smith, John",
-  #         body: "A swell fellow.",
-  #         properties: '{}'
-  #       }
-  #     }, as: :json
-  #   end
+  test "should create person" do
+    assert_difference('Person.count') do
+      post people_url, params: {
+        attributes: {
+          type: "Person",
+          slug: "smith_john",
+          title: "Smith, John",
+          body: "A swell fellow.",
+          properties: '{}'
+        }
+      }, as: :json
+    end
 
-  #   assert_response 201
-  # end
+    assert_response 201
+  end
 
   test "should show person" do
     get person_url(@person), as: :json

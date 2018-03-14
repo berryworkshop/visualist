@@ -10,21 +10,21 @@ class PageControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  # test "should create page" do
-  #   assert_difference('Page.count') do
-  #     post pages_url, params: {
-  #       attributes: {
-  #         type: "Page",
-  #         slug: "test_page",
-  #         title: "A Test Page",
-  #         body: "A nice page.",
-  #         properties: '{}'
-  #       }
-  #     }, as: :json
-  #   end
+  test "should create page" do
+    assert_difference('Page.count') do
+      post pages_url, params: {
+        attributes: {
+          type: "Page",
+          slug: "test_page",
+          title: "A Test Page",
+          body: "A nice page.",
+          properties: '{}'
+        }
+      }, as: :json
+    end
 
-  #   assert_response 201
-  # end
+    assert_response 201
+  end
 
   test "should show page" do
     get page_url(@page), as: :json

@@ -10,21 +10,21 @@ class WorksControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  # test "should create work" do
-  #   assert_difference('Work.count') do
-  #     post works_url, params: {
-  #       attributes: {
-  #         type: "Work",
-  #         slug: "untitled",
-  #         title: "Untitled",
-  #         body: "The most boring of works.",
-  #         properties: '{}'
-  #       }
-  #     }, as: :json
-  #   end
+  test "should create work" do
+    assert_difference('Work.count') do
+      post works_url, params: {
+        attributes: {
+          type: "Work",
+          slug: "untitled",
+          title: "Untitled",
+          body: "The most boring of works.",
+          properties: '{}'
+        }
+      }, as: :json
+    end
 
-  #   assert_response 201
-  # end
+    assert_response 201
+  end
 
   test "should show work" do
     get work_url(@work), as: :json
