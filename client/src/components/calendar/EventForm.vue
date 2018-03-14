@@ -159,6 +159,6 @@ textarea {
 }
 
 textarea[name="event-properties"] {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
 }
 </style>

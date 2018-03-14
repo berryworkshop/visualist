@@ -34,4 +34,8 @@ button.link {
     outline: none;
   }
 }
+
+nav.controls > * {
+  margin-right: 1rem;
+}
 </style>

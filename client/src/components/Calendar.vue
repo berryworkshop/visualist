@@ -7,6 +7,7 @@
 
 <script>
 import Layout from "./layouts/Default";
+
 export default {
   name: "calendar",
   components: {
@@ -14,9 +15,3 @@ export default {
   }
 };
 </script>
-
-<style lang="scss">
-nav.controls > * {
-  margin-right: 1rem;
-}
-</style>

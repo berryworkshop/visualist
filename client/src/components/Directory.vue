@@ -1,6 +1,7 @@
 <template>
   <layout id="directory">
     <h2>Directory</h2>
+    <router-view></router-view>
   </layout>
 </template>
 
@@ -14,6 +15,3 @@ export default {
   }
 };
 </script>
-
-<style scoped>
-</style>
