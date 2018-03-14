@@ -47,4 +47,11 @@ class PeopleControllerTest < ActionDispatch::IntegrationTest
 
     assert_response 204
   end
+
+  test "index should only show people" do
+    get people_url, as: :json
+    r = JSON.parse(@response.body)
+
+    assert_equal r['data'].length, 4
+  end
 end
