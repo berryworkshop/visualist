@@ -37,30 +37,6 @@ export default new Router({
       name: "map",
       component: Map
     },
-    // {
-    //   path: "/nodes/add",
-    //   name: "nodeAdd",
-    //   component: NodeForm,
-    //   props: {
-    //     type: "node"
-    //   }
-    // },
-    // {
-    //   path: "/nodes/:node_id/edit",
-    //   name: "nodeEdit",
-    //   component: NodeForm,
-    //   props: {
-    //     type: "node"
-    //   }
-    // },
-    // {
-    //   path: "/nodes/:node_id",
-    //   name: "node",
-    //   component: Node,
-    //   props: {
-    //     type: "node"
-    //   }
-    // },
     {
       path: "/calendar/",
       component: Calendar,

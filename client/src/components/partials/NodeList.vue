@@ -11,7 +11,7 @@
             params: {
               node_id: n.id
             }}">Edit {{ type.toTitleCase() }}</router-link>
-          <button name="delete" :value="n" v-on:click="nodeDelete(n)">Delete {{ type.toTitleCase() }}</button>
+          <button name="delete" :value="n" v-on:click="deleteNode(n)">Delete {{ type.toTitleCase() }}</button>
         </div>
       </li>
     </ul>
@@ -36,7 +36,7 @@ export default {
     }
   },
   methods: {
-    async nodeDelete(node) {
+    async deleteNode(node) {
       await this.nodeDelete(this.type, node);
       this.updateNodes();
     },
