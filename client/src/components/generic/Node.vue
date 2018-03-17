@@ -1,6 +1,6 @@
 <template>
   <div id="node">
-    <h3>Node: {{ node.attributes.title }}</h3>
+    <h3>{{ type.toTitleCase() }}: {{ node.attributes.title }}</h3>
 
     <p v-if="node.attributes.properties">{{ node.attributes.properties }}</p>
     <p v-else><em>No properties available.</em></p>
@@ -13,7 +13,7 @@
 
     <nav class="controls">
       <router-link :to="{
-          name: 'nodeEdit',
+          name: `${type}Edit`,
           params: {
             node_id: this.$route.params['node_id']
           }}">Edit Node</router-link>
@@ -26,6 +26,8 @@
 import moment from "moment";
 import Layout from "../layouts/Default";
 import nodecrud from "../../mixins/nodecrud";
+// eslint-disable-next-line
+import utility from "../../utility";
 
 export default {
   name: "Node",

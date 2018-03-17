@@ -5,6 +5,11 @@ class EdgesControllerTest < ActionDispatch::IntegrationTest
     @edge = edges(:allan_friend_meg)
   end
 
+  # TODO refactor into module
+  def json_response
+    ActiveSupport::JSON.decode @response.body
+  end
+
   test "should get index" do
     get edges_url, as: :json
     assert_response :success

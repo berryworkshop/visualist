@@ -1,3 +1,5 @@
+require_relative '../serializers/person_serializer.rb'
+
 class PeopleController < NodesController
 
   private
@@ -7,6 +9,10 @@ class PeopleController < NodesController
 
     def set_node
       @node = model.find(params[:id])
+    end
+
+    def serialize(node)
+      PersonSerializer.new(node).serializable_hash
     end
 
 end

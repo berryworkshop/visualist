@@ -5,6 +5,11 @@ class OrganizationsControllerTest < ActionDispatch::IntegrationTest
     @organization = organizations(:aic)
   end
 
+  # TODO refactor into module
+  def json_response
+    ActiveSupport::JSON.decode @response.body
+  end
+
   test "should get index" do
     get organizations_url, as: :json
     assert_response :success
@@ -29,6 +34,11 @@ class OrganizationsControllerTest < ActionDispatch::IntegrationTest
   test "should show organization" do
     get organization_url(@organization), as: :json
     assert_response :success
+  end
+
+  test "organization type should be organization" do
+    get organization_url(@organization), as: :json
+    assert_equal "organization", json_response['data']['type']
   end
 
   test "should update organization" do

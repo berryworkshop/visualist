@@ -14,6 +14,7 @@ export default {
     async nodeBrowse(type) {
       const path = railsRoutes.getPath(pluralize(type));
       const url = `${this.$store.state.apiHost}${path}`;
+
       try {
         const response = await request.get(url);
         console.log(`got ${pluralize(type)}`, response.statusCode);

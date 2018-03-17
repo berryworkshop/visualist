@@ -27,6 +27,9 @@ export default new Vuex.Store({
   mutations: {
     eventsSet(state, arr) {
       state.events = arr;
+    },
+    agentsSet(state, arr) {
+      state.agents = arr;
     }
     // login(state, jwt) {
     //   state.user.jwt = jwt;

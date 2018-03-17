@@ -5,6 +5,11 @@ class NodesControllerTest < ActionDispatch::IntegrationTest
     @allan = people(:berry_allan)
   end
 
+  # TODO refactor into module
+  def json_response
+    ActiveSupport::JSON.decode @response.body
+  end
+
   test "should get index" do
     get nodes_url, as: :json
     assert_response :success
@@ -31,6 +36,11 @@ class NodesControllerTest < ActionDispatch::IntegrationTest
     get node_url(@allan), as: :json
     assert_response :success
   end
+
+  # test "node type should be node" do
+  #   get event_url(@node), as: :json
+  #   assert_equal "node", json_response['data']['type']
+  # end
 
   test "should update node" do
     patch node_url(@allan), params: {

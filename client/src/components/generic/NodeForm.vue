@@ -115,10 +115,10 @@ export default {
   },
   async created() {
     // determine whether editing existing node or creating node
-    const node_id = this.$route.params["node_id"];
+    const node_id = this.$route.params[`node_id`];
     if (node_id) {
       this.formType = "edit";
-      this.node = await this.nodeRead("node", node_id);
+      this.node = await this.nodeRead(this.type, node_id);
     }
   },
   methods: {
@@ -126,17 +126,17 @@ export default {
      * Creates an Node, stores it, and updates the Calendar array
      */
     async submitAndAdd(node) {
-      await this.nodeAdd("node", node);
+      await this.nodeAdd(this.type, node);
       this.$emit("updateNodes");
       this.clearForm();
     },
     async submitDone(node) {
-      await this.nodeAdd("node", node);
+      await this.nodeAdd(this.type, node);
       this.$emit("updateNodes");
       this.$router.push({ name: "calendar" });
     },
     async submitEdit(node) {
-      await this.nodeEdit("node", node);
+      await this.nodeEdit(this.type, node);
       this.$emit("updateNodes");
       this.$router.push({ name: "calendar" });
     },

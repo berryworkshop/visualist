@@ -5,6 +5,11 @@ class EventsControllerTest < ActionDispatch::IntegrationTest
     @event = events(:test_exhibition)
   end
 
+  # TODO refactor into module
+  def json_response
+    ActiveSupport::JSON.decode @response.body
+  end
+
   test "should get index" do
     get events_url, as: :json
     assert_response :success
@@ -29,6 +34,11 @@ class EventsControllerTest < ActionDispatch::IntegrationTest
   test "should show event" do
     get event_url(@event), as: :json
     assert_response :success
+  end
+
+  test "event type should be event" do
+    get event_url(@event), as: :json
+    assert_equal "event", json_response['data']['type']
   end
 
   test "should update event" do

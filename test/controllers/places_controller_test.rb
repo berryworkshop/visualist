@@ -5,6 +5,11 @@ class PlacesControllerTest < ActionDispatch::IntegrationTest
     @place = places(:grant_park)
   end
 
+  # TODO refactor into module
+  def json_response
+    ActiveSupport::JSON.decode @response.body
+  end
+
   test "should get index" do
     get places_url, as: :json
     assert_response :success
@@ -29,6 +34,11 @@ class PlacesControllerTest < ActionDispatch::IntegrationTest
   test "should show place" do
     get place_url(@place), as: :json
     assert_response :success
+  end
+
+  test "place type should be place" do
+    get place_url(@place), as: :json
+    assert_equal "place", json_response['data']['type']
   end
 
   test "should update place" do

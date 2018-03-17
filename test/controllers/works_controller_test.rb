@@ -5,6 +5,11 @@ class WorksControllerTest < ActionDispatch::IntegrationTest
     @work = works(:american_gothic)
   end
 
+  # TODO refactor into module
+  def json_response
+    ActiveSupport::JSON.decode @response.body
+  end
+
   test "should get index" do
     get works_url, as: :json
     assert_response :success
@@ -29,6 +34,11 @@ class WorksControllerTest < ActionDispatch::IntegrationTest
   test "should show work" do
     get work_url(@work), as: :json
     assert_response :success
+  end
+
+  test "work type should be work" do
+    get work_url(@work), as: :json
+    assert_equal "work", json_response['data']['type']
   end
 
   test "should update work" do

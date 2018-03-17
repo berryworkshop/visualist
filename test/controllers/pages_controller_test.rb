@@ -5,6 +5,11 @@ class PageControllerTest < ActionDispatch::IntegrationTest
     @page = pages(:about)
   end
 
+  # TODO refactor into module
+  def json_response
+    ActiveSupport::JSON.decode @response.body
+  end
+
   test "should get index" do
     get pages_url, as: :json
     assert_response :success
@@ -29,6 +34,11 @@ class PageControllerTest < ActionDispatch::IntegrationTest
   test "should show page" do
     get page_url(@page), as: :json
     assert_response :success
+  end
+
+  test "page type should be page" do
+    get page_url(@page), as: :json
+    assert_equal "page", json_response['data']['type']
   end
 
   test "should update page" do

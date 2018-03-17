@@ -7,6 +7,7 @@ import Directory from "@/components/Directory";
 import Node from "@/components/generic/Node";
 import NodeBrowse from "@/components/generic/NodeBrowse";
 import NodeForm from "@/components/generic/NodeForm";
+import AgentBrowse from "@/components/generic/AgentBrowse";
 // import Event from "@/components/calendar/Event";
 // import EventBrowse from "@/components/calendar/EventBrowse";
 // import EventForm from "@/components/calendar/EventForm";
@@ -36,12 +37,36 @@ export default new Router({
       name: "map",
       component: Map
     },
+    // {
+    //   path: "/nodes/add",
+    //   name: "nodeAdd",
+    //   component: NodeForm,
+    //   props: {
+    //     type: "node"
+    //   }
+    // },
+    // {
+    //   path: "/nodes/:node_id/edit",
+    //   name: "nodeEdit",
+    //   component: NodeForm,
+    //   props: {
+    //     type: "node"
+    //   }
+    // },
+    // {
+    //   path: "/nodes/:node_id",
+    //   name: "node",
+    //   component: Node,
+    //   props: {
+    //     type: "node"
+    //   }
+    // },
     {
-      path: "/calendar",
+      path: "/calendar/",
       component: Calendar,
       children: [
         {
-          path: "/events/events",
+          path: "/calendar/events",
           name: "calendar",
           component: NodeBrowse,
           props: {
@@ -49,7 +74,7 @@ export default new Router({
           }
         },
         {
-          path: "/events/add",
+          path: "/calendar/events/add",
           name: "eventAdd",
           component: NodeForm,
           props: {
@@ -57,7 +82,7 @@ export default new Router({
           }
         },
         {
-          path: "/events/:event_id/edit",
+          path: "/calendar/events/:node_id/edit",
           name: "eventEdit",
           component: NodeForm,
           props: {
@@ -65,9 +90,9 @@ export default new Router({
           }
         },
         {
-          path: "/events/:event_id",
+          path: "/calendar/events/:node_id",
           name: "event",
-          component: Event,
+          component: Node,
           props: {
             type: "event"
           }
@@ -75,12 +100,19 @@ export default new Router({
       ]
     },
     {
-      path: "/directory",
-      name: "directory",
+      path: "/directory/",
       component: Directory,
       children: [
         {
-          path: "/people",
+          path: "/directory",
+          name: "directory",
+          component: AgentBrowse,
+          props: {
+            type: "agent"
+          }
+        },
+        {
+          path: "/directory/people",
           name: "people",
           component: NodeBrowse,
           props: {
@@ -88,7 +120,7 @@ export default new Router({
           }
         },
         {
-          path: "/people/add",
+          path: "/directory/people/add",
           name: "personAdd",
           component: NodeForm,
           props: {
@@ -96,7 +128,7 @@ export default new Router({
           }
         },
         {
-          path: "/people/:person_id/edit",
+          path: "/directory/people/:node_id/edit",
           name: "personEdit",
           component: NodeForm,
           props: {
@@ -104,7 +136,7 @@ export default new Router({
           }
         },
         {
-          path: "/people/:person_id",
+          path: "/directory/people/:node_id",
           name: "person",
           component: Node,
           props: {
@@ -112,7 +144,7 @@ export default new Router({
           }
         },
         {
-          path: "/organizations",
+          path: "/directory/organizations",
           name: "organizations",
           component: NodeBrowse,
           props: {
@@ -120,7 +152,7 @@ export default new Router({
           }
         },
         {
-          path: "/organizations/add",
+          path: "/directory/organizations/add",
           name: "organizationAdd",
           component: NodeForm,
           props: {
@@ -128,7 +160,7 @@ export default new Router({
           }
         },
         {
-          path: "/organizations/:organization_id/edit",
+          path: "/directory/organizations/:node_id/edit",
           name: "organizationEdit",
           component: NodeForm,
           props: {
@@ -136,7 +168,7 @@ export default new Router({
           }
         },
         {
-          path: "/:organization_id",
+          path: "/directory/:node_id",
           name: "organization",
           component: Node,
           props: {

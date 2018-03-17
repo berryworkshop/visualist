@@ -1,5 +1,13 @@
 const routes = [
   {
+    name: "nodes",
+    path: `/nodes`
+  },
+  {
+    name: "node",
+    path: `/nodes/` // + ${id}
+  },
+  {
     name: "events",
     path: `/events`
   },
@@ -48,14 +56,6 @@ const routes = [
     path: `/people/` // + ${id}
   },
   {
-    name: "edges",
-    path: `/edges`
-  },
-  {
-    name: "edge",
-    path: `/edges/` // + ${id}
-  },
-  {
     name: "pages",
     path: `/pages`
   },
@@ -64,12 +64,12 @@ const routes = [
     path: `/pages/` // + ${id}
   },
   {
-    name: "nodes",
-    path: `/nodes`
+    name: "edges",
+    path: `/edges`
   },
   {
-    name: "node",
-    path: `/nodes/` // + ${id}
+    name: "edge",
+    path: `/edges/` // + ${id}
   }
 ];
 

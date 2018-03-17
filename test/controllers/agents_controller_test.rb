@@ -5,6 +5,11 @@ class AgentsControllerTest < ActionDispatch::IntegrationTest
     nil
   end
 
+  # TODO refactor into module
+  def json_response
+    ActiveSupport::JSON.decode @response.body
+  end
+
   test "should get index" do
     get agents_url, as: :json
     assert_response :success

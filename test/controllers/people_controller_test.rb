@@ -5,6 +5,11 @@ class PeopleControllerTest < ActionDispatch::IntegrationTest
     @person = people(:berry_allan)
   end
 
+  # TODO refactor into module
+  def json_response
+    ActiveSupport::JSON.decode @response.body
+  end
+
   test "should get index" do
     get people_url, as: :json
     assert_response :success
@@ -29,6 +34,11 @@ class PeopleControllerTest < ActionDispatch::IntegrationTest
   test "should show person" do
     get person_url(@person), as: :json
     assert_response :success
+  end
+
+  test "person type should be person" do
+    get person_url(@person), as: :json
+    assert_equal "person", json_response['data']['type']
   end
 
   test "should update person" do

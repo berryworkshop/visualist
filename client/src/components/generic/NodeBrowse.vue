@@ -4,15 +4,15 @@
     <ul id="node-list" v-if="nodes && nodes.length > 0">
       <li class="node" v-for="n in nodes" :key="n.attributes.slug">
         <div class="data">
-          <span class="node-id">{{ n.id }}</span><router-link class="node-link" :to="{name: 'node', params: { node_id: n.id }}">{{ n.attributes.title }}</router-link>
+          <span class="node-id">{{ n.id }}</span><router-link class="node-link" :to="{name: n.type, params: { node_id: n.id }}">{{ n.attributes.title }}</router-link>
         </div>
         <div class="controls">
           <router-link :to="{
-            name: 'nodeEdit',
+            name: `${n.type}Edit`,
             params: {
               node_id: n.id
             }}">Edit {{ type.toTitleCase() }}</router-link>
-          <button name="delete" :value="e" v-on:click="nodeDelete(e)">Delete {{ type.toTitleCase() }}</button>
+          <button name="delete" :value="n" v-on:click="nodeDelete(n)">Delete {{ type.toTitleCase() }}</button>
         </div>
       </li>
     </ul>
