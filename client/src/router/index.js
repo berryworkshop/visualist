@@ -7,7 +7,7 @@ import Directory from "@/components/Directory";
 import Node from "@/components/generic/Node";
 import NodeBrowse from "@/components/generic/NodeBrowse";
 import NodeForm from "@/components/generic/NodeForm";
-import AgentBrowse from "@/components/generic/AgentBrowse";
+import AgentBrowse from "@/components/directory/AgentBrowse";
 // import Event from "@/components/calendar/Event";
 // import EventBrowse from "@/components/calendar/EventBrowse";
 // import EventForm from "@/components/calendar/EventForm";
@@ -33,17 +33,50 @@ export default new Router({
       component: Home
     },
     {
-      path: "/map",
-      name: "map",
-      component: Map
+      path: "/map/",
+      component: Map,
+      children: [
+        {
+          path: "/map/",
+          name: "places",
+          component: NodeBrowse,
+          props: {
+            label: "Place"
+          }
+        },
+        {
+          path: "/map/places/add",
+          name: "placeAdd",
+          component: NodeForm,
+          props: {
+            label: "Place"
+          }
+        },
+        {
+          path: "/map/places/:node_id/edit",
+          name: "placeEdit",
+          component: NodeForm,
+          props: {
+            label: "Place"
+          }
+        },
+        {
+          path: "/map/places/:node_id",
+          name: "place",
+          component: Node,
+          props: {
+            label: "Place"
+          }
+        }
+      ]
     },
     {
       path: "/calendar/",
       component: Calendar,
       children: [
         {
-          path: "/calendar/events",
-          name: "calendar",
+          path: "/calendar/",
+          name: "events",
           component: NodeBrowse,
           props: {
             label: "Event"
@@ -81,7 +114,7 @@ export default new Router({
       children: [
         {
           path: "/directory",
-          name: "directory",
+          name: "agents",
           component: AgentBrowse,
           props: {
             label: "Agent"
@@ -144,7 +177,7 @@ export default new Router({
           }
         },
         {
-          path: "/directory/:node_id",
+          path: "/directory/organizations/:node_id",
           name: "organization",
           component: Node,
           props: {

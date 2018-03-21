@@ -2,8 +2,8 @@
   <div id="node">
     <h3>{{ label }}: {{ node.attributes.title }}</h3>
 
-    <p v-if="node.attributes.properties">{{ node.attributes.properties }}</p>
-    <p v-else><em>No properties available.</em></p>
+    <!-- <p v-if="node.attributes.properties">{{ node.attributes.properties }}</p>
+    <p v-else><em>No properties available.</em></p> -->
 
     <p v-if="node.attributes.body">{{ node.attributes.body }}</p>
     <p v-else><em>No body available.</em></p>
@@ -15,9 +15,9 @@
       <router-link :to="{
           name: `${label.toLowerCase()}Edit`,
           params: {
-            node_id: this.$route.params['node_id']
-          }}">Edit Node</router-link>
-      <!-- <router-link :to="{name: 'calendar'}">Browse Events</router-link> -->
+            node_id: $route.params['node_id']
+          }}">Edit {{ label }}</router-link>
+      <router-link :to="{name: label.toLowerCase().pluralize()}">Browse {{ label.pluralize() }}</router-link>
     </nav>
   </div>
 </template>
@@ -36,8 +36,10 @@ export default {
   },
   mixins: [nodecrud],
   props: {
-    label: String,
-    required: true
+    label: {
+      type: String,
+      required: true
+    }
   },
   data() {
     return {

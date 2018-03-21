@@ -4,6 +4,8 @@
     <node-list :label="label"></node-list>
 
     <nav class="controls">
+      <router-link :to="{name: `people`}">Browse People</router-link>
+      <router-link :to="{name: `organizations`}">Browse Organizations</router-link>
       <router-link :to="{name: `personAdd`}">Add Person</router-link>
       <router-link :to="{name: `organizationAdd`}">Add Organization</router-link>
     </nav>
@@ -21,8 +23,10 @@ export default {
     NodeList
   },
   props: {
-    label: String,
-    required: true
+    label: {
+      type: String,
+      required: true
+    }
   }
 };
 </script>

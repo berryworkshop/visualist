@@ -18,7 +18,10 @@ export default {
 
       try {
         const response = await request.get(url);
-        console.log(`got ${label.pluralize()}`, response.statusCode);
+        console.log(`got ${label.pluralize()}`, {
+          code: response.statusCode,
+          url
+        });
         return JSON.parse(response.text).data;
       } catch (err) {
         console.error(err);
@@ -33,7 +36,10 @@ export default {
       try {
         const response = await request.get(url);
         const label = response.body.data.attributes.label;
-        console.log(`got ${label}`, response.statusCode);
+        console.log(`got ${label}`, {
+          code: response.statusCode,
+          url
+        });
         return JSON.parse(response.text).data;
       } catch (err) {
         console.error(err);
@@ -48,7 +54,10 @@ export default {
       const url = `${this.$store.state.apiHost}${path}${node.id}`;
       try {
         const response = await request.patch(url).send(node);
-        console.log(`patched ${label}`, response.statusCode);
+        console.log(`patched ${label}`, {
+          code: response.statusCode,
+          url
+        });
         return JSON.parse(response.text).data;
       } catch (err) {
         console.error(err, label, path, url, JSON.parse(JSON.stringify(node)));
@@ -59,14 +68,14 @@ export default {
      */
     async nodeAdd(node) {
       const path = railsRoutes.getPath("node");
-
-      console.log(node);
-
       const label = node.attributes.label;
       const url = `${this.$store.state.apiHost}${path}`;
       try {
         const response = await request.post(url).send(node);
-        console.log(`posted ${label}`, response.statusCode);
+        console.log(`posted ${label}`, {
+          code: response.statusCode,
+          url
+        });
         return JSON.parse(response.text).data;
       } catch (err) {
         console.error(err, label, path, url, JSON.parse(JSON.stringify(node)));
@@ -81,7 +90,10 @@ export default {
       const url = `${this.$store.state.apiHost}${path}${node.id}`;
       try {
         const response = await request.delete(url);
-        console.log(`deleted ${label}`, response.statusCode);
+        console.log(`deleted ${label}`, {
+          code: response.statusCode,
+          url
+        });
         return response.text;
       } catch (err) {
         console.error(err);

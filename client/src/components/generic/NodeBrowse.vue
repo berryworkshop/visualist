@@ -20,8 +20,10 @@ export default {
     NodeList
   },
   props: {
-    label: String,
-    required: true
+    label: {
+      type: String,
+      required: true
+    }
   }
 };
 </script>

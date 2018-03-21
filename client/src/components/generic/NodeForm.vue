@@ -48,7 +48,7 @@
       <button name="submit-button" v-else
           v-on:click="submitEdit(proxyNode)">Submit</button>
       <button name="cancel-button" v-on:click.prevent="$router.go(-1)">Cancel</button>
-      <router-link :to="{name: 'calendar'}">Browse {{ label.toLowerCase().pluralize().toTitleCase() }}</router-link>
+      <router-link :to="{name: label.toLowerCase().pluralize()}">Browse {{ label.toLowerCase().pluralize().toTitleCase() }}</router-link>
 
     </nav>
   </div>
@@ -85,8 +85,10 @@ export default {
   },
   mixins: [nodecrud],
   props: {
-    label: String,
-    required: true
+    label: {
+      type: String,
+      required: true
+    }
   },
   computed: {
     proxyNode() {
@@ -136,12 +138,12 @@ export default {
     async submitDone(node) {
       await this.nodeAdd(node);
       this.$emit("updateNodes");
-      this.$router.push({ name: "calendar" });
+      this.$router.push({ name: this.label.toLowerCase().pluralize() });
     },
     async submitEdit(node) {
       await this.nodeEdit(node);
       this.$emit("updateNodes");
-      this.$router.push({ name: "calendar" });
+      this.$router.push({ name: this.label.toLowerCase().pluralize() });
     },
     /**
      * Resets form data.

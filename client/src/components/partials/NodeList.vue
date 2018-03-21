@@ -10,8 +10,8 @@
             name: `${n.attributes.label.toLowerCase()}Edit`,
             params: {
               node_id: n.id
-            }}">Edit {{ label }}</router-link>
-          <button name="delete" :value="n" v-on:click="deleteNode(n)">Delete {{ label }}</button>
+            }}">Edit</router-link>
+          <button name="delete" :value="n" v-on:click="deleteNode(n)">Delete</button>
         </div>
       </li>
     </ul>
@@ -42,7 +42,7 @@ export default {
     },
     async updateNodes() {
       const json = await this.nodeBrowse(this.label);
-      this.$store.dispatch("storeNodes", {
+      this.$store.dispatch("retainNodes", {
         label: this.label,
         nodes: json
       });

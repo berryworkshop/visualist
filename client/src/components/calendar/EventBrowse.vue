@@ -1,23 +1,16 @@
 <template>
   <div>
     <h3>Browse Events</h3>
-    <node-list label="Event"></node-list>
-
-    <nav class="controls">
-      <router-link :to="{name: `eventAdd`}">Add Event</router-link>
-    </nav>
   </div>
 </template>
 
 <script>
-// eslint-disable-next-line
-import utility from "../../utility";
-import NodeList from "../partials/NodeList";
+import Layout from "../layouts/Default";
 
 export default {
-  name: "node-browse",
+  name: "event-browse",
   components: {
-    NodeList
-  },
+    Layout
+  }
 };
 </script>

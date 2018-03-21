@@ -1,6 +1,8 @@
 <template>
   <layout id="map">
     <h2>Map</h2>
+    <router-view></router-view>
+
   </layout>
 </template>
 

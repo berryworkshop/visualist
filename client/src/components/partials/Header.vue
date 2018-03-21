@@ -30,15 +30,15 @@ export default {
           text: "Home"
         },
         {
-          name: "calendar",
+          name: "events",
           text: "Calendar"
         },
         {
-          name: "directory",
+          name: "agents",
           text: "Directory"
         },
         {
-          name: "map",
+          name: "places",
           text: "Map"
         },
         {

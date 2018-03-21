@@ -20,6 +20,8 @@ export default new Vuex.Store({
     })(),
     events: [],
     agents: [],
+    people: [],
+    organizations: [],
     pages: [],
     places: []
     // user: {
@@ -32,6 +34,18 @@ export default new Vuex.Store({
     },
     agentsSet(state, arr) {
       state.agents = arr;
+    },
+    peopleSet(state, arr) {
+      state.people = arr;
+    },
+    organizationsSet(state, arr) {
+      state.organizations = arr;
+    },
+    placesSet(state, arr) {
+      state.places = arr;
+    },
+    pagesSet(state, arr) {
+      state.pages = arr;
     }
     // login(state, jwt) {
     //   state.user.jwt = jwt;
@@ -49,7 +63,7 @@ export default new Vuex.Store({
     // }
   },
   actions: {
-    async storeNodes(context, { label: label, nodes: nodes }) {
+    async retainNodes(context, { label: label, nodes: nodes }) {
       context.commit(`${label.toLowerCase().pluralize()}Set`, nodes);
     }
     // async login(context, user) {
