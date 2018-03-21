@@ -36,9 +36,15 @@ class PlacesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "place type should be place" do
+  test "place type should be node" do
     get place_url(@place), as: :json
-    assert_equal "place", json_response['data']['type']
+    assert_equal "node", json_response['data']['type']
+  end
+
+  test "place label should be Place" do
+    get place_url(@place), as: :json
+
+    assert_equal "Place", json_response['data']['attributes']['label']
   end
 
   test "should update place" do

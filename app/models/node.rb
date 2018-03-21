@@ -2,6 +2,7 @@ require "json"
 
 class Node < ApplicationRecord
   # JSON_SCHEMA = "#{Rails.root}/app/models/schemas/node.json"
+  alias_attribute :label, :type
 
   @schema = {
     #"$schema": "http://json-schema.org/draft-04/schema",

@@ -15700,3 +15700,131 @@ Processing by EventsController#index as */*
 Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.7ms)
 
 
+Started GET "/events" for 127.0.0.1 at 2018-03-19 21:57:54 -0500
+  [1m[35m (5.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/aljabear/.gem/ruby/2.5.0/gems/activerecord-5.2.0.rc1/lib/active_record/log_subscriber.rb:98
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (4.2ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:15
+Completed 200 OK in 47ms (Views: 0.6ms | ActiveRecord: 18.6ms)
+
+
+Started GET "/agents" for 127.0.0.1 at 2018-03-19 21:57:55 -0500
+Processing by AgentsController#index as */*
+  [1m[36mNode Load (1.2ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ($1, $2)[0m  [["type", "Person"], ["type", "Organization"]]
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 40ms (Views: 1.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-19 21:57:56 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/events_controller.rb:15
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/agents" for 127.0.0.1 at 2018-03-19 21:57:57 -0500
+Processing by AgentsController#index as */*
+  [1m[36mNode Load (1.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ($1, $2)[0m  [["type", "Person"], ["type", "Organization"]]
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 8ms (Views: 1.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/agents" for 127.0.0.1 at 2018-03-19 22:12:42 -0500
+Processing by AgentsController#index as */*
+  [1m[36mNode Load (1.1ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ($1, $2)[0m  [["type", "Person"], ["type", "Organization"]]
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 6ms (Views: 1.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-21 06:57:39 -0500
+Processing by EventsController#index as */*
+Completed 500 Internal Server Error in 47ms (ActiveRecord: 25.9ms)
+
+
+  
+NameError (undefined method `type' for class `#<Class:0x00007faaf2182ac8>'):
+  
+app/models/node.rb:5:in `alias_method'
+app/models/node.rb:5:in `<class:Node>'
+app/models/node.rb:3:in `<main>'
+app/models/event.rb:1:in `<main>'
+app/controllers/events_controller.rb:7:in `model'
+app/controllers/nodes_controller.rb:8:in `index'
+Started GET "/nodes" for 127.0.0.1 at 2018-03-21 06:57:48 -0500
+Processing by NodesController#index as */*
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined method `type' for class `#<Class:0x00007faaf237cb58>'):
+  
+app/models/node.rb:5:in `alias_method'
+app/models/node.rb:5:in `<class:Node>'
+app/models/node.rb:3:in `<main>'
+app/controllers/nodes_controller.rb:46:in `model'
+app/controllers/nodes_controller.rb:8:in `index'
+Started GET "/nodes" for 127.0.0.1 at 2018-03-21 07:00:31 -0500
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/aljabear/.gem/ruby/2.5.0/gems/activerecord-5.2.0.rc1/lib/active_record/log_subscriber.rb:98
+Processing by NodesController#index as */*
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 4.2ms)
+
+
+  
+NameError (undefined method `type' for class `#<Class:0x00007f9b206c4888>'):
+  
+app/models/node.rb:5:in `alias_method'
+app/models/node.rb:5:in `<class:Node>'
+app/models/node.rb:3:in `<main>'
+app/controllers/nodes_controller.rb:46:in `model'
+app/controllers/nodes_controller.rb:8:in `index'
+Started GET "/nodes" for 127.0.0.1 at 2018-03-21 07:02:29 -0500
+Processing by NodesController#index as */*
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 3.9ms)
+
+
+  
+NameError (undefined method `type' for class `#<Class:0x00007f9b23973c98>'):
+  
+app/models/node.rb:5:in `alias_method'
+app/models/node.rb:5:in `<class:Node>'
+app/models/node.rb:3:in `<main>'
+app/controllers/nodes_controller.rb:46:in `model'
+app/controllers/nodes_controller.rb:8:in `index'
+Started GET "/nodes" for 127.0.0.1 at 2018-03-21 07:15:07 -0500
+Processing by NodesController#index as */*
+  [1m[36mNode Load (8.9ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes"[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 96ms (Views: 2.7ms | ActiveRecord: 22.5ms)
+
+
+Started GET "/nodes" for 127.0.0.1 at 2018-03-21 07:15:21 -0500
+Processing by NodesController#index as */*
+  [1m[36mNode Load (0.5ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes"[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 66ms (Views: 1.9ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-21 07:15:58 -0500
+  
+LoadError (cannot load such file -- /Users/aljabear/Documents/visualist/app/serializers/event_serializer.rb):
+  
+app/controllers/events_controller.rb:1:in `require_relative'
+app/controllers/events_controller.rb:1:in `<main>'
+Started GET "/events" for 127.0.0.1 at 2018-03-21 07:18:58 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (1.9ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 28ms (Views: 0.3ms | ActiveRecord: 8.9ms)
+
+
+Started GET "/agents" for 127.0.0.1 at 2018-03-21 07:21:45 -0500
+Processing by AgentsController#index as */*
+  [1m[36mNode Load (1.5ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ($1, $2)[0m  [["type", "Person"], ["type", "Organization"]]
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 21ms (Views: 0.9ms | ActiveRecord: 1.5ms)
+
+
+  [1m[36mEvent Load (1.5ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mEvent Load (2.1ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]

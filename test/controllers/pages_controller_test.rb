@@ -36,9 +36,15 @@ class PageControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "page type should be page" do
+  test "page type should be node" do
     get page_url(@page), as: :json
-    assert_equal "page", json_response['data']['type']
+    assert_equal "node", json_response['data']['type']
+  end
+
+  test "page label should be Event" do
+    get page_url(@page), as: :json
+
+    assert_equal "Page", json_response['data']['attributes']['label']
   end
 
   test "should update page" do

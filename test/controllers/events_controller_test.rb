@@ -36,9 +36,15 @@ class EventsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "event type should be event" do
+  test "event type should be node" do
     get event_url(@event), as: :json
-    assert_equal "event", json_response['data']['type']
+    assert_equal "node", json_response['data']['type']
+  end
+
+  test "event label should be Event" do
+    get event_url(@event), as: :json
+
+    assert_equal "Event", json_response['data']['attributes']['label']
   end
 
   test "should update event" do

@@ -36,9 +36,15 @@ class PeopleControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "person type should be person" do
+  test "person type should be node" do
     get person_url(@person), as: :json
-    assert_equal "person", json_response['data']['type']
+    assert_equal "node", json_response['data']['type']
+  end
+
+  test "person label should be Person" do
+    get person_url(@person), as: :json
+
+    assert_equal "Person", json_response['data']['attributes']['label']
   end
 
   test "should update person" do

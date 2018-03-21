@@ -36,9 +36,15 @@ class WorksControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "work type should be work" do
+  test "work type should be node" do
     get work_url(@work), as: :json
-    assert_equal "work", json_response['data']['type']
+    assert_equal "node", json_response['data']['type']
+  end
+
+  test "work label should be Work" do
+    get work_url(@work), as: :json
+
+    assert_equal "Work", json_response['data']['attributes']['label']
   end
 
   test "should update work" do

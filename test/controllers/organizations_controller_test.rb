@@ -36,9 +36,15 @@ class OrganizationsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "organization type should be organization" do
+  test "organization type should be node" do
     get organization_url(@organization), as: :json
-    assert_equal "organization", json_response['data']['type']
+    assert_equal "node", json_response['data']['type']
+  end
+
+  test "organization label should be Organization" do
+    get organization_url(@organization), as: :json
+
+    assert_equal "Organization", json_response['data']['attributes']['label']
   end
 
   test "should update organization" do
