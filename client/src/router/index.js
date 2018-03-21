@@ -46,7 +46,7 @@ export default new Router({
           name: "calendar",
           component: NodeBrowse,
           props: {
-            type: "event"
+            label: "Event"
           }
         },
         {
@@ -54,7 +54,7 @@ export default new Router({
           name: "eventAdd",
           component: NodeForm,
           props: {
-            type: "event"
+            label: "Event"
           }
         },
         {
@@ -62,7 +62,7 @@ export default new Router({
           name: "eventEdit",
           component: NodeForm,
           props: {
-            type: "event"
+            label: "Event"
           }
         },
         {
@@ -70,7 +70,7 @@ export default new Router({
           name: "event",
           component: Node,
           props: {
-            type: "event"
+            label: "Event"
           }
         }
       ]
@@ -84,7 +84,7 @@ export default new Router({
           name: "directory",
           component: AgentBrowse,
           props: {
-            type: "agent"
+            label: "Agent"
           }
         },
         {
@@ -92,7 +92,7 @@ export default new Router({
           name: "people",
           component: NodeBrowse,
           props: {
-            type: "person"
+            label: "Person"
           }
         },
         {
@@ -100,7 +100,7 @@ export default new Router({
           name: "personAdd",
           component: NodeForm,
           props: {
-            type: "person"
+            label: "Person"
           }
         },
         {
@@ -108,7 +108,7 @@ export default new Router({
           name: "personEdit",
           component: NodeForm,
           props: {
-            type: "person"
+            label: "Person"
           }
         },
         {
@@ -116,7 +116,7 @@ export default new Router({
           name: "person",
           component: Node,
           props: {
-            type: "person"
+            label: "Person"
           }
         },
         {
@@ -124,7 +124,7 @@ export default new Router({
           name: "organizations",
           component: NodeBrowse,
           props: {
-            type: "organization"
+            label: "Organization"
           }
         },
         {
@@ -132,7 +132,7 @@ export default new Router({
           name: "organizationAdd",
           component: NodeForm,
           props: {
-            type: "organization"
+            label: "Organization"
           }
         },
         {
@@ -140,7 +140,7 @@ export default new Router({
           name: "organizationEdit",
           component: NodeForm,
           props: {
-            type: "organization"
+            label: "Organization"
           }
         },
         {
@@ -148,7 +148,7 @@ export default new Router({
           name: "organization",
           component: Node,
           props: {
-            type: "organization"
+            label: "Organization"
           }
         }
       ]

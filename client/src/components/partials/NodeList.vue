@@ -3,19 +3,19 @@
     <ul v-if="nodes && nodes.length > 0">
       <li class="node" v-for="n in nodes" :key="n.attributes.slug">
         <div class="data">
-          <span class="node-id">{{ n.id }}</span><router-link class="node-link" :to="{name: n.type, params: { node_id: n.id }}">{{ n.attributes.title }}</router-link>
+          <span class="node-id">{{ n.id }}</span><router-link class="node-link" :to="{name: n.attributes.label.toLowerCase(), params: { node_id: n.id }}">{{ n.attributes.title }}</router-link>
         </div>
         <div class="controls">
           <router-link :to="{
-            name: `${n.type}Edit`,
+            name: `${n.attributes.label.toLowerCase()}Edit`,
             params: {
               node_id: n.id
-            }}">Edit {{ type.toTitleCase() }}</router-link>
-          <button name="delete" :value="n" v-on:click="deleteNode(n)">Delete {{ type.toTitleCase() }}</button>
+            }}">Edit {{ label }}</router-link>
+          <button name="delete" :value="n" v-on:click="deleteNode(n)">Delete {{ label }}</button>
         </div>
       </li>
     </ul>
-    <p v-else>No {{ type.pluralize() }} are available.</p>
+    <p v-else>No {{ label.pluralize() }} are available.</p>
   </div>
 </template>
 
@@ -28,22 +28,22 @@ export default {
   name: "NodeList",
   mixins: [nodecrud],
   props: {
-    type: String
+    label: String
   },
   computed: {
     nodes() {
-      return this.$store.state[this.type.pluralize()];
+      return this.$store.state[this.label.toLowerCase().pluralize()];
     }
   },
   methods: {
     async deleteNode(node) {
-      await this.nodeDelete(this.type, node);
+      await this.nodeDelete(node);
       this.updateNodes();
     },
     async updateNodes() {
-      const json = await this.nodeBrowse(this.type);
+      const json = await this.nodeBrowse(this.label);
       this.$store.dispatch("storeNodes", {
-        type: this.type,
+        label: this.label,
         nodes: json
       });
     }

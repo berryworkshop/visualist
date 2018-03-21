@@ -1,7 +1,7 @@
 <template>
   <div>
     <h3>Browse Events</h3>
-    <node-list type="event"></node-list>
+    <node-list label="Event"></node-list>
 
     <nav class="controls">
       <router-link :to="{name: `eventAdd`}">Add Event</router-link>

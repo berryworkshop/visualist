@@ -1,7 +1,7 @@
 <template>
   <div>
     <h3>Browse People and Organizations</h3>
-    <node-list :type="type"></node-list>
+    <node-list :label="label"></node-list>
 
     <nav class="controls">
       <router-link :to="{name: `personAdd`}">Add Person</router-link>
@@ -21,7 +21,8 @@ export default {
     NodeList
   },
   props: {
-    type: String
+    label: String,
+    required: true
   }
 };
 </script>

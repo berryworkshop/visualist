@@ -1,7 +1,7 @@
 <template>
   <div id="node-form">
-    <h3 v-if="formType === 'add'">Add {{ type.toTitleCase() }}</h3>
-    <h3 v-else>Edit {{ type.toTitleCase() }}: {{ node.attributes.title }}</h3>
+    <h3 v-if="formType === 'add'">Add {{ label }}</h3>
+    <h3 v-else>Edit {{ label }}: {{ node.attributes.title }}</h3>
     <div>
       <label for="node-title">Title</label>
       <input type="text"
@@ -9,7 +9,7 @@
         required
         name="node-title"
         v-model="node.attributes.title"
-        :placeholder="`Provide a title for this ${type.toTitleCase()}`">
+        :placeholder="`Provide a title for this ${label}`">
     </div>
     <div>
       <label for="node-slug">Slug</label>
@@ -17,7 +17,7 @@
         required
         name="node-slug"
         v-model="slug"
-        :placeholder="`Provide a title for this ${type.toTitleCase()}`">
+        :placeholder="`Provide a title for this ${label}`">
     </div>
     <div>
       <label for="node-properties">Properties</label>
@@ -25,7 +25,7 @@
         name="node-properties"
         rows="5"
         v-model="node.attributes.properties"
-        :placeholder="`Provide properties for this ${type.toTitleCase()}, in valid JSON`"
+        :placeholder="`Provide properties for this ${label}, in valid JSON`"
         ></textarea>
     </div>
     <div>
@@ -34,21 +34,21 @@
         name="node-body"
         rows="5"
         v-model="node.attributes.body"
-        :placeholder="`Provide a description for this ${type.toTitleCase()}`"
+        :placeholder="`Provide a description for this ${label}`"
         ></textarea>
     </div>
 
     <nav class="controls">
       <template v-if="formType === 'add'">
         <button name="submit-button"
-            v-on:click="submitDone(proxyNode)">Submit {{ type.toTitleCase() }}</button>
+            v-on:click="submitDone(proxyNode)">Submit {{ label }}</button>
         <button name="submit-button"
-            v-on:click="submitAndAdd(proxyNode)">Submit and Create Another {{ type.toTitleCase() }}</button>
+            v-on:click="submitAndAdd(proxyNode)">Submit and Create Another {{ label }}</button>
       </template>
       <button name="submit-button" v-else
           v-on:click="submitEdit(proxyNode)">Submit</button>
       <button name="cancel-button" v-on:click.prevent="$router.go(-1)">Cancel</button>
-      <router-link :to="{name: 'calendar'}">Browse {{ type.pluralize().toTitleCase() }}</router-link>
+      <router-link :to="{name: 'calendar'}">Browse {{ label.toLowerCase().pluralize().toTitleCase() }}</router-link>
 
     </nav>
   </div>
@@ -75,6 +75,7 @@ export default {
         id: "",
         attributes: {
           title: "",
+          label: this.label,
           properties: "",
           body: "",
           slug: ""
@@ -84,7 +85,8 @@ export default {
   },
   mixins: [nodecrud],
   props: {
-    type: String
+    label: String,
+    required: true
   },
   computed: {
     proxyNode() {
@@ -92,6 +94,7 @@ export default {
         id: this.node.id,
         attributes: {
           title: this.node.attributes.title,
+          label: this.node.attributes.label,
           properties: this.node.attributes.properties,
           body: this.node.attributes.body,
           slug: this.slug
@@ -118,25 +121,25 @@ export default {
     const node_id = this.$route.params[`node_id`];
     if (node_id) {
       this.formType = "edit";
-      this.node = await this.nodeRead(this.type, node_id);
+      this.node = await this.nodeRead(node_id);
     }
   },
   methods: {
     /**
-     * Creates an Node, stores it, and updates the Calendar array
+     * Creates an Node, stores it, and updates the collection array
      */
     async submitAndAdd(node) {
-      await this.nodeAdd(this.type, node);
+      await this.nodeAdd(node);
       this.$emit("updateNodes");
       this.clearForm();
     },
     async submitDone(node) {
-      await this.nodeAdd(this.type, node);
+      await this.nodeAdd(node);
       this.$emit("updateNodes");
       this.$router.push({ name: "calendar" });
     },
     async submitEdit(node) {
-      await this.nodeEdit(this.type, node);
+      await this.nodeEdit(node);
       this.$emit("updateNodes");
       this.$router.push({ name: "calendar" });
     },
@@ -148,6 +151,7 @@ export default {
         id: "",
         attributes: {
           title: "",
+          label: this.label,
           properties: "",
           body: "",
           slug: ""

@@ -113,7 +113,7 @@ export default {
     const event_id = this.$route.params["event_id"];
     if (event_id) {
       this.formType = "edit";
-      this.event = await this.nodeRead("event", event_id);
+      this.event = await this.nodeRead(event_id);
     }
   },
   methods: {
@@ -121,17 +121,17 @@ export default {
      * Creates an Event, stores it, and updates the Calendar array
      */
     async submitAndAdd(event) {
-      await this.nodeAdd("event", event);
+      await this.nodeAdd(event);
       this.$emit("updateEvents");
       this.clearForm();
     },
     async submitDone(event) {
-      await this.nodeAdd("event", event);
+      await this.nodeAdd(event);
       this.$emit("updateEvents");
       this.$router.push({ name: "calendar" });
     },
     async submitEdit(event) {
-      await this.nodeEdit("event", event);
+      await this.nodeEdit(event);
       this.$emit("updateEvents");
       this.$router.push({ name: "calendar" });
     },

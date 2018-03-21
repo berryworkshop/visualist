@@ -1,6 +1,6 @@
 <template>
   <div id="node">
-    <h3>{{ type.toTitleCase() }}: {{ node.attributes.title }}</h3>
+    <h3>{{ label }}: {{ node.attributes.title }}</h3>
 
     <p v-if="node.attributes.properties">{{ node.attributes.properties }}</p>
     <p v-else><em>No properties available.</em></p>
@@ -13,7 +13,7 @@
 
     <nav class="controls">
       <router-link :to="{
-          name: `${type}Edit`,
+          name: `${label.toLowerCase()}Edit`,
           params: {
             node_id: this.$route.params['node_id']
           }}">Edit Node</router-link>
@@ -36,7 +36,8 @@ export default {
   },
   mixins: [nodecrud],
   props: {
-    type: String
+    label: String,
+    required: true
   },
   data() {
     return {
@@ -59,7 +60,7 @@ export default {
   },
   async created() {
     const node_id = this.$route.params["node_id"];
-    this.node = await this.nodeRead("node", node_id);
+    this.node = await this.nodeRead(node_id);
   }
 };
 </script>

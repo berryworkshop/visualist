@@ -15828,3 +15828,1746 @@ Completed 200 OK in 21ms (Views: 0.9ms | ActiveRecord: 1.5ms)
 
   [1m[36mEvent Load (1.5ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') LIMIT $1[0m  [["LIMIT", 11]]
   [1m[36mEvent Load (2.1ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') ORDER BY "nodes"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/events" for 127.0.0.1 at 2018-03-21 11:59:27 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (1.2ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 31ms (Views: 0.3ms | ActiveRecord: 12.1ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-21 12:13:15 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (1.8ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/events/14" for 127.0.0.1 at 2018-03-21 12:13:31 -0500
+Processing by EventsController#show as */*
+  Parameters: {"id"=>"14"}
+  [1m[36mEvent Load (1.2ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') AND "nodes"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:9
+Completed 200 OK in 22ms (Views: 0.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-21 12:13:34 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (1.1ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-21 12:14:09 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/nodes/14" for 127.0.0.1 at 2018-03-21 12:14:11 -0500
+Processing by NodesController#show as */*
+  Parameters: {"id"=>"14"}
+  [1m[36mNode Load (0.8ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-21 12:14:13 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/events/14" for 127.0.0.1 at 2018-03-21 12:14:14 -0500
+Processing by EventsController#destroy as */*
+  Parameters: {"id"=>"14"}
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event') AND "nodes"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:40
+  [1m[36mEvent Destroy (1.9ms)[0m  [1m[31mDELETE FROM "nodes" WHERE "nodes"."type" IN ('Event') AND "nodes"."id" = $1[0m  [["id", 14]]
+  ↳ app/controllers/nodes_controller.rb:40
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:40
+Completed 204 No Content in 9ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-21 12:14:14 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/events/" for 127.0.0.1 at 2018-03-21 12:14:20 -0500
+Processing by EventsController#create as */*
+  Parameters: {"id"=>"", "attributes"=>{"title"=>"flaggle", "properties"=>"", "body"=>"", "slug"=>"flaggle"}, "event"=>{"id"=>""}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:22
+  [1m[36mNode Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE LOWER("nodes"."slug") = LOWER($1) LIMIT $2[0m  [["slug", "flaggle"], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:22
+  [1m[36mEvent Create (1.6ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "properties", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["type", "Event"], ["slug", "flaggle"], ["title", "flaggle"], ["properties", "{}"], ["body", ""], ["created_at", "2018-03-21 17:14:20.180066"], ["updated_at", "2018-03-21 17:14:20.180066"]]
+  ↳ app/controllers/nodes_controller.rb:22
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:22
+Completed 201 Created in 22ms (Views: 1.1ms | ActiveRecord: 11.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-21 12:14:20 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/agents" for 127.0.0.1 at 2018-03-21 12:14:22 -0500
+Processing by AgentsController#index as */*
+  [1m[36mNode Load (1.1ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ($1, $2)[0m  [["type", "Person"], ["type", "Organization"]]
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 28ms (Views: 0.8ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/nodes/1" for 127.0.0.1 at 2018-03-21 12:14:25 -0500
+Processing by NodesController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mNode Load (0.9ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+Completed 200 OK in 6ms (Views: 1.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/agents" for 127.0.0.1 at 2018-03-21 12:14:27 -0500
+Processing by AgentsController#index as */*
+  [1m[36mNode Load (1.0ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ($1, $2)[0m  [["type", "Person"], ["type", "Organization"]]
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 6ms (Views: 1.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/nodes/6" for 127.0.0.1 at 2018-03-21 12:14:28 -0500
+Processing by NodesController#show as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mNode Load (0.7ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/agents" for 127.0.0.1 at 2018-03-21 12:14:29 -0500
+Processing by AgentsController#index as */*
+  [1m[36mNode Load (0.8ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ($1, $2)[0m  [["type", "Person"], ["type", "Organization"]]
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 5ms (Views: 1.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/organizations/6" for 127.0.0.1 at 2018-03-21 12:14:31 -0500
+Processing by OrganizationsController#show as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mOrganization Load (0.7ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Organization') AND "nodes"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/organizations_controller.rb:9
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.7ms)
+
+
+Started PATCH "/organizations/6" for 127.0.0.1 at 2018-03-21 12:14:58 -0500
+Processing by OrganizationsController#update as */*
+  Parameters: {"id"=>"6", "attributes"=>{"title"=>"Art Institute of Chicago", "properties"=>{}, "body"=>"Chicago's crown jewel.", "slug"=>"aicblork"}, "organization"=>{"id"=>"6"}}
+  [1m[36mOrganization Load (0.6ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Organization') AND "nodes"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/organizations_controller.rb:9
+Unpermitted parameter: :properties
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:31
+  [1m[36mNode Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE LOWER("nodes"."slug") = LOWER($1) AND "nodes"."id" != $2 LIMIT $3[0m  [["slug", "aicblork"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:31
+  [1m[36mOrganization Update (0.8ms)[0m  [1m[33mUPDATE "nodes" SET "slug" = $1, "updated_at" = $2 WHERE "nodes"."id" = $3[0m  [["slug", "aicblork"], ["updated_at", "2018-03-21 17:14:58.188115"], ["id", 6]]
+  ↳ app/controllers/nodes_controller.rb:31
+  [1m[35m (7.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:31
+Completed 200 OK in 17ms (Views: 0.5ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-21 12:14:58 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (2.0ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/agents" for 127.0.0.1 at 2018-03-21 12:15:03 -0500
+Processing by AgentsController#index as */*
+  [1m[36mNode Load (0.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ($1, $2)[0m  [["type", "Person"], ["type", "Organization"]]
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 6ms (Views: 1.7ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/agents/6" for 127.0.0.1 at 2018-03-21 12:15:05 -0500
+  
+ActionController::RoutingError (No route matches [DELETE] "/agents/6"):
+  
+actionpack (5.2.0.rc1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.0.rc1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0.rc1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0.rc1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0.rc1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0.rc1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0.rc1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0.rc1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.0.rc1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0.rc1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0.rc1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0.rc1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0.rc1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.0.rc1) lib/rails/engine.rb:524:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/agents" for 127.0.0.1 at 2018-03-21 12:15:05 -0500
+Processing by AgentsController#index as */*
+  [1m[36mNode Load (0.7ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ($1, $2)[0m  [["type", "Person"], ["type", "Organization"]]
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 5ms (Views: 1.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/agents" for 127.0.0.1 at 2018-03-21 12:17:04 -0500
+Processing by AgentsController#index as */*
+  [1m[36mNode Load (0.8ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ($1, $2)[0m  [["type", "Person"], ["type", "Organization"]]
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 6ms (Views: 1.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/agents" for 127.0.0.1 at 2018-03-21 12:18:40 -0500
+Processing by AgentsController#index as */*
+  [1m[36mNode Load (0.8ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ($1, $2)[0m  [["type", "Person"], ["type", "Organization"]]
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 6ms (Views: 1.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/organizations/6" for 127.0.0.1 at 2018-03-21 12:19:37 -0500
+Processing by OrganizationsController#show as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mOrganization Load (1.1ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Organization') AND "nodes"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/organizations_controller.rb:9
+Completed 200 OK in 5ms (Views: 1.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/agents" for 127.0.0.1 at 2018-03-21 12:19:38 -0500
+Processing by AgentsController#index as */*
+  [1m[36mNode Load (1.1ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ($1, $2)[0m  [["type", "Person"], ["type", "Organization"]]
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 8ms (Views: 1.9ms | ActiveRecord: 1.1ms)
+
+
+Started DELETE "/agents/6" for 127.0.0.1 at 2018-03-21 12:19:43 -0500
+  
+ActionController::RoutingError (No route matches [DELETE] "/agents/6"):
+  
+actionpack (5.2.0.rc1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.0.rc1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0.rc1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0.rc1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0.rc1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0.rc1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0.rc1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0.rc1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.0.rc1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0.rc1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0.rc1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0.rc1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0.rc1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.0.rc1) lib/rails/engine.rb:524:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/agents" for 127.0.0.1 at 2018-03-21 12:19:43 -0500
+Processing by AgentsController#index as */*
+  [1m[36mNode Load (0.5ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ($1, $2)[0m  [["type", "Person"], ["type", "Organization"]]
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 5ms (Views: 1.1ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/agents/1" for 127.0.0.1 at 2018-03-21 12:19:46 -0500
+  
+ActionController::RoutingError (No route matches [DELETE] "/agents/1"):
+  
+actionpack (5.2.0.rc1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.0.rc1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0.rc1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0.rc1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0.rc1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0.rc1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0.rc1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0.rc1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.0.rc1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0.rc1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0.rc1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0.rc1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0.rc1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.0.rc1) lib/rails/engine.rb:524:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/agents" for 127.0.0.1 at 2018-03-21 12:19:46 -0500
+Processing by AgentsController#index as */*
+  [1m[36mNode Load (0.5ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ($1, $2)[0m  [["type", "Person"], ["type", "Organization"]]
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 4ms (Views: 1.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/agents" for 127.0.0.1 at 2018-03-21 12:21:02 -0500
+Processing by AgentsController#index as */*
+  [1m[36mNode Load (0.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ($1, $2)[0m  [["type", "Person"], ["type", "Organization"]]
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 4ms (Views: 0.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/agents" for 127.0.0.1 at 2018-03-21 12:21:41 -0500
+Processing by AgentsController#index as */*
+  [1m[36mNode Load (0.8ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ($1, $2)[0m  [["type", "Person"], ["type", "Organization"]]
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 6ms (Views: 1.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/agents" for 127.0.0.1 at 2018-03-21 12:22:27 -0500
+Processing by AgentsController#index as */*
+  [1m[36mNode Load (0.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ($1, $2)[0m  [["type", "Person"], ["type", "Organization"]]
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 4ms (Views: 1.1ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/nodes/6" for 127.0.0.1 at 2018-03-21 12:22:30 -0500
+Processing by NodesController#destroy as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mNode Load (0.6ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:40
+  [1m[36mOrganization Destroy (0.5ms)[0m  [1m[31mDELETE FROM "nodes" WHERE "nodes"."type" IN ('Organization') AND "nodes"."id" = $1[0m  [["id", 6]]
+  ↳ app/controllers/nodes_controller.rb:40
+  [1m[35m (8.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:40
+Completed 204 No Content in 14ms (ActiveRecord: 9.9ms)
+
+
+Started GET "/agents" for 127.0.0.1 at 2018-03-21 12:22:30 -0500
+Processing by AgentsController#index as */*
+  [1m[36mNode Load (0.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ($1, $2)[0m  [["type", "Person"], ["type", "Organization"]]
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 4ms (Views: 1.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/agents" for 127.0.0.1 at 2018-03-21 12:25:10 -0500
+Processing by AgentsController#index as */*
+  [1m[36mNode Load (0.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ($1, $2)[0m  [["type", "Person"], ["type", "Organization"]]
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/agents" for 127.0.0.1 at 2018-03-21 12:27:34 -0500
+Processing by AgentsController#index as */*
+  [1m[36mNode Load (1.2ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ($1, $2)[0m  [["type", "Person"], ["type", "Organization"]]
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 6ms (Views: 1.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/nodes/1" for 127.0.0.1 at 2018-03-21 12:28:01 -0500
+Processing by NodesController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mNode Load (2.5ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+Completed 200 OK in 6ms (Views: 0.7ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/agents" for 127.0.0.1 at 2018-03-21 12:28:02 -0500
+Processing by AgentsController#index as */*
+  [1m[36mNode Load (3.5ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ($1, $2)[0m  [["type", "Person"], ["type", "Organization"]]
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 9ms (Views: 1.9ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/nodes/1" for 127.0.0.1 at 2018-03-21 12:28:03 -0500
+Processing by NodesController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mNode Load (2.5ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+Completed 200 OK in 6ms (Views: 0.6ms | ActiveRecord: 2.5ms)
+
+
+Started PATCH "/nodes/1" for 127.0.0.1 at 2018-03-21 12:28:07 -0500
+Processing by NodesController#update as */*
+  Parameters: {"id"=>"1", "attributes"=>{"title"=>"Berry, Allan", "properties"=>{}, "body"=>"Allan is awesome.", "slug"=>"berry_allano"}, "node"=>{"id"=>"1"}}
+  [1m[36mNode Load (0.6ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+Unpermitted parameter: :properties
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:31
+  [1m[36mNode Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE LOWER("nodes"."slug") = LOWER($1) AND "nodes"."id" != $2 LIMIT $3[0m  [["slug", "berry_allano"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:31
+  [1m[36mPerson Update (0.6ms)[0m  [1m[33mUPDATE "nodes" SET "slug" = $1, "updated_at" = $2 WHERE "nodes"."id" = $3[0m  [["slug", "berry_allano"], ["updated_at", "2018-03-21 17:28:07.750781"], ["id", 1]]
+  ↳ app/controllers/nodes_controller.rb:31
+  [1m[35m (8.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:31
+Completed 200 OK in 17ms (Views: 0.9ms | ActiveRecord: 9.9ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-21 12:28:07 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (2.2ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 2.2ms)
+
+
+Started DELETE "/nodes/15" for 127.0.0.1 at 2018-03-21 12:28:09 -0500
+Processing by NodesController#destroy as */*
+  Parameters: {"id"=>"15"}
+  [1m[36mNode Load (0.6ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:40
+  [1m[36mEvent Destroy (0.7ms)[0m  [1m[31mDELETE FROM "nodes" WHERE "nodes"."type" IN ('Event') AND "nodes"."id" = $1[0m  [["id", 15]]
+  ↳ app/controllers/nodes_controller.rb:40
+  [1m[35m (8.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:40
+Completed 204 No Content in 15ms (ActiveRecord: 10.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-21 12:28:09 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/agents" for 127.0.0.1 at 2018-03-21 12:28:12 -0500
+Processing by AgentsController#index as */*
+  [1m[36mNode Load (2.5ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ($1, $2)[0m  [["type", "Person"], ["type", "Organization"]]
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 8ms (Views: 1.8ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/nodes/2" for 127.0.0.1 at 2018-03-21 12:28:14 -0500
+Processing by NodesController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mNode Load (1.1ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+Completed 200 OK in 5ms (Views: 0.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/nodes/2" for 127.0.0.1 at 2018-03-21 12:28:47 -0500
+Processing by NodesController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mNode Load (0.6ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/nodes/2" for 127.0.0.1 at 2018-03-21 12:28:53 -0500
+Processing by NodesController#update as */*
+  Parameters: {"id"=>"2", "attributes"=>{"title"=>"Duguid, Megg", "properties"=>{}, "body"=>"Meg is magnificent.", "slug"=>"duguid_meg"}, "node"=>{"id"=>"2"}}
+  [1m[36mNode Load (0.6ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+Unpermitted parameter: :properties
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:31
+  [1m[36mNode Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE LOWER("nodes"."slug") = LOWER($1) AND "nodes"."id" != $2 LIMIT $3[0m  [["slug", "duguid_meg"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:31
+  [1m[36mPerson Update (0.6ms)[0m  [1m[33mUPDATE "nodes" SET "title" = $1, "updated_at" = $2 WHERE "nodes"."id" = $3[0m  [["title", "Duguid, Megg"], ["updated_at", "2018-03-21 17:28:53.166552"], ["id", 2]]
+  ↳ app/controllers/nodes_controller.rb:31
+  [1m[35m (7.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:31
+Completed 200 OK in 18ms (Views: 0.8ms | ActiveRecord: 9.7ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-21 12:28:53 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-21 12:29:57 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/nodes/" for 127.0.0.1 at 2018-03-21 12:30:04 -0500
+Processing by NodesController#create as */*
+  Parameters: {"id"=>"", "attributes"=>{"title"=>"fdsa", "properties"=>"", "body"=>"", "slug"=>"fdsa"}, "node"=>{"id"=>""}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:22
+  [1m[36mNode Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE LOWER("nodes"."slug") = LOWER($1) LIMIT $2[0m  [["slug", "fdsa"], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:22
+  [1m[36mNode Create (0.6ms)[0m  [1m[32mINSERT INTO "nodes" ("slug", "title", "properties", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["slug", "fdsa"], ["title", "fdsa"], ["properties", "{}"], ["body", ""], ["created_at", "2018-03-21 17:30:04.913982"], ["updated_at", "2018-03-21 17:30:04.913982"]]
+  ↳ app/controllers/nodes_controller.rb:22
+  [1m[35m (8.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:22
+Completed 201 Created in 18ms (Views: 1.1ms | ActiveRecord: 10.4ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-21 12:30:04 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/agents" for 127.0.0.1 at 2018-03-21 12:30:16 -0500
+Processing by AgentsController#index as */*
+  [1m[36mNode Load (1.0ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ($1, $2)[0m  [["type", "Person"], ["type", "Organization"]]
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 6ms (Views: 1.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-21 12:30:21 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/nodes/" for 127.0.0.1 at 2018-03-21 12:30:27 -0500
+Processing by NodesController#create as */*
+  Parameters: {"id"=>"", "attributes"=>{"title"=>"blaggle", "properties"=>"", "body"=>"", "slug"=>"blaggle"}, "node"=>{"id"=>""}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:22
+  [1m[36mNode Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE LOWER("nodes"."slug") = LOWER($1) LIMIT $2[0m  [["slug", "blaggle"], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:22
+  [1m[36mNode Create (0.8ms)[0m  [1m[32mINSERT INTO "nodes" ("slug", "title", "properties", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["slug", "blaggle"], ["title", "blaggle"], ["properties", "{}"], ["body", ""], ["created_at", "2018-03-21 17:30:27.879602"], ["updated_at", "2018-03-21 17:30:27.879602"]]
+  ↳ app/controllers/nodes_controller.rb:22
+  [1m[35m (7.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:22
+Completed 201 Created in 16ms (Views: 0.7ms | ActiveRecord: 9.4ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-21 12:30:27 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/agents" for 127.0.0.1 at 2018-03-21 12:30:49 -0500
+Processing by AgentsController#index as */*
+  [1m[36mNode Load (0.8ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ($1, $2)[0m  [["type", "Person"], ["type", "Organization"]]
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 5ms (Views: 1.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/nodes/3" for 127.0.0.1 at 2018-03-21 12:31:22 -0500
+Processing by NodesController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mNode Load (3.5ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+Completed 200 OK in 6ms (Views: 0.6ms | ActiveRecord: 3.5ms)
+
+
+Started PATCH "/nodes/3" for 127.0.0.1 at 2018-03-21 12:31:26 -0500
+Processing by NodesController#update as */*
+  Parameters: {"id"=>"3", "attributes"=>{"title"=>"Thomas, Michaell", "properties"=>{}, "body"=>"Michael is magical.", "slug"=>"thomas_michael"}, "node"=>{"id"=>"3"}}
+  [1m[36mNode Load (0.6ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+Unpermitted parameter: :properties
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:31
+  [1m[36mNode Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE LOWER("nodes"."slug") = LOWER($1) AND "nodes"."id" != $2 LIMIT $3[0m  [["slug", "thomas_michael"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:31
+  [1m[36mPerson Update (0.7ms)[0m  [1m[33mUPDATE "nodes" SET "title" = $1, "updated_at" = $2 WHERE "nodes"."id" = $3[0m  [["title", "Thomas, Michaell"], ["updated_at", "2018-03-21 17:31:26.449252"], ["id", 3]]
+  ↳ app/controllers/nodes_controller.rb:31
+  [1m[35m (4.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:31
+Completed 200 OK in 14ms (Views: 0.6ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-21 12:31:26 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-21 12:34:29 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/nodes/" for 127.0.0.1 at 2018-03-21 12:34:35 -0500
+Processing by NodesController#create as */*
+  Parameters: {"id"=>"", "attributes"=>{"title"=>"blabble", "properties"=>{"label"=>"Event"}, "body"=>"", "slug"=>"blabble"}, "node"=>{"id"=>""}}
+Unpermitted parameter: :properties
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:22
+  [1m[36mNode Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE LOWER("nodes"."slug") = LOWER($1) LIMIT $2[0m  [["slug", "blabble"], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:22
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/nodes_controller.rb:22
+Completed 422 Unprocessable Entity in 18ms (Views: 0.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-21 12:34:35 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (1.1ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-21 12:35:42 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/nodes/" for 127.0.0.1 at 2018-03-21 12:35:47 -0500
+Processing by NodesController#create as */*
+  Parameters: {"id"=>"", "attributes"=>{"title"=>"flaggle", "label"=>"Event", "properties"=>"", "body"=>"", "slug"=>"flaggle"}, "node"=>{"id"=>""}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:22
+  [1m[36mNode Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE LOWER("nodes"."slug") = LOWER($1) LIMIT $2[0m  [["slug", "flaggle"], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:22
+  [1m[36mNode Create (0.8ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "properties", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["type", "Event"], ["slug", "flaggle"], ["title", "flaggle"], ["properties", "{}"], ["body", ""], ["created_at", "2018-03-21 17:35:47.312291"], ["updated_at", "2018-03-21 17:35:47.312291"]]
+  ↳ app/controllers/nodes_controller.rb:22
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:22
+Completed 201 Created in 8ms (Views: 0.6ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-21 12:35:47 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (1.1ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 4ms (Views: 0.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/nodes/18" for 127.0.0.1 at 2018-03-21 12:35:49 -0500
+Processing by NodesController#show as */*
+  Parameters: {"id"=>"18"}
+  [1m[36mNode Load (1.1ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+Completed 200 OK in 5ms (Views: 0.8ms | ActiveRecord: 1.1ms)
+
+
+Started PATCH "/nodes/18" for 127.0.0.1 at 2018-03-21 12:35:54 -0500
+Processing by NodesController#update as */*
+  Parameters: {"id"=>"18", "attributes"=>{"title"=>"blabble", "label"=>"Event", "properties"=>{}, "body"=>"", "slug"=>"flaggle"}, "node"=>{"id"=>"18"}}
+  [1m[36mNode Load (0.8ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+Unpermitted parameter: :properties
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:31
+  [1m[36mNode Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE LOWER("nodes"."slug") = LOWER($1) AND "nodes"."id" != $2 LIMIT $3[0m  [["slug", "flaggle"], ["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:31
+  [1m[36mEvent Update (0.6ms)[0m  [1m[33mUPDATE "nodes" SET "title" = $1, "updated_at" = $2 WHERE "nodes"."id" = $3[0m  [["title", "blabble"], ["updated_at", "2018-03-21 17:35:54.530951"], ["id", 18]]
+  ↳ app/controllers/nodes_controller.rb:31
+  [1m[35m (8.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:31
+Completed 200 OK in 19ms (Views: 0.5ms | ActiveRecord: 10.8ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-21 12:35:54 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/nodes/18" for 127.0.0.1 at 2018-03-21 12:35:56 -0500
+Processing by NodesController#destroy as */*
+  Parameters: {"id"=>"18"}
+  [1m[36mNode Load (0.6ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:40
+  [1m[36mEvent Destroy (0.5ms)[0m  [1m[31mDELETE FROM "nodes" WHERE "nodes"."type" IN ('Event') AND "nodes"."id" = $1[0m  [["id", 18]]
+  ↳ app/controllers/nodes_controller.rb:40
+  [1m[35m (8.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:40
+Completed 204 No Content in 14ms (ActiveRecord: 9.8ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-21 12:35:56 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-21 12:38:04 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/agents" for 127.0.0.1 at 2018-03-21 12:38:17 -0500
+Processing by AgentsController#index as */*
+  [1m[36mNode Load (0.5ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ($1, $2)[0m  [["type", "Person"], ["type", "Organization"]]
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 4ms (Views: 1.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/nodes/4" for 127.0.0.1 at 2018-03-21 12:38:19 -0500
+Processing by NodesController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mNode Load (1.8ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/nodes/4" for 127.0.0.1 at 2018-03-21 12:38:56 -0500
+Processing by NodesController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mNode Load (0.8ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/agents" for 127.0.0.1 at 2018-03-21 12:38:58 -0500
+Processing by AgentsController#index as */*
+  [1m[36mNode Load (3.3ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ($1, $2)[0m  [["type", "Person"], ["type", "Organization"]]
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 8ms (Views: 1.6ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/nodes/3" for 127.0.0.1 at 2018-03-21 12:39:03 -0500
+Processing by NodesController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mNode Load (0.8ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+Completed 200 OK in 4ms (Views: 0.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/nodes/3" for 127.0.0.1 at 2018-03-21 12:39:07 -0500
+Processing by NodesController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mNode Load (0.8ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.8ms)
+
+
+Started PATCH "/nodes/3" for 127.0.0.1 at 2018-03-21 12:39:12 -0500
+Processing by NodesController#update as */*
+  Parameters: {"id"=>"3", "attributes"=>{"title"=>"Thomas, Michael", "label"=>"Person", "properties"=>{}, "body"=>"Michael is magical.", "slug"=>"thomas_michael"}, "node"=>{"id"=>"3"}}
+  [1m[36mNode Load (0.7ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+Unpermitted parameter: :properties
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:31
+  [1m[36mNode Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE LOWER("nodes"."slug") = LOWER($1) AND "nodes"."id" != $2 LIMIT $3[0m  [["slug", "thomas_michael"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:31
+  [1m[36mPerson Update (0.6ms)[0m  [1m[33mUPDATE "nodes" SET "title" = $1, "updated_at" = $2 WHERE "nodes"."id" = $3[0m  [["title", "Thomas, Michael"], ["updated_at", "2018-03-21 17:39:12.225580"], ["id", 3]]
+  ↳ app/controllers/nodes_controller.rb:31
+  [1m[35m (8.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:31
+Completed 200 OK in 18ms (Views: 0.5ms | ActiveRecord: 10.8ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-21 12:39:12 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (2.2ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/nodes/" for 127.0.0.1 at 2018-03-21 12:39:21 -0500
+Processing by NodesController#create as */*
+  Parameters: {"id"=>"", "attributes"=>{"title"=>"New Event", "label"=>"Event", "properties"=>"", "body"=>"", "slug"=>"new-event"}, "node"=>{"id"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:22
+  [1m[36mNode Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE LOWER("nodes"."slug") = LOWER($1) LIMIT $2[0m  [["slug", "new-event"], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:22
+  [1m[36mNode Create (8.6ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "properties", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["type", "Event"], ["slug", "new-event"], ["title", "New Event"], ["properties", "{}"], ["body", ""], ["created_at", "2018-03-21 17:39:21.119972"], ["updated_at", "2018-03-21 17:39:21.119972"]]
+  ↳ app/controllers/nodes_controller.rb:22
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:22
+Completed 201 Created in 17ms (Views: 0.7ms | ActiveRecord: 10.2ms)
+
+
+Started POST "/nodes/" for 127.0.0.1 at 2018-03-21 12:39:34 -0500
+Processing by NodesController#create as */*
+  Parameters: {"id"=>"", "attributes"=>{"title"=>"It's Going OK!", "properties"=>"", "body"=>"", "slug"=>"it's-going-ok!"}, "node"=>{"id"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:22
+  [1m[36mNode Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE LOWER("nodes"."slug") = LOWER($1) LIMIT $2[0m  [["slug", "it's-going-ok!"], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:22
+  [1m[36mNode Create (0.5ms)[0m  [1m[32mINSERT INTO "nodes" ("slug", "title", "properties", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["slug", "it's-going-ok!"], ["title", "It's Going OK!"], ["properties", "{}"], ["body", ""], ["created_at", "2018-03-21 17:39:34.503512"], ["updated_at", "2018-03-21 17:39:34.503512"]]
+  ↳ app/controllers/nodes_controller.rb:22
+  [1m[35m (8.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:22
+Completed 201 Created in 15ms (Views: 0.7ms | ActiveRecord: 9.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-21 12:39:34 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/nodes/" for 127.0.0.1 at 2018-03-21 12:39:53 -0500
+Processing by NodesController#create as */*
+  Parameters: {"id"=>"", "attributes"=>{"title"=>"fghjk", "label"=>"Event", "properties"=>"", "body"=>"", "slug"=>"fghjk"}, "node"=>{"id"=>""}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:22
+  [1m[36mNode Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE LOWER("nodes"."slug") = LOWER($1) LIMIT $2[0m  [["slug", "fghjk"], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:22
+  [1m[36mNode Create (0.5ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "properties", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["type", "Event"], ["slug", "fghjk"], ["title", "fghjk"], ["properties", "{}"], ["body", ""], ["created_at", "2018-03-21 17:39:53.272345"], ["updated_at", "2018-03-21 17:39:53.272345"]]
+  ↳ app/controllers/nodes_controller.rb:22
+  [1m[35m (8.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:22
+Completed 201 Created in 15ms (Views: 0.8ms | ActiveRecord: 9.5ms)
+
+
+Started POST "/nodes/" for 127.0.0.1 at 2018-03-21 12:39:58 -0500
+Processing by NodesController#create as */*
+  Parameters: {"id"=>"", "attributes"=>{"title"=>"sdfghjk", "properties"=>"", "body"=>"", "slug"=>"sdfghjk"}, "node"=>{"id"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:22
+  [1m[36mNode Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE LOWER("nodes"."slug") = LOWER($1) LIMIT $2[0m  [["slug", "sdfghjk"], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:22
+  [1m[36mNode Create (0.5ms)[0m  [1m[32mINSERT INTO "nodes" ("slug", "title", "properties", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["slug", "sdfghjk"], ["title", "sdfghjk"], ["properties", "{}"], ["body", ""], ["created_at", "2018-03-21 17:39:58.139015"], ["updated_at", "2018-03-21 17:39:58.139015"]]
+  ↳ app/controllers/nodes_controller.rb:22
+  [1m[35m (7.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:22
+Completed 201 Created in 15ms (Views: 0.9ms | ActiveRecord: 9.2ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-21 12:39:58 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (3.0ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 7ms (Views: 0.7ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-21 12:42:12 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/nodes/21" for 127.0.0.1 at 2018-03-21 12:43:05 -0500
+Processing by NodesController#show as */*
+  Parameters: {"id"=>"21"}
+  [1m[36mNode Load (1.9ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+Completed 200 OK in 5ms (Views: 0.5ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/nodes/21" for 127.0.0.1 at 2018-03-21 12:43:08 -0500
+Processing by NodesController#show as */*
+  Parameters: {"id"=>"21"}
+  [1m[36mNode Load (1.1ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+Completed 200 OK in 7ms (Views: 0.6ms | ActiveRecord: 1.1ms)
+
+
+Started PATCH "/nodes/21" for 127.0.0.1 at 2018-03-21 12:43:12 -0500
+Processing by NodesController#update as */*
+  Parameters: {"id"=>"21", "attributes"=>{"title"=>"fghjk", "label"=>"Event", "properties"=>{}, "body"=>"", "slug"=>"fghjkfds"}, "node"=>{"id"=>"21"}}
+  [1m[36mNode Load (0.5ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+Unpermitted parameter: :properties
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:31
+  [1m[36mNode Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE LOWER("nodes"."slug") = LOWER($1) AND "nodes"."id" != $2 LIMIT $3[0m  [["slug", "fghjkfds"], ["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:31
+  [1m[36mEvent Update (0.6ms)[0m  [1m[33mUPDATE "nodes" SET "slug" = $1, "updated_at" = $2 WHERE "nodes"."id" = $3[0m  [["slug", "fghjkfds"], ["updated_at", "2018-03-21 17:43:12.447177"], ["id", 21]]
+  ↳ app/controllers/nodes_controller.rb:31
+  [1m[35m (8.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:31
+Completed 200 OK in 19ms (Views: 0.8ms | ActiveRecord: 10.1ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-21 12:43:12 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (3.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 7ms (Views: 0.7ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/nodes/21" for 127.0.0.1 at 2018-03-21 12:43:16 -0500
+Processing by NodesController#show as */*
+  Parameters: {"id"=>"21"}
+  [1m[36mNode Load (2.3ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+Completed 200 OK in 8ms (Views: 0.5ms | ActiveRecord: 2.3ms)
+
+
+Started PATCH "/nodes/21" for 127.0.0.1 at 2018-03-21 12:43:24 -0500
+Processing by NodesController#update as */*
+  Parameters: {"id"=>"21", "attributes"=>{"title"=>"fghjklm", "label"=>"Event", "properties"=>{}, "body"=>"", "slug"=>"fghjkfdsfdsa"}, "node"=>{"id"=>"21"}}
+  [1m[36mNode Load (0.6ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+Unpermitted parameter: :properties
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:31
+  [1m[36mNode Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE LOWER("nodes"."slug") = LOWER($1) AND "nodes"."id" != $2 LIMIT $3[0m  [["slug", "fghjkfdsfdsa"], ["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:31
+  [1m[36mEvent Update (0.6ms)[0m  [1m[33mUPDATE "nodes" SET "slug" = $1, "title" = $2, "updated_at" = $3 WHERE "nodes"."id" = $4[0m  [["slug", "fghjkfdsfdsa"], ["title", "fghjklm"], ["updated_at", "2018-03-21 17:43:24.485335"], ["id", 21]]
+  ↳ app/controllers/nodes_controller.rb:31
+  [1m[35m (7.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:31
+Completed 200 OK in 18ms (Views: 0.6ms | ActiveRecord: 10.2ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-21 12:43:24 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (3.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 7ms (Views: 0.8ms | ActiveRecord: 3.6ms)
+
+
+Started POST "/nodes/" for 127.0.0.1 at 2018-03-21 12:43:31 -0500
+Processing by NodesController#create as */*
+  Parameters: {"id"=>"", "attributes"=>{"title"=>"blaggle", "label"=>"Event", "properties"=>"", "body"=>"", "slug"=>"blaggle"}, "node"=>{"id"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:22
+  [1m[36mNode Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE LOWER("nodes"."slug") = LOWER($1) LIMIT $2[0m  [["slug", "blaggle"], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:22
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/nodes_controller.rb:22
+Completed 422 Unprocessable Entity in 7ms (Views: 0.4ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/nodes/" for 127.0.0.1 at 2018-03-21 12:44:04 -0500
+Processing by NodesController#create as */*
+  Parameters: {"id"=>"", "attributes"=>{"title"=>"gllkjpofdsa", "properties"=>"", "body"=>"", "slug"=>"gllkjpofdsa"}, "node"=>{"id"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:22
+  [1m[36mNode Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE LOWER("nodes"."slug") = LOWER($1) LIMIT $2[0m  [["slug", "gllkjpofdsa"], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:22
+  [1m[36mNode Create (0.5ms)[0m  [1m[32mINSERT INTO "nodes" ("slug", "title", "properties", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["slug", "gllkjpofdsa"], ["title", "gllkjpofdsa"], ["properties", "{}"], ["body", ""], ["created_at", "2018-03-21 17:44:04.258405"], ["updated_at", "2018-03-21 17:44:04.258405"]]
+  ↳ app/controllers/nodes_controller.rb:22
+  [1m[35m (8.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:22
+Completed 201 Created in 15ms (Views: 0.6ms | ActiveRecord: 9.5ms)
+
+
+Started POST "/nodes/" for 127.0.0.1 at 2018-03-21 12:44:10 -0500
+Processing by NodesController#create as */*
+  Parameters: {"id"=>"", "attributes"=>{"title"=>"goofball", "properties"=>"", "body"=>"", "slug"=>"goofball"}, "node"=>{"id"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:22
+  [1m[36mNode Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE LOWER("nodes"."slug") = LOWER($1) LIMIT $2[0m  [["slug", "goofball"], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:22
+  [1m[36mNode Create (0.5ms)[0m  [1m[32mINSERT INTO "nodes" ("slug", "title", "properties", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["slug", "goofball"], ["title", "goofball"], ["properties", "{}"], ["body", ""], ["created_at", "2018-03-21 17:44:10.761489"], ["updated_at", "2018-03-21 17:44:10.761489"]]
+  ↳ app/controllers/nodes_controller.rb:22
+  [1m[35m (8.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:22
+Completed 201 Created in 16ms (Views: 0.8ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-21 12:44:10 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/nodes/" for 127.0.0.1 at 2018-03-21 12:48:16 -0500
+Processing by NodesController#create as */*
+  Parameters: {"id"=>"", "attributes"=>{"title"=>"fdassdffds", "label"=>"Event", "properties"=>"", "body"=>"", "slug"=>"fdassdffds"}, "node"=>{"id"=>""}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:22
+  [1m[36mNode Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE LOWER("nodes"."slug") = LOWER($1) LIMIT $2[0m  [["slug", "fdassdffds"], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:22
+  [1m[36mNode Create (0.6ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "properties", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["type", "Event"], ["slug", "fdassdffds"], ["title", "fdassdffds"], ["properties", "{}"], ["body", ""], ["created_at", "2018-03-21 17:48:16.769202"], ["updated_at", "2018-03-21 17:48:16.769202"]]
+  ↳ app/controllers/nodes_controller.rb:22
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:22
+Completed 201 Created in 10ms (Views: 0.6ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-21 12:48:16 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (1.3ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 5ms (Views: 1.0ms | ActiveRecord: 1.3ms)
+
+
+Started DELETE "/nodes/25" for 127.0.0.1 at 2018-03-21 12:48:36 -0500
+Processing by NodesController#destroy as */*
+  Parameters: {"id"=>"25"}
+  [1m[36mNode Load (0.7ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:40
+  [1m[36mEvent Destroy (0.5ms)[0m  [1m[31mDELETE FROM "nodes" WHERE "nodes"."type" IN ('Event') AND "nodes"."id" = $1[0m  [["id", 25]]
+  ↳ app/controllers/nodes_controller.rb:40
+  [1m[35m (8.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:40
+Completed 204 No Content in 14ms (ActiveRecord: 10.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-21 12:48:36 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/nodes/21" for 127.0.0.1 at 2018-03-21 12:48:37 -0500
+Processing by NodesController#destroy as */*
+  Parameters: {"id"=>"21"}
+  [1m[36mNode Load (0.7ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:40
+  [1m[36mEvent Destroy (0.5ms)[0m  [1m[31mDELETE FROM "nodes" WHERE "nodes"."type" IN ('Event') AND "nodes"."id" = $1[0m  [["id", 21]]
+  ↳ app/controllers/nodes_controller.rb:40
+  [1m[35m (8.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:40
+Completed 204 No Content in 14ms (ActiveRecord: 9.9ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-21 12:48:37 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/nodes/19" for 127.0.0.1 at 2018-03-21 12:48:39 -0500
+Processing by NodesController#destroy as */*
+  Parameters: {"id"=>"19"}
+  [1m[36mNode Load (0.6ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:40
+  [1m[36mEvent Destroy (0.5ms)[0m  [1m[31mDELETE FROM "nodes" WHERE "nodes"."type" IN ('Event') AND "nodes"."id" = $1[0m  [["id", 19]]
+  ↳ app/controllers/nodes_controller.rb:40
+  [1m[35m (8.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:40
+Completed 204 No Content in 13ms (ActiveRecord: 10.1ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-21 12:48:39 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/nodes/" for 127.0.0.1 at 2018-03-21 12:48:45 -0500
+Processing by NodesController#create as */*
+  Parameters: {"id"=>"", "attributes"=>{"title"=>"slurm", "label"=>"Event", "properties"=>"", "body"=>"", "slug"=>"slurm"}, "node"=>{"id"=>""}}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:22
+  [1m[36mNode Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE LOWER("nodes"."slug") = LOWER($1) LIMIT $2[0m  [["slug", "slurm"], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:22
+  [1m[36mNode Create (0.9ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "properties", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["type", "Event"], ["slug", "slurm"], ["title", "slurm"], ["properties", "{}"], ["body", ""], ["created_at", "2018-03-21 17:48:45.358251"], ["updated_at", "2018-03-21 17:48:45.358251"]]
+  ↳ app/controllers/nodes_controller.rb:22
+  [1m[35m (8.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:22
+Completed 201 Created in 19ms (Views: 1.3ms | ActiveRecord: 11.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-21 12:48:49 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/agents" for 127.0.0.1 at 2018-03-21 12:48:54 -0500
+Processing by AgentsController#index as */*
+  [1m[36mNode Load (0.7ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ($1, $2)[0m  [["type", "Person"], ["type", "Organization"]]
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 5ms (Views: 1.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/nodes/3" for 127.0.0.1 at 2018-03-21 12:48:56 -0500
+Processing by NodesController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mNode Load (1.1ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+Completed 200 OK in 5ms (Views: 1.4ms | ActiveRecord: 1.1ms)
+
+
+Started PATCH "/nodes/3" for 127.0.0.1 at 2018-03-21 12:48:59 -0500
+Processing by NodesController#update as */*
+  Parameters: {"id"=>"3", "attributes"=>{"title"=>"Thomas, Michael", "label"=>"Person", "properties"=>{}, "body"=>"Michael is magical.", "slug"=>"thomas_michaell"}, "node"=>{"id"=>"3"}}
+  [1m[36mNode Load (0.6ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+Unpermitted parameter: :properties
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:31
+  [1m[36mNode Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE LOWER("nodes"."slug") = LOWER($1) AND "nodes"."id" != $2 LIMIT $3[0m  [["slug", "thomas_michaell"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:31
+  [1m[36mPerson Update (0.6ms)[0m  [1m[33mUPDATE "nodes" SET "slug" = $1, "updated_at" = $2 WHERE "nodes"."id" = $3[0m  [["slug", "thomas_michaell"], ["updated_at", "2018-03-21 17:48:59.944568"], ["id", 3]]
+  ↳ app/controllers/nodes_controller.rb:31
+  [1m[35m (8.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:31
+Completed 200 OK in 17ms (Views: 0.6ms | ActiveRecord: 10.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-21 12:48:59 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (2.1ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/agents" for 127.0.0.1 at 2018-03-21 12:49:02 -0500
+Processing by AgentsController#index as */*
+  [1m[36mNode Load (1.5ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ($1, $2)[0m  [["type", "Person"], ["type", "Organization"]]
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 6ms (Views: 1.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/nodes/3" for 127.0.0.1 at 2018-03-21 12:49:17 -0500
+Processing by NodesController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mNode Load (1.2ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/nodes/3" for 127.0.0.1 at 2018-03-21 12:49:18 -0500
+Processing by NodesController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mNode Load (0.8ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.8ms)
+
+
+Started PATCH "/nodes/3" for 127.0.0.1 at 2018-03-21 12:49:22 -0500
+Processing by NodesController#update as */*
+  Parameters: {"id"=>"3", "attributes"=>{"title"=>"Thomas, Michaell", "label"=>"Person", "properties"=>{}, "body"=>"Michael is magical.", "slug"=>"thomas_michaell"}, "node"=>{"id"=>"3"}}
+  [1m[36mNode Load (0.6ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+Unpermitted parameter: :properties
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:31
+  [1m[36mNode Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE LOWER("nodes"."slug") = LOWER($1) AND "nodes"."id" != $2 LIMIT $3[0m  [["slug", "thomas_michaell"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:31
+  [1m[36mPerson Update (0.5ms)[0m  [1m[33mUPDATE "nodes" SET "title" = $1, "updated_at" = $2 WHERE "nodes"."id" = $3[0m  [["title", "Thomas, Michaell"], ["updated_at", "2018-03-21 17:49:22.065072"], ["id", 3]]
+  ↳ app/controllers/nodes_controller.rb:31
+  [1m[35m (8.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:31
+Completed 200 OK in 18ms (Views: 0.5ms | ActiveRecord: 10.6ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-21 12:49:22 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (5.5ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 11ms (Views: 0.6ms | ActiveRecord: 5.5ms)
+
+
+Started POST "/nodes/" for 127.0.0.1 at 2018-03-21 12:49:37 -0500
+Processing by NodesController#create as */*
+  Parameters: {"id"=>"", "attributes"=>{"title"=>"efverfv", "label"=>"Event", "properties"=>"", "body"=>"", "slug"=>"efverfv"}, "node"=>{"id"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:22
+  [1m[36mNode Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE LOWER("nodes"."slug") = LOWER($1) LIMIT $2[0m  [["slug", "efverfv"], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:22
+  [1m[36mNode Create (0.6ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "properties", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["type", "Event"], ["slug", "efverfv"], ["title", "efverfv"], ["properties", "{}"], ["body", ""], ["created_at", "2018-03-21 17:49:37.526793"], ["updated_at", "2018-03-21 17:49:37.526793"]]
+  ↳ app/controllers/nodes_controller.rb:22
+  [1m[35m (8.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:22
+Completed 201 Created in 20ms (Views: 0.9ms | ActiveRecord: 9.5ms)
+
+
+Started POST "/nodes/" for 127.0.0.1 at 2018-03-21 12:49:44 -0500
+Processing by NodesController#create as */*
+  Parameters: {"id"=>"", "attributes"=>{"title"=>"fqwefeqww", "properties"=>"", "body"=>"", "slug"=>"fqwefeqww"}, "node"=>{"id"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:22
+  [1m[36mNode Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE LOWER("nodes"."slug") = LOWER($1) LIMIT $2[0m  [["slug", "fqwefeqww"], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:22
+  [1m[36mNode Create (0.6ms)[0m  [1m[32mINSERT INTO "nodes" ("slug", "title", "properties", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["slug", "fqwefeqww"], ["title", "fqwefeqww"], ["properties", "{}"], ["body", ""], ["created_at", "2018-03-21 17:49:44.052180"], ["updated_at", "2018-03-21 17:49:44.052180"]]
+  ↳ app/controllers/nodes_controller.rb:22
+  [1m[35m (8.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:22
+Completed 201 Created in 16ms (Views: 0.9ms | ActiveRecord: 9.4ms)
+
+
+Started POST "/nodes/" for 127.0.0.1 at 2018-03-21 12:51:04 -0500
+Processing by NodesController#create as */*
+  Parameters: {"id"=>"", "attributes"=>{"title"=>"blaggle", "label"=>"Event", "properties"=>"", "body"=>"", "slug"=>"blaggle"}, "node"=>{"id"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:22
+  [1m[36mNode Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE LOWER("nodes"."slug") = LOWER($1) LIMIT $2[0m  [["slug", "blaggle"], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:22
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/nodes_controller.rb:22
+Completed 422 Unprocessable Entity in 5ms (Views: 0.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/agents" for 127.0.0.1 at 2018-03-21 12:51:06 -0500
+Processing by AgentsController#index as */*
+  [1m[36mNode Load (0.8ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ($1, $2)[0m  [["type", "Person"], ["type", "Organization"]]
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 6ms (Views: 1.5ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/nodes/" for 127.0.0.1 at 2018-03-21 12:51:16 -0500
+Processing by NodesController#create as */*
+  Parameters: {"id"=>"", "attributes"=>{"title"=>"flagglefdsasdf", "label"=>"Organization", "properties"=>"", "body"=>"", "slug"=>"flagglefdsasdf"}, "node"=>{"id"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:22
+  [1m[36mNode Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE LOWER("nodes"."slug") = LOWER($1) LIMIT $2[0m  [["slug", "flagglefdsasdf"], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:22
+  [1m[36mNode Create (0.7ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "properties", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["type", "Organization"], ["slug", "flagglefdsasdf"], ["title", "flagglefdsasdf"], ["properties", "{}"], ["body", ""], ["created_at", "2018-03-21 17:51:16.563716"], ["updated_at", "2018-03-21 17:51:16.563716"]]
+  ↳ app/controllers/nodes_controller.rb:22
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:22
+Completed 201 Created in 8ms (Views: 0.5ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/nodes/" for 127.0.0.1 at 2018-03-21 12:51:22 -0500
+Processing by NodesController#create as */*
+  Parameters: {"id"=>"", "attributes"=>{"title"=>"another one fl", "label"=>"Organization", "properties"=>"", "body"=>"", "slug"=>"another-one-fl"}, "node"=>{"id"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:22
+  [1m[36mNode Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE LOWER("nodes"."slug") = LOWER($1) LIMIT $2[0m  [["slug", "another-one-fl"], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:22
+  [1m[36mNode Create (0.5ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "properties", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["type", "Organization"], ["slug", "another-one-fl"], ["title", "another one fl"], ["properties", "{}"], ["body", ""], ["created_at", "2018-03-21 17:51:22.119586"], ["updated_at", "2018-03-21 17:51:22.119586"]]
+  ↳ app/controllers/nodes_controller.rb:22
+  [1m[35m (8.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:22
+Completed 201 Created in 15ms (Views: 0.5ms | ActiveRecord: 9.6ms)
+
+
+Started GET "/agents" for 127.0.0.1 at 2018-03-21 12:51:26 -0500
+Processing by AgentsController#index as */*
+  [1m[36mNode Load (2.2ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ($1, $2)[0m  [["type", "Person"], ["type", "Organization"]]
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 7ms (Views: 1.5ms | ActiveRecord: 2.2ms)
+
+
+Started DELETE "/nodes/4" for 127.0.0.1 at 2018-03-21 12:51:28 -0500
+Processing by NodesController#destroy as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mNode Load (0.7ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:40
+  [1m[36mPerson Destroy (0.7ms)[0m  [1m[31mDELETE FROM "nodes" WHERE "nodes"."type" IN ('Person') AND "nodes"."id" = $1[0m  [["id", 4]]
+  ↳ app/controllers/nodes_controller.rb:40
+  [1m[35m (7.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:40
+Completed 204 No Content in 14ms (ActiveRecord: 9.4ms)
+
+
+Started GET "/agents" for 127.0.0.1 at 2018-03-21 12:51:28 -0500
+Processing by AgentsController#index as */*
+  [1m[36mNode Load (0.8ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ($1, $2)[0m  [["type", "Person"], ["type", "Organization"]]
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 4ms (Views: 0.9ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/nodes/5" for 127.0.0.1 at 2018-03-21 12:51:28 -0500
+Processing by NodesController#destroy as */*
+  Parameters: {"id"=>"5"}
+  [1m[36mNode Load (0.6ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:40
+  [1m[36mOrganization Destroy (0.6ms)[0m  [1m[31mDELETE FROM "nodes" WHERE "nodes"."type" IN ('Organization') AND "nodes"."id" = $1[0m  [["id", 5]]
+  ↳ app/controllers/nodes_controller.rb:40
+  [1m[35m (8.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:40
+Completed 204 No Content in 14ms (ActiveRecord: 10.0ms)
+
+
+Started GET "/agents" for 127.0.0.1 at 2018-03-21 12:51:29 -0500
+Processing by AgentsController#index as */*
+  [1m[36mNode Load (0.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ($1, $2)[0m  [["type", "Person"], ["type", "Organization"]]
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 4ms (Views: 0.9ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/nodes/1" for 127.0.0.1 at 2018-03-21 12:51:29 -0500
+Processing by NodesController#destroy as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mNode Load (0.9ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:40
+  [1m[36mPerson Destroy (0.5ms)[0m  [1m[31mDELETE FROM "nodes" WHERE "nodes"."type" IN ('Person') AND "nodes"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/nodes_controller.rb:40
+  [1m[35m (8.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:40
+Completed 204 No Content in 14ms (ActiveRecord: 10.0ms)
+
+
+Started GET "/agents" for 127.0.0.1 at 2018-03-21 12:51:29 -0500
+Processing by AgentsController#index as */*
+  [1m[36mNode Load (0.8ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ($1, $2)[0m  [["type", "Person"], ["type", "Organization"]]
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/nodes/2" for 127.0.0.1 at 2018-03-21 12:51:29 -0500
+Processing by NodesController#destroy as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mNode Load (0.5ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:40
+  [1m[36mPerson Destroy (0.5ms)[0m  [1m[31mDELETE FROM "nodes" WHERE "nodes"."type" IN ('Person') AND "nodes"."id" = $1[0m  [["id", 2]]
+  ↳ app/controllers/nodes_controller.rb:40
+  [1m[35m (7.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:40
+Completed 204 No Content in 13ms (ActiveRecord: 9.1ms)
+
+
+Started GET "/agents" for 127.0.0.1 at 2018-03-21 12:51:29 -0500
+Processing by AgentsController#index as */*
+  [1m[36mNode Load (0.5ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ($1, $2)[0m  [["type", "Person"], ["type", "Organization"]]
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/nodes/3" for 127.0.0.1 at 2018-03-21 12:51:29 -0500
+Processing by NodesController#destroy as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mNode Load (0.6ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:40
+  [1m[36mPerson Destroy (0.5ms)[0m  [1m[31mDELETE FROM "nodes" WHERE "nodes"."type" IN ('Person') AND "nodes"."id" = $1[0m  [["id", 3]]
+  ↳ app/controllers/nodes_controller.rb:40
+  [1m[35m (8.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:40
+Completed 204 No Content in 15ms (ActiveRecord: 10.0ms)
+
+
+Started GET "/agents" for 127.0.0.1 at 2018-03-21 12:51:29 -0500
+Processing by AgentsController#index as */*
+  [1m[36mNode Load (0.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ($1, $2)[0m  [["type", "Person"], ["type", "Organization"]]
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/nodes/29" for 127.0.0.1 at 2018-03-21 12:51:29 -0500
+Processing by NodesController#destroy as */*
+  Parameters: {"id"=>"29"}
+  [1m[36mNode Load (1.1ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:40
+  [1m[36mOrganization Destroy (0.5ms)[0m  [1m[31mDELETE FROM "nodes" WHERE "nodes"."type" IN ('Organization') AND "nodes"."id" = $1[0m  [["id", 29]]
+  ↳ app/controllers/nodes_controller.rb:40
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:40
+Completed 204 No Content in 7ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/agents" for 127.0.0.1 at 2018-03-21 12:51:29 -0500
+Processing by AgentsController#index as */*
+  [1m[36mNode Load (0.5ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ($1, $2)[0m  [["type", "Person"], ["type", "Organization"]]
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/nodes/30" for 127.0.0.1 at 2018-03-21 12:51:29 -0500
+Processing by NodesController#destroy as */*
+  Parameters: {"id"=>"30"}
+  [1m[36mNode Load (0.5ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:40
+  [1m[36mOrganization Destroy (0.6ms)[0m  [1m[31mDELETE FROM "nodes" WHERE "nodes"."type" IN ('Organization') AND "nodes"."id" = $1[0m  [["id", 30]]
+  ↳ app/controllers/nodes_controller.rb:40
+  [1m[35m (8.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:40
+Completed 204 No Content in 14ms (ActiveRecord: 9.9ms)
+
+
+Started GET "/agents" for 127.0.0.1 at 2018-03-21 12:51:29 -0500
+Processing by AgentsController#index as */*
+  [1m[36mNode Load (0.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ($1, $2)[0m  [["type", "Person"], ["type", "Organization"]]
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/aljabear/.rubies/ruby-2.5.0/lib/ruby/gems/2.5.0/gems/rake-12.3.0/lib/rake/task.rb:251
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/aljabear/.rubies/ruby-2.5.0/lib/ruby/gems/2.5.0/gems/rake-12.3.0/lib/rake/task.rb:251
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/aljabear/.rubies/ruby-2.5.0/lib/ruby/gems/2.5.0/gems/rake-12.3.0/lib/rake/task.rb:251
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/aljabear/.rubies/ruby-2.5.0/lib/ruby/gems/2.5.0/gems/rake-12.3.0/lib/rake/task.rb:251
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/aljabear/.rubies/ruby-2.5.0/lib/ruby/gems/2.5.0/gems/rake-12.3.0/lib/rake/task.rb:251
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/aljabear/.rubies/ruby-2.5.0/lib/ruby/gems/2.5.0/gems/rake-12.3.0/lib/rake/task.rb:251
+  [1m[35m (5057.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "visualist_development"[0m
+  ↳ /Users/aljabear/.rubies/ruby-2.5.0/lib/ruby/gems/2.5.0/gems/rake-12.3.0/lib/rake/task.rb:251
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/aljabear/.rubies/ruby-2.5.0/lib/ruby/gems/2.5.0/gems/rake-12.3.0/lib/rake/task.rb:251
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/aljabear/.rubies/ruby-2.5.0/lib/ruby/gems/2.5.0/gems/rake-12.3.0/lib/rake/task.rb:251
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/aljabear/.rubies/ruby-2.5.0/lib/ruby/gems/2.5.0/gems/rake-12.3.0/lib/rake/task.rb:251
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/aljabear/.rubies/ruby-2.5.0/lib/ruby/gems/2.5.0/gems/rake-12.3.0/lib/rake/task.rb:251
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/aljabear/.rubies/ruby-2.5.0/lib/ruby/gems/2.5.0/gems/rake-12.3.0/lib/rake/task.rb:251
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/aljabear/.rubies/ruby-2.5.0/lib/ruby/gems/2.5.0/gems/rake-12.3.0/lib/rake/task.rb:251
+  [1m[35m (152.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "visualist_development"[0m
+  ↳ /Users/aljabear/.rubies/ruby-2.5.0/lib/ruby/gems/2.5.0/gems/rake-12.3.0/lib/rake/task.rb:251
+  [1m[35m (143.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "visualist_test"[0m
+  ↳ /Users/aljabear/.rubies/ruby-2.5.0/lib/ruby/gems/2.5.0/gems/rake-12.3.0/lib/rake/task.rb:251
+  [1m[35m (588.6ms)[0m  [1m[35mCREATE DATABASE "visualist_development" ENCODING = 'unicode'[0m
+  ↳ /Users/aljabear/.rubies/ruby-2.5.0/lib/ruby/gems/2.5.0/gems/rake-12.3.0/lib/rake/task.rb:251
+  [1m[35m (274.0ms)[0m  [1m[35mCREATE DATABASE "visualist_test" ENCODING = 'unicode'[0m
+  ↳ /Users/aljabear/.rubies/ruby-2.5.0/lib/ruby/gems/2.5.0/gems/rake-12.3.0/lib/rake/task.rb:251
+  [1m[35m (21.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ /Users/aljabear/.rubies/ruby-2.5.0/lib/ruby/gems/2.5.0/gems/rake-12.3.0/lib/rake/task.rb:251
+  [1m[35m (5.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ /Users/aljabear/.rubies/ruby-2.5.0/lib/ruby/gems/2.5.0/gems/rake-12.3.0/lib/rake/task.rb:251
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8056133293431660360)[0m
+  ↳ /Users/aljabear/.rubies/ruby-2.5.0/lib/ruby/gems/2.5.0/gems/rake-12.3.0/lib/rake/task.rb:251
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/aljabear/.rubies/ruby-2.5.0/lib/ruby/gems/2.5.0/gems/rake-12.3.0/lib/rake/task.rb:251
+Migrating to InitialSetup (20180224040121)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/aljabear/.rubies/ruby-2.5.0/lib/ruby/gems/2.5.0/gems/rake-12.3.0/lib/rake/task.rb:251
+  [1m[35m (11.5ms)[0m  [1m[35mCREATE TABLE "nodes" ("id" bigserial primary key, "type" character varying, "slug" character varying, "title" character varying, "properties" jsonb, "body" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20180224040121_initial_setup.rb:3
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_nodes_on_slug" ON "nodes"  ("slug")[0m
+  ↳ db/migrate/20180224040121_initial_setup.rb:3
+  [1m[35m (4.9ms)[0m  [1m[35mCREATE TABLE "edges" ("id" bigserial primary key, "subject_id" bigint, "predicate" character varying, "dobject_id" bigint, "properties" jsonb, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20180224040121_initial_setup.rb:14
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX  "index_edges_on_subject_id" ON "edges"  ("subject_id")[0m
+  ↳ db/migrate/20180224040121_initial_setup.rb:14
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX  "index_edges_on_dobject_id" ON "edges"  ("dobject_id")[0m
+  ↳ db/migrate/20180224040121_initial_setup.rb:14
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_edges_on_subject_id_and_predicate_and_dobject_id" ON "edges"  ("subject_id", "predicate", "dobject_id")[0m
+  ↳ db/migrate/20180224040121_initial_setup.rb:14
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180224040121"]]
+  ↳ /Users/aljabear/.rubies/ruby-2.5.0/lib/ruby/gems/2.5.0/gems/rake-12.3.0/lib/rake/task.rb:251
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/aljabear/.rubies/ruby-2.5.0/lib/ruby/gems/2.5.0/gems/rake-12.3.0/lib/rake/task.rb:251
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/aljabear/.rubies/ruby-2.5.0/lib/ruby/gems/2.5.0/gems/rake-12.3.0/lib/rake/task.rb:251
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/aljabear/.rubies/ruby-2.5.0/lib/ruby/gems/2.5.0/gems/rake-12.3.0/lib/rake/task.rb:251
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-03-21 17:52:07.969908"], ["updated_at", "2018-03-21 17:52:07.969908"]]
+  ↳ /Users/aljabear/.rubies/ruby-2.5.0/lib/ruby/gems/2.5.0/gems/rake-12.3.0/lib/rake/task.rb:251
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/aljabear/.rubies/ruby-2.5.0/lib/ruby/gems/2.5.0/gems/rake-12.3.0/lib/rake/task.rb:251
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(8056133293431660360)[0m
+  ↳ /Users/aljabear/.rubies/ruby-2.5.0/lib/ruby/gems/2.5.0/gems/rake-12.3.0/lib/rake/task.rb:251
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/aljabear/.rubies/ruby-2.5.0/lib/ruby/gems/2.5.0/gems/rake-12.3.0/lib/rake/task.rb:251
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/aljabear/.rubies/ruby-2.5.0/lib/ruby/gems/2.5.0/gems/rake-12.3.0/lib/rake/task.rb:251
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:1
+  [1m[36mNode Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE LOWER("nodes"."slug") = LOWER($1) LIMIT $2[0m  [["slug", "berry_allan"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:1
+  [1m[36mPerson Create (1.0ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "properties", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["type", "Person"], ["slug", "berry_allan"], ["title", "Berry, Allan"], ["properties", "{}"], ["body", "Allan is awesome."], ["created_at", "2018-03-21 17:52:08.080590"], ["updated_at", "2018-03-21 17:52:08.080590"]]
+  ↳ db/seeds.rb:1
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:1
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mNode Exists (2.9ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE LOWER("nodes"."slug") = LOWER($1) LIMIT $2[0m  [["slug", "duguid_meg"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mPerson Create (0.6ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "properties", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["type", "Person"], ["slug", "duguid_meg"], ["title", "Duguid, Meg"], ["properties", "{}"], ["body", "Meg is magnificent."], ["created_at", "2018-03-21 17:52:08.090199"], ["updated_at", "2018-03-21 17:52:08.090199"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mNode Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE LOWER("nodes"."slug") = LOWER($1) LIMIT $2[0m  [["slug", "thomas_michael"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:17
+  [1m[36mPerson Create (0.5ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "properties", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["type", "Person"], ["slug", "thomas_michael"], ["title", "Thomas, Michael"], ["properties", "{}"], ["body", "Michael is magical."], ["created_at", "2018-03-21 17:52:08.096513"], ["updated_at", "2018-03-21 17:52:08.096513"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:25
+  [1m[36mNode Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE LOWER("nodes"."slug") = LOWER($1) LIMIT $2[0m  [["slug", "wood_grant"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mPerson Create (0.7ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "properties", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["type", "Person"], ["slug", "wood_grant"], ["title", "Wood, Grant"], ["properties", "{}"], ["body", "A great American artist."], ["created_at", "2018-03-21 17:52:08.103101"], ["updated_at", "2018-03-21 17:52:08.103101"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:33
+  [1m[36mNode Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE LOWER("nodes"."slug") = LOWER($1) LIMIT $2[0m  [["slug", "culture_math"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:33
+  [1m[36mOrganization Create (0.8ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "properties", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["type", "Organization"], ["slug", "culture_math"], ["title", "Culture/Math"], ["properties", "{}"], ["body", "Culture/Math is great."], ["created_at", "2018-03-21 17:52:08.127321"], ["updated_at", "2018-03-21 17:52:08.127321"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:41
+  [1m[36mNode Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE LOWER("nodes"."slug") = LOWER($1) LIMIT $2[0m  [["slug", "aic"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:41
+  [1m[36mOrganization Create (0.5ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "properties", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["type", "Organization"], ["slug", "aic"], ["title", "Art Institute of Chicago"], ["properties", "{}"], ["body", "Chicago's crown jewel."], ["created_at", "2018-03-21 17:52:08.135275"], ["updated_at", "2018-03-21 17:52:08.135275"]]
+  ↳ db/seeds.rb:41
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:41
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:49
+  [1m[36mNode Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE LOWER("nodes"."slug") = LOWER($1) LIMIT $2[0m  [["slug", "chicago"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:49
+  [1m[36mPlace Create (0.5ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "properties", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["type", "Place"], ["slug", "chicago"], ["title", "Chicago"], ["properties", "{}"], ["body", "The Windy City."], ["created_at", "2018-03-21 17:52:08.157894"], ["updated_at", "2018-03-21 17:52:08.157894"]]
+  ↳ db/seeds.rb:49
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:49
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:57
+  [1m[36mNode Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE LOWER("nodes"."slug") = LOWER($1) LIMIT $2[0m  [["slug", "grant_park"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:57
+  [1m[36mPlace Create (0.5ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "properties", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["type", "Place"], ["slug", "grant_park"], ["title", "Grant Park"], ["properties", "{}"], ["body", "The great lawn of Chicago."], ["created_at", "2018-03-21 17:52:08.172403"], ["updated_at", "2018-03-21 17:52:08.172403"]]
+  ↳ db/seeds.rb:57
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:57
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:65
+  [1m[36mNode Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE LOWER("nodes"."slug") = LOWER($1) LIMIT $2[0m  [["slug", "pilsen"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:65
+  [1m[36mPlace Create (0.6ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "properties", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["type", "Place"], ["slug", "pilsen"], ["title", "Pilsen"], ["properties", "{}"], ["body", "The best neighborhood for tacos."], ["created_at", "2018-03-21 17:52:08.177940"], ["updated_at", "2018-03-21 17:52:08.177940"]]
+  ↳ db/seeds.rb:65
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:65
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:73
+  [1m[36mNode Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE LOWER("nodes"."slug") = LOWER($1) LIMIT $2[0m  [["slug", "american_gothic"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:73
+  [1m[36mWork Create (0.6ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "properties", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["type", "Work"], ["slug", "american_gothic"], ["title", "American Gothic"], ["properties", "{}"], ["body", "A nice painting of two lovely people."], ["created_at", "2018-03-21 17:52:08.198729"], ["updated_at", "2018-03-21 17:52:08.198729"]]
+  ↳ db/seeds.rb:73
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:73
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:81
+  [1m[36mNode Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE LOWER("nodes"."slug") = LOWER($1) LIMIT $2[0m  [["slug", "visualist"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:81
+  [1m[36mWork Create (0.5ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "properties", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["type", "Work"], ["slug", "visualist"], ["title", "The Visualist"], ["properties", "{}"], ["body", "Chicago's Visual Arts Calendar."], ["created_at", "2018-03-21 17:52:08.204569"], ["updated_at", "2018-03-21 17:52:08.204569"]]
+  ↳ db/seeds.rb:81
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:81
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:89
+  [1m[36mNode Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE LOWER("nodes"."slug") = LOWER($1) LIMIT $2[0m  [["slug", "about"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:89
+  [1m[36mPage Create (0.6ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "properties", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["type", "Page"], ["slug", "about"], ["title", "About The Visualist"], ["properties", "{}"], ["body", "The Visualist connects Chicago with its art."], ["created_at", "2018-03-21 17:52:08.221229"], ["updated_at", "2018-03-21 17:52:08.221229"]]
+  ↳ db/seeds.rb:89
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:89
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:98
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:105
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:105
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:112
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:112
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:119
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:119
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:126
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:126
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:133
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:133
+Started GET "/events" for 127.0.0.1 at 2018-03-21 12:52:24 -0500
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/aljabear/.gem/ruby/2.5.0/gems/activerecord-5.2.0.rc1/lib/active_record/log_subscriber.rb:98
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 11ms (Views: 0.3ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/agents" for 127.0.0.1 at 2018-03-21 12:52:26 -0500
+Processing by AgentsController#index as */*
+  [1m[36mNode Load (2.0ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ($1, $2)[0m  [["type", "Person"], ["type", "Organization"]]
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 53ms (Views: 1.2ms | ActiveRecord: 8.8ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-21 12:52:28 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/agents" for 127.0.0.1 at 2018-03-21 12:52:30 -0500
+Processing by AgentsController#index as */*
+  [1m[36mNode Load (0.9ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ($1, $2)[0m  [["type", "Person"], ["type", "Organization"]]
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 8ms (Views: 1.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/agents" for 127.0.0.1 at 2018-03-21 12:52:34 -0500
+Processing by AgentsController#index as */*
+  [1m[36mNode Load (0.8ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ($1, $2)[0m  [["type", "Person"], ["type", "Organization"]]
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 5ms (Views: 1.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-21 12:52:34 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/agents" for 127.0.0.1 at 2018-03-21 12:52:36 -0500
+Processing by AgentsController#index as */*
+  [1m[36mNode Load (0.8ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ($1, $2)[0m  [["type", "Person"], ["type", "Organization"]]
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 6ms (Views: 2.0ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/nodes/1" for 127.0.0.1 at 2018-03-21 12:52:37 -0500
+Processing by NodesController#destroy as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mNode Load (0.8ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:40
+  [1m[36mPerson Destroy (0.7ms)[0m  [1m[31mDELETE FROM "nodes" WHERE "nodes"."type" IN ('Person') AND "nodes"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/nodes_controller.rb:40
+  [1m[35m (8.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:40
+Completed 204 No Content in 16ms (ActiveRecord: 10.6ms)
+
+
+Started GET "/agents" for 127.0.0.1 at 2018-03-21 12:52:37 -0500
+Processing by AgentsController#index as */*
+  [1m[36mNode Load (0.5ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ($1, $2)[0m  [["type", "Person"], ["type", "Organization"]]
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 6ms (Views: 1.6ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/nodes/2" for 127.0.0.1 at 2018-03-21 12:52:37 -0500
+Processing by NodesController#destroy as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mNode Load (0.6ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:40
+  [1m[36mPerson Destroy (0.8ms)[0m  [1m[31mDELETE FROM "nodes" WHERE "nodes"."type" IN ('Person') AND "nodes"."id" = $1[0m  [["id", 2]]
+  ↳ app/controllers/nodes_controller.rb:40
+  [1m[35m (7.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:40
+Completed 204 No Content in 14ms (ActiveRecord: 9.5ms)
+
+
+Started GET "/agents" for 127.0.0.1 at 2018-03-21 12:52:37 -0500
+Processing by AgentsController#index as */*
+  [1m[36mNode Load (0.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ($1, $2)[0m  [["type", "Person"], ["type", "Organization"]]
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 6ms (Views: 2.0ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/nodes/3" for 127.0.0.1 at 2018-03-21 12:52:37 -0500
+Processing by NodesController#destroy as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mNode Load (0.7ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:40
+  [1m[36mPerson Destroy (0.5ms)[0m  [1m[31mDELETE FROM "nodes" WHERE "nodes"."type" IN ('Person') AND "nodes"."id" = $1[0m  [["id", 3]]
+  ↳ app/controllers/nodes_controller.rb:40
+  [1m[35m (7.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:40
+Completed 204 No Content in 14ms (ActiveRecord: 9.3ms)
+
+
+Started GET "/agents" for 127.0.0.1 at 2018-03-21 12:52:37 -0500
+Processing by AgentsController#index as */*
+  [1m[36mNode Load (0.7ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ($1, $2)[0m  [["type", "Person"], ["type", "Organization"]]
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 13ms (Views: 0.9ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/nodes/4" for 127.0.0.1 at 2018-03-21 12:52:38 -0500
+Processing by NodesController#destroy as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mNode Load (0.7ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:40
+  [1m[36mPerson Destroy (0.6ms)[0m  [1m[31mDELETE FROM "nodes" WHERE "nodes"."type" IN ('Person') AND "nodes"."id" = $1[0m  [["id", 4]]
+  ↳ app/controllers/nodes_controller.rb:40
+  [1m[35m (8.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:40
+Completed 204 No Content in 14ms (ActiveRecord: 9.8ms)
+
+
+Started GET "/agents" for 127.0.0.1 at 2018-03-21 12:52:38 -0500
+Processing by AgentsController#index as */*
+  [1m[36mNode Load (0.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ($1, $2)[0m  [["type", "Person"], ["type", "Organization"]]
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/nodes/5" for 127.0.0.1 at 2018-03-21 12:52:38 -0500
+Processing by NodesController#destroy as */*
+  Parameters: {"id"=>"5"}
+  [1m[36mNode Load (0.6ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:40
+  [1m[36mOrganization Destroy (0.6ms)[0m  [1m[31mDELETE FROM "nodes" WHERE "nodes"."type" IN ('Organization') AND "nodes"."id" = $1[0m  [["id", 5]]
+  ↳ app/controllers/nodes_controller.rb:40
+  [1m[35m (7.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:40
+Completed 204 No Content in 13ms (ActiveRecord: 9.2ms)
+
+
+Started GET "/agents" for 127.0.0.1 at 2018-03-21 12:52:38 -0500
+Processing by AgentsController#index as */*
+  [1m[36mNode Load (0.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ($1, $2)[0m  [["type", "Person"], ["type", "Organization"]]
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/nodes/6" for 127.0.0.1 at 2018-03-21 12:52:38 -0500
+Processing by NodesController#destroy as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mNode Load (0.7ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:40
+  [1m[36mOrganization Destroy (0.6ms)[0m  [1m[31mDELETE FROM "nodes" WHERE "nodes"."type" IN ('Organization') AND "nodes"."id" = $1[0m  [["id", 6]]
+  ↳ app/controllers/nodes_controller.rb:40
+  [1m[35m (7.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:40
+Completed 204 No Content in 14ms (ActiveRecord: 9.3ms)
+
+
+Started GET "/agents" for 127.0.0.1 at 2018-03-21 12:52:38 -0500
+Processing by AgentsController#index as */*
+  [1m[36mNode Load (0.7ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ($1, $2)[0m  [["type", "Person"], ["type", "Organization"]]
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.7ms)
+
+

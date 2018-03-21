@@ -2,7 +2,9 @@ import Vue from "vue";
 import Vuex from "vuex";
 // import request from "superagent";
 // import railsRoutes from "../router/railsRoutes";
-import { pluralize } from "../utility";
+
+// eslint-disable-next-line
+import utility from "../utility";
 
 Vue.use(Vuex);
 
@@ -47,8 +49,8 @@ export default new Vuex.Store({
     // }
   },
   actions: {
-    async storeNodes(context, { type: type, nodes: nodes }) {
-      context.commit(`${pluralize(type)}Set`, nodes);
+    async storeNodes(context, { label: label, nodes: nodes }) {
+      context.commit(`${label.toLowerCase().pluralize()}Set`, nodes);
     }
     // async login(context, user) {
     //   // user: {email: 'lebowski@example.com', password: 'p455w0rd'}

@@ -1,10 +1,10 @@
 <template>
   <div>
-    <h3>Browse {{ type.pluralize().toTitleCase() }}</h3>
-    <node-list :type="type"></node-list>
+    <h3>Browse {{ label.toLowerCase().pluralize().toTitleCase() }}</h3>
+    <node-list :label="label"></node-list>
 
     <nav class="controls">
-      <router-link :to="{name: `${type}Add`}">Add {{ type.toTitleCase() }}</router-link>
+      <router-link :to="{name: `${label.toLowerCase()}Add`}">Add {{ label }}</router-link>
     </nav>
   </div>
 </template>
@@ -20,7 +20,8 @@ export default {
     NodeList
   },
   props: {
-    type: String
+    label: String,
+    required: true
   }
 };
 </script>

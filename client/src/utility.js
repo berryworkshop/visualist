@@ -1,6 +1,8 @@
 /**
  * Creates a plural form of any term.
  * If a plural form is not defined, will just add an "s".  Pretty basic.
+ * deprecated, in favor of the method on the prototype class
+ * TODO: remove this function
  */
 export function pluralize(term) {
   const plurals = {
@@ -17,7 +19,8 @@ export function pluralize(term) {
  */
 String.prototype.pluralize = function() {
   const plurals = {
-    person: "people"
+    person: "people",
+    Person: "People"
   };
   if (plurals.hasOwnProperty(this)) {
     return plurals[this];

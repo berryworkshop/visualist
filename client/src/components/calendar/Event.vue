@@ -54,7 +54,7 @@ export default {
   },
   async created() {
     const event_id = this.$route.params["event_id"];
-    this.event = await this.nodeRead("event", event_id);
+    this.event = await this.nodeRead(event_id);
   }
 };
 </script>
