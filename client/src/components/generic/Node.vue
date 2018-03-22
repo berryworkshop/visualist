@@ -8,8 +8,19 @@
     <p v-if="node.attributes.body">{{ node.attributes.body }}</p>
     <p v-else><em>No body available.</em></p>
 
-    <p>created: {{ created_at }}</p>
-    <p>updated: {{ updated_at }}</p>
+    <div>
+      <ul v-if="node.attributes.properties.websites">
+        <li v-for="(s, index) in node.attributes.properties.websites"
+            :key="index">
+          <a :href="s.url">{{ s.url }}</a>
+        </li>
+      </ul>
+    </div>
+
+    <div>
+      <p>created: {{ created_at }}</p>
+      <p>updated: {{ updated_at }}</p>
+    </div>
 
     <nav class="controls">
       <router-link :to="{

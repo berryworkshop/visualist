@@ -23,7 +23,7 @@ class EventsControllerTest < ActionDispatch::IntegrationTest
           slug: "groovy_exhibition",
           title: "A Groovy Exhibition",
           body: "A good time.",
-          properties: '{}'
+          properties: {}
         }
       }, as: :json
     end

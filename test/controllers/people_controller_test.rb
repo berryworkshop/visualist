@@ -23,7 +23,7 @@ class PeopleControllerTest < ActionDispatch::IntegrationTest
           slug: "smith_john",
           title: "Smith, John",
           body: "A swell fellow.",
-          properties: '{}'
+          properties: {}
         }
       }, as: :json
     end

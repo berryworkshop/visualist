@@ -23,8 +23,7 @@ class NodesControllerTest < ActionDispatch::IntegrationTest
           slug: "test_slug",
           title: "A Title",
           body: "This is a body.",
-          properties: '{
-          }',
+          properties: {}
         }
       }, as: :json
     end

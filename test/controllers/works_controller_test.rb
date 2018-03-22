@@ -23,7 +23,7 @@ class WorksControllerTest < ActionDispatch::IntegrationTest
           slug: "untitled",
           title: "Untitled",
           body: "The most boring of works.",
-          properties: '{}'
+          properties: {}
         }
       }, as: :json
     end

@@ -19,15 +19,22 @@
         v-model="slug"
         :placeholder="`Provide a title for this ${label}`">
     </div>
+
     <div>
-      <label for="node-properties">Properties</label>
-      <textarea
-        name="node-properties"
-        rows="5"
-        v-model="node.attributes.properties"
-        :placeholder="`Provide properties for this ${label}, in valid JSON`"
-        ></textarea>
+      <button name="add-website" v-on:click="addWebsite()">Add Website</button>
+      <ul v-if="node.attributes.properties.websites">
+        <li v-for="(s, index) in node.attributes.properties.websites"
+            :key="index">
+          <label for="website-url">Url</label>
+          <input type="url"
+            required
+            name="website-url"
+            v-model="s.url"
+            :placeholder="`Provide a url`">
+        </li>
+      </ul>
     </div>
+
     <div>
       <label for="node-body">Body</label>
       <textarea
@@ -76,7 +83,9 @@ export default {
         attributes: {
           title: "",
           label: this.label,
-          properties: "",
+          properties: {
+            websites: []
+          },
           body: "",
           slug: ""
         }
@@ -154,11 +163,21 @@ export default {
         attributes: {
           title: "",
           label: this.label,
-          properties: "",
+          properties: {
+            websites: []
+          },
           body: "",
           slug: ""
         }
       };
+    },
+    addWebsite() {
+      if (!this.node.attributes.properties.websites) {
+        this.$set(this.node.attributes.properties, "websites", []);
+      }
+      this.node.attributes.properties.websites.push({
+        url: ""
+      });
     }
   }
 };

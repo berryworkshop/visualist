@@ -3,7 +3,7 @@ berry_allan = Person.create(
   slug: 'berry_allan',
   title: 'Berry, Allan',
   body: 'Allan is awesome.',
-  properties: '{}'
+  properties: {}
 )
 
 duguid_meg = Person.create(
@@ -11,7 +11,7 @@ duguid_meg = Person.create(
   slug: 'duguid_meg',
   title: 'Duguid, Meg',
   body: 'Meg is magnificent.',
-  properties: '{}'
+  properties: {}
 )
 
 thomas_michael = Person.create(
@@ -19,7 +19,7 @@ thomas_michael = Person.create(
   slug: 'thomas_michael',
   title: 'Thomas, Michael',
   body: 'Michael is magical.',
-  properties: '{}'
+  properties: {}
 )
 
 wood_grant = Person.create(
@@ -27,7 +27,7 @@ wood_grant = Person.create(
   slug: 'wood_grant',
   title: 'Wood, Grant',
   body: 'A great American artist.',
-  properties: '{}'
+  properties: {}
 )
 
 culture_math = Organization.create(
@@ -35,7 +35,7 @@ culture_math = Organization.create(
   slug: 'culture_math',
   title: 'Culture/Math',
   body: 'Culture/Math is great.',
-  properties: '{}'
+  properties: {}
 )
 
 aic = Organization.create(
@@ -43,7 +43,7 @@ aic = Organization.create(
   slug: 'aic',
   title: 'Art Institute of Chicago',
   body: 'Chicago\'s crown jewel.',
-  properties: '{}'
+  properties: {}
 )
 
 chicago = Place.create(
@@ -51,7 +51,7 @@ chicago = Place.create(
   slug: 'chicago',
   title: 'Chicago',
   body: 'The Windy City.',
-  properties: '{}'
+  properties: {}
 )
 
 grant_park = Place.create(
@@ -59,7 +59,7 @@ grant_park = Place.create(
   slug: 'grant_park',
   title: 'Grant Park',
   body: 'The great lawn of Chicago.',
-  properties: '{}'
+  properties: {}
 )
 
 pilsen = Place.create(
@@ -67,7 +67,7 @@ pilsen = Place.create(
   slug: 'pilsen',
   title: 'Pilsen',
   body: 'The best neighborhood for tacos.',
-  properties: '{}'
+  properties: {}
 )
 
 american_gothic = Work.create(
@@ -75,7 +75,7 @@ american_gothic = Work.create(
   slug: 'american_gothic',
   title: 'American Gothic',
   body: 'A nice painting of two lovely people.',
-  properties: '{}'
+  properties: {}
 )
 
 visualist = Work.create(
@@ -83,7 +83,7 @@ visualist = Work.create(
   slug: 'visualist',
   title: 'The Visualist',
   body: 'Chicago\'s Visual Arts Calendar.',
-  properties: '{}'
+  properties: {}
 )
 
 visualist = Page.create(
@@ -91,7 +91,7 @@ visualist = Page.create(
   slug: 'about',
   title: 'About The Visualist',
   body: 'The Visualist connects Chicago with its art.',
-  properties: '{}'
+  properties: {}
 )
 
 
@@ -99,40 +99,40 @@ allan_friend_meg = Edge.create(
   # subject: berry_allan,
   predicate: :has_friend,
   # dobject: duguid_meg,
-  properties: '{}'
+  properties: {}
 )
 
 meg_friend_allan = Edge.create(
   # subject: duguid_meg,
   predicate: :has_friend,
   # dobject: berry_allan,
-  properties: '{}'
+  properties: {}
 )
 
 allan_friend_michael = Edge.create(
   # subject: berry_allan,
   predicate: :has_friend,
   # dobject: thomas_michael,
-  properties: '{}'
+  properties: {}
 )
 
 meg_spouse_michael = Edge.create(
   # subject: duguid_meg,
   predicate: :has_spouse,
   # dobject: thomas_michael,
-  properties: '{}'
+  properties: {}
 )
 
 americangothic_own_aic = Edge.create(
   # subject: american_gothic,
   predicate: :has_owner,
   # dobject: aic,
-  properties: '{}'
+  properties: {}
 )
 
 allan_lives_pilsen = Edge.create(
   # subject: american_gothic,
   predicate: :has_place_lived,
   # dobject: pilsen,
-  properties: '{}'
+  properties: {}
 )
