@@ -17,7 +17,7 @@
         required
         name="node-slug"
         v-model="slug"
-        :placeholder="`Provide a title for this ${label}`">
+        :placeholder="`Provide a slug for this ${label}`">
     </div>
 
     <div>
@@ -31,6 +31,7 @@
             name="website-url"
             v-model="s.url"
             :placeholder="`Provide a url`">
+          <button name="delete-website" v-on:click="deleteWebsite(index)">Delete</button>
         </li>
       </ul>
     </div>
@@ -53,7 +54,7 @@
             v-on:click="submitAndAdd(proxyNode)">Submit and Create Another {{ label }}</button>
       </template>
       <button name="submit-button" v-else
-          v-on:click="submitEdit(proxyNode)">Submit</button>
+          v-on:click="submitEdit(proxyNode)">Save Changes</button>
       <button name="cancel-button" v-on:click.prevent="$router.go(-1)">Cancel</button>
       <router-link :to="{name: label.toLowerCase().pluralize()}">Browse {{ label.toLowerCase().pluralize().toTitleCase() }}</router-link>
 
@@ -178,6 +179,9 @@ export default {
       this.node.attributes.properties.websites.push({
         url: ""
       });
+    },
+    deleteWebsite(index) {
+      this.node.attributes.properties.websites.splice(index, 1);
     }
   }
 };

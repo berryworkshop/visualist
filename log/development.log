@@ -22445,3 +22445,911 @@ Processing by NodesController#show as */*
 Completed 200 OK in 9ms (Views: 0.6ms | ActiveRecord: 6.0ms)
 
 
+Started GET "/organizations" for 127.0.0.1 at 2018-03-21 23:02:44 -0500
+Processing by OrganizationsController#index as */*
+  [1m[36mOrganization Load (0.8ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Organization')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 6ms (Views: 1.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/nodes/6" for 127.0.0.1 at 2018-03-21 23:02:51 -0500
+Processing by NodesController#show as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mNode Load (0.9ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+Completed 200 OK in 5ms (Views: 1.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-21 23:03:06 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 12ms (Views: 0.2ms | ActiveRecord: 7.2ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-21 23:03:09 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/nodes/" for 127.0.0.1 at 2018-03-21 23:07:25 -0500
+Processing by NodesController#create as */*
+  Parameters: {"id"=>"", "attributes"=>{"title"=>"", "label"=>"Event", "properties"=>{"websites"=>[{"url"=>""}]}, "body"=>"", "slug"=>""}, "node"=>{"id"=>""}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:22
+  [1m[36mNode Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE LOWER("nodes"."slug") = LOWER($1) LIMIT $2[0m  [["slug", ""], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:22
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/nodes_controller.rb:22
+Completed 422 Unprocessable Entity in 14ms (Views: 0.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-21 23:07:25 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (2.2ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-21 23:12:18 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-21 23:12:24 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/agents" for 127.0.0.1 at 2018-03-22 09:09:24 -0500
+Processing by AgentsController#index as */*
+  [1m[36mNode Load (7.3ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ($1, $2)[0m  [["type", "Person"], ["type", "Organization"]]
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 77ms (Views: 3.7ms | ActiveRecord: 26.7ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-22 09:09:29 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (1.1ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/places" for 127.0.0.1 at 2018-03-22 09:09:30 -0500
+Processing by PlacesController#index as */*
+  [1m[36mPlace Load (0.8ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Place')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 25ms (Views: 1.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/agents" for 127.0.0.1 at 2018-03-22 09:09:44 -0500
+Processing by AgentsController#index as */*
+  [1m[36mNode Load (0.7ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ($1, $2)[0m  [["type", "Person"], ["type", "Organization"]]
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 6ms (Views: 2.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-22 09:09:45 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (1.9ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/agents" for 127.0.0.1 at 2018-03-22 09:09:46 -0500
+Processing by AgentsController#index as */*
+  [1m[36mNode Load (0.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ($1, $2)[0m  [["type", "Person"], ["type", "Organization"]]
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 5ms (Views: 1.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/places" for 127.0.0.1 at 2018-03-22 09:09:47 -0500
+Processing by PlacesController#index as */*
+  [1m[36mPlace Load (0.5ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Place')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/nodes/7" for 127.0.0.1 at 2018-03-22 09:10:00 -0500
+Processing by NodesController#show as */*
+  Parameters: {"id"=>"7"}
+  [1m[36mNode Load (1.1ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/nodes/7" for 127.0.0.1 at 2018-03-22 09:11:29 -0500
+Processing by NodesController#show as */*
+  Parameters: {"id"=>"7"}
+  [1m[36mNode Load (0.5ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-22 09:11:32 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/agents" for 127.0.0.1 at 2018-03-22 09:11:34 -0500
+Processing by AgentsController#index as */*
+  [1m[36mNode Load (2.1ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ($1, $2)[0m  [["type", "Person"], ["type", "Organization"]]
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 9ms (Views: 2.4ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/nodes/1" for 127.0.0.1 at 2018-03-22 09:11:36 -0500
+Processing by NodesController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mNode Load (0.8ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/agents" for 127.0.0.1 at 2018-03-22 09:11:37 -0500
+Processing by AgentsController#index as */*
+  [1m[36mNode Load (0.8ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ($1, $2)[0m  [["type", "Person"], ["type", "Organization"]]
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 6ms (Views: 1.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/nodes/6" for 127.0.0.1 at 2018-03-22 09:11:39 -0500
+Processing by NodesController#show as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mNode Load (1.4ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+Completed 200 OK in 5ms (Views: 1.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/places" for 127.0.0.1 at 2018-03-22 09:11:41 -0500
+Processing by PlacesController#index as */*
+  [1m[36mPlace Load (1.0ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Place')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 6ms (Views: 1.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/nodes/7" for 127.0.0.1 at 2018-03-22 09:11:42 -0500
+Processing by NodesController#show as */*
+  Parameters: {"id"=>"7"}
+  [1m[36mNode Load (0.7ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+Completed 200 OK in 4ms (Views: 0.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/nodes/7" for 127.0.0.1 at 2018-03-22 09:11:44 -0500
+Processing by NodesController#show as */*
+  Parameters: {"id"=>"7"}
+  [1m[36mNode Load (3.1ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+Completed 200 OK in 7ms (Views: 0.6ms | ActiveRecord: 3.1ms)
+
+
+Started PATCH "/nodes/7" for 127.0.0.1 at 2018-03-22 09:11:52 -0500
+Processing by NodesController#update as */*
+  Parameters: {"id"=>"7", "attributes"=>{"title"=>"Chicago", "label"=>"Place", "properties"=>{"websites"=>[{"url"=>"http://chicago.com"}]}, "body"=>"The Windy City.", "slug"=>"chicago"}, "node"=>{"id"=>"7"}}
+  [1m[36mNode Load (0.6ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:31
+  [1m[36mNode Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE LOWER("nodes"."slug") = LOWER($1) AND "nodes"."id" != $2 LIMIT $3[0m  [["slug", "chicago"], ["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:31
+  [1m[36mPlace Update (6.3ms)[0m  [1m[33mUPDATE "nodes" SET "properties" = $1, "updated_at" = $2 WHERE "nodes"."id" = $3[0m  [["properties", "{\"websites\":[{\"url\":\"http://chicago.com\"}]}"], ["updated_at", "2018-03-22 14:11:52.968282"], ["id", 7]]
+  ↳ app/controllers/nodes_controller.rb:31
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:31
+Completed 200 OK in 28ms (Views: 0.4ms | ActiveRecord: 13.9ms)
+
+
+Started GET "/places" for 127.0.0.1 at 2018-03-22 09:11:53 -0500
+Processing by PlacesController#index as */*
+  [1m[36mPlace Load (7.0ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Place')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 11ms (Views: 1.8ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/nodes/7" for 127.0.0.1 at 2018-03-22 09:11:55 -0500
+Processing by NodesController#show as */*
+  Parameters: {"id"=>"7"}
+  [1m[36mNode Load (0.6ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/agents" for 127.0.0.1 at 2018-03-22 09:12:27 -0500
+Processing by AgentsController#index as */*
+  [1m[36mNode Load (0.5ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ($1, $2)[0m  [["type", "Person"], ["type", "Organization"]]
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/nodes/1" for 127.0.0.1 at 2018-03-22 09:12:29 -0500
+Processing by NodesController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mNode Load (0.7ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/nodes/1" for 127.0.0.1 at 2018-03-22 09:12:32 -0500
+Processing by NodesController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mNode Load (0.6ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-22 09:12:36 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/agents" for 127.0.0.1 at 2018-03-22 09:12:37 -0500
+Processing by AgentsController#index as */*
+  [1m[36mNode Load (0.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ($1, $2)[0m  [["type", "Person"], ["type", "Organization"]]
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-22 09:12:40 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/agents" for 127.0.0.1 at 2018-03-22 09:12:41 -0500
+Processing by AgentsController#index as */*
+  [1m[36mNode Load (0.5ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ($1, $2)[0m  [["type", "Person"], ["type", "Organization"]]
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-22 09:12:43 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (1.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-22 09:12:52 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/agents" for 127.0.0.1 at 2018-03-22 09:13:21 -0500
+Processing by AgentsController#index as */*
+  [1m[36mNode Load (1.2ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ($1, $2)[0m  [["type", "Person"], ["type", "Organization"]]
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 7ms (Views: 1.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/nodes/6" for 127.0.0.1 at 2018-03-22 09:13:24 -0500
+Processing by NodesController#show as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mNode Load (0.7ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/nodes/6" for 127.0.0.1 at 2018-03-22 09:13:34 -0500
+Processing by NodesController#show as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mNode Load (0.6ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/places" for 127.0.0.1 at 2018-03-22 09:14:17 -0500
+Processing by PlacesController#index as */*
+  [1m[36mPlace Load (0.5ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Place')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 4ms (Views: 1.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/agents" for 127.0.0.1 at 2018-03-22 09:14:18 -0500
+Processing by AgentsController#index as */*
+  [1m[36mNode Load (0.7ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ($1, $2)[0m  [["type", "Person"], ["type", "Organization"]]
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 6ms (Views: 1.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-22 09:14:20 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (2.0ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/agents" for 127.0.0.1 at 2018-03-22 09:14:22 -0500
+Processing by AgentsController#index as */*
+  [1m[36mNode Load (0.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ($1, $2)[0m  [["type", "Person"], ["type", "Organization"]]
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 4ms (Views: 0.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-22 09:14:23 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (1.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/nodes/" for 127.0.0.1 at 2018-03-22 09:15:39 -0500
+Processing by NodesController#create as */*
+  Parameters: {"id"=>"", "attributes"=>{"title"=>"A New Event", "label"=>"Event", "properties"=>{"websites"=>[{"url"=>"http://besteventeva.com"}]}, "body"=>"The Best Event Eva.", "slug"=>"a-new-event"}, "node"=>{"id"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:22
+  [1m[36mNode Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE LOWER("nodes"."slug") = LOWER($1) LIMIT $2[0m  [["slug", "a-new-event"], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:22
+  [1m[36mNode Create (10.7ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "properties", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["type", "Event"], ["slug", "a-new-event"], ["title", "A New Event"], ["properties", "{\"websites\":[{\"url\":\"http://besteventeva.com\"}]}"], ["body", "The Best Event Eva."], ["created_at", "2018-03-22 14:15:39.686363"], ["updated_at", "2018-03-22 14:15:39.686363"]]
+  ↳ app/controllers/nodes_controller.rb:22
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:22
+Completed 201 Created in 19ms (Views: 1.8ms | ActiveRecord: 12.1ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-22 09:15:39 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 25ms (Views: 0.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/nodes/13" for 127.0.0.1 at 2018-03-22 09:15:42 -0500
+Processing by NodesController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mNode Load (1.2ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/nodes/13" for 127.0.0.1 at 2018-03-22 09:15:50 -0500
+Processing by NodesController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mNode Load (1.0ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+Completed 200 OK in 5ms (Views: 1.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-22 09:16:20 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 4ms (Views: 0.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/nodes/13" for 127.0.0.1 at 2018-03-22 09:16:21 -0500
+Processing by NodesController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mNode Load (0.8ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-22 09:16:59 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (3.1ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 6ms (Views: 0.6ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/agents" for 127.0.0.1 at 2018-03-22 09:17:00 -0500
+Processing by AgentsController#index as */*
+  [1m[36mNode Load (0.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ($1, $2)[0m  [["type", "Person"], ["type", "Organization"]]
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 4ms (Views: 0.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/places" for 127.0.0.1 at 2018-03-22 09:17:02 -0500
+Processing by PlacesController#index as */*
+  [1m[36mPlace Load (2.9ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Place')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 6ms (Views: 0.6ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/places" for 127.0.0.1 at 2018-03-22 09:17:05 -0500
+Processing by PlacesController#index as */*
+  [1m[36mPlace Load (1.2ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Place')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 5ms (Views: 1.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/agents" for 127.0.0.1 at 2018-03-22 09:17:07 -0500
+Processing by AgentsController#index as */*
+  [1m[36mNode Load (1.7ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ($1, $2)[0m  [["type", "Person"], ["type", "Organization"]]
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 7ms (Views: 1.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-22 09:17:09 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/agents" for 127.0.0.1 at 2018-03-22 09:17:10 -0500
+Processing by AgentsController#index as */*
+  [1m[36mNode Load (1.9ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ($1, $2)[0m  [["type", "Person"], ["type", "Organization"]]
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 7ms (Views: 1.8ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-22 09:17:26 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (2.9ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 5ms (Views: 0.5ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/nodes/13" for 127.0.0.1 at 2018-03-22 09:17:28 -0500
+Processing by NodesController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mNode Load (0.7ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/nodes/6" for 127.0.0.1 at 2018-03-22 09:17:33 -0500
+Processing by NodesController#show as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mNode Load (0.6ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/nodes/13" for 127.0.0.1 at 2018-03-22 22:58:02 -0500
+Processing by NodesController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mNode Load (5.5ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+Completed 200 OK in 106ms (Views: 1.6ms | ActiveRecord: 43.9ms)
+
+
+Started GET "/nodes/13" for 127.0.0.1 at 2018-03-22 23:02:17 -0500
+Processing by NodesController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mNode Load (0.9ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/nodes/13" for 127.0.0.1 at 2018-03-22 23:06:06 -0500
+Processing by NodesController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mNode Load (0.6ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/nodes/13" for 127.0.0.1 at 2018-03-22 23:07:40 -0500
+Processing by NodesController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mNode Load (0.8ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/nodes/13" for 127.0.0.1 at 2018-03-22 23:07:49 -0500
+Processing by NodesController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mNode Load (0.6ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/nodes/13" for 127.0.0.1 at 2018-03-22 23:08:44 -0500
+Processing by NodesController#update as */*
+  Parameters: {"id"=>"13", "attributes"=>{"title"=>"A New Event", "label"=>"Event", "properties"=>{"websites"=>[{"url"=>"http://flurgleblarm.com"}, {"url"=>"http://example.com"}, {"url"=>"https://blaster.me/lburk"}]}, "body"=>"The Best Event Eva.", "slug"=>"a-new-event"}, "node"=>{"id"=>"13"}}
+  [1m[36mNode Load (0.5ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+  [1m[35m (2.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:31
+  [1m[36mNode Exists (4.0ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE LOWER("nodes"."slug") = LOWER($1) AND "nodes"."id" != $2 LIMIT $3[0m  [["slug", "a-new-event"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:31
+  [1m[36mEvent Update (12.7ms)[0m  [1m[33mUPDATE "nodes" SET "properties" = $1, "updated_at" = $2 WHERE "nodes"."id" = $3[0m  [["properties", "{\"websites\":[{\"url\":\"http://flurgleblarm.com\"},{\"url\":\"http://example.com\"},{\"url\":\"https://blaster.me/lburk\"}]}"], ["updated_at", "2018-03-23 04:08:44.364832"], ["id", 13]]
+  ↳ app/controllers/nodes_controller.rb:31
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:31
+Completed 200 OK in 49ms (Views: 0.5ms | ActiveRecord: 31.3ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-22 23:08:44 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (1.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/nodes/13" for 127.0.0.1 at 2018-03-22 23:08:46 -0500
+Processing by NodesController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mNode Load (0.9ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/nodes/13" for 127.0.0.1 at 2018-03-22 23:08:48 -0500
+Processing by NodesController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mNode Load (1.0ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/nodes/13" for 127.0.0.1 at 2018-03-22 23:08:52 -0500
+Processing by NodesController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mNode Load (0.9ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+Completed 200 OK in 5ms (Views: 0.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/nodes/13" for 127.0.0.1 at 2018-03-22 23:08:54 -0500
+Processing by NodesController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mNode Load (0.8ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.8ms)
+
+
+Started PATCH "/nodes/13" for 127.0.0.1 at 2018-03-22 23:08:57 -0500
+Processing by NodesController#update as */*
+  Parameters: {"id"=>"13", "attributes"=>{"title"=>"A New Event", "label"=>"Event", "properties"=>{"websites"=>[{"url"=>"http://flurgleblarm.com"}, {"url"=>"https://blaster.me/lburk"}]}, "body"=>"The Best Event Eva.", "slug"=>"a-new-event"}, "node"=>{"id"=>"13"}}
+  [1m[36mNode Load (0.6ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:31
+  [1m[36mNode Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE LOWER("nodes"."slug") = LOWER($1) AND "nodes"."id" != $2 LIMIT $3[0m  [["slug", "a-new-event"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:31
+  [1m[36mEvent Update (0.6ms)[0m  [1m[33mUPDATE "nodes" SET "properties" = $1, "updated_at" = $2 WHERE "nodes"."id" = $3[0m  [["properties", "{\"websites\":[{\"url\":\"http://flurgleblarm.com\"},{\"url\":\"https://blaster.me/lburk\"}]}"], ["updated_at", "2018-03-23 04:08:57.017898"], ["id", 13]]
+  ↳ app/controllers/nodes_controller.rb:31
+  [1m[35m (8.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:31
+Completed 200 OK in 19ms (Views: 0.6ms | ActiveRecord: 10.7ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-22 23:08:57 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (5.1ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 10ms (Views: 0.8ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/nodes/13" for 127.0.0.1 at 2018-03-22 23:08:58 -0500
+Processing by NodesController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mNode Load (0.6ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/nodes/13" for 127.0.0.1 at 2018-03-22 23:09:01 -0500
+Processing by NodesController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mNode Load (0.8ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+Completed 200 OK in 5ms (Views: 0.7ms | ActiveRecord: 0.8ms)
+
+
+Started PATCH "/nodes/13" for 127.0.0.1 at 2018-03-22 23:09:06 -0500
+Processing by NodesController#update as */*
+  Parameters: {"id"=>"13", "attributes"=>{"title"=>"A New Event", "label"=>"Event", "properties"=>{"websites"=>[]}, "body"=>"The Best Event Eva.", "slug"=>"a-new-event"}, "node"=>{"id"=>"13"}}
+  [1m[36mNode Load (0.6ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:31
+  [1m[36mNode Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE LOWER("nodes"."slug") = LOWER($1) AND "nodes"."id" != $2 LIMIT $3[0m  [["slug", "a-new-event"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:31
+  [1m[36mEvent Update (0.7ms)[0m  [1m[33mUPDATE "nodes" SET "properties" = $1, "updated_at" = $2 WHERE "nodes"."id" = $3[0m  [["properties", "{\"websites\":[]}"], ["updated_at", "2018-03-23 04:09:06.115221"], ["id", 13]]
+  ↳ app/controllers/nodes_controller.rb:31
+  [1m[35m (8.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:31
+Completed 200 OK in 19ms (Views: 0.5ms | ActiveRecord: 11.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-22 23:09:06 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (5.4ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 13ms (Views: 1.8ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/nodes/13" for 127.0.0.1 at 2018-03-22 23:09:56 -0500
+Processing by NodesController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mNode Load (1.3ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/nodes/13" for 127.0.0.1 at 2018-03-22 23:09:58 -0500
+Processing by NodesController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mNode Load (0.7ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/nodes/13" for 127.0.0.1 at 2018-03-22 23:10:02 -0500
+Processing by NodesController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mNode Load (0.8ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+Completed 200 OK in 4ms (Views: 0.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/nodes/13" for 127.0.0.1 at 2018-03-22 23:10:04 -0500
+Processing by NodesController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mNode Load (0.8ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+Completed 200 OK in 4ms (Views: 0.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/nodes/13" for 127.0.0.1 at 2018-03-22 23:10:21 -0500
+Processing by NodesController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mNode Load (0.5ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/nodes/13" for 127.0.0.1 at 2018-03-22 23:10:23 -0500
+Processing by NodesController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mNode Load (1.0ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 1.0ms)
+
+
+Started PATCH "/nodes/13" for 127.0.0.1 at 2018-03-22 23:10:41 -0500
+Processing by NodesController#update as */*
+  Parameters: {"id"=>"13", "attributes"=>{"title"=>"A New Event", "label"=>"Event", "properties"=>{"websites"=>[]}, "body"=>"The Best Event Eva.", "slug"=>"a-new-event"}, "node"=>{"id"=>"13"}}
+  [1m[36mNode Load (0.6ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:31
+  [1m[36mNode Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE LOWER("nodes"."slug") = LOWER($1) AND "nodes"."id" != $2 LIMIT $3[0m  [["slug", "a-new-event"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:31
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:31
+Completed 200 OK in 7ms (Views: 0.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-22 23:10:41 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/nodes/13" for 127.0.0.1 at 2018-03-22 23:10:47 -0500
+Processing by NodesController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mNode Load (1.0ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+Completed 200 OK in 4ms (Views: 0.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-22 23:10:50 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (3.7ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 7ms (Views: 0.7ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/nodes/13" for 127.0.0.1 at 2018-03-22 23:11:07 -0500
+Processing by NodesController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mNode Load (1.3ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-22 23:11:10 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/agents" for 127.0.0.1 at 2018-03-22 23:14:05 -0500
+Processing by AgentsController#index as */*
+  [1m[36mNode Load (1.0ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ($1, $2)[0m  [["type", "Person"], ["type", "Organization"]]
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 26ms (Views: 1.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/nodes/6" for 127.0.0.1 at 2018-03-22 23:14:07 -0500
+Processing by NodesController#show as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mNode Load (1.6ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/nodes/6" for 127.0.0.1 at 2018-03-22 23:14:10 -0500
+Processing by NodesController#show as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mNode Load (0.8ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/nodes/6" for 127.0.0.1 at 2018-03-22 23:14:16 -0500
+Processing by NodesController#show as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mNode Load (0.8ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/nodes/6" for 127.0.0.1 at 2018-03-22 23:14:54 -0500
+Processing by NodesController#show as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mNode Load (0.6ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/nodes/6" for 127.0.0.1 at 2018-03-23 06:24:21 -0500
+Processing by NodesController#show as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mNode Load (1.6ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:50
+Completed 200 OK in 23ms (Views: 4.0ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-23 06:24:53 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (1.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 10ms (Views: 2.0ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-24 06:33:56 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (6.3ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 17ms (Views: 2.4ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-24 06:35:36 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (5.0ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 10ms (Views: 0.8ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/agents" for 127.0.0.1 at 2018-03-24 06:35:38 -0500
+Processing by AgentsController#index as */*
+  [1m[36mNode Load (1.3ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ($1, $2)[0m  [["type", "Person"], ["type", "Organization"]]
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 10ms (Views: 2.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/places" for 127.0.0.1 at 2018-03-24 06:35:39 -0500
+Processing by PlacesController#index as */*
+  [1m[36mPlace Load (0.8ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Place')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 40ms (Views: 0.9ms | ActiveRecord: 14.6ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-24 06:38:48 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-24 06:40:47 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/agents" for 127.0.0.1 at 2018-03-24 12:14:32 -0500
+Processing by AgentsController#index as */*
+  [1m[36mNode Load (6.3ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ($1, $2)[0m  [["type", "Person"], ["type", "Organization"]]
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 45ms (Views: 13.6ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-24 12:14:33 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (1.4ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 9ms (Views: 2.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-24 12:24:26 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (1.8ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 6ms (Views: 0.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/agents" for 127.0.0.1 at 2018-03-24 12:24:28 -0500
+Processing by AgentsController#index as */*
+  [1m[36mNode Load (1.1ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ($1, $2)[0m  [["type", "Person"], ["type", "Organization"]]
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 9ms (Views: 4.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-26 20:51:14 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (8.0ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 37ms (Views: 6.0ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-26 20:57:22 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (1.9ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 6ms (Views: 0.7ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-26 22:21:23 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (1.9ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-26 22:37:11 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (2.0ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 5ms (Views: 0.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-26 22:38:44 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/agents" for 127.0.0.1 at 2018-03-26 22:38:46 -0500
+Processing by AgentsController#index as */*
+  [1m[36mNode Load (1.4ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ($1, $2)[0m  [["type", "Person"], ["type", "Organization"]]
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 16ms (Views: 1.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-26 22:38:46 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-26 22:39:48 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (2.7ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 6ms (Views: 0.6ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/agents" for 127.0.0.1 at 2018-03-26 22:39:49 -0500
+Processing by AgentsController#index as */*
+  [1m[36mNode Load (0.8ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ($1, $2)[0m  [["type", "Person"], ["type", "Organization"]]
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 6ms (Views: 2.4ms | ActiveRecord: 0.8ms)
+
+

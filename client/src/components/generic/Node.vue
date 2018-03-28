@@ -55,7 +55,9 @@ export default {
   data() {
     return {
       node: {
-        attributes: {}
+        attributes: {
+          properties: {}
+        }
       }
     };
   },

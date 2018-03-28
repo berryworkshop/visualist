@@ -7,19 +7,25 @@
         <router-link :to="{ name: i.name }">{{ i.text }}</router-link>
       </li>
     </ul>
-    <!-- <ul id="user-nav"> -->
-      <!-- <li v-if="!this.$store.getters.loggedIn">
-        <router-link :to="{ name: 'login' }">Login</router-link>
-      <li v-else>
-        <button name="logout" class="link"
-          v-on:click="$store.dispatch('logout')">Logout</button>
-      </li> -->
-      <!-- <li v-if="!isObjectEmpty(user)">User</li> -->
-    <!-- </ul> -->
+
+    <button
+      v-if="!$store.getters.loggedIn"
+      class="btn btn-primary btn-margin"
+      @click="$store.dispatch('login')">
+        Log In
+    </button>
+    <button
+      v-else
+      class="btn btn-primary btn-margin"
+      @click="$store.dispatch('logout')">
+        Log Out
+    </button>
+
   </header>
 </template>
 
 <script>
+
 export default {
   name: "HeaderDefault",
   data() {

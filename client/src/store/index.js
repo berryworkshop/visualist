@@ -1,12 +1,12 @@
 import Vue from "vue";
 import Vuex from "vuex";
-// import request from "superagent";
-// import railsRoutes from "../router/railsRoutes";
+import AuthService from "../auth/AuthService";
 
 // eslint-disable-next-line
 import utility from "../utility";
 
 Vue.use(Vuex);
+const Auth = new AuthService();
 
 export default new Vuex.Store({
   state: {
@@ -24,9 +24,6 @@ export default new Vuex.Store({
     organizations: [],
     pages: [],
     places: []
-    // user: {
-    //   jwt: ""
-    // }
   },
   mutations: {
     eventsSet(state, arr) {
@@ -47,46 +44,22 @@ export default new Vuex.Store({
     pagesSet(state, arr) {
       state.pages = arr;
     }
-    // login(state, jwt) {
-    //   state.user.jwt = jwt;
-    // },
-    // logout(state) {
-    //   state.user = { jwt: "" };
-    // },
-  },
-  getters: {
-    // loggedIn(state) {
-    //   if (state.user.jwt && state.user.jwt.length > 0) {
-    //     return true;
-    //   }
-    //   return false;
-    // }
   },
   actions: {
-    async retainNodes(context, { label: label, nodes: nodes }) {
+    retainNodes(context, { label: label, nodes: nodes }) {
       context.commit(`${label.toLowerCase().pluralize()}Set`, nodes);
+    },
+    login(context) {
+      Auth.login();
+    },
+    logout(context) {
+      Auth.logout();
+    },
+    handleAuthentication(context) {
+      Auth.handleAuthentication();
+    },
+    loggedIn() {
+      return Auth.isAuthenticated();
     }
-    // async login(context, user) {
-    //   // user: {email: 'lebowski@example.com', password: 'p455w0rd'}
-    //   const url = `${context.rootState.apiHost}/user_token`;
-    //   try {
-    //     const response = await request
-    //       .post(url)
-    //       .set("Content-Type", "application/json")
-    //       .send({
-    //         auth: {
-    //           email: user.email,
-    //           password: user.password
-    //         }
-    //       });
-    //     const res = JSON.parse(response.text);
-    //     context.commit("login", res.jwt);
-    //   } catch (err) {
-    //     console.error(err);
-    //   }
-    // },
-    // async logout(context) {
-    //   context.commit("logout");
-    // },
   }
 });

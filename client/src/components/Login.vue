@@ -1,7 +1,10 @@
 <template>
   <layout id="login">
     <h2>Login</h2>
-      <div>
+
+    <button name="user-button" v-on:click="login">Login</button>
+
+      <!-- <div>
         <label for="user-email">User Email </label>
         <input name="user-email"
             type="email"
@@ -18,7 +21,7 @@
             required>
       </div>
       <button name="user-button"
-          v-on:click="$store.dispatch('login', user)">Submit</button>
+          v-on:click="$store.dispatch('login', user)">Submit</button> -->
   </layout>
 </template>
 

@@ -18,6 +18,7 @@ import AgentBrowse from "@/components/directory/AgentBrowse";
 // import OrganizationForm from "@/components/directory/OrganizationForm";
 // import Organization from "@/components/directory/Organization";
 import Login from "@/components/Login";
+import LoginCallback from "@/components/LoginCallback";
 import Search from "@/components/Search";
 import Sitemap from "@/components/Sitemap";
 import Error404 from "@/components/404";
@@ -26,6 +27,7 @@ import Error500 from "@/components/500";
 Vue.use(Router);
 
 export default new Router({
+  mode: "history",
   routes: [
     {
       path: "/",
@@ -202,14 +204,23 @@ export default new Router({
       component: Login
     },
     {
-      path: "/404",
-      name: "error404",
-      component: Error404
+      path: "/callback",
+      name: "loginCallback",
+      component: LoginCallback
     },
     {
       path: "/500",
       name: "error500",
       component: Error500
+    },
+    {
+      path: "/404",
+      name: "error404",
+      component: Error404
+    },
+    {
+      path: "*",
+      component: Error404
     }
   ]
 });
