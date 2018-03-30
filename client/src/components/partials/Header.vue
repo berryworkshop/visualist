@@ -9,7 +9,7 @@
     </ul>
 
     <button
-      v-if="!$auth.loggedIn"
+      v-if="!$auth.authenticated"
       class="btn btn-primary btn-margin"
       @click="$auth.login()">
         Log In
@@ -20,7 +20,6 @@
       @click="$auth.logout()">
         Log Out
     </button>
-
   </header>
 </template>
 

@@ -23437,3 +23437,157 @@ Processing by AgentsController#index as */*
 Completed 200 OK in 9ms (Views: 2.8ms | ActiveRecord: 0.8ms)
 
 
+Started GET "/events" for 127.0.0.1 at 2018-03-30 09:28:55 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (3.1ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 22ms (Views: 4.5ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/agents" for 127.0.0.1 at 2018-03-30 09:28:57 -0500
+Processing by AgentsController#index as */*
+  [1m[36mNode Load (3.5ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ($1, $2)[0m  [["type", "Person"], ["type", "Organization"]]
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 18ms (Views: 6.0ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-30 09:29:10 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 5ms (Views: 1.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-30 09:35:44 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (1.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-30 09:39:09 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (1.8ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 9ms (Views: 0.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-30 09:41:11 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-30 09:44:54 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-30 09:45:21 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (1.8ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 5ms (Views: 0.8ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-30 09:45:30 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 4ms (Views: 0.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-30 09:48:28 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/agents" for 127.0.0.1 at 2018-03-30 09:48:29 -0500
+Processing by AgentsController#index as */*
+  [1m[36mNode Load (2.4ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ($1, $2)[0m  [["type", "Person"], ["type", "Organization"]]
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 20ms (Views: 5.1ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/agents" for 127.0.0.1 at 2018-03-30 09:49:27 -0500
+Processing by AgentsController#index as */*
+  [1m[36mNode Load (0.7ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ($1, $2)[0m  [["type", "Person"], ["type", "Organization"]]
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 7ms (Views: 1.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-30 09:49:31 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-30 09:51:27 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-30 09:52:21 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (8.6ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 13ms (Views: 0.5ms | ActiveRecord: 8.6ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-30 09:52:23 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 4ms (Views: 1.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-30 09:54:47 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-30 09:56:29 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (9.8ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 14ms (Views: 0.6ms | ActiveRecord: 9.8ms)
+
+
+Started GET "/agents" for 127.0.0.1 at 2018-03-30 09:56:29 -0500
+Processing by AgentsController#index as */*
+  [1m[36mNode Load (8.1ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ($1, $2)[0m  [["type", "Person"], ["type", "Organization"]]
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 13ms (Views: 2.4ms | ActiveRecord: 8.1ms)
+
+
+Started GET "/agents" for 127.0.0.1 at 2018-03-30 09:57:32 -0500
+Processing by AgentsController#index as */*
+  [1m[36mNode Load (0.8ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ($1, $2)[0m  [["type", "Person"], ["type", "Organization"]]
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 7ms (Views: 2.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-03-30 09:57:42 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Event')[0m
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 5ms (Views: 1.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/agents" for 127.0.0.1 at 2018-03-30 09:57:43 -0500
+Processing by AgentsController#index as */*
+  [1m[36mNode Load (1.8ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."type" IN ($1, $2)[0m  [["type", "Person"], ["type", "Organization"]]
+  ↳ app/controllers/nodes_controller.rb:54
+Completed 200 OK in 10ms (Views: 2.9ms | ActiveRecord: 1.8ms)
+
+

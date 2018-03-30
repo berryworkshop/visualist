@@ -1,10 +1,7 @@
 import { AUTH_CONFIG } from "./config.js";
 import auth0 from "auth0-js";
 import router from "./../router";
-import EventEmitter from "eventemitter3";
 import Vue from "vue";
-
-const authNotifier = new EventEmitter();
 
 const webauth = new auth0.WebAuth({
   domain: AUTH_CONFIG.domain,
@@ -15,44 +12,49 @@ const webauth = new auth0.WebAuth({
   scope: "openid"
 });
 
-function setSession(authResult) {
-  // Set the time that the access token will expire at
-  const expiresAt = JSON.stringify(
-    authResult.expiresIn * 1000 + new Date().getTime()
-  );
-  localStorage.setItem("access_token", authResult.accessToken);
-  localStorage.setItem("id_token", authResult.idToken);
-  localStorage.setItem("expires_at", expiresAt);
-  authNotifier.emit("authChange", { authenticated: true });
+/**
+ * Determines whether the current session is valid.
+ */
+function isAuthenticated() {
+  // Check whether the current time is past the
+  // access token's expiry time
+  let expiresAt = JSON.parse(localStorage.getItem("expires_at"));
+  return new Date().getTime() < expiresAt;
 }
 
 const auth = new Vue({
   name: "AuthMixin",
   data() {
+    // verify registered state change
+    // this is in data() to trigger Vue's update mechanism
+    this.$on("authChange", () => {
+      this.authenticated = isAuthenticated();
+    });
     return {
-      authenticated: false
+      authenticated: isAuthenticated()
     };
   },
   methods: {
-    async login() {
-      this.loggedIn = true;
-      await webauth.authorize();
+    login() {
+      webauth.authorize();
+      // register state change
+      this.$emit("authChange");
     },
-    async logout() {
-      // Clear access token and ID token from local storage
+    logout() {
+      // clear session variables from local storage
       localStorage.removeItem("access_token");
       localStorage.removeItem("id_token");
       localStorage.removeItem("expires_at");
-      authNotifier.emit("authChange", false);
+      // register state change
+      this.$emit("authChange");
       // navigate to the home route
-      this.loggedIn = false;
       router.push({ name: "home" });
     },
-    async handleAuthentication() {
+    handleAuthentication() {
       webauth.parseHash((err, authResult) => {
         if (authResult && authResult.accessToken && authResult.idToken) {
-          setSession(authResult);
-          this.loggedIn = true;
+          this.setSession(authResult);
+          this.$emit("authChange");
           router.push({ name: "home" });
         } else if (err) {
           router.push({ name: "home" });
@@ -60,14 +62,17 @@ const auth = new Vue({
         }
       });
     },
-    async setAuth() {
-      // Check whether the current time is past the
-      // access token's expiry time
-      if (this.authenticated === true) {
-        const expiresAt = JSON.parse(localStorage.getItem("expires_at"));
-        this.authenticated = new Date().getTime() < expiresAt;
-      }
-      this.authenticated = false;
+    setSession(authResult) {
+      // Set the time that the access token will expire at
+      const expiresAt = JSON.stringify(
+        authResult.expiresIn * 1000 + new Date().getTime()
+      );
+      // save session variables in local storage
+      localStorage.setItem("access_token", authResult.accessToken);
+      localStorage.setItem("id_token", authResult.idToken);
+      localStorage.setItem("expires_at", expiresAt);
+      // register state change
+      this.$emit("authChange");
     }
   }
 });
