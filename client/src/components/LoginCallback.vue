@@ -1,20 +1,21 @@
 <template>
   <layout id="loginCallback">
-    <h2>Callback</h2>
-    <p>You have been logged in.</p>
+    <p>Logging in...</p>
   </layout>
 </template>
 
 <script>
 import Layout from "./layouts/Default";
+import auth from "../auth/auth.js";
 
 export default {
   name: "LoginCallback",
+  mixins: [auth],
   components: {
     Layout
   },
   created() {
-    this.$store.dispatch('handleAuthentication')
+    this.$auth.handleAuthentication();
   }
 };
 </script>

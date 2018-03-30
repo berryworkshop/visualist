@@ -9,15 +9,15 @@
     </ul>
 
     <button
-      v-if="!$store.getters.loggedIn"
+      v-if="!$auth.loggedIn"
       class="btn btn-primary btn-margin"
-      @click="$store.dispatch('login')">
+      @click="$auth.login()">
         Log In
     </button>
     <button
       v-else
       class="btn btn-primary btn-margin"
-      @click="$store.dispatch('logout')">
+      @click="$auth.logout()">
         Log Out
     </button>
 
@@ -25,9 +25,11 @@
 </template>
 
 <script>
+import auth from "../../auth/auth.js";
 
 export default {
   name: "HeaderDefault",
+  mixins: [auth],
   data() {
     return {
       nav: [

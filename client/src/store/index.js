@@ -1,12 +1,10 @@
 import Vue from "vue";
 import Vuex from "vuex";
-import AuthService from "../auth/AuthService";
 
 // eslint-disable-next-line
 import utility from "../utility";
 
 Vue.use(Vuex);
-const Auth = new AuthService();
 
 export default new Vuex.Store({
   state: {
@@ -48,18 +46,6 @@ export default new Vuex.Store({
   actions: {
     retainNodes(context, { label: label, nodes: nodes }) {
       context.commit(`${label.toLowerCase().pluralize()}Set`, nodes);
-    },
-    login(context) {
-      Auth.login();
-    },
-    logout(context) {
-      Auth.logout();
-    },
-    handleAuthentication(context) {
-      Auth.handleAuthentication();
-    },
-    loggedIn() {
-      return Auth.isAuthenticated();
     }
   }
 });
