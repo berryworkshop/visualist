@@ -28,11 +28,6 @@ class Node < ApplicationRecord
   validates :slug, uniqueness: { case_sensitive: false }
   validates :properties, json: {schema: @schema.as_json }
 
-
-
-
-
-
   # has_many :edges_out,
   #   class_name: 'Edge',
   #   foreign_key: :subject_id,

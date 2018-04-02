@@ -136,3 +136,8 @@ allan_lives_pilsen = Edge.create(
   # dobject: pilsen,
   properties: {}
 )
+
+admin = User.create(
+  name: 'Administrator',
+  email: 'admin@example.com'
+)

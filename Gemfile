@@ -22,6 +22,8 @@ gem 'rack-cors', '>= 1.0.2', require: 'rack/cors'
 
 gem 'activerecord_json_validator', '>= 1.2.0'
 
+gem 'knock', '>= 2.1.1'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

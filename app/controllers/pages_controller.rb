@@ -1,4 +1,5 @@
 class PagesController < NodesController
+  # before_action :authenticate_user
 
   private
     def model
