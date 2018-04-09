@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3>Browse {{ label.toLowerCase().pluralize().toTitleCase() }}</h3>
+    <h1 class="display-4">Browse {{ label.toLowerCase().pluralize().toTitleCase() }}</h1>
     <node-list :label="label"></node-list>
 
     <nav class="controls">

@@ -1,6 +1,6 @@
 <template>
   <layout id="sitemap">
-    <h2>Sitemap</h2>
+    <h1 class="display-4">Sitemap</h1>
   </layout>
 </template>
 

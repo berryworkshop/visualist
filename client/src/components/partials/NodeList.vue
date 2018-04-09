@@ -1,9 +1,10 @@
 <template>
   <div class="node-list">
-    <ul v-if="nodes && nodes.length > 0">
+    <!-- <ul v-if="nodes && nodes.length > 0">
       <li class="node" v-for="n in nodes" :key="n.attributes.slug">
         <div class="data">
-          <span class="node-id">{{ n.id }}</span><router-link class="node-link" :to="{name: n.attributes.label.toLowerCase(), params: { node_id: n.id }}">{{ n.attributes.title }}</router-link>
+          <span class="node-id">{{ n.id }}</span>
+          <router-link class="node-link" :to="{name: n.attributes.label.toLowerCase(), params: { node_id: n.id }}">{{ n.attributes.title }}</router-link>
         </div>
         <div class="controls">
           <router-link :to="{
@@ -14,7 +15,41 @@
           <button name="delete" :value="n" v-on:click="deleteNode(n)">Delete</button>
         </div>
       </li>
-    </ul>
+    </ul> -->
+
+    <table class="table" v-if="nodes && nodes.length > 0">
+      <caption>List of {{ label.pluralize() }}</caption>
+      <thead>
+        <tr>
+          <th scope="col">Pic</th>
+          <th scope="col">Id</th>
+          <th scope="col" style="width: 100%">Title</th>
+          <th scope="col">Controls</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="n in nodes" :key="n.attributes.slug">
+          <td scope="row">
+            <img class="mr-3" src="http://via.placeholder.com/50" alt="Generic placeholder image">
+          </td>
+          <td>{{ n.id }}</td>
+          <td>
+            <router-link class="node-link" :to="{name: n.attributes.label.toLowerCase(), params: { node_id: n.id }}">{{ n.attributes.title }}</router-link>
+          </td>
+          <td>
+            <router-link class="control"
+                :to="{
+                  name: `${n.attributes.label.toLowerCase()}Edit`,
+                  params: {
+                    node_id: n.id
+                  }}">Edit</router-link>
+            <button class="control" name="delete" :value="n" v-on:click="deleteNode(n)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+
     <p v-else>No {{ label.pluralize() }} are available.</p>
   </div>
 </template>
@@ -55,23 +90,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.node-list ul {
-  padding-left: 0;
-  list-style-type: none;
-
-  .node {
-    display: flex;
-    .data {
-      flex: 1;
-      > * {
-        margin-right: 1rem;
-      }
-    }
-    .controls {
-      > * {
-        margin-left: 1rem;
-      }
-    }
+.control {
+  margin-right: 1rem;
+  &:last-child {
+    margin-right: 0;
   }
 }
 </style>

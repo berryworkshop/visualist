@@ -1,7 +1,7 @@
 <template>
   <div id="node-form">
-    <h3 v-if="formType === 'add'">Add {{ label }}</h3>
-    <h3 v-else>Edit {{ label }}: {{ node.attributes.title }}</h3>
+    <h1 v-if="formType === 'add'" class="display-4">Add {{ label }}</h1>
+    <h1 v-else class="display-4">Edit {{ label }}: {{ node.attributes.title }}</h1>
     <div>
       <label for="node-title">Title</label>
       <input type="text"

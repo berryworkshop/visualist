@@ -1,6 +1,6 @@
 <template>
   <div id="node">
-    <h3>{{ label }}: {{ node.attributes.title }}</h3>
+    <h1 class="display-4">{{ label }}: {{ node.attributes.title }}</h1>
 
     <!-- <p v-if="node.attributes.properties">{{ node.attributes.properties }}</p>
     <p v-else><em>No properties available.</em></p> -->

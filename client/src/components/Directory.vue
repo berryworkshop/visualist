@@ -1,6 +1,6 @@
 <template>
   <layout id="directory">
-    <h2>Directory</h2>
+    <!-- <h1>Directory</h1> -->
     <router-view></router-view>
   </layout>
 </template>

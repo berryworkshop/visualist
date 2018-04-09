@@ -1,6 +1,6 @@
 <template>
   <layout id="calendar">
-    <h2>Calendar</h2>
+    <!-- <h1>Calendar</h1> -->
     <router-view></router-view>
   </layout>
 </template>

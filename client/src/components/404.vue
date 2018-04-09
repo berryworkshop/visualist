@@ -1,6 +1,6 @@
 <template>
   <layout id="error-404">
-    <h2>Error 404</h2>
+    <h1 class="display-4">Error 404</h1>
   </layout>
 </template>
 

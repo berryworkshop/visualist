@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3>Browse People and Organizations</h3>
+    <h1 class="display-4">Browse People and Organizations</h1>
     <node-list :label="label"></node-list>
 
     <nav class="controls">

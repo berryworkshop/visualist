@@ -1,6 +1,6 @@
 <template>
   <layout id="login">
-    <h2>Login</h2>
+    <h1 class="display-4">Login</h1>
 
     <button name="user-button" v-on:click="login">Login</button>
 

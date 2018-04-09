@@ -16,6 +16,7 @@ export default new Vuex.Store({
         process.env.NODE_ENV === "development" ? 3000 : window.location.port;
       return `${protocol}//${hostname}:${port}`;
     })(),
+    nodes: [],
     events: [],
     agents: [],
     people: [],
@@ -24,6 +25,9 @@ export default new Vuex.Store({
     places: []
   },
   mutations: {
+    nodesSet(state, arr) {
+      state.nodes = arr;
+    },
     eventsSet(state, arr) {
       state.events = arr;
     },

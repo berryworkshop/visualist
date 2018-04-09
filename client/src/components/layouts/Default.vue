@@ -1,8 +1,12 @@
 <template>
   <div class="layout">
     <header-default></header-default>
-    <main>
-      <slot></slot>
+    <main class="container">
+      <div id="node" class="row">
+        <div class="col py-md-3">
+          <slot></slot>
+        </div>
+      </div>
     </main>
     <footer-default></footer-default>
   </div>
@@ -29,7 +33,7 @@ export default {
 
   main {
     flex: 1;
-    padding: 1rem;
+    // padding: 1rem;
   }
 }
 </style>
