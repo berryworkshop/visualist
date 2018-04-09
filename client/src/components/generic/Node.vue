@@ -5,21 +5,30 @@
     <!-- <p v-if="node.attributes.properties">{{ node.attributes.properties }}</p>
     <p v-else><em>No properties available.</em></p> -->
 
-    <p v-if="node.attributes.body">{{ node.attributes.body }}</p>
-    <p v-else><em>No body available.</em></p>
+    <div class="row">
+      <div class="col-3">
+        <img class="w-100 mb-3" src="http://via.placeholder.com/250" alt="Generic placeholder image">
 
-    <div>
-      <ul v-if="node.attributes.properties.websites">
-        <li v-for="(s, index) in node.attributes.properties.websites"
-            :key="index">
-          <a :href="s.url">{{ s.url }}</a>
-        </li>
-      </ul>
-    </div>
+        <div>
+          <p>created: {{ created_at }}</p>
+          <p>updated: {{ updated_at }}</p>
+        </div>
+      </div>
+      <div class="col-9">
+        <p v-if="node.attributes.body">{{ node.attributes.body }}</p>
+        <p v-else><em>No body available.</em></p>
 
-    <div>
-      <p>created: {{ created_at }}</p>
-      <p>updated: {{ updated_at }}</p>
+        <div>
+          <ul v-if="node.attributes.properties.websites">
+            <li v-for="(s, index) in node.attributes.properties.websites"
+                :key="index">
+              <a :href="s.url">{{ s.url }}</a>
+            </li>
+          </ul>
+        </div>
+
+
+      </div>
     </div>
 
     <nav class="controls">
