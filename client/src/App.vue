@@ -11,8 +11,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import "assets/bootstrap-reboot.css";
-
 $link-color: #007bff;
 $link-color-hover: #0056b3;
 
