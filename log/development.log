@@ -25986,3 +25986,425 @@ Processing by EventsController#index as */*
 Completed 200 OK in 6ms (Views: 1.2ms | ActiveRecord: 2.1ms)
 
 
+  [1m[36mEdge Load (6.3ms)[0m  [1m[34mSELECT  "edges".* FROM "edges" ORDER BY "edges"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mEdge Load (0.8ms)[0m  [1m[34mSELECT  "edges".* FROM "edges" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:4
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:4
+  [1m[35m (143.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "visualist_development"[0m
+  ↳ bin/rails:4
+  [1m[35m (136.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "visualist_test"[0m
+  ↳ bin/rails:4
+  [1m[35m (579.1ms)[0m  [1m[35mCREATE DATABASE "visualist_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:4
+  [1m[35m (303.5ms)[0m  [1m[35mCREATE DATABASE "visualist_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:4
+  [1m[35m (11.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:4
+  [1m[35m (5.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:4
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8056133293431660360)[0m
+  ↳ bin/rails:4
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Migrating to InitialSetup (20180224040121)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (7.3ms)[0m  [1m[35mCREATE TABLE "nodes" ("id" bigserial primary key, "type" character varying, "slug" character varying, "title" character varying, "properties" jsonb, "body" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20180224040121_initial_setup.rb:3
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_nodes_on_slug" ON "nodes"  ("slug")[0m
+  ↳ db/migrate/20180224040121_initial_setup.rb:3
+  [1m[35m (9.0ms)[0m  [1m[35mCREATE TABLE "edges" ("id" bigserial primary key, "subject_id" bigint, "predicate" character varying, "dobject_id" bigint, "properties" jsonb, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20180224040121_initial_setup.rb:14
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE  INDEX  "index_edges_on_subject_id" ON "edges"  ("subject_id")[0m
+  ↳ db/migrate/20180224040121_initial_setup.rb:14
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX  "index_edges_on_dobject_id" ON "edges"  ("dobject_id")[0m
+  ↳ db/migrate/20180224040121_initial_setup.rb:14
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_edges_on_subject_id_and_predicate_and_dobject_id" ON "edges"  ("subject_id", "predicate", "dobject_id")[0m
+  ↳ db/migrate/20180224040121_initial_setup.rb:14
+  [1m[35m (6.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "email" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20180224040121_initial_setup.rb:24
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/migrate/20180224040121_initial_setup.rb:24
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180224040121"]]
+  ↳ bin/rails:4
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-04-11 03:25:46.844345"], ["updated_at", "2018-04-11 03:25:46.844345"]]
+  ↳ bin/rails:4
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(8056133293431660360)[0m
+  ↳ bin/rails:4
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:1
+  [1m[36mNode Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE LOWER("nodes"."slug") = LOWER($1) LIMIT $2[0m  [["slug", "berry_allan"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:1
+  [1m[36mPerson Create (0.8ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "properties", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["type", "Person"], ["slug", "berry_allan"], ["title", "Berry, Allan"], ["properties", "{}"], ["body", "Allan is awesome."], ["created_at", "2018-04-11 03:25:46.957649"], ["updated_at", "2018-04-11 03:25:46.957649"]]
+  ↳ db/seeds.rb:1
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:1
+  [1m[35m (1.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mNode Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE LOWER("nodes"."slug") = LOWER($1) LIMIT $2[0m  [["slug", "duguid_meg"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mPerson Create (0.5ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "properties", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["type", "Person"], ["slug", "duguid_meg"], ["title", "Duguid, Meg"], ["properties", "{}"], ["body", "Meg is magnificent."], ["created_at", "2018-04-11 03:25:46.965783"], ["updated_at", "2018-04-11 03:25:46.965783"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mNode Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE LOWER("nodes"."slug") = LOWER($1) LIMIT $2[0m  [["slug", "thomas_michael"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:17
+  [1m[36mPerson Create (0.5ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "properties", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["type", "Person"], ["slug", "thomas_michael"], ["title", "Thomas, Michael"], ["properties", "{}"], ["body", "Michael is magical."], ["created_at", "2018-04-11 03:25:46.970814"], ["updated_at", "2018-04-11 03:25:46.970814"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:25
+  [1m[36mNode Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE LOWER("nodes"."slug") = LOWER($1) LIMIT $2[0m  [["slug", "wood_grant"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mPerson Create (0.4ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "properties", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["type", "Person"], ["slug", "wood_grant"], ["title", "Wood, Grant"], ["properties", "{}"], ["body", "A great American artist."], ["created_at", "2018-04-11 03:25:46.975593"], ["updated_at", "2018-04-11 03:25:46.975593"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:33
+  [1m[36mNode Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE LOWER("nodes"."slug") = LOWER($1) LIMIT $2[0m  [["slug", "culture_math"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:33
+  [1m[36mOrganization Create (0.6ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "properties", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["type", "Organization"], ["slug", "culture_math"], ["title", "Culture/Math"], ["properties", "{}"], ["body", "Culture/Math is great."], ["created_at", "2018-04-11 03:25:46.991268"], ["updated_at", "2018-04-11 03:25:46.991268"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:41
+  [1m[36mNode Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE LOWER("nodes"."slug") = LOWER($1) LIMIT $2[0m  [["slug", "aic"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:41
+  [1m[36mOrganization Create (0.5ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "properties", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["type", "Organization"], ["slug", "aic"], ["title", "Art Institute of Chicago"], ["properties", "{}"], ["body", "Chicago's crown jewel."], ["created_at", "2018-04-11 03:25:46.997230"], ["updated_at", "2018-04-11 03:25:46.997230"]]
+  ↳ db/seeds.rb:41
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:41
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:49
+  [1m[36mNode Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE LOWER("nodes"."slug") = LOWER($1) LIMIT $2[0m  [["slug", "chicago"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:49
+  [1m[36mPlace Create (0.6ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "properties", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["type", "Place"], ["slug", "chicago"], ["title", "Chicago"], ["properties", "{}"], ["body", "The Windy City."], ["created_at", "2018-04-11 03:25:47.018012"], ["updated_at", "2018-04-11 03:25:47.018012"]]
+  ↳ db/seeds.rb:49
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:49
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:57
+  [1m[36mNode Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE LOWER("nodes"."slug") = LOWER($1) LIMIT $2[0m  [["slug", "grant_park"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:57
+  [1m[36mPlace Create (0.4ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "properties", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["type", "Place"], ["slug", "grant_park"], ["title", "Grant Park"], ["properties", "{}"], ["body", "The great lawn of Chicago."], ["created_at", "2018-04-11 03:25:47.022775"], ["updated_at", "2018-04-11 03:25:47.022775"]]
+  ↳ db/seeds.rb:57
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:57
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:65
+  [1m[36mNode Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE LOWER("nodes"."slug") = LOWER($1) LIMIT $2[0m  [["slug", "pilsen"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:65
+  [1m[36mPlace Create (0.5ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "properties", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["type", "Place"], ["slug", "pilsen"], ["title", "Pilsen"], ["properties", "{}"], ["body", "The best neighborhood for tacos."], ["created_at", "2018-04-11 03:25:47.028146"], ["updated_at", "2018-04-11 03:25:47.028146"]]
+  ↳ db/seeds.rb:65
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:65
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:73
+  [1m[36mNode Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE LOWER("nodes"."slug") = LOWER($1) LIMIT $2[0m  [["slug", "american_gothic"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:73
+  [1m[36mWork Create (0.5ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "properties", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["type", "Work"], ["slug", "american_gothic"], ["title", "American Gothic"], ["properties", "{}"], ["body", "A nice painting of two lovely people."], ["created_at", "2018-04-11 03:25:47.040306"], ["updated_at", "2018-04-11 03:25:47.040306"]]
+  ↳ db/seeds.rb:73
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:73
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:81
+  [1m[36mNode Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE LOWER("nodes"."slug") = LOWER($1) LIMIT $2[0m  [["slug", "visualist"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:81
+  [1m[36mWork Create (0.5ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "properties", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["type", "Work"], ["slug", "visualist"], ["title", "The Visualist"], ["properties", "{}"], ["body", "Chicago's Visual Arts Calendar."], ["created_at", "2018-04-11 03:25:47.045416"], ["updated_at", "2018-04-11 03:25:47.045416"]]
+  ↳ db/seeds.rb:81
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:81
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:89
+  [1m[36mNode Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE LOWER("nodes"."slug") = LOWER($1) LIMIT $2[0m  [["slug", "about"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:89
+  [1m[36mPage Create (0.4ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "properties", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["type", "Page"], ["slug", "about"], ["title", "About The Visualist"], ["properties", "{}"], ["body", "The Visualist connects Chicago with its art."], ["created_at", "2018-04-11 03:25:47.058262"], ["updated_at", "2018-04-11 03:25:47.058262"]]
+  ↳ db/seeds.rb:89
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:89
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:98
+  [1m[36mEdge Create (2.4ms)[0m  [1m[32mINSERT INTO "edges" ("subject_id", "predicate", "dobject_id", "properties", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["subject_id", 1], ["predicate", "has_friend"], ["dobject_id", 2], ["properties", "{}"], ["created_at", "2018-04-11 03:25:47.077107"], ["updated_at", "2018-04-11 03:25:47.077107"]]
+  ↳ db/seeds.rb:98
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:105
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:105
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:112
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:112
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:119
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:119
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:126
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:126
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:133
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:133
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:140
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:140
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Administrator"], ["email", "admin@example.com"], ["created_at", "2018-04-11 03:25:47.106734"], ["updated_at", "2018-04-11 03:25:47.106734"]]
+  ↳ db/seeds.rb:140
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:140
+  [1m[36mEdge Load (0.8ms)[0m  [1m[34mSELECT  "edges".* FROM "edges" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mNode Load (0.6ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 11]]
+  [1m[36mNode Load (0.9ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 11]]
+  [1m[36mEdge Load (0.7ms)[0m  [1m[34mSELECT  "edges".* FROM "edges" ORDER BY "edges"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mNode Load (0.8ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 11]]
+  [1m[36mNode Load (0.9ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 11]]
+  [1m[36mNode Load (0.7ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."id" = $1[0m  [["id", 1]]
+  [1m[36mNode Load (0.5ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mNode Load (0.8ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mPerson Load (2.3ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."type" IN ('Person') AND "nodes"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mNode Load (0.9ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEdge Load (0.4ms)[0m  [1m[34mSELECT  "edges".* FROM "edges" WHERE "edges"."subject_id" = $1 LIMIT $2[0m  [["subject_id", 1], ["LIMIT", 11]]
+  [1m[36mEdge Load (0.6ms)[0m  [1m[34mSELECT  "edges".* FROM "edges" WHERE "edges"."dobject_id" = $1 LIMIT $2[0m  [["dobject_id", 1], ["LIMIT", 11]]
+  [1m[36mNode Load (1.2ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes"."id" = "edges"."dobject_id" WHERE "edges"."subject_id" = $1 LIMIT $2[0m  [["subject_id", 1], ["LIMIT", 11]]
+  [1m[36mNode Load (1.0ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes"."id" = "edges"."subject_id" WHERE "edges"."dobject_id" = $1 LIMIT $2[0m  [["dobject_id", 1], ["LIMIT", 11]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:4
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:4
+  [1m[35m (136.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "visualist_development"[0m
+  ↳ bin/rails:4
+  [1m[35m (135.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "visualist_test"[0m
+  ↳ bin/rails:4
+  [1m[35m (276.8ms)[0m  [1m[35mCREATE DATABASE "visualist_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:4
+  [1m[35m (279.2ms)[0m  [1m[35mCREATE DATABASE "visualist_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:4
+  [1m[35m (6.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:4
+  [1m[35m (7.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8056133293431660360)[0m
+  ↳ bin/rails:4
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Migrating to InitialSetup (20180224040121)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE TABLE "nodes" ("id" bigserial primary key, "type" character varying, "slug" character varying, "title" character varying, "properties" jsonb, "body" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20180224040121_initial_setup.rb:3
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_nodes_on_slug" ON "nodes"  ("slug")[0m
+  ↳ db/migrate/20180224040121_initial_setup.rb:3
+  [1m[35m (5.9ms)[0m  [1m[35mCREATE TABLE "edges" ("id" bigserial primary key, "subject_id" bigint, "predicate" character varying, "dobject_id" bigint, "properties" jsonb, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20180224040121_initial_setup.rb:14
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_edges_on_subject_id" ON "edges"  ("subject_id")[0m
+  ↳ db/migrate/20180224040121_initial_setup.rb:14
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX  "index_edges_on_dobject_id" ON "edges"  ("dobject_id")[0m
+  ↳ db/migrate/20180224040121_initial_setup.rb:14
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_edges_on_subject_id_and_predicate_and_dobject_id" ON "edges"  ("subject_id", "predicate", "dobject_id")[0m
+  ↳ db/migrate/20180224040121_initial_setup.rb:14
+  [1m[35m (4.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "email" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20180224040121_initial_setup.rb:24
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/migrate/20180224040121_initial_setup.rb:24
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180224040121"]]
+  ↳ bin/rails:4
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-04-11 03:37:34.671535"], ["updated_at", "2018-04-11 03:37:34.671535"]]
+  ↳ bin/rails:4
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(8056133293431660360)[0m
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:1
+  [1m[36mNode Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE LOWER("nodes"."slug") = LOWER($1) LIMIT $2[0m  [["slug", "berry_allan"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:1
+  [1m[36mPerson Create (0.9ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "properties", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["type", "Person"], ["slug", "berry_allan"], ["title", "Berry, Allan"], ["properties", "{}"], ["body", "Allan is awesome."], ["created_at", "2018-04-11 03:37:34.776608"], ["updated_at", "2018-04-11 03:37:34.776608"]]
+  ↳ db/seeds.rb:1
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:1
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mNode Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE LOWER("nodes"."slug") = LOWER($1) LIMIT $2[0m  [["slug", "duguid_meg"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mPerson Create (0.5ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "properties", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["type", "Person"], ["slug", "duguid_meg"], ["title", "Duguid, Meg"], ["properties", "{}"], ["body", "Meg is magnificent."], ["created_at", "2018-04-11 03:37:34.783948"], ["updated_at", "2018-04-11 03:37:34.783948"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mNode Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE LOWER("nodes"."slug") = LOWER($1) LIMIT $2[0m  [["slug", "thomas_michael"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:17
+  [1m[36mPerson Create (1.8ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "properties", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["type", "Person"], ["slug", "thomas_michael"], ["title", "Thomas, Michael"], ["properties", "{}"], ["body", "Michael is magical."], ["created_at", "2018-04-11 03:37:34.790894"], ["updated_at", "2018-04-11 03:37:34.790894"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:25
+  [1m[36mNode Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE LOWER("nodes"."slug") = LOWER($1) LIMIT $2[0m  [["slug", "wood_grant"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mPerson Create (0.6ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "properties", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["type", "Person"], ["slug", "wood_grant"], ["title", "Wood, Grant"], ["properties", "{}"], ["body", "A great American artist."], ["created_at", "2018-04-11 03:37:34.798202"], ["updated_at", "2018-04-11 03:37:34.798202"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:33
+  [1m[36mNode Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE LOWER("nodes"."slug") = LOWER($1) LIMIT $2[0m  [["slug", "culture_math"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:33
+  [1m[36mOrganization Create (0.5ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "properties", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["type", "Organization"], ["slug", "culture_math"], ["title", "Culture/Math"], ["properties", "{}"], ["body", "Culture/Math is great."], ["created_at", "2018-04-11 03:37:34.815745"], ["updated_at", "2018-04-11 03:37:34.815745"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:41
+  [1m[36mNode Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE LOWER("nodes"."slug") = LOWER($1) LIMIT $2[0m  [["slug", "aic"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:41
+  [1m[36mOrganization Create (0.5ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "properties", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["type", "Organization"], ["slug", "aic"], ["title", "Art Institute of Chicago"], ["properties", "{}"], ["body", "Chicago's crown jewel."], ["created_at", "2018-04-11 03:37:34.822326"], ["updated_at", "2018-04-11 03:37:34.822326"]]
+  ↳ db/seeds.rb:41
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:41
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:49
+  [1m[36mNode Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE LOWER("nodes"."slug") = LOWER($1) LIMIT $2[0m  [["slug", "chicago"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:49
+  [1m[36mPlace Create (0.5ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "properties", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["type", "Place"], ["slug", "chicago"], ["title", "Chicago"], ["properties", "{}"], ["body", "The Windy City."], ["created_at", "2018-04-11 03:37:34.841394"], ["updated_at", "2018-04-11 03:37:34.841394"]]
+  ↳ db/seeds.rb:49
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:49
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:57
+  [1m[36mNode Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE LOWER("nodes"."slug") = LOWER($1) LIMIT $2[0m  [["slug", "grant_park"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:57
+  [1m[36mPlace Create (0.5ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "properties", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["type", "Place"], ["slug", "grant_park"], ["title", "Grant Park"], ["properties", "{}"], ["body", "The great lawn of Chicago."], ["created_at", "2018-04-11 03:37:34.847949"], ["updated_at", "2018-04-11 03:37:34.847949"]]
+  ↳ db/seeds.rb:57
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:57
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:65
+  [1m[36mNode Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE LOWER("nodes"."slug") = LOWER($1) LIMIT $2[0m  [["slug", "pilsen"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:65
+  [1m[36mPlace Create (0.5ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "properties", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["type", "Place"], ["slug", "pilsen"], ["title", "Pilsen"], ["properties", "{}"], ["body", "The best neighborhood for tacos."], ["created_at", "2018-04-11 03:37:34.854163"], ["updated_at", "2018-04-11 03:37:34.854163"]]
+  ↳ db/seeds.rb:65
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:65
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:73
+  [1m[36mNode Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE LOWER("nodes"."slug") = LOWER($1) LIMIT $2[0m  [["slug", "american_gothic"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:73
+  [1m[36mWork Create (0.6ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "properties", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["type", "Work"], ["slug", "american_gothic"], ["title", "American Gothic"], ["properties", "{}"], ["body", "A nice painting of two lovely people."], ["created_at", "2018-04-11 03:37:34.871215"], ["updated_at", "2018-04-11 03:37:34.871215"]]
+  ↳ db/seeds.rb:73
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:73
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:81
+  [1m[36mNode Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE LOWER("nodes"."slug") = LOWER($1) LIMIT $2[0m  [["slug", "visualist"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:81
+  [1m[36mWork Create (0.4ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "properties", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["type", "Work"], ["slug", "visualist"], ["title", "The Visualist"], ["properties", "{}"], ["body", "Chicago's Visual Arts Calendar."], ["created_at", "2018-04-11 03:37:34.885803"], ["updated_at", "2018-04-11 03:37:34.885803"]]
+  ↳ db/seeds.rb:81
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:81
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:89
+  [1m[36mNode Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" WHERE LOWER("nodes"."slug") = LOWER($1) LIMIT $2[0m  [["slug", "about"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:89
+  [1m[36mPage Create (0.5ms)[0m  [1m[32mINSERT INTO "nodes" ("type", "slug", "title", "properties", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["type", "Page"], ["slug", "about"], ["title", "About The Visualist"], ["properties", "{}"], ["body", "The Visualist connects Chicago with its art."], ["created_at", "2018-04-11 03:37:34.897929"], ["updated_at", "2018-04-11 03:37:34.897929"]]
+  ↳ db/seeds.rb:89
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:89
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:98
+  [1m[36mEdge Create (1.1ms)[0m  [1m[32mINSERT INTO "edges" ("subject_id", "predicate", "dobject_id", "properties", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["subject_id", 1], ["predicate", "has_friend"], ["dobject_id", 2], ["properties", "{}"], ["created_at", "2018-04-11 03:37:34.915898"], ["updated_at", "2018-04-11 03:37:34.915898"]]
+  ↳ db/seeds.rb:98
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:98
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:105
+  [1m[36mEdge Create (0.5ms)[0m  [1m[32mINSERT INTO "edges" ("subject_id", "predicate", "dobject_id", "properties", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["subject_id", 2], ["predicate", "has_friend"], ["dobject_id", 1], ["properties", "{}"], ["created_at", "2018-04-11 03:37:34.919771"], ["updated_at", "2018-04-11 03:37:34.919771"]]
+  ↳ db/seeds.rb:105
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:105
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:112
+  [1m[36mEdge Create (0.4ms)[0m  [1m[32mINSERT INTO "edges" ("subject_id", "predicate", "dobject_id", "properties", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["subject_id", 1], ["predicate", "has_friend"], ["dobject_id", 3], ["properties", "{}"], ["created_at", "2018-04-11 03:37:34.923103"], ["updated_at", "2018-04-11 03:37:34.923103"]]
+  ↳ db/seeds.rb:112
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:112
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:119
+  [1m[36mEdge Create (0.4ms)[0m  [1m[32mINSERT INTO "edges" ("subject_id", "predicate", "dobject_id", "properties", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["subject_id", 2], ["predicate", "has_spouse"], ["dobject_id", 3], ["properties", "{}"], ["created_at", "2018-04-11 03:37:34.925718"], ["updated_at", "2018-04-11 03:37:34.925718"]]
+  ↳ db/seeds.rb:119
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:119
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:126
+  [1m[36mEdge Create (0.4ms)[0m  [1m[32mINSERT INTO "edges" ("subject_id", "predicate", "dobject_id", "properties", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["subject_id", 10], ["predicate", "has_owner"], ["dobject_id", 6], ["properties", "{}"], ["created_at", "2018-04-11 03:37:34.928676"], ["updated_at", "2018-04-11 03:37:34.928676"]]
+  ↳ db/seeds.rb:126
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:126
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:133
+  [1m[36mEdge Create (0.6ms)[0m  [1m[32mINSERT INTO "edges" ("subject_id", "predicate", "dobject_id", "properties", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["subject_id", 10], ["predicate", "has_place_lived"], ["dobject_id", 9], ["properties", "{}"], ["created_at", "2018-04-11 03:37:34.931654"], ["updated_at", "2018-04-11 03:37:34.931654"]]
+  ↳ db/seeds.rb:133
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:133
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:140
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:140
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Administrator"], ["email", "admin@example.com"], ["created_at", "2018-04-11 03:37:34.946593"], ["updated_at", "2018-04-11 03:37:34.946593"]]
+  ↳ db/seeds.rb:140
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:140
+  [1m[36mEdge Load (2.3ms)[0m  [1m[34mSELECT  "edges".* FROM "edges" ORDER BY "edges"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mNode Load (1.3ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mNode Load (1.0ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" WHERE "nodes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mNode Load (0.8ms)[0m  [1m[34mSELECT  "nodes".* FROM "nodes" INNER JOIN "edges" ON "nodes"."id" = "edges"."dobject_id" WHERE "edges"."subject_id" = $1 LIMIT $2[0m  [["subject_id", 1], ["LIMIT", 11]]
+  [1m[36mNode Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM "nodes" INNER JOIN "edges" ON "nodes"."id" = "edges"."dobject_id" WHERE "edges"."subject_id" = $1 AND "nodes"."id" = $2 LIMIT $3[0m  [["subject_id", 1], ["id", 2], ["LIMIT", 1]]
