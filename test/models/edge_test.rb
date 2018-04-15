@@ -39,24 +39,24 @@ class EdgeTest < ActiveSupport::TestCase
     assert @edge.valid?, 'edge is not valid without both a subject and a dobject'
   end
 
-  test 'subject nodes_out includes dobject' do
-    assert @allan.nodes_out.include? @meg
-    refute @allan.nodes_out.include? @michael
+  test 'subject dobjects includes dobject' do
+    assert @allan.dobjects.include? @meg
+    refute @allan.dobjects.include? @michael
   end
 
-  test 'subject edges_out includes edge' do
-    assert @allan.edges_out.include? @edge
-    refute @allan.edges_out.include? @edge2
+  test 'subject dobject_relations includes edge' do
+    assert @allan.dobject_relations.include? @edge
+    refute @allan.dobject_relations.include? @edge2
   end
 
-  test 'dobject nodes_in includes subject' do
-    assert @meg.nodes_in.include? @allan
-    refute @meg.nodes_in.include? @michael
+  test 'dobject subjects includes subject' do
+    assert @meg.subjects.include? @allan
+    refute @meg.subjects.include? @michael
   end
 
-  test 'dobject edges_in includes edge' do
-    assert @meg.edges_in.include? @edge
-    refute @meg.edges_in.include? @edge2
+  test 'dobject subject_relations includes edge' do
+    assert @meg.subject_relations.include? @edge
+    refute @meg.subject_relations.include? @edge2
   end
 
 end

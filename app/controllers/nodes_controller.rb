@@ -51,7 +51,12 @@ class NodesController < ApplicationController
     end
 
     def serialize(node)
-      NodeSerializer.new(node).serializable_hash
+      options = {}
+      options[:include] = [
+        :dobject_relations,
+        :subject_relations
+      ]
+      NodeSerializer.new(node, options).serializable_hash
     end
 
     # Only allow a trusted parameter "white list" through.
