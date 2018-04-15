@@ -28,21 +28,25 @@ class Node < ApplicationRecord
   validates :slug, uniqueness: { case_sensitive: false }
   validates :properties, json: {schema: @schema.as_json }
 
-  has_many :dobject_relations,
+  has_many :edges,
     class_name: 'Edge',
     foreign_key: :subject_id,
     dependent: :destroy
 
-  has_many :subject_relations,
+  has_many :edges_inverted,
     class_name: 'Edge',
     foreign_key: :dobject_id,
     dependent: :destroy
 
-  has_many :dobjects,
-    through: :dobject_relations,
+  has_many :nodes,
+    through: :edges,
     source: :dobject
 
-  has_many :subjects,
-    through: :subject_relations,
+  has_many :nodes_inverted,
+    through: :edges_inverted,
     source: :subject
+
+  def absolute_url
+    return self.node_path self.id
+  end
 end

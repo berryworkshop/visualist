@@ -53,8 +53,8 @@ class NodesController < ApplicationController
     def serialize(node)
       options = {}
       options[:include] = [
-        :dobject_relations,
-        :subject_relations
+        :edges,
+        :edges_inverted
       ]
       NodeSerializer.new(node, options).serializable_hash
     end

@@ -38,4 +38,8 @@ class Edge < ApplicationRecord
         # :is_same_as,
       ].map { |x| x.to_s }
     }
+
+  def absolute_url
+    return self.edge_path self.id
+  end
 end
