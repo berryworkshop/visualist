@@ -22,7 +22,7 @@ export default {
           code: response.statusCode,
           url
         });
-        return JSON.parse(response.text).data;
+        return JSON.parse(response.text);
       } catch (err) {
         console.error(err);
       }
@@ -40,7 +40,7 @@ export default {
           code: response.statusCode,
           url
         });
-        return JSON.parse(response.text).data;
+        return JSON.parse(response.text);
       } catch (err) {
         console.error(err);
       }
@@ -58,7 +58,7 @@ export default {
           code: response.statusCode,
           url
         });
-        return JSON.parse(response.text).data;
+        return JSON.parse(response.text);
       } catch (err) {
         console.error(err, label, path, url, JSON.parse(JSON.stringify(node)));
       }
@@ -76,7 +76,7 @@ export default {
           code: response.statusCode,
           url
         });
-        return JSON.parse(response.text).data;
+        return JSON.parse(response.text);
       } catch (err) {
         console.error(err, label, path, url, JSON.parse(JSON.stringify(node)));
       }

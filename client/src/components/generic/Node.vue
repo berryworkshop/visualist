@@ -83,8 +83,13 @@ export default {
     }
   },
   async created() {
-    const node_id = this.$route.params["node_id"];
-    this.node = await this.nodeRead(node_id);
+    try {
+      const node_id = this.$route.params["node_id"];
+      const node = await this.nodeRead(node_id);
+      this.node = node.data;
+    } catch (error) {
+      console.error(error);
+    }
   }
 };
 </script>

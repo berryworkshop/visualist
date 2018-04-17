@@ -49,7 +49,7 @@ export default {
       const json = await this.nodeBrowse(this.label);
       this.$store.dispatch("retainNodes", {
         label: this.label,
-        nodes: json
+        nodes: json.data
       });
     },
     truncateWords(text, wordcount) {

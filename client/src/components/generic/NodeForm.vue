@@ -129,11 +129,16 @@ export default {
     }
   },
   async created() {
-    // determine whether editing existing node or creating node
-    const node_id = this.$route.params[`node_id`];
-    if (node_id) {
-      this.formType = "edit";
-      this.node = await this.nodeRead(node_id);
+    try {
+      // node_id determines whether editing or creating node
+      const node_id = this.$route.params["node_id"];
+      if (node_id) {
+        this.formType = "edit";
+        const node = await this.nodeRead(node_id);
+        this.node = node.data;
+      }
+    } catch (error) {
+      console.error(error);
     }
   },
   methods: {
