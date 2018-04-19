@@ -131,7 +131,7 @@ americangothic_own_aic = Edge.create(
 )
 
 allan_lives_pilsen = Edge.create(
-  subject: american_gothic,
+  subject: berry_allan,
   predicate: :has_place_lived,
   dobject: pilsen,
   properties: {}

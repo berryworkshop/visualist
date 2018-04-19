@@ -16,40 +16,16 @@ export default new Vuex.Store({
         process.env.NODE_ENV === "development" ? 3000 : window.location.port;
       return `${protocol}//${hostname}:${port}`;
     })(),
-    nodes: [],
-    events: [],
-    agents: [],
-    people: [],
-    organizations: [],
-    pages: [],
-    places: []
+    nodes: []
   },
   mutations: {
     nodesSet(state, arr) {
       state.nodes = arr;
-    },
-    eventsSet(state, arr) {
-      state.events = arr;
-    },
-    agentsSet(state, arr) {
-      state.agents = arr;
-    },
-    peopleSet(state, arr) {
-      state.people = arr;
-    },
-    organizationsSet(state, arr) {
-      state.organizations = arr;
-    },
-    placesSet(state, arr) {
-      state.places = arr;
-    },
-    pagesSet(state, arr) {
-      state.pages = arr;
     }
   },
   actions: {
-    retainNodes(context, { label: label, nodes: nodes }) {
-      context.commit(`${label.toLowerCase().pluralize()}Set`, nodes);
+    retainNodes(context, nodes) {
+      context.commit("nodesSet", nodes);
     }
   }
 });

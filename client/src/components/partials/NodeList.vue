@@ -67,7 +67,7 @@ export default {
   },
   computed: {
     nodes() {
-      return this.$store.state[this.label.toLowerCase().pluralize()];
+      return this.$store.state["nodes"];
     }
   },
   methods: {
@@ -77,10 +77,7 @@ export default {
     },
     async updateNodes() {
       const json = await this.nodeBrowse(this.label);
-      this.$store.dispatch("retainNodes", {
-        label: this.label,
-        nodes: json.data
-      });
+      this.$store.dispatch("retainNodes", json.data);
     }
   },
   created() {
